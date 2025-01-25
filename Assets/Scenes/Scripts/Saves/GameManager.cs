@@ -23,14 +23,20 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        //this is just for testing with s being save and R being a reset for it
-        if (Input.GetKeyDown(KeyCode.S))
+        //this is just for testing with a being add, s being save, and R being a reset for it
+        if (Input.GetKeyDown(KeyCode.A))
         {
+            Debug.Log("Adding");
             gameData.LevelsCompleted += 1;
+        }
+        else if (Input.GetKeyDown(KeyCode.S))
+        {
+            Debug.Log("Pressing S");
             SaveGame();
         }
         else if (Input.GetKeyDown(KeyCode.R))
         {
+            Debug.Log("Wiping");
             gameData = new GameData();
         }
     }
@@ -76,11 +82,24 @@ public class GameManager : MonoBehaviour
             gameData = JsonUtility.FromJson<GameData>(fileContents);
             Debug.Log("Reading");
         }
+        //I also used gpt, conversation: https://chatgpt.com/share/679499f9-167c-800c-95e6-f3774649f3f7 for this to make sure that there is a new save file in case it doesn't exist
+        else
+        {
+            Debug.Log("No save file found. Creating a new save file.");
+            //make new gameData class and then make a new save.
+            gameData = new GameData();
+            SaveGame();
+        }
     }
 
     //converts the data from the gamedata class to json and writes the save file as json 
     void WriteFile()
     {
+        if (gameData == null)
+        {
+            Debug.Log("gameData is null");
+            gameData = new GameData();
+        }
         string gameDataJSON = JsonUtility.ToJson(gameData);
         File.WriteAllText(saveFile, gameDataJSON);
         Debug.Log("Game saved: " + JsonUtility.ToJson(gameData, true)); // Debug to verify saved data
