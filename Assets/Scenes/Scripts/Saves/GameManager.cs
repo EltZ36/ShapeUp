@@ -1,19 +1,38 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    //code for saving is based on https://videlais.com/2021/02/25/using-jsonutility-in-unity-to-save-and-load-game-data/
+    //code for saving is based on https://videlais.com/2021/02/25/using-jsonutility-in-unity-to-save-and-load-game-data/ and https://weeklyhow.com/how-to-save-load-game-in-unity/
     string saveFile;
     GameData gameData = new GameData();
 
     //make a new save file on awake
+    //for the save and load, I also used gpt with this link: https://chatgpt.com/share/679499f9-167c-800c-95e6-f3774649f3f7 and modified my code based on that
     void Awake()
     {
+        //you can find this in C:\Users\<user>\AppData\LocalLow\<company name>
+        //for me (Elton) on windows, it's C:\Users\<user>\AppData\LocalLow\DefaultCompany/ShapeUp/gamedata.json
         saveFile = Application.persistentDataPath + "/gamedata.json";
+        ReadFile();
+    }
+
+    void Update()
+    {
+        //this is just for testing with s being save and R being a reset for it
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            gameData.LevelsCompleted += 1;
+            SaveGame();
+        }
+        else if (Input.GetKeyDown(KeyCode.R))
+        {
+            gameData = new GameData();
+        }
     }
 
     //should be called to begin the game but this should use the scenemanager instead
@@ -25,7 +44,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("OffLine Mode");
+            Debug.Log("Offline Mode");
         }
         if (ready)
         {
@@ -48,14 +67,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    //calls both read and write to save the game to the save file
-    public void SaveGame()
-    {
-        Debug.Log("Saving game");
-        ReadFile();
-        WriteFile();
-    }
-
     //this just reads from the save file if it exists and converts the file back from json
     void ReadFile()
     {
@@ -63,13 +74,21 @@ public class GameManager : MonoBehaviour
         {
             string fileContents = File.ReadAllText(saveFile);
             gameData = JsonUtility.FromJson<GameData>(fileContents);
+            Debug.Log("Reading");
         }
     }
 
-    //converts the data from the gamedata class to json and writes the save file as jason 
+    //converts the data from the gamedata class to json and writes the save file as json 
     void WriteFile()
     {
         string gameDataJSON = JsonUtility.ToJson(gameData);
         File.WriteAllText(saveFile, gameDataJSON);
+        Debug.Log("Game saved: " + JsonUtility.ToJson(gameData, true)); // Debug to verify saved data
+    }
+
+    //public function to call this write file
+    public void SaveGame()
+    {
+        WriteFile();
     }
 }
