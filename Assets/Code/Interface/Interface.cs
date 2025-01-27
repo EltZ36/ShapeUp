@@ -5,11 +5,6 @@ using UnityEngine;
 /// </summary>
 interface IGameManager
 {
-    /// <summary>
-    /// make a new save file on awake
-    /// for the save and load, I also used gpt with this link: https://chatgpt.com/share/679499f9-167c-800c-95e6-f3774649f3f7 and modified my code based on that
-    /// </summary>
-    void Init();
 
     /// <summary>
     /// Save a game state

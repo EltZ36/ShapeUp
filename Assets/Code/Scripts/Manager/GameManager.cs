@@ -38,13 +38,6 @@ public class GameManager : MonoBehaviour, IGameManager
     #endregion
 
     #region EXPOSED PUBLIC FUNCTIONS
-    public void Init()
-    {
-        //you can find this in C:\Users\<user>\AppData\LocalLow\<company name>
-        //for me (Elton) on windows, it's C:\Users\<user>\AppData\LocalLow\DefaultCompany/ShapeUp/gamedata.json
-        saveFile = Application.persistentDataPath + "/gamedata.json";
-        ReadFile();
-    }
 
     public void SaveGame()
     {
@@ -126,6 +119,17 @@ public class GameManager : MonoBehaviour, IGameManager
 
     #region OTHER
     /// <summary>
+    /// Override start from monobehavior to load saved game data
+    /// </summary>
+    void Start()
+    {
+        //you can find this in C:\Users\<user>\AppData\LocalLow\<company name>
+        //for me (Elton) on windows, it's C:\Users\<user>\AppData\LocalLow\DefaultCompany/ShapeUp/gamedata.json
+        saveFile = Application.persistentDataPath + "/gamedata.json";
+        ReadFile();
+    }
+
+    /// <summary>
     /// TESTING FUNCTION
     ///  A being add, S being save, and R being a reset
     /// </summary>
@@ -145,7 +149,10 @@ public class GameManager : MonoBehaviour, IGameManager
         {
             Debug.Log("Wiping");
             gameData = new GameData();
+            SaveGame();
         }
     }
+
+
     #endregion
 }
