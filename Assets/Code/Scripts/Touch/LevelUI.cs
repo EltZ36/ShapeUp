@@ -6,9 +6,16 @@ using UnityEngine.UI;
 
 public class LevelUI : MonoBehaviour
 {
-    [SerializeField] public Canvas Victory, Save, Default;
-    [SerializeField] public Image img;
+    //switch to a singleton type of manager
+    [SerializeField]
+    public Canvas Victory,
+        Save,
+        Default;
+
+    [SerializeField]
+    public Image img;
     public bool hints;
+    public GameManager GameManager;
 
     private void Start()
     {
@@ -16,7 +23,9 @@ public class LevelUI : MonoBehaviour
         Save.enabled = false;
         img.enabled = false;
         hints = false;
+        GameManager.SaveGame();
     }
+
     public void OnBackButton()
     {
         // Load Save UI
@@ -29,7 +38,6 @@ public class LevelUI : MonoBehaviour
         Debug.Log("Refresh Level");
         img.enabled = false;
         hints = false;
-
     }
 
     public void OnHintButton()
@@ -45,6 +53,7 @@ public class LevelUI : MonoBehaviour
         // Load Victory UI
         Victory.enabled = true;
     }
+
     public void OnNextButton()
     {
         // Load Next Level
@@ -66,6 +75,7 @@ public class LevelUI : MonoBehaviour
         Debug.Log("Save and Quit");
         Debug.Log("Menu");
         Save.enabled = false;
+        GameManager.SaveGame();
         SceneManager.LoadScene("Menu");
     }
 
@@ -77,5 +87,4 @@ public class LevelUI : MonoBehaviour
         Save.enabled = false;
         SceneManager.LoadScene("Menu");
     }
-
 }

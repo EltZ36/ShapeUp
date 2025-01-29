@@ -29,6 +29,8 @@ public class GameManager : MonoBehaviour, IGameManager
             _instance = this;
             DontDestroyOnLoad(this.gameObject);
         }
+        saveFile = Path.Combine(Application.persistentDataPath, "gamedata.json");
+        ReadFile();
     }
     #endregion
 
@@ -89,7 +91,7 @@ public class GameManager : MonoBehaviour, IGameManager
         {
             string fileContents = File.ReadAllText(saveFile);
             gameData = JsonUtility.FromJson<GameData>(fileContents);
-            Debug.Log("Reading");
+            Debug.Log("Reading from save");
         }
         //I also used gpt, conversation: https://chatgpt.com/share/679499f9-167c-800c-95e6-f3774649f3f7 for this to make sure that there is a new save file in case it doesn't exist
         else
@@ -112,8 +114,16 @@ public class GameManager : MonoBehaviour, IGameManager
             gameData = new GameData();
         }
         string gameDataJSON = JsonUtility.ToJson(gameData);
-        File.WriteAllText(saveFile, gameDataJSON);
-        Debug.Log("Game saved: " + JsonUtility.ToJson(gameData, true)); // Debug to verify saved data
+        try
+        {
+            gameData.LevelsCompleted += 1;
+            File.WriteAllText(saveFile, gameDataJSON);
+            Debug.Log("Game saved: " + JsonUtility.ToJson(gameData, true));
+        }
+        catch (System.Exception ex)
+        {
+            Debug.LogError($"Failed to write file: {ex.Message}");
+        }
     }
     #endregion
 
@@ -125,7 +135,7 @@ public class GameManager : MonoBehaviour, IGameManager
     {
         //you can find this in C:\Users\<user>\AppData\LocalLow\<company name>
         //for me (Elton) on windows, it's C:\Users\<user>\AppData\LocalLow\DefaultCompany/ShapeUp/gamedata.json
-        saveFile = Application.persistentDataPath + "/gamedata.json";
+        saveFile = Path.Combine(Application.persistentDataPath, "gamedata.json");
         ReadFile();
     }
 
@@ -133,7 +143,7 @@ public class GameManager : MonoBehaviour, IGameManager
     /// TESTING FUNCTION
     ///  A being add, S being save, and R being a reset
     /// </summary>
-    void Update()
+    /*void Update()
     {
         if (Input.GetKeyDown(KeyCode.A))
         {
@@ -151,8 +161,7 @@ public class GameManager : MonoBehaviour, IGameManager
             gameData = new GameData();
             SaveGame();
         }
-    }
-
+    } */
 
     #endregion
 }
