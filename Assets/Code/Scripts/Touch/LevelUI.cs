@@ -8,20 +8,24 @@ public class LevelUI : MonoBehaviour
 {
     //switch to a singleton type of manager
     [SerializeField]
-    public Canvas Victory,
-        Save,
-        Default;
+    public Canvas Default;
 
     [SerializeField]
-    public Image img;
+    public Image hintImage, victoryImage, saveImage;
     public bool hints;
     public GameManager GameManager;
 
+    private CanvasGroup victory, save;
+
     private void Start()
     {
-        Victory.enabled = false;
-        Save.enabled = false;
-        img.enabled = false;
+        save = saveImage.GetComponent < CanvasGroup>();
+        disableUIElement(save);
+
+        victory = victoryImage.GetComponent<CanvasGroup>();
+        disableUIElement(victory);
+
+        hintImage.enabled = false;
         hints = false;
         GameManager.SaveGame();
     }
@@ -29,14 +33,14 @@ public class LevelUI : MonoBehaviour
     public void OnBackButton()
     {
         // Load Save UI
-        Save.enabled = true;
+        enableUIElement(save);
     }
 
     public void OnRefreshButton()
     {
         // Revert level to starting state
         Debug.Log("Refresh Level");
-        img.enabled = false;
+        hintImage.enabled = false;
         hints = false;
     }
 
@@ -44,28 +48,28 @@ public class LevelUI : MonoBehaviour
     {
         // Show Hint Icons
         Debug.Log("Show Hints");
-        img.enabled = true;
+        hintImage.enabled = true;
         hints = true;
     }
 
     public void OnVictoryButton()
     {
         // Load Victory UI
-        Victory.enabled = true;
+        enableUIElement(victory);
     }
 
     public void OnNextButton()
     {
         // Load Next Level
         Debug.Log("Next Level");
-        Victory.enabled = false;
+        disableUIElement(victory);
     }
 
     public void OnMenuButton()
     {
         // Load Menu
         Debug.Log("Menu");
-        Victory.enabled = false;
+        disableUIElement(victory);
         SceneManager.LoadScene("Menu");
     }
 
@@ -74,17 +78,31 @@ public class LevelUI : MonoBehaviour
         // Save game, load menu
         Debug.Log("Save and Quit");
         Debug.Log("Menu");
-        Save.enabled = false;
+        disableUIElement(save);
         GameManager.SaveGame();
         SceneManager.LoadScene("Menu");
     }
 
     public void OnQuitButton()
     {
-        // Save game, load menu
+        // Quit game, load menu
         Debug.Log("Quit");
         Debug.Log("Menu");
-        Save.enabled = false;
+        disableUIElement(save);
         SceneManager.LoadScene("Menu");
+    }
+
+    void disableUIElement(CanvasGroup element)
+    {
+        element.alpha = 0;
+        element.interactable = false;
+        element.blocksRaycasts = false;
+    }
+
+    void enableUIElement(CanvasGroup element)
+    {
+        element.alpha = 1;
+        element.interactable = true;
+        element.blocksRaycasts = true;
     }
 }
