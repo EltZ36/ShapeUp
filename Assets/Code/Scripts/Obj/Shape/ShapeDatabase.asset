@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: ShapeDatabase
   m_EditorClassIdentifier: 
   shapeInfoList:
-  - shape: 0
-    prefab: {fileID: 1740465846098495637, guid: df10f4879db27f642a31ac4396abfa27, type: 3}
-    tags: 0
-  - shape: 1
-    prefab: {fileID: 1740465846098495637, guid: 7c367d30fe978434f989e041bd1b9096, type: 3}
-    tags: 0
+  - Shape: 0
+    Prefab: {fileID: 1740465846098495637, guid: df10f4879db27f642a31ac4396abfa27, type: 3}
+    Tags: 0
+  - Shape: 1
+    Prefab: {fileID: 1740465846098495637, guid: 7c367d30fe978434f989e041bd1b9096, type: 3}
+    Tags: 0

@@ -31,13 +31,21 @@ public class ShapeManager : MonoBehaviour, IShapeManager
     [SerializeField]
     private ShapeRecipes shapeRecipes;
 
+    private List<(Shape, Shape)> checkShapes = new List<(Shape, Shape)>();
+
+    //event that tells subscriber a new shape was created
+    public event Action<Shape> OnCreateShape;
+
     public GameObject CreateShape(ShapeType shapeType, Vector3 position)
     {
         GameObject shapePrefab = shapeDatabase.GetPrefab(shapeType);
         if (shapePrefab != null)
         {
-            GameObject shape = Instantiate(shapePrefab, position, Quaternion.identity);
-            return shape;
+            GameObject shapeObj = Instantiate(shapePrefab, position, Quaternion.identity);
+            Shape shape = shapeObj.GetComponent<Shape>();
+            shape.SetShapeInfo(new ShapeInfo(shapeType, shapePrefab));
+            OnCreateShape?.Invoke(shape);
+            return shapeObj;
         }
         return shapePrefab;
     }
@@ -60,4 +68,45 @@ public class ShapeManager : MonoBehaviour, IShapeManager
         }
         return null;
     }
+
+    public void CheckShapeCollide((Shape, Shape) pair)
+    {
+        checkShapes.Add(pair);
+    }
+
+    #region Monobehavior
+    public void LateUpdate()
+    {
+        if (checkShapes.Count >= 1)
+        {
+            HashSet<Shape> used = new HashSet<Shape>();
+            foreach ((Shape, Shape) pair in checkShapes)
+            {
+                if (used.Contains(pair.Item1) || used.Contains(pair.Item2))
+                {
+                    continue;
+                }
+                else
+                {
+                    ShapeType? combined = CombineShapes(
+                        pair.Item1.ShapeInfo.Shape,
+                        pair.Item2.ShapeInfo.Shape
+                    );
+                    if (combined.HasValue)
+                    {
+                        Vector3 pointA = pair.Item1.gameObject.transform.position;
+                        Vector3 pointB = pair.Item2.gameObject.transform.position;
+                        Vector3 midpoint = (pointA + pointB) / 2;
+                        CreateShape((ShapeType)combined, midpoint);
+                        used.Add(pair.Item1);
+                        used.Add(pair.Item2);
+                        Destroy(pair.Item1.gameObject);
+                        Destroy(pair.Item2.gameObject);
+                    }
+                }
+            }
+        }
+        checkShapes.Clear();
+    }
+    #endregion
 }

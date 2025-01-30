@@ -19,9 +19,9 @@ public class ShapeDatabase : ScriptableObject
             shapeInfoDict = new Dictionary<ShapeType, GameObject>();
             foreach (var shapeInfo in shapeInfoList)
             {
-                if (!shapeInfoDict.ContainsKey(shapeInfo.shape))
+                if (!shapeInfoDict.ContainsKey(shapeInfo.Shape))
                 {
-                    shapeInfoDict.Add(shapeInfo.shape, shapeInfo.prefab);
+                    shapeInfoDict.Add(shapeInfo.Shape, shapeInfo.Prefab);
                 }
             }
         }

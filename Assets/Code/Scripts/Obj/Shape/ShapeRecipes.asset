@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: ShapeRecipes
   m_EditorClassIdentifier: 
   shapeRecipesList:
-  - shapeA: 0
-    shapeB: 1
+  - shapeA: 1
+    shapeB: 0
     shapeResult: 3
-  - shapeA: 0
-    shapeB: 2
+  - shapeA: 1
+    shapeB: 1
     shapeResult: 0

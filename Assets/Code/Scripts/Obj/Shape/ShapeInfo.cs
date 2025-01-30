@@ -27,9 +27,15 @@ public enum ShapeTags
 [Serializable]
 public class ShapeInfo
 {
-    public ShapeType shape;
-    public GameObject prefab;
+    public ShapeType Shape;
+    public GameObject Prefab;
 
     [HideInInspector]
-    public ShapeTags tags;
+    public ShapeTags Tags;
+
+    public ShapeInfo(ShapeType type, GameObject prefab)
+    {
+        Shape = type;
+        Prefab = prefab;
+    }
 }

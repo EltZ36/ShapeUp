@@ -19,5 +19,14 @@ public class TestScript : MonoBehaviour
         {
             Debug.Log(s);
         }
+
+        ShapeManager
+            .Instance.CreateShape(ShapeType.Square, Vector3.one)
+            .GetComponent<Rigidbody2D>()
+            .gravityScale = 0;
+        ShapeManager
+            .Instance.CreateShape(ShapeType.Square, Vector3.left)
+            .GetComponent<Rigidbody2D>()
+            .gravityScale = 0;
     }
 }
