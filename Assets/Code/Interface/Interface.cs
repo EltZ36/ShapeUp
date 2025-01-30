@@ -64,3 +64,8 @@ interface ILevelManager
     /// </summary>
     void UnloadCurrentSubLevel();
 }
+
+
+interface IShapeManager{
+    
+}
