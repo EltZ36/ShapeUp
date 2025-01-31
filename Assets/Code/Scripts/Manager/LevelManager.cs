@@ -62,7 +62,7 @@ public class LevelManager : MonoBehaviour, ILevelManager
     private SubLevel currentSubLevel = null;
 
     #region Interface Methods
-    public void Init()
+    public void Start()
     {
         for (int i = 0; i < levelNames.Count; i++)
         {
@@ -85,13 +85,11 @@ public class LevelManager : MonoBehaviour, ILevelManager
 
     public void LoadLevel(int levelID)
     {
-        if (CurrentState == LMState.Select)
-        {
-            SetLMState(LMState.Level);
-            currentLevel = levels[levelID];
-            string name = currentLevel.SceneName;
-            SceneManager.LoadScene(name);
-        }
+        // removed guard for state select
+        SetLMState(LMState.Level);
+        currentLevel = levels[levelID];
+        string name = currentLevel.SceneName;
+        SceneManager.LoadScene(name);
     }
 
     //SubLevel ID is relative to current level

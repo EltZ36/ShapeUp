@@ -9,7 +9,7 @@ public class Menu : MonoBehaviour
     {
         // SceneManager.LoadScene(1);
         Debug.Log("Load Daily Puzzle");
-        SceneManager.LoadScene("LevelSelect");
+        LevelManager.Instance.LoadLevelSelect();
     }
 
     public void OnSuperButton()

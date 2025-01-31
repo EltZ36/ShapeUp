@@ -5,7 +5,6 @@ using UnityEngine;
 /// </summary>
 interface IGameManager
 {
-
     /// <summary>
     /// Save a game state
     /// code for saving is based on https://videlais.com/2021/02/25/using-jsonutility-in-unity-to-save-and-load-game-data/ and https://weeklyhow.com/how-to-save-load-game-in-unity/
@@ -28,11 +27,6 @@ interface IGameManager
 /// </summary>
 interface ILevelManager
 {
-    /// <summary>
-    /// Initializes the LevelManager with level information
-    /// </summary>
-    void Init();
-
     /// <summary>
     /// Marks level as complete and invokes OnLevelComplete event.
     /// </summary>

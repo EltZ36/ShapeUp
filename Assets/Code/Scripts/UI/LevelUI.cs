@@ -11,15 +11,18 @@ public class LevelUI : MonoBehaviour
     public Canvas Default;
 
     [SerializeField]
-    public Image hintImage, victoryImage, saveImage;
+    public Image hintImage,
+        victoryImage,
+        saveImage;
     public bool hints;
     public GameManager GameManager;
 
-    private CanvasGroup victory, save;
+    private CanvasGroup victory,
+        save;
 
     private void Start()
     {
-        save = saveImage.GetComponent < CanvasGroup>();
+        save = saveImage.GetComponent<CanvasGroup>();
         disableUIElement(save);
 
         victory = victoryImage.GetComponent<CanvasGroup>();
