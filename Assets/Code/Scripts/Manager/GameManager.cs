@@ -12,7 +12,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour, IGameManager
 {
     #region Singleton Pattern
-    public static GameManager _instance;
+    private static GameManager _instance;
     public static GameManager Instance
     {
         get { return _instance; }
@@ -36,7 +36,8 @@ public class GameManager : MonoBehaviour, IGameManager
 
     #region Internal Class Data
     string saveFile;
-    GameData gameData = new GameData();
+    public GameData gameData = new GameData();
+
     #endregion
 
     #region EXPOSED PUBLIC FUNCTIONS
@@ -113,10 +114,10 @@ public class GameManager : MonoBehaviour, IGameManager
             Debug.Log("gameData is null");
             gameData = new GameData();
         }
+        gameData.serialize();
         string gameDataJSON = JsonUtility.ToJson(gameData);
         try
         {
-            gameData.LevelsCompleted += 1;
             File.WriteAllText(saveFile, gameDataJSON);
             Debug.Log("Game saved: " + JsonUtility.ToJson(gameData, true));
         }
@@ -143,25 +144,24 @@ public class GameManager : MonoBehaviour, IGameManager
     /// TESTING FUNCTION
     ///  A being add, S being save, and R being a reset
     /// </summary>
-    /*void Update()
+    void Update()
     {
         if (Input.GetKeyDown(KeyCode.A))
         {
-            Debug.Log("Adding");
-            gameData.LevelsCompleted += 1;
+            Debug.Log(gameData);
         }
-        else if (Input.GetKeyDown(KeyCode.S))
-        {
-            Debug.Log("Pressing S");
-            SaveGame();
-        }
-        else if (Input.GetKeyDown(KeyCode.R))
-        {
-            Debug.Log("Wiping");
-            gameData = new GameData();
-            SaveGame();
-        }
-    } */
+        // else if (Input.GetKeyDown(KeyCode.S))
+        // {
+        //     Debug.Log("Pressing S");
+        //     SaveGame();
+        // }
+        // else if (Input.GetKeyDown(KeyCode.R))
+        // {
+        //     Debug.Log("Wiping");
+        //     gameData = new GameData();
+        //     SaveGame();
+        // }
+    }
 
     #endregion
 }

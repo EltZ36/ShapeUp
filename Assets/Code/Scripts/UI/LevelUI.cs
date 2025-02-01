@@ -30,6 +30,7 @@ public class LevelUI : MonoBehaviour
 
         hintImage.enabled = false;
         hints = false;
+        GameManager.Instance.gameData.AddLevelToSaveMapping(1, new LevelInfo("test"));
         GameManager.SaveGame();
     }
 
@@ -75,6 +76,8 @@ public class LevelUI : MonoBehaviour
         Debug.Log("Next Level");
         disableUIElement(victory);
         LevelManager.Instance.UnloadCurrentSubLevel();
+        GameManager.Instance.gameData.setCompletedSublevel(1, 1);
+        GameManager.SaveGame();
     }
 
     public void OnMenuButton()
