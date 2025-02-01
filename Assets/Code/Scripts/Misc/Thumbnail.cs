@@ -34,14 +34,9 @@ public class Thumbnail : MonoBehaviour
                 LevelManager.Instance.InjectSubLevel(0, transform.position);
                 loaded = true;
             }
-            if (
-                loaded == true
-                && Vector2.Distance(mainCamera.transform.position, transform.position) >= 2
-            )
-            {
-                LevelManager.Instance.UnloadCurrentSubLevel();
-                loaded = false;
-            }
+        } else
+        {
+            loaded = false;
         }
     }
 

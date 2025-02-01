@@ -33,10 +33,18 @@ public class LevelUI : MonoBehaviour
         GameManager.SaveGame();
     }
 
-    public void OnBackButton()
+    public void OnBackMenuButton()
     {
         // Load Save UI
         enableUIElement(save);
+    }
+
+    public void OnBackLevelButton()
+    {
+        // Return to level view
+        GameManager.Instance.SaveGame();
+
+        LevelManager.Instance.UnloadCurrentSubLevel();
     }
 
     public void OnRefreshButton()
@@ -66,6 +74,7 @@ public class LevelUI : MonoBehaviour
         // Load Next Level
         Debug.Log("Next Level");
         disableUIElement(victory);
+        LevelManager.Instance.UnloadCurrentSubLevel();
     }
 
     public void OnMenuButton()
@@ -82,7 +91,7 @@ public class LevelUI : MonoBehaviour
         Debug.Log("Save and Quit");
         Debug.Log("Menu");
         disableUIElement(save);
-        GameManager.SaveGame();
+        GameManager.Instance.SaveGame();
         SceneManager.LoadScene("Menu");
     }
 

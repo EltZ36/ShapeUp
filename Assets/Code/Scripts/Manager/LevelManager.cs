@@ -77,6 +77,12 @@ public class LevelManager : MonoBehaviour, ILevelManager
         levels[levelID].IsComplete = true;
     }
 
+    public void OnSubLevelCompleteEvent(int levelID, string sublevelID)
+    {
+        OnLevelComplete?.Invoke(levelID);
+        levels[levelID].IsComplete = true;
+    }
+
     public void LoadLevelSelect()
     {
         SetLMState(LMState.Select);
@@ -121,6 +127,7 @@ public class LevelManager : MonoBehaviour, ILevelManager
         if (CurrentState == LMState.SubLevel && currentSubLevel != null)
         {
             SceneManager.UnloadSceneAsync(currentSubLevel.SceneName);
+            Camera.main.orthographicSize = 10;
             currentSubLevel = null;
             SetLMState(LMState.Level);
         }
