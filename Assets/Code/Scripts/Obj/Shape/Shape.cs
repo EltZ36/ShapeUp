@@ -22,6 +22,14 @@ public class Shape : MonoBehaviour
         }
     }
 
+    public void ToggleShapeTags(ShapeTags tags)
+    {
+        if (ShapeInfo != null)
+        {
+            ShapeInfo.Tags ^= tags;
+        }
+    }
+
     void OnCollisionEnter2D(Collision2D collision)
     {
         Shape shape = collision.gameObject.GetComponent<Shape>();

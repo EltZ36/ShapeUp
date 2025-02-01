@@ -35,6 +35,9 @@ public class ShapeManager : MonoBehaviour, IShapeManager
 
     //event that tells subscriber a new shape was created
     public event Action<Shape> OnCreateShape;
+    public event Action<Shape> OnDestroyShape;
+
+    #region Interface Methods
 
     public GameObject CreateShape(ShapeType shapeType, Vector3 position)
     {
@@ -48,6 +51,12 @@ public class ShapeManager : MonoBehaviour, IShapeManager
             return shapeObj;
         }
         return shapePrefab;
+    }
+
+    public void DestroyShape(Shape shape)
+    {
+        OnDestroyShape?.Invoke(shape);
+        Destroy(shape.gameObject);
     }
 
     public ShapeType? CombineShapes(ShapeType shapeA, ShapeType shapeB)
@@ -73,6 +82,7 @@ public class ShapeManager : MonoBehaviour, IShapeManager
     {
         checkShapes.Add(pair);
     }
+    #endregion
 
     #region Monobehavior
     public void LateUpdate()
@@ -100,8 +110,8 @@ public class ShapeManager : MonoBehaviour, IShapeManager
                         CreateShape((ShapeType)combined, midpoint);
                         used.Add(pair.Item1);
                         used.Add(pair.Item2);
-                        Destroy(pair.Item1.gameObject);
-                        Destroy(pair.Item2.gameObject);
+                        DestroyShape(pair.Item1);
+                        DestroyShape(pair.Item2);
                     }
                 }
             }

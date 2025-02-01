@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
@@ -5,7 +6,6 @@ using UnityEngine;
 /// </summary>
 interface IGameManager
 {
-
     /// <summary>
     /// Save a game state
     /// code for saving is based on https://videlais.com/2021/02/25/using-jsonutility-in-unity-to-save-and-load-game-data/ and https://weeklyhow.com/how-to-save-load-game-in-unity/
@@ -65,7 +65,38 @@ interface ILevelManager
     void UnloadCurrentSubLevel();
 }
 
+/// <summary>
+/// Interface for the ShapeManager Singleton
+/// ShapeManager also implements a check every frame in LateUpdate to merge all colliding shapes with corresponding recipe outputs
+/// </summary>
+interface IShapeManager
+{
+    /// <summary>
+    /// Adds Shape to current scene and returns gameObject. Triggers OnShapeCreate event
+    /// </summary>
+    /// <param name="shapeType">Enum representing shape type</param>
+    /// <param name="position">position in game world</param>
+    /// <returns></returns>
+    public GameObject CreateShape(ShapeType shapeType, Vector3 position);
 
-interface IShapeManager{
-    
+    /// <summary>
+    /// Given a shape, destroy the corresponding gameObject. Triggers OnShapeDestroy event
+    /// </summary>
+    /// <param name="shape"></param>
+    public void DestroyShape(Shape shape);
+
+    /// <summary>
+    /// Given two ShapeType enums, return the corresponding ShapeType output according the loaded recipe. Returns null if no output is found.
+    /// </summary>
+    /// <param name="shapeA">The first shape</param>
+    /// <param name="shapeB">The second shape</param>
+    /// <returns></returns>
+    public ShapeType? CombineShapes(ShapeType shapeA, ShapeType shapeB);
+
+    /// <summary>
+    /// Returns a HashSet containing the two shapes used to create the shape being taken apart.
+    /// </summary>
+    /// <param name="shape">Shape being taken apart</param>
+    /// <returns></returns>
+    public HashSet<ShapeType> TakeApartShape(ShapeType shape);
 }
