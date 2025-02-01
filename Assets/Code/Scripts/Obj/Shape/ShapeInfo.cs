@@ -23,6 +23,7 @@ public enum ShapeTags
     Slice = 1 << 3,
     Accelerate = 1 << 4,
     Gyroscope = 1 << 5,
+    Storable = 1 << 6, //can be placed in the inventory
 }
 
 [Serializable]
