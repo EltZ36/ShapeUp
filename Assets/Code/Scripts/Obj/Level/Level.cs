@@ -6,10 +6,10 @@ using UnityEngine;
 public class Level : MonoBehaviour
 {
     [SerializeField]
-    private List<SubLevel> subLevels;
+    private LevelInfo levelInfo;
 
     public void Start()
     {
-        LevelManager.Instance.GetSubLevels(subLevels);
+        LevelManager.Instance.GetLevelInfo(levelInfo);
     }
 }

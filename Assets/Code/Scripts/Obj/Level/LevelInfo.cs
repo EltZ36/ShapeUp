@@ -7,7 +7,7 @@ using UnityEngine;
 [Serializable]
 public class LevelInfo : LevelCore
 {
-    public List<SubLevel> SubLevels = new List<SubLevel>();
+    public List<SubLevelInfo> SubLevels = new List<SubLevelInfo>();
 
     public LevelInfo(string sceneName)
     {

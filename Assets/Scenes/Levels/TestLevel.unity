@@ -245,13 +245,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d378e9cf21ea58a4ba3dfe021dd207aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  subLevels:
-  - SceneName: LevelUI
+  levelInfo:
+    SceneName: TestLevel
     IsComplete: 0
-    Thumbnail: {fileID: 1688693569}
-  - SceneName: LevelUI
-    IsComplete: 0
-    Thumbnail: {fileID: 357313774}
+    SubLevels:
+    - SceneName: SubLevel
+      IsComplete: 0
+      Thumbnail: {fileID: 1688693569}
+    - SceneName: SubLevel 1
+      IsComplete: 0
+      Thumbnail: {fileID: 357313774}
 --- !u!1 &1307445518
 GameObject:
   m_ObjectHideFlags: 0

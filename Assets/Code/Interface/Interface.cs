@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
@@ -28,15 +29,28 @@ interface IGameManager
 interface ILevelManager
 {
     /// <summary>
-    /// Marks level as complete and invokes OnLevelComplete event.
+    /// Marks the current level complete.
     /// </summary>
-    /// <param name="levelID">Based on LevelManager Dict, not build number</param>
-    void OnLevelCompleteEvent(int levelID);
+    /// <returns></returns>
+    void OnCurrentLevelComplete();
 
     /// <summary>
-    /// Moves to the scene named LevelSelect
+    /// Marks the current sub level complete.
     /// </summary>
-    void LoadLevelSelect();
+    /// <returns></returns>
+    void OnCurrentSubLevelComplete();
+
+    /// <summary>
+    /// returns a dictionary where each key represents a level id, and the value list contains the relative sublevel id that is marked as completed.
+    /// </summary>
+    /// <returns></returns>
+    Dictionary<int, List<int>> GetLevelsProgress();
+
+    /// <summary>
+    /// Returns true if all the sub levels of the current level is complete
+    /// </summary>
+    /// <returns></returns>
+    bool CheckAllSubLevelsComplete();
 
     /// <summary>
     /// Moves to the scene defined by levelID
