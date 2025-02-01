@@ -15,8 +15,9 @@ public enum ShapeType
 [Flags]
 public enum ShapeTags
 {
+    UseDatabaseDefault = 1 << 31,
     None = 0,
-    Physics = 1 << 0,
+    Gravity = 1 << 0,
     Drag = 1 << 1,
     Zoom = 1 << 2,
     Slice = 1 << 3,
@@ -29,8 +30,6 @@ public class ShapeInfo
 {
     public ShapeType Shape;
     public GameObject Prefab;
-
-    [HideInInspector]
     public ShapeTags Tags;
 
     public ShapeInfo(ShapeType type, GameObject prefab)

@@ -10,28 +10,28 @@ public class ShapeDatabase : ScriptableObject
     [SerializeField]
     private List<ShapeInfo> shapeInfoList;
 
-    private Dictionary<ShapeType, GameObject> shapeInfoDict;
+    private Dictionary<ShapeType, ShapeInfo> shapeInfoDict;
 
     private void OnEnable()
     {
         if (shapeInfoDict == null && shapeInfoList != null)
         {
-            shapeInfoDict = new Dictionary<ShapeType, GameObject>();
+            shapeInfoDict = new Dictionary<ShapeType, ShapeInfo>();
             foreach (var shapeInfo in shapeInfoList)
             {
                 if (!shapeInfoDict.ContainsKey(shapeInfo.Shape))
                 {
-                    shapeInfoDict.Add(shapeInfo.Shape, shapeInfo.Prefab);
+                    shapeInfoDict.Add(shapeInfo.Shape, shapeInfo);
                 }
             }
         }
     }
 
-    public GameObject GetPrefab(ShapeType shape)
+    public ShapeInfo GetShapeInfo(ShapeType shape)
     {
-        if (shapeInfoDict.TryGetValue(shape, out GameObject prefab))
+        if (shapeInfoDict.TryGetValue(shape, out ShapeInfo info))
         {
-            return prefab;
+            return info;
         }
         return null;
     }

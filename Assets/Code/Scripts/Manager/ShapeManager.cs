@@ -39,18 +39,35 @@ public class ShapeManager : MonoBehaviour, IShapeManager
 
     #region Interface Methods
 
-    public GameObject CreateShape(ShapeType shapeType, Vector3 position)
+    public GameObject CreateShape(
+        ShapeType shapeType,
+        Vector3 position,
+        ShapeTags tags = ShapeTags.UseDatabaseDefault
+    )
     {
-        GameObject shapePrefab = shapeDatabase.GetPrefab(shapeType);
-        if (shapePrefab != null)
+        ShapeInfo shapeInfo = shapeDatabase.GetShapeInfo(shapeType);
+        if (shapeInfo != null)
         {
-            GameObject shapeObj = Instantiate(shapePrefab, position, Quaternion.identity);
+            GameObject shapeObj = Instantiate(shapeInfo.Prefab, position, Quaternion.identity);
             Shape shape = shapeObj.GetComponent<Shape>();
-            shape.SetShapeInfo(new ShapeInfo(shapeType, shapePrefab));
+            shape.SetShapeInfo(new ShapeInfo(shapeType, shapeInfo.Prefab));
+            if (tags == ShapeTags.UseDatabaseDefault)
+            {
+                shape.SetShapeTags(shapeInfo.Tags);
+            }
+            else
+            {
+                shape.SetShapeTags(tags);
+            }
+            if ((shape.ShapeInfo.Tags & ShapeTags.Gravity) != ShapeTags.Gravity)
+            {
+                shape.ToggleShapeTags(ShapeTags.Gravity);
+                shapeObj.GetComponent<Rigidbody2D>().gravityScale = 0;
+            }
             OnCreateShape?.Invoke(shape);
             return shapeObj;
         }
-        return shapePrefab;
+        return null;
     }
 
     public void DestroyShape(Shape shape)
@@ -92,26 +109,28 @@ public class ShapeManager : MonoBehaviour, IShapeManager
             HashSet<Shape> used = new HashSet<Shape>();
             foreach ((Shape, Shape) pair in checkShapes)
             {
-                if (used.Contains(pair.Item1) || used.Contains(pair.Item2))
+                Shape shapeA = pair.Item1;
+                Shape shapeB = pair.Item2;
+                if (used.Contains(shapeA) || used.Contains(shapeB))
                 {
                     continue;
                 }
                 else
                 {
                     ShapeType? combined = CombineShapes(
-                        pair.Item1.ShapeInfo.Shape,
-                        pair.Item2.ShapeInfo.Shape
+                        shapeA.ShapeInfo.Shape,
+                        shapeB.ShapeInfo.Shape
                     );
                     if (combined.HasValue)
                     {
-                        Vector3 pointA = pair.Item1.gameObject.transform.position;
-                        Vector3 pointB = pair.Item2.gameObject.transform.position;
+                        Vector3 pointA = shapeA.gameObject.transform.position;
+                        Vector3 pointB = shapeB.gameObject.transform.position;
                         Vector3 midpoint = (pointA + pointB) / 2;
                         CreateShape((ShapeType)combined, midpoint);
-                        used.Add(pair.Item1);
-                        used.Add(pair.Item2);
-                        DestroyShape(pair.Item1);
-                        DestroyShape(pair.Item2);
+                        used.Add(shapeA);
+                        used.Add(shapeB);
+                        DestroyShape(shapeA);
+                        DestroyShape(shapeB);
                     }
                 }
             }

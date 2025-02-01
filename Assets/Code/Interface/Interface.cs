@@ -76,8 +76,13 @@ interface IShapeManager
     /// </summary>
     /// <param name="shapeType">Enum representing shape type</param>
     /// <param name="position">position in game world</param>
+    /// <param name="tags">tags that are applied to the shape, default to use tags set in the database</param>
     /// <returns></returns>
-    public GameObject CreateShape(ShapeType shapeType, Vector3 position);
+    public GameObject CreateShape(
+        ShapeType shapeType,
+        Vector3 position,
+        ShapeTags tags = ShapeTags.UseDatabaseDefault
+    );
 
     /// <summary>
     /// Given a shape, destroy the corresponding gameObject. Triggers OnShapeDestroy event

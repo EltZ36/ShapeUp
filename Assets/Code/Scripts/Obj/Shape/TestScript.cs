@@ -6,7 +6,11 @@ public class TestScript : MonoBehaviour
 {
     void Start()
     {
-        ShapeManager.Instance.CreateShape(ShapeType.Triangle, Vector3.zero);
+        ShapeManager.Instance.CreateShape(
+            ShapeType.Triangle,
+            Vector3.zero,
+            ShapeTags.Gravity | ShapeTags.Drag
+        );
         ShapeType shape = (ShapeType)
             ShapeManager.Instance.CombineShapes(ShapeType.Triangle, ShapeType.Square);
         ShapeType shape2 = (ShapeType)
@@ -20,13 +24,9 @@ public class TestScript : MonoBehaviour
             Debug.Log(s);
         }
 
-        ShapeManager
-            .Instance.CreateShape(ShapeType.Square, Vector3.one)
-            .GetComponent<Rigidbody2D>()
-            .gravityScale = 0;
-        ShapeManager
-            .Instance.CreateShape(ShapeType.Square, Vector3.left)
-            .GetComponent<Rigidbody2D>()
-            .gravityScale = 0;
+        ShapeManager.Instance.CreateShape(ShapeType.Square, Vector3.one);
+        ShapeManager.Instance.CreateShape(ShapeType.Square, Vector3.left * 2);
+
+        Debug.Log(1 << 31);
     }
 }
