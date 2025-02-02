@@ -34,7 +34,8 @@ public class Thumbnail : MonoBehaviour
                 LevelManager.Instance.InjectSubLevel(0, transform.position);
                 loaded = true;
             }
-        } else
+        }
+        else
         {
             loaded = false;
         }

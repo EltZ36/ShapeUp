@@ -29,6 +29,14 @@ interface IGameManager
 interface ILevelManager
 {
     /// <summary>
+    /// Update the level progress given game data instance TODO game data instance needs to be properly deserailzed and not 
+    /// just "fromjson'd"
+    /// https://docs.unity3d.com/6000.0/Documentation/ScriptReference/JsonUtility.FromJson.html
+    /// </summary>
+    /// <returns></returns>
+    public void SetLevelProgress(GameData gd);
+
+    /// <summary>
     /// Marks the current level complete.
     /// </summary>
     /// <returns></returns>

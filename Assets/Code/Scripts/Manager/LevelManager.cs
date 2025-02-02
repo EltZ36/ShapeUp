@@ -45,6 +45,23 @@ public class LevelManager : MonoBehaviour, ILevelManager
     private int currentSubLevelID = -1;
 
     #region Interface Methods
+
+    public void SetLevelProgress(GameData gd)
+    {
+        // get each level saved
+        foreach (int LNum in gd.LevelCompleteMap.Keys)
+        {
+            // go throuhg the sublevels of that level
+            foreach (var sl in gd.LevelCompleteMap[LNum])
+            { // level was beat
+                if (sl.Value == true)
+                { // set levels accordingly
+                    Levels[LNum].SubLevels[sl.Key].IsComplete = true;
+                }
+            }
+        }
+    }
+
     public void OnCurrentLevelComplete()
     {
         if (currentLevelID != -1)
@@ -64,7 +81,7 @@ public class LevelManager : MonoBehaviour, ILevelManager
             Levels[currentLevelID].SubLevels[currentSubLevelID].IsComplete = true;
 
             // cj elton test
-            GameManager.Instance.gameData.setCompletedSublevel(currentLevelID, currentSubLevelID);
+            GameManager.Instance.gameData.SetCompletedSublevel(currentLevelID, currentSubLevelID);
             GameManager.Instance.SaveGame();
         }
         else
@@ -168,9 +185,6 @@ public class LevelManager : MonoBehaviour, ILevelManager
     // Might find a different way of doing this.
     public void GetLevelInfo(LevelInfo levelInfo)
     {
-        // x
-        Debug.Log(levelInfo);
-        // x
         if (levelInfo == null)
         {
             throw new Exception("GetLevelInfo: Level missing LevelInfo");

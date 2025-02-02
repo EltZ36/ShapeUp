@@ -7,7 +7,6 @@ public class Menu : MonoBehaviour
 {
     public void OnDailyButton()
     {
-        // SceneManager.LoadScene(1);
         Debug.Log("Load Daily Puzzle");
         LevelManager.Instance.LoadLevel(0);
     }

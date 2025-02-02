@@ -1,6 +1,4 @@
-// using UnityEngine;
 
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,26 +6,28 @@ using UnityEngine;
 public class GameData
 {
     //code for saving is based on https://videlais.com/2021/02/25/using-jsonutility-in-unity-to-save-and-load-game-data/
-    private int LevelsCompleted;
 
     //https://discussions.unity.com/t/how-to-serialize-a-custom-class/925263
-    private Dictionary<int, Dictionary<int, bool>> LevelCompleteMap;
+    public Dictionary<int, Dictionary<int, bool>> LevelCompleteMap { get; private set; }
 
-    public List<int> levelNums;
-    public List<(int, int)> sublevelNums; // first is the associated level, second is the sublevel
-    public List<(int, int, bool)> isSubLevelComplete; // first is level num, second is sublevel num, thirs is whether or not its complete
+    public List<serializedLevel> SLevels;
+    public List<serializedSubLevel> SSLevels;
 
     public GameData()
     {
         LevelCompleteMap = new Dictionary<int, Dictionary<int, bool>>();
-        levelNums = new List<int>();
-        sublevelNums = new List<(int, int)>();
-        isSubLevelComplete = new List<(int, int, bool)>();
+        SLevels = new List<serializedLevel>();
+        SSLevels = new List<serializedSubLevel>();
     }
 
+    /// <summary>
+    /// pass in a level id and a level info instance to set the storage tracker
+    /// </summary>
+    /// <param name="levelID"></param>
+    /// <param name="li"></param>
     public void AddLevelToSaveMapping(int levelID, LevelInfo li)
     {
-        Debug.Log("here in lkevel to savge mappiung");
+        if (LevelCompleteMap.ContainsKey(levelID)) return;
         // todo add protection for already added
         Dictionary<int, bool> d = new Dictionary<int, bool>();
 
@@ -41,8 +41,12 @@ public class GameData
 
         LevelCompleteMap.Add(levelID, d);
     }
-
-    public void setCompletedSublevel(int lID, int slID)
+    /// <summary>
+    /// pass in level id and sub level id to set sublevel completed. 
+    /// </summary>
+    /// <param name="lID">level id</param>
+    /// <param name="slID">sub level id</param>
+    public void SetCompletedSublevel(int lID, int slID)
     {
         Debug.Log("here in completeedSublevel");
         if (LevelCompleteMap.ContainsKey(lID) == false)
@@ -62,25 +66,66 @@ public class GameData
 
         return;
     }
-
-    public void serialize()
+    /// <summary>
+    /// serialize the high level mapping into stupid unity acceptable format because
+    /// no one ever though to make a dictionary serializeable in unity i guess
+    /// </summary>
+    public void Serialize()
     {
-        Debug.Log("Hello from serialize");
         // go throuhg the base dict by key
         //no tuple do a class thank you
         foreach (var levelNum in LevelCompleteMap.Keys)
         {
-            levelNums.Add(levelNum);
+            serializedLevel sl;
+            sl.LevelNumber = levelNum;
+            sl.SubLevelCount = 0;
             // now go through each sublevel dictionary
             foreach (int subLevelNum in LevelCompleteMap[levelNum].Keys)
             {
-                Debug.Log(subLevelNum);
-                Debug.Log(LevelCompleteMap[levelNum][subLevelNum]);
-                sublevelNums.Add((levelNum, subLevelNum));
-                isSubLevelComplete.Add(
-                    (levelNum, subLevelNum, LevelCompleteMap[levelNum][subLevelNum])
-                );
+                sl.SubLevelCount += 1;
+
+                serializedSubLevel ssl;
+                ssl.ParentLevelNumber = levelNum;
+                ssl.sublevelNumber = subLevelNum;
+                ssl.completed = LevelCompleteMap[levelNum][subLevelNum];
+                SSLevels.Add(ssl);
             }
+            SLevels.Add(sl);
         }
     }
+    /// <summary>
+    /// the opposeide of serialize. sets up the dictionary. what more should be said.
+    /// </summary>
+    public void Deserialize()
+    {
+        foreach (var level in SLevels)
+        {
+            Dictionary<int, bool> d = new Dictionary<int, bool>();
+            foreach (var sublevel in SSLevels)
+            {
+                if (sublevel.ParentLevelNumber == level.LevelNumber)
+                {
+                    d.Add(sublevel.sublevelNumber, sublevel.completed);
+                }
+            }
+
+            LevelCompleteMap.Add(level.LevelNumber, d);
+        }
+    }
+}
+[System.Serializable]
+public struct serializedLevel
+{
+    public int LevelNumber;
+
+    public int SubLevelCount; // not needed idek
+}
+[System.Serializable]
+public struct serializedSubLevel
+{
+    public int ParentLevelNumber;
+
+    public int sublevelNumber;
+
+    public bool completed;
 }

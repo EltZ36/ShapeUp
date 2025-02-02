@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour, IGameManager
 
     #region Internal Class Data
     string saveFile;
-    public GameData gameData = new GameData();
+    public GameData gameData;
 
     #endregion
 
@@ -90,9 +90,12 @@ public class GameManager : MonoBehaviour, IGameManager
     {
         if (File.Exists(saveFile))
         {
-            string fileContents = File.ReadAllText(saveFile);
-            gameData = JsonUtility.FromJson<GameData>(fileContents);
             Debug.Log("Reading from save");
+            string fileContents = File.ReadAllText(saveFile);
+            // TODO: this is not how to use from json, will need to fix
+            // gameData = JsonUtility.FromJson<GameData>(fileContents);
+            // gameData.Deserialize();
+            // LevelManager.Instance.SetLevelProgress(gameData);
         }
         //I also used gpt, conversation: https://chatgpt.com/share/679499f9-167c-800c-95e6-f3774649f3f7 for this to make sure that there is a new save file in case it doesn't exist
         else
@@ -100,7 +103,6 @@ public class GameManager : MonoBehaviour, IGameManager
             Debug.Log("No save file found. Creating a new save file.");
             //make new gameData class and then make a new save.
             gameData = new GameData();
-            //SaveGame();
         }
     }
 
@@ -114,42 +116,43 @@ public class GameManager : MonoBehaviour, IGameManager
             Debug.Log("gameData is null");
             gameData = new GameData();
         }
-        gameData.serialize();
+        gameData.Serialize();
         string gameDataJSON = JsonUtility.ToJson(gameData);
-        try
         {
-            File.WriteAllText(saveFile, gameDataJSON);
-            Debug.Log("Game saved: " + JsonUtility.ToJson(gameData, true));
+            try
+            {
+                File.WriteAllText(saveFile, gameDataJSON);
+                Debug.Log("Game saved: " + JsonUtility.ToJson(gameData, true));
+            }
+            catch (System.Exception ex)
+            {
+                Debug.LogError($"Failed to write file: {ex.Message}");
+            }
         }
-        catch (System.Exception ex)
-        {
-            Debug.LogError($"Failed to write file: {ex.Message}");
-        }
-    }
     #endregion
 
-    #region OTHER
-    /// <summary>
-    /// Override start from monobehavior to load saved game data
-    /// </summary>
-    void Start()
-    {
-        //you can find this in C:\Users\<user>\AppData\LocalLow\<company name>
-        //for me (Elton) on windows, it's C:\Users\<user>\AppData\LocalLow\DefaultCompany/ShapeUp/gamedata.json
-        saveFile = Path.Combine(Application.persistentDataPath, "gamedata.json");
-        ReadFile();
-    }
+        #region OTHER
+        /// <summary>
+        /// Override start from monobehavior to load saved game data
+        /// </summary>
+        void Start()
+        {
+            //you can find this in C:\Users\<user>\AppData\LocalLow\<company name>
+            //for me (Elton) on windows, it's C:\Users\<user>\AppData\LocalLow\DefaultCompany/ShapeUp/gamedata.json
+            saveFile = Path.Combine(Application.persistentDataPath, "gamedata.json");
+            ReadFile();
+        }
 
-    /// <summary>
-    /// TESTING FUNCTION
-    ///  A being add, S being save, and R being a reset
-    /// </summary>
-    //void Update()
-    //{
-       // if (Input.GetKeyDown(KeyCode.A))
-       // {
+        /// <summary>
+        /// TESTING FUNCTION
+        ///  A being add, S being save, and R being a reset
+        /// </summary>
+        //void Update()
+        //{
+        // if (Input.GetKeyDown(KeyCode.A))
+        // {
         //    Debug.Log(gameData);
-    // }
+        // }
         // else if (Input.GetKeyDown(KeyCode.S))
         // {
         //     Debug.Log("Pressing S");
@@ -161,7 +164,8 @@ public class GameManager : MonoBehaviour, IGameManager
         //     gameData = new GameData();
         //     SaveGame();
         // }
-    //}
+        //}
 
-    #endregion
+        #endregion
+    }
 }
