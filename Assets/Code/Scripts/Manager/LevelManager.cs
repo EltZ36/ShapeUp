@@ -62,6 +62,10 @@ public class LevelManager : MonoBehaviour, ILevelManager
         if (currentLevelID != -1 || currentSubLevelID != -1)
         {
             Levels[currentLevelID].SubLevels[currentSubLevelID].IsComplete = true;
+
+            // cj elton test
+            GameManager.Instance.gameData.setCompletedSublevel(currentLevelID, currentSubLevelID);
+            GameManager.Instance.SaveGame();
         }
         else
         {
@@ -164,6 +168,9 @@ public class LevelManager : MonoBehaviour, ILevelManager
     // Might find a different way of doing this.
     public void GetLevelInfo(LevelInfo levelInfo)
     {
+        // x
+        Debug.Log(levelInfo);
+        // x
         if (levelInfo == null)
         {
             throw new Exception("GetLevelInfo: Level missing LevelInfo");
@@ -175,6 +182,9 @@ public class LevelManager : MonoBehaviour, ILevelManager
         if (Levels[currentLevelID] == null)
         {
             Levels[currentLevelID] = levelInfo;
+
+            // cj elton test
+            GameManager.Instance.gameData.AddLevelToSaveMapping(currentLevelID, levelInfo);
         }
     }
     #endregion

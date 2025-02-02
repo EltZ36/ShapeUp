@@ -100,7 +100,7 @@ public class GameManager : MonoBehaviour, IGameManager
             Debug.Log("No save file found. Creating a new save file.");
             //make new gameData class and then make a new save.
             gameData = new GameData();
-            SaveGame();
+            //SaveGame();
         }
     }
 
@@ -144,12 +144,12 @@ public class GameManager : MonoBehaviour, IGameManager
     /// TESTING FUNCTION
     ///  A being add, S being save, and R being a reset
     /// </summary>
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            Debug.Log(gameData);
-        }
+    //void Update()
+    //{
+       // if (Input.GetKeyDown(KeyCode.A))
+       // {
+        //    Debug.Log(gameData);
+    // }
         // else if (Input.GetKeyDown(KeyCode.S))
         // {
         //     Debug.Log("Pressing S");
@@ -161,7 +161,7 @@ public class GameManager : MonoBehaviour, IGameManager
         //     gameData = new GameData();
         //     SaveGame();
         // }
-    }
+    //}
 
     #endregion
 }
