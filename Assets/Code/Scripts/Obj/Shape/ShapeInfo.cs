@@ -5,8 +5,14 @@ public enum ShapeType
 {
     Triangle,
     Square,
+    Rectangle,
     Circle,
-    Cylinder,
+    Oval,
+    Pyramid3D,
+    Cube3D,
+    Rectanlge3D,
+    Oval3D,
+    Sphere3D,
 }
 
 /// <summary>
