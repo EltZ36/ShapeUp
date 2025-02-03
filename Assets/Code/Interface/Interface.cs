@@ -75,3 +75,44 @@ interface ILevelManager
     /// </summary>
     void UnloadCurrentSubLevel();
 }
+
+/// <summary>
+/// Interface for the ShapeManager Singleton
+/// ShapeManager also implements a check every frame in LateUpdate to merge all colliding shapes with corresponding recipe outputs
+/// </summary>
+interface IShapeManager
+{
+    /// <summary>
+    /// Adds Shape to current scene and returns gameObject. Triggers OnShapeCreate event
+    /// </summary>
+    /// <param name="shapeType">Enum representing shape type</param>
+    /// <param name="position">position in game world</param>
+    /// <param name="tags">tags that are applied to the shape, default to use tags set in the database</param>
+    /// <returns></returns>
+    public GameObject CreateShape(
+        ShapeType shapeType,
+        Vector3 position,
+        ShapeTags tags = ShapeTags.UseDatabaseDefault
+    );
+
+    /// <summary>
+    /// Given a shape, destroy the corresponding gameObject. Triggers OnShapeDestroy event
+    /// </summary>
+    /// <param name="shape"></param>
+    public void DestroyShape(Shape shape);
+
+    /// <summary>
+    /// Given two ShapeType enums, return the corresponding ShapeType output according the loaded recipe. Returns null if no output is found.
+    /// </summary>
+    /// <param name="shapeA">The first shape</param>
+    /// <param name="shapeB">The second shape</param>
+    /// <returns></returns>
+    public ShapeType? CombineShapes(ShapeType shapeA, ShapeType shapeB);
+
+    /// <summary>
+    /// Returns a HashSet containing the two shapes used to create the shape being taken apart.
+    /// </summary>
+    /// <param name="shape">Shape being taken apart</param>
+    /// <returns></returns>
+    public HashSet<ShapeType> TakeApartShape(ShapeType shape);
+}
