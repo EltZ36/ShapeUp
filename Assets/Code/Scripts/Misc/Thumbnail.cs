@@ -14,8 +14,6 @@ public class Thumbnail : MonoBehaviour
         mainCamera = Camera.main;
     }
 
-    bool loaded = false;
-
     //Below should be split up and put into the correct locations, this is temp
     void Update()
     {
@@ -26,18 +24,12 @@ public class Thumbnail : MonoBehaviour
             {
                 mainCamera.transform.position += (Vector3)pull * Time.deltaTime;
             }
-            if (
-                loaded == false
-                && Vector2.Distance(mainCamera.transform.position, transform.position) < 2
-            )
+            if (Vector2.Distance(mainCamera.transform.position, transform.position) < 2)
             {
+                // TODO: when making the actual levels, we will need a mapping of poistion to sublevel id
+                // that way we will know what to put V there
                 LevelManager.Instance.InjectSubLevel(0, transform.position);
-                loaded = true;
             }
-        }
-        else
-        {
-            loaded = false;
         }
     }
 

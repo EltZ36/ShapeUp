@@ -1,23 +1,38 @@
-
 using System.Collections.Generic;
 using UnityEngine;
+
+[System.Serializable]
+public struct serializedLevel
+{
+    public int LevelNumber;
+
+    public int SubLevelCount;
+}
+
+[System.Serializable]
+public struct serializedSubLevel
+{
+    public int ParentLevelNumber;
+
+    public int sublevelNumber;
+
+    public bool completed;
+}
 
 [System.Serializable]
 public class GameData
 {
     //code for saving is based on https://videlais.com/2021/02/25/using-jsonutility-in-unity-to-save-and-load-game-data/
-
     //https://discussions.unity.com/t/how-to-serialize-a-custom-class/925263
     public Dictionary<int, Dictionary<int, bool>> LevelCompleteMap { get; private set; }
-
-    public List<serializedLevel> SLevels;
-    public List<serializedSubLevel> SSLevels;
+    public List<serializedLevel> SerialLevels;
+    public List<serializedSubLevel> SerialSubLevels;
 
     public GameData()
     {
         LevelCompleteMap = new Dictionary<int, Dictionary<int, bool>>();
-        SLevels = new List<serializedLevel>();
-        SSLevels = new List<serializedSubLevel>();
+        SerialLevels = new List<serializedLevel>();
+        SerialSubLevels = new List<serializedSubLevel>();
     }
 
     /// <summary>
@@ -27,53 +42,48 @@ public class GameData
     /// <param name="li"></param>
     public void AddLevelToSaveMapping(int levelID, LevelInfo li)
     {
-        if (LevelCompleteMap.ContainsKey(levelID)) return;
+        if (LevelCompleteMap.ContainsKey(levelID))
+            return;
         // todo add protection for already added
         Dictionary<int, bool> d = new Dictionary<int, bool>();
 
         int count = 0;
         foreach (SubLevelInfo sl in li.SubLevels)
         {
-            Debug.Log("hereinloop");
-            Debug.Log(sl.SceneName);
             d.Add(count++, sl.IsComplete);
         }
 
         LevelCompleteMap.Add(levelID, d);
     }
+
     /// <summary>
-    /// pass in level id and sub level id to set sublevel completed. 
+    /// pass in level id and sub level id to set sublevel completed.
     /// </summary>
     /// <param name="lID">level id</param>
     /// <param name="slID">sub level id</param>
     public void SetCompletedSublevel(int lID, int slID)
     {
-        Debug.Log("here in completeedSublevel");
         if (LevelCompleteMap.ContainsKey(lID) == false)
         {
-            Debug.Log("coudlnt find key in the dicxtionaoryu");
             return;
         }
 
         Dictionary<int, bool> CurrentLevel = LevelCompleteMap[lID];
         if (CurrentLevel.ContainsKey(slID) == false)
         {
-            Debug.Log("couldnt find sub level in the level");
             return;
         }
 
         CurrentLevel[slID] = true;
-
-        return;
     }
+
     /// <summary>
-    /// serialize the high level mapping into stupid unity acceptable format because
-    /// no one ever though to make a dictionary serializeable in unity i guess
+    ///convert the dictionary into lists of struct so that the Unity JSON uility can save them
     /// </summary>
     public void Serialize()
     {
-        // go throuhg the base dict by key
-        //no tuple do a class thank you
+        //check the serialize to make sure the keys are supposed to be there
+        // go through the base dict by key
         foreach (var levelNum in LevelCompleteMap.Keys)
         {
             serializedLevel sl;
@@ -88,44 +98,36 @@ public class GameData
                 ssl.ParentLevelNumber = levelNum;
                 ssl.sublevelNumber = subLevelNum;
                 ssl.completed = LevelCompleteMap[levelNum][subLevelNum];
-                SSLevels.Add(ssl);
+
+                SerialSubLevels.Add(ssl);
             }
-            SLevels.Add(sl);
+            SerialLevels.Add(sl);
         }
     }
+
     /// <summary>
-    /// the opposeide of serialize. sets up the dictionary. what more should be said.
+    /// Take the lists of structs and write them back to the dictionary
     /// </summary>
     public void Deserialize()
     {
-        foreach (var level in SLevels)
+        foreach (var level in SerialLevels)
         {
             Dictionary<int, bool> d = new Dictionary<int, bool>();
-            foreach (var sublevel in SSLevels)
+            foreach (var sublevel in SerialSubLevels)
             {
-                if (sublevel.ParentLevelNumber == level.LevelNumber)
+                if (
+                    sublevel.ParentLevelNumber == level.LevelNumber
+                    && d.ContainsKey(sublevel.sublevelNumber) != true
+                )
                 {
                     d.Add(sublevel.sublevelNumber, sublevel.completed);
                 }
             }
 
-            LevelCompleteMap.Add(level.LevelNumber, d);
+            if (LevelCompleteMap.ContainsKey(level.LevelNumber) == false)
+            {
+                LevelCompleteMap.Add(level.LevelNumber, d);
+            }
         }
     }
-}
-[System.Serializable]
-public struct serializedLevel
-{
-    public int LevelNumber;
-
-    public int SubLevelCount; // not needed idek
-}
-[System.Serializable]
-public struct serializedSubLevel
-{
-    public int ParentLevelNumber;
-
-    public int sublevelNumber;
-
-    public bool completed;
 }

@@ -29,6 +29,8 @@ public class GameManager : MonoBehaviour, IGameManager
             _instance = this;
             DontDestroyOnLoad(this.gameObject);
         }
+        //you can find this in C:\Users\<user>\AppData\LocalLow\<company name>
+        //for me (Elton) on windows, it's C:\Users\<user>\AppData\LocalLow\DefaultCompany/ShapeUp/gamedata.json
         saveFile = Path.Combine(Application.persistentDataPath, "gamedata.json");
         ReadFile();
     }
@@ -45,27 +47,6 @@ public class GameManager : MonoBehaviour, IGameManager
     public void SaveGame()
     {
         WriteFile();
-    }
-
-    public bool BeginGame(bool onlineMode, bool ready)
-    {
-        if (onlineMode)
-        {
-            Debug.Log("In online mode");
-        }
-        else
-        {
-            Debug.Log("Offline Mode");
-        }
-        if (ready)
-        {
-            Debug.Log("Starting Game");
-            //load the scene manager to load the game
-            //SceneManager.LoadScene();
-            return true;
-        }
-        else
-            return false;
     }
 
     public void OnQuitEvent(bool save, bool exit)
@@ -92,10 +73,8 @@ public class GameManager : MonoBehaviour, IGameManager
         {
             Debug.Log("Reading from save");
             string fileContents = File.ReadAllText(saveFile);
-            // TODO: this is not how to use from json, will need to fix
-            // gameData = JsonUtility.FromJson<GameData>(fileContents);
-            // gameData.Deserialize();
-            // LevelManager.Instance.SetLevelProgress(gameData);
+            gameData = JsonUtility.FromJson<GameData>(fileContents);
+            gameData.Deserialize();
         }
         //I also used gpt, conversation: https://chatgpt.com/share/679499f9-167c-800c-95e6-f3774649f3f7 for this to make sure that there is a new save file in case it doesn't exist
         else
@@ -129,43 +108,6 @@ public class GameManager : MonoBehaviour, IGameManager
                 Debug.LogError($"Failed to write file: {ex.Message}");
             }
         }
-    #endregion
-
-        #region OTHER
-        /// <summary>
-        /// Override start from monobehavior to load saved game data
-        /// </summary>
-        void Start()
-        {
-            //you can find this in C:\Users\<user>\AppData\LocalLow\<company name>
-            //for me (Elton) on windows, it's C:\Users\<user>\AppData\LocalLow\DefaultCompany/ShapeUp/gamedata.json
-            saveFile = Path.Combine(Application.persistentDataPath, "gamedata.json");
-            ReadFile();
-        }
-
-        /// <summary>
-        /// TESTING FUNCTION
-        ///  A being add, S being save, and R being a reset
-        /// </summary>
-        //void Update()
-        //{
-        // if (Input.GetKeyDown(KeyCode.A))
-        // {
-        //    Debug.Log(gameData);
-        // }
-        // else if (Input.GetKeyDown(KeyCode.S))
-        // {
-        //     Debug.Log("Pressing S");
-        //     SaveGame();
-        // }
-        // else if (Input.GetKeyDown(KeyCode.R))
-        // {
-        //     Debug.Log("Wiping");
-        //     gameData = new GameData();
-        //     SaveGame();
-        // }
-        //}
-
-        #endregion
     }
+    #endregion
 }

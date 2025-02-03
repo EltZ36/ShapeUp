@@ -161,7 +161,6 @@ public class LevelManager : MonoBehaviour, ILevelManager
             };
             //replace with a call to UI Manager
             SceneManager.LoadSceneAsync("LevelUI", LoadSceneMode.Additive);
-            ///
             return true;
         }
         return false;
@@ -171,12 +170,12 @@ public class LevelManager : MonoBehaviour, ILevelManager
     {
         if (currentSubLevelID != -1)
         {
+            Debug.Log(currentSubLevelID);
             SceneManager.UnloadSceneAsync(
                 Levels[currentLevelID].SubLevels[currentSubLevelID].SceneName
             );
             //replace with a call to UI Manager
             SceneManager.UnloadSceneAsync("LevelUI");
-            ///
             currentSubLevelID = -1;
         }
     }

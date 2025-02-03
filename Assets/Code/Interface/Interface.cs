@@ -13,11 +13,6 @@ interface IGameManager
     void SaveGame();
 
     /// <summary>
-    /// should be called to begin the game but this should use the scenemanager instead
-    /// </summary>
-    bool BeginGame(bool onlineMode, bool ready);
-
-    /// <summary>
     /// handler for quit event booleans for save and exit query
     /// </summary>
     void OnQuitEvent(bool save, bool exit);
@@ -29,7 +24,7 @@ interface IGameManager
 interface ILevelManager
 {
     /// <summary>
-    /// Update the level progress given game data instance TODO game data instance needs to be properly deserailzed and not 
+    /// Update the level progress given game data instance TODO game data instance needs to be properly deserailzed and not
     /// just "fromjson'd"
     /// https://docs.unity3d.com/6000.0/Documentation/ScriptReference/JsonUtility.FromJson.html
     /// </summary>

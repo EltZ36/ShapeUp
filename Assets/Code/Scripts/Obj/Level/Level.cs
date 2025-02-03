@@ -11,5 +11,6 @@ public class Level : MonoBehaviour
     public void Start()
     {
         LevelManager.Instance.GetLevelInfo(levelInfo);
+        LevelManager.Instance.SetLevelProgress(GameManager.Instance.gameData);
     }
 }
