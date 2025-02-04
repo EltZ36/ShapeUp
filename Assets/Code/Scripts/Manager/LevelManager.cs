@@ -37,71 +37,117 @@ public class LevelManager : MonoBehaviour, ILevelManager
     //Instead of using the build number, use the index/name defined below.
     [SerializeField]
     private List<string> levelNames = new List<string>();
-    private Dictionary<int, LevelInfo> levels = new Dictionary<int, LevelInfo>();
-    public Dictionary<int, LevelInfo> Levels
-    {
-        get { return levels; }
-    }
 
-    public enum LMState : uint
-    {
-        Select = 0, //Level Select Menu
-        Level = 1, //Level
-        SubLevel = 2, //SubLevel
-    }
+    public Dictionary<int, LevelInfo> Levels { get; private set; } =
+        new Dictionary<int, LevelInfo>();
 
-    private LMState currentState = LMState.Select;
-    public LMState CurrentState
-    {
-        get { return currentState; }
-    }
-
-    public event Action<int> OnLevelComplete;
-
-    private LevelInfo currentLevel = null;
-    private SubLevel currentSubLevel = null;
+    private int currentLevelID = -1;
+    private int currentSubLevelID = -1;
 
     #region Interface Methods
-    public void Init()
+
+    public void SetLevelProgress(GameData gd)
     {
+        // get each level saved
+        foreach (int LNum in gd.LevelCompleteMap.Keys)
+        {
+            // go throuhg the sublevels of that level
+            foreach (var sl in gd.LevelCompleteMap[LNum])
+            { // level was beat
+                if (sl.Value == true)
+                { // set levels accordingly
+                    Levels[LNum].SubLevels[sl.Key].IsComplete = true;
+                }
+            }
+        }
+    }
+
+    public void OnCurrentLevelComplete()
+    {
+        if (currentLevelID != -1)
+        {
+            Levels[currentLevelID].IsComplete = true;
+        }
+        else
+        {
+            throw new Exception("OnCurrentLevelComplete: No Level Loaded");
+        }
+    }
+
+    public void OnCurrentSubLevelComplete()
+    {
+        if (currentLevelID != -1 || currentSubLevelID != -1)
+        {
+            Levels[currentLevelID].SubLevels[currentSubLevelID].IsComplete = true;
+
+            // cj elton test
+            GameManager.Instance.gameData.SetCompletedSublevel(currentLevelID, currentSubLevelID);
+            GameManager.Instance.SaveGame();
+        }
+        else
+        {
+            throw new Exception("OnCurrentLevelComplete: No Level or SubLevel Loaded");
+        }
+    }
+
+    public Dictionary<int, List<int>> GetLevelsProgress()
+    {
+        Dictionary<int, List<int>> progress = new Dictionary<int, List<int>>();
         for (int i = 0; i < levelNames.Count; i++)
         {
-            levels.Add(i, new LevelInfo(levelNames[i]));
+            if (Levels[i] == null)
+            {
+                progress.Add(i, new List<int>());
+                continue;
+            }
+            else
+            {
+                List<int> levelProgress = new List<int>();
+                LevelInfo level = Levels[i];
+                for (int j = 0; j < level.SubLevels.Count; j++)
+                {
+                    if (level.SubLevels[j].IsComplete)
+                    {
+                        levelProgress.Add(j);
+                    }
+                }
+            }
         }
-        OnLevelComplete += PrintLogLevelComplete;
+
+        return progress;
     }
 
-    public void OnLevelCompleteEvent(int levelID)
+    public bool CheckAllSubLevelsComplete()
     {
-        OnLevelComplete?.Invoke(levelID);
-        levels[levelID].IsComplete = true;
-    }
-
-    public void LoadLevelSelect()
-    {
-        SetLMState(LMState.Select);
-        SceneManager.LoadScene("LevelSelect");
+        if (currentLevelID != -1)
+        {
+            foreach (var subLevel in Levels[currentLevelID].SubLevels)
+            {
+                if (subLevel.IsComplete == false)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+        throw new Exception("CheckAllSubLevelsComplete: No Level Loaded");
     }
 
     public void LoadLevel(int levelID)
     {
-        if (CurrentState == LMState.Select)
-        {
-            SetLMState(LMState.Level);
-            currentLevel = levels[levelID];
-            string name = currentLevel.SceneName;
-            SceneManager.LoadScene(name);
-        }
+        currentSubLevelID = -1;
+        currentLevelID = levelID;
+        string name = levelNames[levelID];
+        SceneManager.LoadScene(name);
     }
 
     //SubLevel ID is relative to current level
-    public bool InjectSubLevel(int SubLevelID, Vector3 position)
+    public bool InjectSubLevel(int subLevelID, Vector3 position)
     {
-        if (CurrentState == LMState.Level && currentLevel != null)
+        if (currentSubLevelID == -1 && currentLevelID != -1)
         {
-            SetLMState(LMState.SubLevel);
-            currentSubLevel = currentLevel.SubLevels[SubLevelID];
-            string name = currentSubLevel.SceneName;
+            currentSubLevelID = subLevelID;
+            string name = Levels[currentLevelID].SubLevels[currentSubLevelID].SceneName;
             SceneManager.LoadSceneAsync(name, LoadSceneMode.Additive).completed += (operation) =>
             {
                 Scene subLevel = SceneManager.GetSceneByName(name);
@@ -113,6 +159,8 @@ public class LevelManager : MonoBehaviour, ILevelManager
                     root.transform.position = position;
                 }
             };
+            //replace with a call to UI Manager
+            SceneManager.LoadSceneAsync("LevelUI", LoadSceneMode.Additive);
             return true;
         }
         return false;
@@ -120,37 +168,45 @@ public class LevelManager : MonoBehaviour, ILevelManager
 
     public void UnloadCurrentSubLevel()
     {
-        if (CurrentState == LMState.SubLevel && currentSubLevel != null)
+        if (currentSubLevelID != -1)
         {
-            SceneManager.UnloadSceneAsync(currentSubLevel.SceneName);
-            currentSubLevel = null;
-            SetLMState(LMState.Level);
+            Debug.Log(currentSubLevelID);
+            SceneManager.UnloadSceneAsync(
+                Levels[currentLevelID].SubLevels[currentSubLevelID].SceneName
+            );
+            //replace with a call to UI Manager
+            SceneManager.UnloadSceneAsync("LevelUI");
+            currentSubLevelID = -1;
         }
     }
 
     // Called by a level at start, should give the level manager the relevent information needed
     // Might find a different way of doing this.
-    public void GetSubLevels(List<SubLevel> subLevels)
+    public void GetLevelInfo(LevelInfo levelInfo)
     {
-        if (currentLevel.SubLevels.Count == 0)
+        if (levelInfo == null)
         {
-            // change set equal instead of overwriting
-            currentLevel.SubLevels.AddRange(subLevels);
+            throw new Exception("GetLevelInfo: Level missing LevelInfo");
         }
-        else
+        if (levelNames[currentLevelID] != levelInfo.SceneName)
         {
-            Debug.Log("Already Loaded SubLevels");
+            throw new Exception("GetLevelInfo: Current Level ID and Loaded Level mismatch");
+        }
+        if (Levels[currentLevelID] == null)
+        {
+            Levels[currentLevelID] = levelInfo;
+
+            // cj elton test
+            GameManager.Instance.gameData.AddLevelToSaveMapping(currentLevelID, levelInfo);
         }
     }
     #endregion
 
-    public void SetLMState(LMState state)
+    public void Start()
     {
-        currentState = state;
-    }
-
-    private void PrintLogLevelComplete(int level)
-    {
-        Debug.Log("Level Complete: " + level);
+        for (int i = 0; i < levelNames.Count; i++)
+        {
+            Levels.Add(i, null);
+        }
     }
 }

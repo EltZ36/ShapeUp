@@ -74,3 +74,4 @@ crashlytics-build.properties
 
 #editors
 .vscode
+.vsconfig

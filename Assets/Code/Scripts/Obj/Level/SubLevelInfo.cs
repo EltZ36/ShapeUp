@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [Serializable]
-public class SubLevel : LevelCore
+public class SubLevelInfo : LevelCore
 {
     public GameObject Thumbnail;
 }
