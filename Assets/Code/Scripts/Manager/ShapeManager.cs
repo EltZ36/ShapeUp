@@ -59,11 +59,12 @@ public class ShapeManager : MonoBehaviour, IShapeManager
             {
                 shape.SetShapeTags(tags);
             }
-            if ((shape.ShapeInfo.Tags & ShapeTags.Gravity) != ShapeTags.Gravity)
+            if ((shape.LocalShapeInfo.Tags & ShapeTags.Gravity) != ShapeTags.Gravity)
             {
                 shape.ToggleShapeTags(ShapeTags.Gravity);
                 shapeObj.GetComponent<Rigidbody2D>().gravityScale = 0;
             }
+            //add components here
             OnCreateShape?.Invoke(shape);
             return shapeObj;
         }
@@ -118,8 +119,8 @@ public class ShapeManager : MonoBehaviour, IShapeManager
                 else
                 {
                     ShapeType? combined = CombineShapes(
-                        shapeA.ShapeInfo.Shape,
-                        shapeB.ShapeInfo.Shape
+                        shapeA.LocalShapeInfo.Shape,
+                        shapeB.LocalShapeInfo.Shape
                     );
                     if (combined.HasValue)
                     {
