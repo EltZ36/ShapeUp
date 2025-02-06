@@ -209,4 +209,55 @@ public class LevelManager : MonoBehaviour, ILevelManager
             Levels.Add(i, null);
         }
     }
+
+    public void Update()
+    {
+        // probably needs better guards
+        if (currentLevelID == -1 || Levels[currentLevelID] == null)
+        {
+            return;
+        }
+
+        if (Camera.main.orthographicSize > 6)
+        {
+            return;
+        }
+        (int, float, Vector3) closestSubLevel = new(-1, float.MaxValue, Vector3.zero);
+
+        Vector2 camPos = Camera.main.transform.position;
+
+        for (int i = 0; i < Levels[currentLevelID].SubLevels.Count; i++)
+        {
+            SubLevelInfo subLevel = Levels[currentLevelID].SubLevels[i];
+            float dist = Vector2.Distance(camPos, subLevel.Thumbnail.transform.position);
+            if (dist < closestSubLevel.Item2)
+            {
+                closestSubLevel.Item1 = i;
+                closestSubLevel.Item2 = dist;
+                closestSubLevel.Item3 = subLevel.Thumbnail.transform.position;
+            }
+        }
+
+        Vector2 pull = Snap(camPos, closestSubLevel.Item3, 2, 20);
+        if (pull.magnitude > 0.1)
+        {
+            Camera.main.transform.position += (Vector3)pull * Time.deltaTime;
+            Debug.Log("CHSHSDHHDS");
+        }
+        if (closestSubLevel.Item2 < 2)
+        {
+            InjectSubLevel(closestSubLevel.Item1, closestSubLevel.Item3);
+        }
+    }
+
+    private Vector3 Snap(Vector3 position, Vector3 anchor, float snapDist, float strength)
+    {
+        float distance = Vector2.Distance(position, anchor);
+        if (distance < snapDist)
+        {
+            Vector2 direction = anchor - position;
+            return direction.normalized * (distance > strength ? strength : distance);
+        }
+        return Vector2.zero;
+    }
 }

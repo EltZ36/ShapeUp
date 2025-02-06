@@ -115,4 +115,11 @@ interface IShapeManager
     /// <param name="shape">Shape being taken apart</param>
     /// <returns></returns>
     public HashSet<ShapeType> TakeApartShape(ShapeType shape);
+
+    /// <summary>
+    /// Prevent a shape from being combined for a set amount of time
+    /// </summary>
+    /// <param name="shape">The shape being blacklisted</param>
+    /// <param name="time">Time in seconds</param>
+    public void Blacklist(Shape shape, float time);
 }

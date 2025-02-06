@@ -41,6 +41,7 @@ public class Shape : MonoBehaviour
                 LocalShapeInfo.Tags
             );
             shape.transform.rotation = transform.rotation;
+            shape.transform.parent = transform.parent;
         }
     }
 

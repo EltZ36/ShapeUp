@@ -8,6 +8,8 @@ public class Level : MonoBehaviour
     [SerializeField]
     private LevelInfo levelInfo;
 
+    public List<Shape> Inventory { get; private set; } = new List<Shape>();
+
     public void Start()
     {
         LevelManager.Instance.GetLevelInfo(levelInfo);

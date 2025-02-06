@@ -32,6 +32,7 @@ public class ShapeManager : MonoBehaviour, IShapeManager
     private ShapeRecipes shapeRecipes;
 
     private List<(Shape, Shape)> checkShapes = new List<(Shape, Shape)>();
+    private List<Shape> blacklistShapes = new List<Shape>();
 
     //event that tells subscriber a new shape was created
     public event Action<Shape> OnCreateShape;
@@ -66,6 +67,7 @@ public class ShapeManager : MonoBehaviour, IShapeManager
             }
             //add components here
             OnCreateShape?.Invoke(shape);
+            shapeObj.GetComponent<SpriteRenderer>().sortingOrder = 1;
             return shapeObj;
         }
         return null;
@@ -100,7 +102,19 @@ public class ShapeManager : MonoBehaviour, IShapeManager
     {
         checkShapes.Add(pair);
     }
+
+    public void Blacklist(Shape shape, float time)
+    {
+        blacklistShapes.Add(shape);
+        StartCoroutine(RemoveFromBlacklist(shape, time));
+    }
     #endregion
+
+    IEnumerator RemoveFromBlacklist(Shape shape, float time)
+    {
+        yield return new WaitForSeconds(time);
+        blacklistShapes.Remove(shape);
+    }
 
     #region Monobehavior
     public void LateUpdate()
@@ -108,6 +122,10 @@ public class ShapeManager : MonoBehaviour, IShapeManager
         if (checkShapes.Count >= 1)
         {
             HashSet<Shape> used = new HashSet<Shape>();
+            foreach (Shape shape in blacklistShapes)
+            {
+                used.Add(shape);
+            }
             foreach ((Shape, Shape) pair in checkShapes)
             {
                 Shape shapeA = pair.Item1;
