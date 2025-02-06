@@ -2,27 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LevelAccel : MonoBehaviour
+public class ShakeBreak : MonoBehaviour
 {
-    public Shape shakeBreakShape = null;
-
     int shakes = 0;
+    Shape shakeBreakShape;
 
     void Awake()
     {
-        ShapeManager.Instance.OnCreateShape += SetBreakShape;
-        SensorManager.Instance.OnAccelChange += ShakeBreak;
+        SensorManager.Instance.OnAccelChange += Break;
+        shakeBreakShape = GetComponent<Shape>();
     }
 
-    void SetBreakShape(Shape shape)
-    {
-        if (shakeBreakShape == null) //probably better way to do this
-        {
-            shakeBreakShape = shape;
-        }
-    }
-
-    void ShakeBreak()
+    void Break()
     {
         shakes += 1;
         if (shakes == 3)

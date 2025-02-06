@@ -21,7 +21,7 @@ public enum ShapeType
 [Flags]
 public enum ShapeTags
 {
-    UseDatabaseDefault = 1 << 31,
+    UseDatabaseDefault = 1 << 31, //max shift for a 32 bit int
     None = 0,
     Gravity = 1 << 0,
     Drag = 1 << 1,
@@ -30,6 +30,7 @@ public enum ShapeTags
     Accelerate = 1 << 4,
     Gyroscope = 1 << 5,
     Storable = 1 << 6, //can be placed in the inventory
+    ShakeBreak = 1 << 7,
 }
 
 [Serializable]

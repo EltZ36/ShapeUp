@@ -62,10 +62,13 @@ public class ShapeManager : MonoBehaviour, IShapeManager
             }
             if ((shape.LocalShapeInfo.Tags & ShapeTags.Gravity) != ShapeTags.Gravity)
             {
-                shape.ToggleShapeTags(ShapeTags.Gravity);
                 shapeObj.GetComponent<Rigidbody2D>().gravityScale = 0;
             }
             //add components here
+            if ((shape.LocalShapeInfo.Tags & ShapeTags.ShakeBreak) == ShapeTags.ShakeBreak)
+            {
+                shapeObj.AddComponent<ShakeBreak>();
+            }
             OnCreateShape?.Invoke(shape);
             shapeObj.GetComponent<SpriteRenderer>().sortingOrder = 1;
             return shapeObj;
