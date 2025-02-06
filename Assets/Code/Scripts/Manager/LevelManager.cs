@@ -242,7 +242,6 @@ public class LevelManager : MonoBehaviour, ILevelManager
         if (pull.magnitude > 0.1)
         {
             Camera.main.transform.position += (Vector3)pull * Time.deltaTime;
-            Debug.Log("CHSHSDHHDS");
         }
         if (closestSubLevel.Item2 < 2)
         {
