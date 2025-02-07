@@ -36,7 +36,6 @@ public class TapAndBreak : MonoBehaviour
                     GameObject hitObject = hit.transform.gameObject;
                     if (hitObject == Circle3D && numTaps < 3)
                     {
-                        Debug.Log("Circle was tapped");
                         Circle3D.GetComponent<SpriteRenderer>().sprite = sprites[numTaps];
                         numTaps += 1;
                     }
@@ -45,11 +44,8 @@ public class TapAndBreak : MonoBehaviour
                         StartCoroutine(BreakCircle());
                         Circle2D.GetComponent<Shape>().SetShapeTags(ShapeTags.Gravity);
                         Debug.Log("Level Complete");
+                        LevelManager.Instance.OnCurrentSubLevelComplete();
                     }
-                }
-                else
-                {
-                    Debug.Log("no hit");
                 }
             }
         }
