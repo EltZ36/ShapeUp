@@ -5,45 +5,62 @@ using UnityEngine;
 
 public class TapAndBreak : MonoBehaviour
 {
-    [SerializeField]
     public GameObject Circle3D;
     public GameObject Circle2D;
+    public GameObject CrackedCircle;
 
     //https://docs.unity3d.com/6000.0/Documentation/ScriptReference/SpriteRenderer-sprite.html
+    [SerializeField]
     private Sprite[] sprites;
     int numTaps = 0;
 
     void Start()
     {
         Circle2D.SetActive(false);
+        CrackedCircle.SetActive(false);
     }
 
     void Tap()
     {
-        //based on code from https://stackoverflow.com/questions/38565746/tap-detection-on-a-gameobject-in-unity by user Programmer
-        if ((Input.touchCount > 0) && (Input.GetTouch(0).phase == TouchPhase.Began))
+        //based on code from https://stackoverflow.com/questions/38565746/tap-detection-on-a-gameobject-in-unity by user Programmer and Umair M
+        for (int i = 0; i < Input.touchCount; ++i)
         {
-            Ray raycast = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
-            RaycastHit raycastHit;
-            if (Physics.Raycast(raycast, out raycastHit))
+            if (Input.GetTouch(i).phase.Equals(TouchPhase.Began))
             {
-                GameObject hitObject = raycastHit.transform.gameObject;
-                if (hitObject == Circle3D)
+                // Construct a ray from the current touch coordinates
+                Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(i).position);
+                RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction, Mathf.Infinity);
+                if (hit)
                 {
-                    Debug.Log("Circle was tapped");
-                    Circle3D.GetComponent<SpriteRenderer>().sprite = sprites[numTaps];
-                    numTaps += 1;
+                    //I had to set the prefab of the object to not be none but the actual prefab
+                    GameObject hitObject = hit.transform.gameObject;
+                    if (hitObject == Circle3D && numTaps < 3)
+                    {
+                        Debug.Log("Circle was tapped");
+                        Circle3D.GetComponent<SpriteRenderer>().sprite = sprites[numTaps];
+                        numTaps += 1;
+                    }
+                    if (numTaps == 3)
+                    {
+                        StartCoroutine(BreakCircle());
+                        Circle2D.GetComponent<Shape>().SetShapeTags(ShapeTags.Gravity);
+                        Debug.Log("Level Complete");
+                    }
                 }
-                //once it hits 3 taps, destroy the 3D circle and reveal the 2D circle
-                if (numTaps == 3)
+                else
                 {
-                    Destroy(Circle3D);
-                    //reveal 2D circle
-                    Circle2D.SetActive(true);
-                    Circle2D.GetComponent<Shape>().SetShapeTags(ShapeTags.Gravity);
+                    Debug.Log("no hit");
                 }
             }
         }
+    }
+
+    IEnumerator BreakCircle()
+    {
+        yield return new WaitForSeconds(0.5f);
+        Circle3D.SetActive(false);
+        CrackedCircle.SetActive(true);
+        Circle2D.SetActive(true);
     }
 
     void Update()

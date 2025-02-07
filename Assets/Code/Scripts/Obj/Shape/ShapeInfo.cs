@@ -13,6 +13,8 @@ public enum ShapeType
     Rectanlge3D,
     Oval3D,
     Sphere3D,
+    BreakableCircle,
+    Ramp,
 }
 
 /// <summary>

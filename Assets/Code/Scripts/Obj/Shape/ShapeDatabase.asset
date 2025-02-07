@@ -40,6 +40,9 @@ MonoBehaviour:
   - Shape: 8
     Prefab: {fileID: 1740465846098495637, guid: e8ac27c219d470b40b0e724a16c0eee3, type: 3}
     Tags: 0
-  - Shape: 9
-    Prefab: {fileID: 1740465846098495637, guid: 5c4c90c1f0d89874ebc8043fe66d1ee5, type: 3}
+  - Shape: 10
+    Prefab: {fileID: 2454265566715658170, guid: 1d3a73354efc31c4886d283596218c55, type: 3}
+    Tags: 0
+  - Shape: 11
+    Prefab: {fileID: 2454265566715658170, guid: 96ac4bf3af2af8f4f9f0834829759896, type: 3}
     Tags: 0
