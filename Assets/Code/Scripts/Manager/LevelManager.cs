@@ -158,6 +158,7 @@ public class LevelManager : MonoBehaviour, ILevelManager
                     GameObject root = subLevel.GetRootGameObjects()[0];
                     root.transform.position = position;
                 }
+                SceneManager.SetActiveScene(subLevel);
             };
             //replace with a call to UI Manager
             SceneManager.LoadSceneAsync("LevelUI", LoadSceneMode.Additive);
@@ -177,6 +178,10 @@ public class LevelManager : MonoBehaviour, ILevelManager
             //replace with a call to UI Manager
             SceneManager.UnloadSceneAsync("LevelUI");
             currentSubLevelID = -1;
+
+            SceneManager.SetActiveScene(
+                SceneManager.GetSceneByName(Levels[currentLevelID].SceneName)
+            );
         }
     }
 
