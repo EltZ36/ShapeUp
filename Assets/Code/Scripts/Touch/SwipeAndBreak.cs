@@ -14,6 +14,11 @@ public class SwipeAndBreak : MonoBehaviour
     public GameObject BrokenObject;
     public ParticleSystem Bubbles;
 
+    void Awake()
+    {
+        cam = Camera.main;
+    }
+
     void Start()
     {
         BrokenObject.SetActive(false);
@@ -24,7 +29,7 @@ public class SwipeAndBreak : MonoBehaviour
         //code also based on https://www.youtube.com/watch?v=Pca9LMd8WsM from 00:00 to 1:15
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
         {
-            cam.ScreenToWorldPoint(Input.GetTouch(0).position);
+            startPos = cam.ScreenToWorldPoint(Input.GetTouch(0).position);
         }
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended)
         {
@@ -62,6 +67,10 @@ public class SwipeAndBreak : MonoBehaviour
                 Bubbles.Stop();
                 Debug.Log("Level Complete");
             }
+        }
+        else
+        {
+            Debug.LogWarning("The object hit by the Linecast is not the sliceObject!");
         }
     }
 
