@@ -87,7 +87,8 @@ public class ShapeManager : MonoBehaviour, IShapeManager
             if ((shape.LocalShapeInfo.Tags & ShapeTags.GyroscopeR) == ShapeTags.GyroscopeR)
             {
                 shapeObj.AddComponent<GyroscopeRotation>();
-            if((shape.LocalShapeInfo.Tags & ShapeTags.Zoom) == ShapeTags.Zoom)
+            }
+            if ((shape.LocalShapeInfo.Tags & ShapeTags.Zoom) == ShapeTags.Zoom)
             {
                 shapeObj.AddComponent<Zoom>();
             }
