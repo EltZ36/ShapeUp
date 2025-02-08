@@ -32,18 +32,25 @@ public class SensorManager : MonoBehaviour
     float accelSens = 1;
 
     [SerializeField]
-    float gyroCooldown;
+    float gyroSens = 1;
 
-    [SerializeField]
-    float gyroSens;
+    private float offset = 0;
 
     public event Action OnAccelChange;
 
-    //public event Action OnGyroChange;
+    public event Action<float> OnGyroChange;
 
     private Vector3 pastAccel = Vector3.zero;
     private Vector3 newAccel;
     bool accelRecent = false;
+
+    private Quaternion pastGyro;
+
+    void Start()
+    {
+        Input.gyro.enabled = true;
+        CalibrateOffset();
+    }
 
     void Update()
     {
@@ -53,14 +60,29 @@ public class SensorManager : MonoBehaviour
         {
             accelRecent = true;
             OnAccelChange?.Invoke();
-            StartCoroutine(resetAccel());
+            StartCoroutine(ResetAccel());
         }
         pastAccel = newAccel;
+
+        Quaternion currGyro = Input.gyro.attitude;
+        if (Mathf.Abs(currGyro.eulerAngles.z - pastGyro.eulerAngles.z) > gyroSens)
+        {
+            OnGyroChange?.Invoke(currGyro.eulerAngles.z + offset);
+            pastGyro = currGyro;
+        }
     }
 
-    private IEnumerator resetAccel()
+    private IEnumerator ResetAccel()
     {
         yield return new WaitForSeconds(accelCooldown);
         accelRecent = false;
+    }
+
+    private void CalibrateOffset()
+    {
+        //assumes current device orientation is neutral landscape right, probably needs to be inverted for landscape left.
+        Debug.Log("change");
+        float z = Input.gyro.attitude.eulerAngles.z;
+        offset = 270 - z;
     }
 }

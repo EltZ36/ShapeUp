@@ -92,6 +92,8 @@ interface IShapeManager
     public GameObject CreateShape(
         ShapeType shapeType,
         Vector3 position,
+        Quaternion rotation = default,
+        Vector3 scale = default,
         ShapeTags tags = ShapeTags.UseDatabaseDefault
     );
 

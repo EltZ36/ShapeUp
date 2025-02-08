@@ -27,11 +27,16 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels/LevelAccel.unity
     guid: 339fb2f0406b82842a3b741a94b4f334
   - enabled: 1
+<<<<<<< HEAD
     path: Assets/Scenes/Levels/BreakRope.unity
     guid: a28b718d19ec1434a9029d9252777888
   - enabled: 1
     path: Assets/Scenes/Levels/LevelTap.unity
     guid: cdd9abd48538a83409d26ef5716cb8b5
+=======
+    path: Assets/Scenes/Levels/LevelGyro.unity
+    guid: c6d5aa4ab74672045a39140105750583
+>>>>>>> origin/SaveShapeSubLevel
   - enabled: 1
     path: Assets/Scenes/Levels/SubLevel.unity
     guid: 06e126fe5dba14f4489da4fcaab7ce66
