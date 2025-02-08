@@ -69,6 +69,10 @@ public class ShapeManager : MonoBehaviour, IShapeManager
             {
                 shapeObj.AddComponent<ShakeBreak>();
             }
+            if((shape.LocalShapeInfo.Tags & ShapeTags.Zoom) == ShapeTags.Zoom)
+            {
+                shapeObj.AddComponent<Zoom>();
+            }
             OnCreateShape?.Invoke(shape);
             shapeObj.GetComponent<SpriteRenderer>().sortingOrder = 1;
             return shapeObj;
