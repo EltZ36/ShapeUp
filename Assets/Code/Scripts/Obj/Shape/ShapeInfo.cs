@@ -14,10 +14,7 @@ public enum ShapeType
     Oval3D,
     Sphere3D,
     BreakableCircle,
-    Ramp,
     FilledCube,
-    Rope,
-    BrokenRope,
 }
 
 /// <summary>

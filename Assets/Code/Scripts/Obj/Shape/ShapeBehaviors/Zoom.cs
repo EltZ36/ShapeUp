@@ -11,7 +11,6 @@ public class Zoom : MonoBehaviour
     float minSize,
         maxSize;
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +26,6 @@ public class Zoom : MonoBehaviour
     {
         if (Input.touches.Length == 2)
         {
-
             handleTwoTouches();
         }
         // pinchPoint.GetComponent<SpriteRenderer>().enabled = !pinching;
