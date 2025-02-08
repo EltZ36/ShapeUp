@@ -13,4 +13,6 @@ public class LevelInfo : LevelCore
     {
         SceneName = sceneName;
     }
+
+    public List<Shape> Inventory = new List<Shape>();
 }

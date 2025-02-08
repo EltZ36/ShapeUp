@@ -13,6 +13,11 @@ public class ShakeBreak : MonoBehaviour
         shakeBreakShape = GetComponent<Shape>();
     }
 
+    void OnDestroy()
+    {
+        SensorManager.Instance.OnAccelChange -= Break;
+    }
+
     void Break()
     {
         shakes += 1;

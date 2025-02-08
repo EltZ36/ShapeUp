@@ -43,13 +43,24 @@ public class ShapeManager : MonoBehaviour, IShapeManager
     public GameObject CreateShape(
         ShapeType shapeType,
         Vector3 position,
+        Quaternion rotation = default,
+        Vector3 scale = default,
         ShapeTags tags = ShapeTags.UseDatabaseDefault
     )
     {
         ShapeInfo shapeInfo = shapeDatabase.GetShapeInfo(shapeType);
         if (shapeInfo != null)
         {
-            GameObject shapeObj = Instantiate(shapeInfo.Prefab, position, Quaternion.identity);
+            if (rotation == default)
+            {
+                rotation = Quaternion.identity;
+            }
+            if (scale == default)
+            {
+                scale = Vector3.one;
+            }
+            GameObject shapeObj = Instantiate(shapeInfo.Prefab, position, rotation);
+            shapeObj.transform.localScale = scale;
             Shape shape = shapeObj.GetComponent<Shape>();
             shape.SetShapeInfo(new ShapeInfo(shapeType, shapeInfo.Prefab));
             if (tags == ShapeTags.UseDatabaseDefault)
@@ -69,9 +80,13 @@ public class ShapeManager : MonoBehaviour, IShapeManager
             {
                 shapeObj.AddComponent<ShakeBreak>();
             }
-            if ((shape.LocalShapeInfo.Tags & ShapeTags.Gyroscope) == ShapeTags.Gyroscope)
+            if ((shape.LocalShapeInfo.Tags & ShapeTags.GyroscopeF) == ShapeTags.GyroscopeF)
             {
-                shapeObj.AddComponent<Gyroscope>();
+                shapeObj.AddComponent<GyroscopeForce>();
+            }
+            if ((shape.LocalShapeInfo.Tags & ShapeTags.GyroscopeR) == ShapeTags.GyroscopeR)
+            {
+                shapeObj.AddComponent<GyroscopeRotation>();
             }
             OnCreateShape?.Invoke(shape);
             shapeObj.GetComponent<SpriteRenderer>().sortingOrder = 1;

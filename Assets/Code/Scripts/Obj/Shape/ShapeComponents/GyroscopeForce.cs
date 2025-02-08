@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Gyroscope : MonoBehaviour
+public class GyroscopeForce : MonoBehaviour
 {
     private Rigidbody2D rb;
     private Vector3 dir = Vector3.zero;
@@ -11,6 +11,11 @@ public class Gyroscope : MonoBehaviour
     {
         SensorManager.Instance.OnGyroChange += PullShape;
         rb = GetComponent<Rigidbody2D>();
+    }
+
+    void OnDestroy()
+    {
+        SensorManager.Instance.OnGyroChange -= PullShape;
     }
 
     void PullShape(float rotation)

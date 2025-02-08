@@ -35,13 +35,19 @@ public class Shape : MonoBehaviour
         if (LocalShapeInfo.Prefab == null)
         {
             Destroy(gameObject);
-            GameObject shape = ShapeManager.Instance.CreateShape(
-                LocalShapeInfo.Shape,
-                transform.position,
-                LocalShapeInfo.Tags
-            );
-            shape.transform.rotation = transform.rotation;
-            shape.transform.parent = transform.parent;
+            if (
+                LevelManager.Instance == null
+                || LevelManager.Instance.CurrentSubLevelInfo().ActiveShapes.Count == 0
+            )
+            {
+                ShapeManager.Instance.CreateShape(
+                    LocalShapeInfo.Shape,
+                    transform.position,
+                    transform.rotation,
+                    transform.localScale,
+                    LocalShapeInfo.Tags
+                );
+            }
         }
     }
 

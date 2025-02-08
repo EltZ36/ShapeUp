@@ -415,6 +415,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: 7c367d30fe978434f989e041bd1b9096, type: 3}
       propertyPath: LocalShapeInfo.Tags
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: 7c367d30fe978434f989e041bd1b9096, type: 3}
+      propertyPath: LocalShapeInfo.Shape
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6524447479145971792, guid: 7c367d30fe978434f989e041bd1b9096, type: 3}
@@ -646,6 +650,10 @@ PrefabInstance:
     - target: {fileID: 1740465846098495637, guid: 8e76d4961ada2644aa783dbe5397cea5, type: 3}
       propertyPath: m_Name
       value: CubePrefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 2361894183180487304, guid: 8e76d4961ada2644aa783dbe5397cea5, type: 3}
+      propertyPath: m_Mass
+      value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: 8e76d4961ada2644aa783dbe5397cea5, type: 3}
       propertyPath: LocalShapeInfo.Tags
