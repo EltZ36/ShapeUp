@@ -14,11 +14,17 @@ public class LevelUI : MonoBehaviour
     public Image hintImage,
         victoryImage,
         saveImage;
+    private Camera cam;
     public bool hints;
     public GameManager GameManager;
 
     private CanvasGroup victory,
         save;
+
+    public void Awake()
+    {
+        cam = Camera.main;
+    }
 
     private void Start()
     {
@@ -40,6 +46,9 @@ public class LevelUI : MonoBehaviour
 
     public void OnBackLevelButton()
     {
+        var CameraPos = cam.transform.position;
+        SceneManager.UnloadSceneAsync("LevelUI");
+        StartCoroutine(ZoomOut(cam.orthographicSize, 10, 1f));
         // Return to level view
         GameManager.Instance.SaveGame();
 
@@ -116,5 +125,17 @@ public class LevelUI : MonoBehaviour
         element.alpha = 1;
         element.interactable = true;
         element.blocksRaycasts = true;
+    }
+
+    IEnumerator ZoomOut(float StartPos, float EndPos, float time)
+    {
+        float elapsed = 0.0f;
+        while (elapsed / time < 1)
+        {
+            elapsed += Time.deltaTime;
+            cam.orthographicSize = Mathf.Lerp(StartPos, EndPos, elapsed / time);
+            yield return null;
+        }
+        cam.orthographicSize = EndPos;
     }
 }

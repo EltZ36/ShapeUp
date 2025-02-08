@@ -179,7 +179,6 @@ public class LevelManager : MonoBehaviour, ILevelManager
                 Levels[currentLevelID].SubLevels[currentSubLevelID].SceneName
             );
             //replace with a call to UI Manager
-            SceneManager.UnloadSceneAsync("LevelUI");
             currentSubLevelID = -1;
 
             SceneManager.SetActiveScene(
