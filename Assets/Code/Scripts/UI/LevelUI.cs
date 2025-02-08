@@ -46,13 +46,7 @@ public class LevelUI : MonoBehaviour
 
     public void OnBackLevelButton()
     {
-        var CameraPos = cam.transform.position;
-        SceneManager.UnloadSceneAsync("LevelUI");
         StartCoroutine(ZoomOut(cam.orthographicSize, 10, 1f));
-        // Return to level view
-        GameManager.Instance.SaveGame();
-
-        LevelManager.Instance.UnloadCurrentSubLevel();
     }
 
     public void OnRefreshButton()
@@ -133,9 +127,19 @@ public class LevelUI : MonoBehaviour
         while (elapsed / time < 1)
         {
             elapsed += Time.deltaTime;
-            cam.orthographicSize = Mathf.Lerp(StartPos, EndPos, elapsed / time);
+            cam.orthographicSize = EaseOutQuad(StartPos, EndPos, elapsed / time);
             yield return null;
         }
         cam.orthographicSize = EndPos;
+        GameManager.Instance.SaveGame();
+        SceneManager.UnloadSceneAsync("LevelUI");
+        LevelManager.Instance.UnloadCurrentSubLevel();
+    }
+
+    //Created by C.J. Kimberlin https://gist.github.com/cjddmut/d789b9eb78216998e95c
+    private float EaseOutQuad(float start, float end, float value)
+    {
+        end -= start;
+        return -end * value * (value - 2) + start;
     }
 }
