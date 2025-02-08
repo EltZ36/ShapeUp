@@ -249,11 +249,7 @@ MonoBehaviour:
     SceneName: TestLevel
     IsComplete: 0
     SubLevels:
-<<<<<<< HEAD
-    - SceneName: LevelTap
-=======
     - SceneName: LevelGyro
->>>>>>> origin/SaveShapeSubLevel
       IsComplete: 0
       Thumbnail: {fileID: 1688693569}
     - SceneName: BreakRope
