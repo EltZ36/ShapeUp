@@ -9,6 +9,7 @@ Dependancies: ILevelManager, MonoBehaviour
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -147,6 +148,22 @@ public class LevelManager : MonoBehaviour, ILevelManager
     {
         if (currentSubLevelID == -1 && currentLevelID != -1)
         {
+            // if the level is complete, don't reload it
+            if (Levels[currentLevelID].SubLevels[subLevelID].IsComplete == true)
+            {
+                return false;
+            }
+            // if the level is the last level in the list, only load it if all other levels have been completed
+            if (subLevelID == Levels[currentLevelID].SubLevels.Count - 1)
+            {
+                for (int i = 0; i < subLevelID; i++)
+                {
+                    if (Levels[currentLevelID].SubLevels[i].IsComplete == false)
+                    {
+                        return false;
+                    }
+                }
+            }
             currentSubLevelID = subLevelID;
             string name = Levels[currentLevelID].SubLevels[currentSubLevelID].SceneName;
             SceneManager.LoadSceneAsync(name, LoadSceneMode.Additive).completed += (operation) =>
@@ -292,6 +309,10 @@ public class LevelManager : MonoBehaviour, ILevelManager
             float dist = Vector2.Distance(camPos, subLevel.Thumbnail.transform.position);
             if (dist < closestSubLevel.Item2)
             {
+                if (subLevel.IsComplete)
+                {
+                    continue;
+                }
                 closestSubLevel.Item1 = i;
                 closestSubLevel.Item2 = dist;
                 closestSubLevel.Item3 = subLevel.Thumbnail.transform.position;

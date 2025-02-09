@@ -68,7 +68,9 @@ public class LevelUI : MonoBehaviour
     public void OnVictoryButton()
     {
         // Load Victory UI
-        enableUIElement(victory);
+        // enableUIElement(victory);
+        StartCoroutine(CameraController.ZoomOut());
+        LevelManager.Instance.OnCurrentSubLevelComplete();
     }
 
     public void OnNextButton()
