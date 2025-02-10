@@ -47,6 +47,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dc6d39d28c20b04b9ac3475e8874f2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LocalShapeInfo:
+    Shape: 5
+    Prefab: {fileID: 0}
+    Tags: 0
   rb: {fileID: 2361894183180487304}
 --- !u!212 &-4990759095755913176
 SpriteRenderer:
@@ -89,7 +93,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: fa656d9378556144fb8f5507fe42bbeb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 58ee248b99e7ba940a80f57f228ab3ba, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -136,7 +140,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.90625, y: 4.395604}
+    oldSize: {x: 18.97, y: 18.18}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

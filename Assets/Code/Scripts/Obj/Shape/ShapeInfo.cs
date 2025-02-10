@@ -10,11 +10,15 @@ public enum ShapeType
     Oval,
     Pyramid3D,
     Cube3D,
-    Rectanlge3D,
+    Rectangle3D,
     Oval3D,
     Sphere3D,
+    Cone3D,
     BreakableCircle,
-    FilledCube,
+    ConePerson,
+    CubePerson,
+    CompleteCubePerson,
+    CompleteConePerson,
 }
 
 /// <summary>

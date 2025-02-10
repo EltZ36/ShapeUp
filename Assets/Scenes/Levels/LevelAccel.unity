@@ -565,6 +565,14 @@ PrefabInstance:
       propertyPath: LocalShapeInfo.Tags
       value: 128
       objectReference: {fileID: 0}
+    - target: {fileID: 6411353487938334408, guid: 8e76d4961ada2644aa783dbe5397cea5, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 19.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 6411353487938334408, guid: 8e76d4961ada2644aa783dbe5397cea5, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 16.84
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

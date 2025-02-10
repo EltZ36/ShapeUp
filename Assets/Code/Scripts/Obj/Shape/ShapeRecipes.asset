@@ -19,6 +19,12 @@ MonoBehaviour:
   - shapeA: 1
     shapeB: 1
     shapeResult: 6
+  - shapeA: 10
+    shapeB: 12
+    shapeResult: 15
+  - shapeA: 6
+    shapeB: 13
+    shapeResult: 14
   - shapeA: 3
-    shapeB: 3
-    shapeResult: 9
+    shapeB: 0
+    shapeResult: 10
