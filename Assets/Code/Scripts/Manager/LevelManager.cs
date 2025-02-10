@@ -272,6 +272,11 @@ public class LevelManager : MonoBehaviour, ILevelManager
     private void LoadSavedActiveShapes()
     {
         var subLevelShapes = CurrentSubLevelInfo().ActiveShapes;
+        if (subLevelShapes.Count == 0)
+        {
+            return;
+        }
+        CurrentSubLevelInfo().firstLoad = true;
         var savedShapes = subLevelShapes.Values.ToList();
         CurrentSubLevelInfo().ActiveShapes.Clear();
 

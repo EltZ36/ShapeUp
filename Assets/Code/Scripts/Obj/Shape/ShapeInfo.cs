@@ -31,9 +31,13 @@ public enum ShapeTags
     Slice = 1 << 3,
     Accelerate = 1 << 4,
     GyroscopeF = 1 << 5,
-    Storable = 1 << 6, //can be placed in the inventory
-    ShakeBreak = 1 << 7,
-    GyroscopeR = 1 << 8,
+    GyroscopeR = 1 << 6,
+    Storable = 1 << 7, //can be placed in the inventory
+    ShakeBreak = 1 << 8,
+    FreezeX = 1 << 9,
+    FreezeY = 1 << 10,
+    FreezeRotation = 1 << 11,
+    Frictionless = 1 << 12,
 }
 
 [Serializable]

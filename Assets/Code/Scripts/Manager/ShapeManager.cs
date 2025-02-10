@@ -60,6 +60,8 @@ public class ShapeManager : MonoBehaviour, IShapeManager
                 scale = Vector3.one;
             }
             GameObject shapeObj = Instantiate(shapeInfo.Prefab, position, rotation);
+
+            Rigidbody2D shapeRB = shapeObj.GetComponent<Rigidbody2D>();
             shapeObj.transform.localScale = scale;
             Shape shape = shapeObj.GetComponent<Shape>();
             shape.SetShapeInfo(new ShapeInfo(shapeType, shapeInfo.Prefab));
@@ -73,7 +75,19 @@ public class ShapeManager : MonoBehaviour, IShapeManager
             }
             if ((shape.LocalShapeInfo.Tags & ShapeTags.Gravity) != ShapeTags.Gravity)
             {
-                shapeObj.GetComponent<Rigidbody2D>().gravityScale = 0;
+                shapeRB.gravityScale = 0;
+            }
+            if ((shape.LocalShapeInfo.Tags & ShapeTags.FreezeX) == ShapeTags.FreezeX)
+            {
+                shapeRB.constraints ^= RigidbodyConstraints2D.FreezePositionX;
+            }
+            if ((shape.LocalShapeInfo.Tags & ShapeTags.FreezeY) == ShapeTags.FreezeY)
+            {
+                shapeRB.constraints ^= RigidbodyConstraints2D.FreezePositionY;
+            }
+            if ((shape.LocalShapeInfo.Tags & ShapeTags.FreezeRotation) == ShapeTags.FreezeRotation)
+            {
+                shapeRB.constraints ^= RigidbodyConstraints2D.FreezeRotation;
             }
             //add components here
             if ((shape.LocalShapeInfo.Tags & ShapeTags.ShakeBreak) == ShapeTags.ShakeBreak)
@@ -91,6 +105,12 @@ public class ShapeManager : MonoBehaviour, IShapeManager
             if ((shape.LocalShapeInfo.Tags & ShapeTags.Zoom) == ShapeTags.Zoom)
             {
                 shapeObj.AddComponent<Zoom>();
+            }
+            if ((shape.LocalShapeInfo.Tags & ShapeTags.Frictionless) == ShapeTags.Frictionless)
+            {
+                PhysicsMaterial2D frictionless = new PhysicsMaterial2D();
+                frictionless.friction = 0f;
+                shapeObj.GetComponent<Collider2D>().sharedMaterial = frictionless;
             }
             OnCreateShape?.Invoke(shape);
             shapeObj.GetComponent<SpriteRenderer>().sortingOrder = 1;
