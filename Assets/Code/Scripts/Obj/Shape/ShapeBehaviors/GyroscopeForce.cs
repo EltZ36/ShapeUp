@@ -20,7 +20,7 @@ public class GyroscopeForce : MonoBehaviour
 
     void PullShape(float rotation)
     {
-        dir = Quaternion.Euler(0, 0, rotation) * Vector3.right;
+        dir = Quaternion.Euler(0, 0, rotation) * Vector3.down;
         dir = new Vector3(-dir.x, dir.y, dir.z);
     }
 

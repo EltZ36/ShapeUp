@@ -37,7 +37,7 @@ public class Shape : MonoBehaviour
             Destroy(gameObject);
             if (
                 LevelManager.Instance == null
-                || LevelManager.Instance.CurrentSubLevelInfo().ActiveShapes.Count == 0
+                || LevelManager.Instance.CurrentSubLevelInfo().firstLoad == false
             )
             {
                 ShapeManager.Instance.CreateShape(

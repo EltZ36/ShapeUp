@@ -1,13 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GyroscopeRotation : MonoBehaviour
 {
     private Rigidbody2D rb;
-    private Quaternion dir = Quaternion.identity;
-    bool check = false;
-    private Quaternion offset;
+
+    // https://chatgpt.com/share/67a94ce1-77b8-8010-9cdb-ab556c8017c7
+    public float targetRotation;
+    public float torqueAmount = 10f;
+    public float rotationDamping = 5f;
 
     void Awake()
     {
@@ -22,16 +25,15 @@ public class GyroscopeRotation : MonoBehaviour
 
     void RotateShape(float rotation)
     {
-        if (check == false)
-        {
-            check = true;
-            offset = Quaternion.Euler(0, 0, rotation);
-        }
-        dir = Quaternion.Euler(0, 0, rotation);
+        targetRotation = rotation;
     }
 
     void FixedUpdate()
     {
-        transform.rotation = Quaternion.Inverse(offset) * dir;
+        float currentRotation = rb.rotation;
+        float rotationDifference = Mathf.DeltaAngle(currentRotation, targetRotation);
+
+        float torque = rotationDifference * torqueAmount - rb.angularVelocity * rotationDamping;
+        rb.AddTorque(torque);
     }
 }

@@ -67,7 +67,12 @@ public class SensorManager : MonoBehaviour
         Quaternion currGyro = Input.gyro.attitude;
         if (Mathf.Abs(currGyro.eulerAngles.z - pastGyro.eulerAngles.z) > gyroSens)
         {
-            OnGyroChange?.Invoke(currGyro.eulerAngles.z + offset);
+            float rotation = (currGyro.eulerAngles.z - offset) % 360;
+            if (rotation < 0)
+            {
+                rotation += 360;
+            }
+            OnGyroChange?.Invoke(rotation);
             pastGyro = currGyro;
         }
     }
@@ -81,8 +86,7 @@ public class SensorManager : MonoBehaviour
     private void CalibrateOffset()
     {
         //assumes current device orientation is neutral landscape right, probably needs to be inverted for landscape left.
-        Debug.Log("change");
-        float z = Input.gyro.attitude.eulerAngles.z;
-        offset = 270 - z;
+
+        offset = 270;
     }
 }
