@@ -440,21 +440,27 @@ MonoBehaviour:
     - SceneName: LevelPinch
       IsComplete: 0
       Thumbnail: {fileID: 1688693569}
+      firstLoad: 0
     - SceneName: BreakRope
       IsComplete: 0
       Thumbnail: {fileID: 357313774}
+      firstLoad: 0
     - SceneName: LevelAccel
       IsComplete: 0
       Thumbnail: {fileID: 1565525942}
+      firstLoad: 0
     - SceneName: LevelTap
       IsComplete: 0
       Thumbnail: {fileID: 1700647864}
+      firstLoad: 0
     - SceneName: LevelGyro
       IsComplete: 0
       Thumbnail: {fileID: 200559515}
-    - SceneName: SubLevel
+      firstLoad: 0
+    - SceneName: LevelOneFinal
       IsComplete: 0
       Thumbnail: {fileID: 1641307496}
+      firstLoad: 0
     Inventory: []
 --- !u!1001 &1565525941
 PrefabInstance:
