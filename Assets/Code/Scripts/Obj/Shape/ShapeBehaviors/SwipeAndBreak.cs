@@ -10,8 +10,11 @@ public class SwipeAndBreak : MonoBehaviour
         endPos;
     public Camera cam;
     public GameObject sliceObject;
+
+    //the BrokenObjectUpper needs to be connected to ObjectToFloat
     public GameObject ObjectToFloat;
-    public GameObject BrokenObject;
+    public GameObject BrokenObjectUpper;
+    public GameObject BrokenObjectLower;
     public ParticleSystem Bubbles;
 
     void Awake()
@@ -21,7 +24,8 @@ public class SwipeAndBreak : MonoBehaviour
 
     void Start()
     {
-        BrokenObject.SetActive(false);
+        BrokenObjectUpper.SetActive(false);
+        BrokenObjectLower.SetActive(false);
     }
 
     private void Swipe()
@@ -78,7 +82,8 @@ public class SwipeAndBreak : MonoBehaviour
     {
         yield return new WaitForSeconds(0.1f);
         sliceObject.GetComponent<SpriteRenderer>().enabled = false;
-        BrokenObject.SetActive(true);
+        BrokenObjectUpper.SetActive(true);
+        BrokenObjectLower.SetActive(true);
     }
 
     void Update()
