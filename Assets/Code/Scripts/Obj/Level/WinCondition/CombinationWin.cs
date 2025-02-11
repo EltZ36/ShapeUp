@@ -7,7 +7,7 @@ using UnityEngine.Rendering;
 public class ComboWin : MonoBehaviour
 {
     [SerializeField]
-    ShapeType winShape;
+    List<ShapeType> winShapes;
 
     void Awake()
     {
@@ -21,7 +21,7 @@ public class ComboWin : MonoBehaviour
 
     void CheckWinShape(Shape created)
     {
-        if (created.LocalShapeInfo.Shape == winShape)
+        if (winShapes.Contains(created.LocalShapeInfo.Shape))
         {
             LevelManager.Instance.OnCurrentSubLevelComplete();
             StartCoroutine(CameraController.ZoomOut());

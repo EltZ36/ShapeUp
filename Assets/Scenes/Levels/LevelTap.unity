@@ -221,19 +221,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5388439485415872362, guid: 96ac4bf3af2af8f4f9f0834829759896, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.62590134
+      value: 0.6102538
       objectReference: {fileID: 0}
     - target: {fileID: 5388439485415872362, guid: 96ac4bf3af2af8f4f9f0834829759896, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.62590134
+      value: 0.6102538
       objectReference: {fileID: 0}
     - target: {fileID: 5388439485415872362, guid: 96ac4bf3af2af8f4f9f0834829759896, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.62590134
+      value: 0.6102538
       objectReference: {fileID: 0}
     - target: {fileID: 5388439485415872362, guid: 96ac4bf3af2af8f4f9f0834829759896, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.73
+      value: 0.54
       objectReference: {fileID: 0}
     - target: {fileID: 5388439485415872362, guid: 96ac4bf3af2af8f4f9f0834829759896, type: 3}
       propertyPath: m_LocalPosition.y
@@ -350,6 +350,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 731970655}
+  - component: {fileID: 731970657}
   - component: {fileID: 731970656}
   m_Layer: 0
   m_Name: TapAndBreakCheck
@@ -382,16 +383,29 @@ MonoBehaviour:
   m_GameObject: {fileID: 731970654}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfa0183877d0c1249be913a6c2185530, type: 3}
+  m_Script: {fileID: 11500000, guid: 8c6f21e6202aad94e99996793782d241, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   LargeObject: {fileID: 1483095478}
   SmallObject: {fileID: 5375859317523524613}
   CrackedObject: {fileID: 1769716529}
+  tapBehavior: {fileID: 731970657}
   sprites:
   - {fileID: 21300000, guid: 61d6260cfe162214cabdac8607d1fc78, type: 3}
   - {fileID: 21300000, guid: a26e4e1092381be468e22949e1f3d7e2, type: 3}
   - {fileID: 21300000, guid: 034f5ea930119b34398fab80a3bc9039, type: 3}
+--- !u!114 &731970657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 731970654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfa0183877d0c1249be913a6c2185530, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &875083881
 GameObject:
   m_ObjectHideFlags: 0
