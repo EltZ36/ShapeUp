@@ -29,27 +29,29 @@ public class FinalLevelCombine : MonoBehaviour
                 );
             }
         }
-        if (dragBehavior.getDragging() == true)
-        {
-            if (ShapeManager.Instance.CheckShapeCollide(gameObject) == true)
-            {
-                Debug.Log("Shape Dragged and trying to combine");
-                ShapeManager.Instance.CombineShapes(gameObject, gameObject);
-            }
-        }
     }
 
-    /* void ComboShape()
+    /*if (dragBehavior.getDragging() == true)
+    {
+        if (ShapeManager.Instance.CheckShapeCollide(gameObject) == true)
+        {
+            Debug.Log("Shape Dragged and trying to combine");
+            ShapeManager.Instance.CombineShapes(gameObject, gameObject);
+        }
+    }*
+}
+
+/* void ComboShape()
+ {
+     if (
+         dragBehavior.getDragging() == true
+         && ShapeManager.Instance.CheckShapeCollide(gameObject) == true
+     )
      {
-         if (
-             dragBehavior.getDragging() == true
-             && ShapeManager.Instance.CheckShapeCollide(gameObject) == true
-         )
-         {
-             Debug.Log("Shape Dragged and trying to combine");
-             ShapeManager.Instance.CombineShapes(gameObject, gameObject);
-         }
-     } */
+         Debug.Log("Shape Dragged and trying to combine");
+         ShapeManager.Instance.CombineShapes(gameObject, gameObject);
+     }
+ } */
 
     // Update is called once per frame
     void Update()
