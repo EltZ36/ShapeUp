@@ -64,6 +64,23 @@ public class LevelManager : MonoBehaviour, ILevelManager
         }
     }
 
+    public void ClearOneSubLevelProgress(int lID, int slID)
+    {
+        if (!Levels[lId])
+            return;
+        if (!Levels[lID].Sublevels[slID])
+            return;
+        Levels[lID].SubLevels[slID].IsComplete = false;
+    }
+
+    public void ClearAllLevelProgress(int lID)
+    {
+        foreach (var subLevel in Levels[lID].Sublevels)
+        {
+            subLevel.IsComplete = false;
+        }
+    }
+
     public void OnCurrentLevelComplete()
     {
         if (currentLevelID != -1)

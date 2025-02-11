@@ -13,8 +13,23 @@ interface IGameManager
     void SaveGame();
 
     /// <summary>
+    /// Clear an entire levels progress from game state
+    /// </summary>
+    /// <param name="lID">level id</param>
+    void ClearLevel(int lID);
+
+    /// <summary>
+    /// clear a sublevels progress from game state
+    /// </summary>
+    /// <param name="lID">level id</param>
+    /// <param name="slID">sub level id</param>
+    void ClearSubLevel(int lID, int slID);
+
+    /// <summary>
     /// handler for quit event booleans for save and exit query
     /// </summary>
+    /// <param name="save">save the game?</param>
+    /// <param name="slID">exit the game?</param>
     void OnQuitEvent(bool save, bool exit);
 }
 
