@@ -2,18 +2,14 @@ using UnityEngine;
 
 public class DragBehavior : MonoBehaviour
 {
+    [SerializeField]
     private Camera cam;
-    private bool dragging,
-        zooming;
-    Vector3 touchWorldPos,
-        startPos,
-        endPos;
-
-    private GameObject dragObject;
+    private bool dragging;
+    Vector3 touchWorldPos;
 
     void Awake()
     {
-        cam = Camera.main;
+        // cam = Camera.main;
     }
 
     void Drag()
@@ -24,24 +20,17 @@ public class DragBehavior : MonoBehaviour
             touchWorldPos = cam.ScreenToWorldPoint(touch.position);
             Vector2 touchWorldPos2D = new Vector2(touchWorldPos.x, touchWorldPos.y);
             RaycastHit2D hitInformation = Physics2D.Raycast(touchWorldPos2D, cam.transform.forward);
-            if (hitInformation.collider != null)
+            if (hitInformation.collider != null) // it hit!
             {
-                if (hitInformation.transform.gameObject.CompareTag("Drag"))
-                {
-                    dragObject = hitInformation.transform.gameObject;
-                    dragging = true;
+                // tapped on the game object this script is attached to
+                if(hitInformation.transform.gameObject == gameObject){
+                   dragging = true;
                 }
-            }
-            else
-            {
-                startPos = cam.ScreenToWorldPoint(
-                    new Vector3(touch.position.x, touch.position.y, cam.nearClipPlane)
-                );
             }
         }
         else if (touch.phase == TouchPhase.Moved && dragging)
         {
-            dragObject.transform.position = cam.ScreenToWorldPoint(
+            gameObject.transform.position = cam.ScreenToWorldPoint(
                 new Vector3(touch.position.x, touch.position.y, cam.nearClipPlane)
             );
         }
@@ -50,12 +39,6 @@ public class DragBehavior : MonoBehaviour
             if (dragging)
             {
                 dragging = false;
-            }
-            else
-            {
-                endPos = cam.ScreenToWorldPoint(
-                    new Vector3(touch.position.x, touch.position.y, cam.nearClipPlane)
-                );
             }
         }
     }
@@ -66,10 +49,5 @@ public class DragBehavior : MonoBehaviour
         {
             Drag();
         }
-    }
-
-    public bool getDragging()
-    {
-        return dragging;
     }
 }

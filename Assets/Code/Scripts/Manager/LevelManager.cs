@@ -66,16 +66,16 @@ public class LevelManager : MonoBehaviour, ILevelManager
 
     public void ClearOneSubLevelProgress(int lID, int slID)
     {
-        if (!Levels[lId])
+        if (Levels.ContainsKey(lID) == false)
             return;
-        if (!Levels[lID].Sublevels[slID])
+        if (Levels[lID].SubLevels[slID] == null)
             return;
         Levels[lID].SubLevels[slID].IsComplete = false;
     }
 
     public void ClearAllLevelProgress(int lID)
     {
-        foreach (var subLevel in Levels[lID].Sublevels)
+        foreach (var subLevel in Levels[lID].SubLevels)
         {
             subLevel.IsComplete = false;
         }
