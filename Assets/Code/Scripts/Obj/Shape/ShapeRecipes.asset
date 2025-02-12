@@ -28,3 +28,9 @@ MonoBehaviour:
   - shapeA: 3
     shapeB: 0
     shapeResult: 10
+  - shapeA: 3
+    shapeB: 3
+    shapeResult: 9
+  - shapeA: 3
+    shapeB: 1
+    shapeResult: 9

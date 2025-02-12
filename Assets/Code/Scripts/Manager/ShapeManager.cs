@@ -112,6 +112,11 @@ public class ShapeManager : MonoBehaviour, IShapeManager
                 frictionless.friction = 0f;
                 shapeObj.GetComponent<Collider2D>().sharedMaterial = frictionless;
             }
+            if ((shape.LocalShapeInfo.Tags & ShapeTags.Drag) == ShapeTags.Drag)
+            {
+                shapeObj.AddComponent<DragBehavior>();
+            }
+
             OnCreateShape?.Invoke(shape);
             shapeObj.GetComponent<SpriteRenderer>().sortingOrder = 1;
             return shapeObj;

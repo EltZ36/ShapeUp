@@ -9,6 +9,8 @@ public class ComboWin : MonoBehaviour
     [SerializeField]
     List<ShapeType> winShapes;
 
+    int winCount = 0;
+
     void Awake()
     {
         ShapeManager.Instance.OnCreateShape += CheckWinShape;
@@ -21,10 +23,20 @@ public class ComboWin : MonoBehaviour
 
     void CheckWinShape(Shape created)
     {
+        // something something remove shape from win list
+
         if (winShapes.Contains(created.LocalShapeInfo.Shape))
         {
-            LevelManager.Instance.OnCurrentSubLevelComplete();
-            StartCoroutine(CameraController.ZoomOut());
+            winCount++;
+            if (winCount == 2)
+            {
+                LevelManager.Instance.OnCurrentSubLevelComplete(); // add back in
+                StartCoroutine(CameraController.ZoomOut());
+            }
         }
     }
+
+    // TODO: reset win method
+    // method to reset the list of shapes to win, used when shake (or reset) occurs
+    // fn resetWinCond()
 }

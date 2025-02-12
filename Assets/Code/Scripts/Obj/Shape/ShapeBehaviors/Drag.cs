@@ -2,14 +2,14 @@ using UnityEngine;
 
 public class DragBehavior : MonoBehaviour
 {
-    [SerializeField]
-    private Camera cam;
+    // [SerializeField]
+    private Camera cam; // delete this
     private bool dragging;
     Vector3 touchWorldPos;
 
     void Awake()
     {
-        // cam = Camera.main;
+        cam = Camera.main;
     }
 
     void Drag()
@@ -23,8 +23,9 @@ public class DragBehavior : MonoBehaviour
             if (hitInformation.collider != null) // it hit!
             {
                 // tapped on the game object this script is attached to
-                if(hitInformation.transform.gameObject == gameObject){
-                   dragging = true;
+                if (hitInformation.transform.gameObject == gameObject)
+                {
+                    dragging = true;
                 }
             }
         }
