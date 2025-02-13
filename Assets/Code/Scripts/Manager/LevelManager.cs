@@ -241,9 +241,9 @@ public class LevelManager : MonoBehaviour, ILevelManager
 
     public void LeaveCurrentLevel()
     {
+        Levels[currentLevelID] = null;
         currentLevelID = -1;
         currentSubLevelID = -1;
-        Levels[currentLevelID] = null;
     }
     #endregion
 

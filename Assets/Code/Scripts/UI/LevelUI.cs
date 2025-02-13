@@ -144,10 +144,10 @@ public class LevelUI : MonoBehaviour
     public void OnSaveAndQuitButton()
     {
         disableUIElement(save);
+        LevelManager.Instance.LeaveCurrentLevel();
         GameManager.Instance.SaveGame();
         SceneManager.LoadScene("Menu");
         whichSave = 1;
-        LevelManager.Instance.LeaveCurrentLevel();
     }
 
     public void OnSaveButton()
@@ -162,9 +162,9 @@ public class LevelUI : MonoBehaviour
         Debug.Log("Quit");
         Debug.Log("Menu");
         disableUIElement(save);
+        LevelManager.Instance.LeaveCurrentLevel();
         SceneManager.LoadScene("Menu");
         whichSave = 2;
-        LevelManager.Instance.LeaveCurrentLevel();
     }
 
     public void OnCancelSaveButton()
