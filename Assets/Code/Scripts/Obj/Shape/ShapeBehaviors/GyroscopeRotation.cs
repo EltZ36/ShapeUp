@@ -46,6 +46,6 @@ public class GyroscopeRotation : MonoBehaviour
 
         float torque = rotationDifference * torqueAmount - rb.angularVelocity * rotationDamping;
         rb.AddTorque(torque);
-        rb.totalTorque = Mathf.Clamp(rb.totalTorque, -10, 10);
+        rb.totalTorque = Mathf.Clamp(rb.totalTorque, -100, 100);
     }
 }
