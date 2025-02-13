@@ -24,12 +24,13 @@ public class LevelUI : MonoBehaviour
         save,
         confirm;
 
-        #region Singleton Pattern
+    #region Singleton Pattern
     private static LevelUI _instance;
     public static LevelUI Instance
     {
         get { return _instance; }
     }
+    #endregion
 
     void Awake()
     {
