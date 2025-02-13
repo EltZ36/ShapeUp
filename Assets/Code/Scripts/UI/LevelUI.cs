@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -191,5 +192,12 @@ public class LevelUI : MonoBehaviour
         element.alpha = 1;
         element.interactable = true;
         element.blocksRaycasts = true;
+    }
+
+    public void DisableEverything()
+    {
+        disableUIElement(victory);
+        disableUIElement(save);
+        disableUIElement(confirm);
     }
 }

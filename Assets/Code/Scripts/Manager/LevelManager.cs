@@ -43,7 +43,7 @@ public class LevelManager : MonoBehaviour, ILevelManager
     public Dictionary<int, LevelInfo> Levels { get; private set; } =
         new Dictionary<int, LevelInfo>();
 
-    private int currentLevelID = -1;
+    public int currentLevelID { get; private set; } = -1;
     private int currentSubLevelID = -1;
 
     #region Interface Methods
