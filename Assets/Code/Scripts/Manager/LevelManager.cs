@@ -182,6 +182,7 @@ public class LevelManager : MonoBehaviour, ILevelManager
                 }
             }
             currentSubLevelID = subLevelID;
+            Camera.main.GetComponent<CameraController>().enabled = false;
             string name = Levels[currentLevelID].SubLevels[currentSubLevelID].SceneName;
             SceneManager.LoadSceneAsync(name, LoadSceneMode.Additive).completed += (operation) =>
             {
@@ -207,6 +208,8 @@ public class LevelManager : MonoBehaviour, ILevelManager
     {
         if (currentSubLevelID != -1)
         {
+            Camera.main.GetComponent<CameraController>().enabled = true;
+
             UpdateActiveShapePositions();
             Debug.Log(currentSubLevelID);
             SceneManager.UnloadSceneAsync(
