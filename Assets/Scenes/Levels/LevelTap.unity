@@ -1016,9 +1016,13 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4305497239867837717, guid: 70107f38b2fe47d439950d2ad6c0490f, type: 3}
+      propertyPath: LocalShapeInfo.Tags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4305497239867837717, guid: 70107f38b2fe47d439950d2ad6c0490f, type: 3}
       propertyPath: LocalShapeInfo.Prefab
       value: 
-      objectReference: {fileID: 230384449129717543, guid: 70107f38b2fe47d439950d2ad6c0490f, type: 3}
+      objectReference: {fileID: 1740465846098495637, guid: f394eb81f1d5390458a24506a6d292e2, type: 3}
     - target: {fileID: 8746634324655266690, guid: 70107f38b2fe47d439950d2ad6c0490f, type: 3}
       propertyPath: m_SortingOrder
       value: 1

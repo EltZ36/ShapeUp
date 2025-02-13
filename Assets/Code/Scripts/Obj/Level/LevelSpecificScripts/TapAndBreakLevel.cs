@@ -45,7 +45,10 @@ public class TapAndBreakLevel : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         LargeObject.SetActive(false);
         CrackedObject.SetActive(true);
-        SmallObject.SetActive(true);
+        if (SmallObject != null)
+        {
+            SmallObject.SetActive(true);
+        }
     }
 
     void Update()

@@ -563,7 +563,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: 8e76d4961ada2644aa783dbe5397cea5, type: 3}
       propertyPath: LocalShapeInfo.Tags
-      value: 128
+      value: 256
       objectReference: {fileID: 0}
     - target: {fileID: 6411353487938334408, guid: 8e76d4961ada2644aa783dbe5397cea5, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x

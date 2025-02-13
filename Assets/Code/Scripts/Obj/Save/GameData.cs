@@ -85,7 +85,7 @@ public class GameData
     {
         return LevelCompleteMap.Remove(lID);
     }
-    
+
     /// <summary>
     /// remove one sublevel from the levels progress dict
     /// </summary>
@@ -97,7 +97,7 @@ public class GameData
     }
 
     /// <summary>
-    /// Clear the levels progress dictionary 
+    /// Clear the levels progress dictionary
     /// </summary>
     public void DeleteAllLevelProgress()
     {

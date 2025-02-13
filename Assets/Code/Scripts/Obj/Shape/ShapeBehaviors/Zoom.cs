@@ -83,11 +83,5 @@ public class Zoom : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("win"))
-        {
-            Debug.Log("Victory");
-        }
-    }
+    private void OnTriggerEnter2D(Collider2D collision) { }
 }

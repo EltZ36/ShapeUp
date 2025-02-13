@@ -19,6 +19,7 @@ public class BoundaryWin : MonoBehaviour
             StartCoroutine(CameraController.ZoomOut());
             // end
             ShapeManager.Instance.DestroyShape(shape);
+            LevelManager.Instance.OnCurrentSubLevelComplete();
         }
     }
 }
