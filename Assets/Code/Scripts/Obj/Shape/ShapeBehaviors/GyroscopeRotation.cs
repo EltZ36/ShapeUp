@@ -25,7 +25,18 @@ public class GyroscopeRotation : MonoBehaviour
 
     void RotateShape(float rotation)
     {
-        targetRotation = rotation;
+        if (rotation < 90 || rotation > 270)
+        {
+            targetRotation = rotation;
+        }
+        else
+        {
+            targetRotation = (rotation - 180) % 360;
+            if (targetRotation < 0)
+            {
+                targetRotation += 360;
+            }
+        }
     }
 
     void FixedUpdate()
@@ -35,5 +46,6 @@ public class GyroscopeRotation : MonoBehaviour
 
         float torque = rotationDifference * torqueAmount - rb.angularVelocity * rotationDamping;
         rb.AddTorque(torque);
+        rb.totalTorque = Mathf.Clamp(rb.totalTorque, -10, 10);
     }
 }
