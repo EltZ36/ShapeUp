@@ -147,6 +147,7 @@ public class LevelUI : MonoBehaviour
         GameManager.Instance.SaveGame();
         SceneManager.LoadScene("Menu");
         whichSave = 1;
+        LevelManager.Instance.LeaveCurrentLevel();
     }
 
     public void OnSaveButton()
@@ -163,6 +164,7 @@ public class LevelUI : MonoBehaviour
         disableUIElement(save);
         SceneManager.LoadScene("Menu");
         whichSave = 2;
+        LevelManager.Instance.LeaveCurrentLevel();
     }
 
     public void OnCancelSaveButton()

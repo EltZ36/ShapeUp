@@ -238,6 +238,13 @@ public class LevelManager : MonoBehaviour, ILevelManager
         // cj elton test
         GameManager.Instance.gameData.AddLevelToSaveMapping(currentLevelID, levelInfo);
     }
+
+    public void LeaveCurrentLevel()
+    {
+        currentLevelID = -1;
+        currentSubLevelID = -1;
+        Levels[currentLevelID] = null;
+    }
     #endregion
 
     public SubLevelInfo CurrentSubLevelInfo()
