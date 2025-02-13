@@ -24,6 +24,27 @@ public class LevelUI : MonoBehaviour
         save,
         confirm;
 
+        #region Singleton Pattern
+    private static LevelUI _instance;
+    public static LevelUI Instance
+    {
+        get { return _instance; }
+    }
+
+    void Awake()
+    {
+        if (_instance != null && _instance != this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            _instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        cam = Camera.main;
+    }
+
     private void Start()
     {
         save = saveImage.GetComponent<CanvasGroup>();
@@ -37,7 +58,6 @@ public class LevelUI : MonoBehaviour
 
         hintImage.enabled = false;
         hints = false;
-        cam = Camera.main;
     }
 
     public void OnBackMenuButton()

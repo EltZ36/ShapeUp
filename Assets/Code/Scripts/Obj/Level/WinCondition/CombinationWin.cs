@@ -31,7 +31,7 @@ public class ComboWin : MonoBehaviour
             winCount++;
             if (winCount == 2)
             {
-                LevelUI.VictoryScreen();
+                LevelUI.Instance.VictoryScreen();
             }
         }
     }
