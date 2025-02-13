@@ -23,7 +23,8 @@ public class SeparationWin : MonoBehaviour
     {
         if (destroyed.LocalShapeInfo.Shape == winShape)
         {
-            LevelUI.Instance.VictoryScreen();
+            LevelManager.Instance.OnCurrentSubLevelComplete();
+            StartCoroutine(CameraController.ZoomOut());
         }
     }
 }

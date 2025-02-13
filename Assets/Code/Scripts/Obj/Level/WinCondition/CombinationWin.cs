@@ -31,7 +31,8 @@ public class ComboWin : MonoBehaviour
             winCount++;
             if (winCount == 2)
             {
-                LevelUI.Instance.VictoryScreen();
+                LevelManager.Instance.OnCurrentSubLevelComplete(); // add back in
+                StartCoroutine(CameraController.ZoomOut());
             }
         }
     }
