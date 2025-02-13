@@ -9,6 +9,8 @@ public class SeparationWin : MonoBehaviour
     [SerializeField]
     ShapeType winShape;
 
+    LevelUI LevelUI;
+
     void Awake()
     {
         ShapeManager.Instance.OnDestroyShape += CheckWinShape;
@@ -23,8 +25,7 @@ public class SeparationWin : MonoBehaviour
     {
         if (destroyed.LocalShapeInfo.Shape == winShape)
         {
-            LevelManager.Instance.OnCurrentSubLevelComplete();
-            StartCoroutine(CameraController.ZoomOut());
+            LevelUI.VictoryScreen();
         }
     }
 }

@@ -8,6 +8,7 @@ public class BoundaryWin : MonoBehaviour
 {
     [SerializeField]
     private ShapeType ST;
+    LevelUI LevelUI;
 
     void OnTriggerExit2D(Collider2D collision)
     {
@@ -18,8 +19,7 @@ public class BoundaryWin : MonoBehaviour
             StartCoroutine(CameraController.ZoomOut());
             // end
             ShapeManager.Instance.DestroyShape(shape);
-
-            LevelManager.Instance.OnCurrentSubLevelComplete();
+            LevelUI.VictoryScreen();
         }
     }
 }

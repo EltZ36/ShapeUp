@@ -27,7 +27,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels/LevelTap.unity
     guid: cdd9abd48538a83409d26ef5716cb8b5
   - enabled: 1
-    path: Assets/Scenes/Prod/LevelOneFinal.unity
+    path: Assets/Scenes/Dev/LevelOneFinal.unity
     guid: f8103cf9875955748986369ce2697e9a
   - enabled: 1
     path: Assets/Scenes/Levels/BreakRope.unity

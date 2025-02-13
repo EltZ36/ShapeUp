@@ -8,6 +8,7 @@ public class ComboWin : MonoBehaviour
 {
     [SerializeField]
     List<ShapeType> winShapes;
+    LevelUI LevelUI;
 
     int winCount = 0;
 
@@ -30,8 +31,7 @@ public class ComboWin : MonoBehaviour
             winCount++;
             if (winCount == 2)
             {
-                LevelManager.Instance.OnCurrentSubLevelComplete(); // add back in
-                StartCoroutine(CameraController.ZoomOut());
+                LevelUI.VictoryScreen();
             }
         }
     }

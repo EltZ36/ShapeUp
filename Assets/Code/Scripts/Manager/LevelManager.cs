@@ -233,13 +233,10 @@ public class LevelManager : MonoBehaviour, ILevelManager
         {
             throw new Exception("GetLevelInfo: Current Level ID and Loaded Level mismatch");
         }
-        if (Levels[currentLevelID] == null)
-        {
-            Levels[currentLevelID] = levelInfo;
+        Levels[currentLevelID] = levelInfo;
 
-            // cj elton test
-            GameManager.Instance.gameData.AddLevelToSaveMapping(currentLevelID, levelInfo);
-        }
+        // cj elton test
+        GameManager.Instance.gameData.AddLevelToSaveMapping(currentLevelID, levelInfo);
     }
     #endregion
 
