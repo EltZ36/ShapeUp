@@ -32,6 +32,7 @@ public class ShapeManager : MonoBehaviour, IShapeManager
     private ShapeRecipes shapeRecipes;
 
     private List<(Shape, Shape)> checkShapes = new List<(Shape, Shape)>();
+    private List<Shape> blacklistShapes = new List<Shape>();
 
     //event that tells subscriber a new shape was created
     public event Action<Shape> OnCreateShape;
@@ -42,13 +43,26 @@ public class ShapeManager : MonoBehaviour, IShapeManager
     public GameObject CreateShape(
         ShapeType shapeType,
         Vector3 position,
+        Quaternion rotation = default,
+        Vector3 scale = default,
         ShapeTags tags = ShapeTags.UseDatabaseDefault
     )
     {
         ShapeInfo shapeInfo = shapeDatabase.GetShapeInfo(shapeType);
         if (shapeInfo != null)
         {
-            GameObject shapeObj = Instantiate(shapeInfo.Prefab, position, Quaternion.identity);
+            if (rotation == default)
+            {
+                rotation = Quaternion.identity;
+            }
+            if (scale == default)
+            {
+                scale = Vector3.one;
+            }
+            GameObject shapeObj = Instantiate(shapeInfo.Prefab, position, rotation);
+
+            Rigidbody2D shapeRB = shapeObj.GetComponent<Rigidbody2D>();
+            shapeObj.transform.localScale = scale;
             Shape shape = shapeObj.GetComponent<Shape>();
             shape.SetShapeInfo(new ShapeInfo(shapeType, shapeInfo.Prefab));
             if (tags == ShapeTags.UseDatabaseDefault)
@@ -61,11 +75,50 @@ public class ShapeManager : MonoBehaviour, IShapeManager
             }
             if ((shape.LocalShapeInfo.Tags & ShapeTags.Gravity) != ShapeTags.Gravity)
             {
-                shape.ToggleShapeTags(ShapeTags.Gravity);
-                shapeObj.GetComponent<Rigidbody2D>().gravityScale = 0;
+                shapeRB.gravityScale = 0;
+            }
+            if ((shape.LocalShapeInfo.Tags & ShapeTags.FreezeX) == ShapeTags.FreezeX)
+            {
+                shapeRB.constraints ^= RigidbodyConstraints2D.FreezePositionX;
+            }
+            if ((shape.LocalShapeInfo.Tags & ShapeTags.FreezeY) == ShapeTags.FreezeY)
+            {
+                shapeRB.constraints ^= RigidbodyConstraints2D.FreezePositionY;
+            }
+            if ((shape.LocalShapeInfo.Tags & ShapeTags.FreezeRotation) == ShapeTags.FreezeRotation)
+            {
+                shapeRB.constraints ^= RigidbodyConstraints2D.FreezeRotation;
             }
             //add components here
+            if ((shape.LocalShapeInfo.Tags & ShapeTags.ShakeBreak) == ShapeTags.ShakeBreak)
+            {
+                shapeObj.AddComponent<ShakeBreak>();
+            }
+            if ((shape.LocalShapeInfo.Tags & ShapeTags.GyroscopeF) == ShapeTags.GyroscopeF)
+            {
+                shapeObj.AddComponent<GyroscopeForce>();
+            }
+            if ((shape.LocalShapeInfo.Tags & ShapeTags.GyroscopeR) == ShapeTags.GyroscopeR)
+            {
+                shapeObj.AddComponent<GyroscopeRotation>();
+            }
+            if ((shape.LocalShapeInfo.Tags & ShapeTags.Zoom) == ShapeTags.Zoom)
+            {
+                shapeObj.AddComponent<Zoom>();
+            }
+            if ((shape.LocalShapeInfo.Tags & ShapeTags.Frictionless) == ShapeTags.Frictionless)
+            {
+                PhysicsMaterial2D frictionless = new PhysicsMaterial2D();
+                frictionless.friction = 0f;
+                shapeObj.GetComponent<Collider2D>().sharedMaterial = frictionless;
+            }
+            if ((shape.LocalShapeInfo.Tags & ShapeTags.Drag) == ShapeTags.Drag)
+            {
+                shapeObj.AddComponent<DragBehavior>();
+            }
+
             OnCreateShape?.Invoke(shape);
+            shapeObj.GetComponent<SpriteRenderer>().sortingOrder = 1;
             return shapeObj;
         }
         return null;
@@ -100,7 +153,19 @@ public class ShapeManager : MonoBehaviour, IShapeManager
     {
         checkShapes.Add(pair);
     }
+
+    public void Blacklist(Shape shape, float time)
+    {
+        blacklistShapes.Add(shape);
+        StartCoroutine(RemoveFromBlacklist(shape, time));
+    }
     #endregion
+
+    IEnumerator RemoveFromBlacklist(Shape shape, float time)
+    {
+        yield return new WaitForSeconds(time);
+        blacklistShapes.Remove(shape);
+    }
 
     #region Monobehavior
     public void LateUpdate()
@@ -108,6 +173,10 @@ public class ShapeManager : MonoBehaviour, IShapeManager
         if (checkShapes.Count >= 1)
         {
             HashSet<Shape> used = new HashSet<Shape>();
+            foreach (Shape shape in blacklistShapes)
+            {
+                used.Add(shape);
+            }
             foreach ((Shape, Shape) pair in checkShapes)
             {
                 Shape shapeA = pair.Item1;

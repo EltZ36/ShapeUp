@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,12 +14,21 @@ public class LevelUI : MonoBehaviour
     [SerializeField]
     public Image hintImage,
         victoryImage,
-        saveImage;
+        saveImage,
+        confirmImage;
+    private Camera cam;
     public bool hints;
+    public int whichSave;
     public GameManager GameManager;
 
     private CanvasGroup victory,
-        save;
+        save,
+        confirm;
+
+    void Awake()
+    {
+        cam = Camera.main;
+    }
 
     private void Start()
     {
@@ -27,6 +37,9 @@ public class LevelUI : MonoBehaviour
 
         victory = victoryImage.GetComponent<CanvasGroup>();
         disableUIElement(victory);
+
+        confirm = confirmImage.GetComponent<CanvasGroup>();
+        disableUIElement(confirm);
 
         hintImage.enabled = false;
         hints = false;
@@ -40,10 +53,7 @@ public class LevelUI : MonoBehaviour
 
     public void OnBackLevelButton()
     {
-        // Return to level view
-        GameManager.Instance.SaveGame();
-
-        LevelManager.Instance.UnloadCurrentSubLevel();
+        StartCoroutine(CameraController.ZoomOut());
     }
 
     public void OnRefreshButton()
@@ -65,6 +75,13 @@ public class LevelUI : MonoBehaviour
     public void OnVictoryButton()
     {
         // Load Victory UI
+        //enableUIElement(victory);
+        StartCoroutine(CameraController.ZoomOut());
+        LevelManager.Instance.OnCurrentSubLevelComplete();
+    }
+
+    public void VictoryScreen()
+    {
         enableUIElement(victory);
     }
 
@@ -75,6 +92,7 @@ public class LevelUI : MonoBehaviour
         disableUIElement(victory);
         LevelManager.Instance.OnCurrentSubLevelComplete();
         LevelManager.Instance.UnloadCurrentSubLevel();
+        CameraController.ZoomOut();
     }
 
     public void OnMenuButton()
@@ -85,14 +103,41 @@ public class LevelUI : MonoBehaviour
         SceneManager.LoadScene("Menu");
     }
 
+    public void GoToConfirmButton()
+    {
+        enableUIElement(confirm);
+    }
+
+    public void YesButton()
+    {
+        if (whichSave == 1)
+        {
+            GameManager.Instance.SaveGame();
+            Debug.Log("Save and Quit");
+            Debug.Log(whichSave);
+        }
+        Debug.Log("Menu");
+        SceneManager.LoadScene("Menu");
+    }
+
+    public void NoButton()
+    {
+        disableUIElement(confirm);
+    }
+
     public void OnSaveAndQuitButton()
     {
-        // Save game, load menu
-        Debug.Log("Save and Quit");
-        Debug.Log("Menu");
         disableUIElement(save);
+        LevelManager.Instance.LeaveCurrentLevel();
         GameManager.Instance.SaveGame();
         SceneManager.LoadScene("Menu");
+        whichSave = 1;
+    }
+
+    public void OnSaveButton()
+    {
+        disableUIElement(save);
+        GameManager.Instance.SaveGame();
     }
 
     public void OnQuitButton()
@@ -101,7 +146,21 @@ public class LevelUI : MonoBehaviour
         Debug.Log("Quit");
         Debug.Log("Menu");
         disableUIElement(save);
+        LevelManager.Instance.LeaveCurrentLevel();
         SceneManager.LoadScene("Menu");
+        whichSave = 2;
+    }
+
+    public void OnCancelSaveButton()
+    {
+        disableUIElement(save);
+    }
+
+    //the difference between OnCancelSaveButton and OnCancelConfirmButton is that this is for the confirm
+    public void onCancelConfirmButton()
+    {
+        disableUIElement(save);
+        disableUIElement(confirm);
     }
 
     void disableUIElement(CanvasGroup element)
@@ -116,5 +175,12 @@ public class LevelUI : MonoBehaviour
         element.alpha = 1;
         element.interactable = true;
         element.blocksRaycasts = true;
+    }
+
+    public void DisableEverything()
+    {
+        disableUIElement(victory);
+        disableUIElement(save);
+        disableUIElement(confirm);
     }
 }

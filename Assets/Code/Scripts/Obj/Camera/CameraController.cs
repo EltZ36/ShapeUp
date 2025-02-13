@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CameraController : MonoBehaviour
 {
@@ -63,5 +64,28 @@ public class CameraController : MonoBehaviour
             Camera.main.orthographicSize = scaleChange;
             zoom = Vector2.Distance(Input.touches[0].position, Input.touches[1].position);
         }
+    }
+
+    public static IEnumerator ZoomOut(float EndPos = 10, float time = 1f)
+    {
+        float StartPos = Camera.main.orthographicSize;
+        float elapsed = 0.0f;
+        while (elapsed / time < 1)
+        {
+            elapsed += Time.deltaTime;
+            Camera.main.orthographicSize = EaseOutQuad(StartPos, EndPos, elapsed / time);
+            yield return null;
+        }
+        Camera.main.orthographicSize = EndPos;
+        GameManager.Instance.SaveGame();
+        SceneManager.UnloadSceneAsync("LevelUI");
+        LevelManager.Instance.UnloadCurrentSubLevel();
+    }
+
+    //Created by C.J. Kimberlin https://gist.github.com/cjddmut/d789b9eb78216998e95c
+    private static float EaseOutQuad(float start, float end, float value)
+    {
+        end -= start;
+        return -end * value * (value - 2) + start;
     }
 }

@@ -35,17 +35,25 @@ public class Shape : MonoBehaviour
         if (LocalShapeInfo.Prefab == null)
         {
             Destroy(gameObject);
-            GameObject shape = ShapeManager.Instance.CreateShape(
-                LocalShapeInfo.Shape,
-                transform.position,
-                LocalShapeInfo.Tags
-            );
-            shape.transform.rotation = transform.rotation;
+            if (
+                LevelManager.Instance == null
+                || LevelManager.Instance.CurrentSubLevelInfo().firstLoad == false
+            )
+            {
+                ShapeManager.Instance.CreateShape(
+                    LocalShapeInfo.Shape,
+                    transform.position,
+                    transform.rotation,
+                    transform.localScale,
+                    LocalShapeInfo.Tags
+                );
+            }
         }
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
+        // Debug.Log("COLLLLLISON");
         Shape shape = collision.gameObject.GetComponent<Shape>();
         if (shape != null)
         {

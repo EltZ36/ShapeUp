@@ -49,6 +49,18 @@ public class GameManager : MonoBehaviour, IGameManager
         WriteFile();
     }
 
+    public void ClearLevel(int lID)
+    {
+        gameData.DeleteOneLevelProgress(lID); // optionally returns boolean for more advanced ux
+        LevelManager.Instance.ClearAllLevelProgress(lID);
+    }
+
+    public void ClearSubLevel(int lID, int slID)
+    {
+        gameData.DeleteOneSubLevelProgress(lID, slID); // optionally returns boolean for more advanced ux
+        LevelManager.Instance.ClearOneSubLevelProgress(lID, slID);
+    }
+
     public void OnQuitEvent(bool save, bool exit)
     {
         if (save == true)

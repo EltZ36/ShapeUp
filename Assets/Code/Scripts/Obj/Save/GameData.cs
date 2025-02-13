@@ -78,6 +78,33 @@ public class GameData
     }
 
     /// <summary>
+    /// remove a single level from the levels progress dictionary
+    /// </summary>
+    /// <param name="lID">level id</param>
+    public bool DeleteOneLevelProgress(int lID)
+    {
+        return LevelCompleteMap.Remove(lID);
+    }
+
+    /// <summary>
+    /// remove one sublevel from the levels progress dict
+    /// </summary>
+    /// <param name="lID">level id</param>
+    /// <param name="slID">sublevel id</param>
+    public bool DeleteOneSubLevelProgress(int lID, int slID)
+    {
+        return LevelCompleteMap[lID].Remove(slID);
+    }
+
+    /// <summary>
+    /// Clear the levels progress dictionary
+    /// </summary>
+    public void DeleteAllLevelProgress()
+    {
+        LevelCompleteMap.Clear();
+    }
+
+    /// <summary>
     ///convert the dictionary into lists of struct so that the Unity JSON uility can save them
     /// </summary>
     public void Serialize()

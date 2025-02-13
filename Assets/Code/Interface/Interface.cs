@@ -13,8 +13,23 @@ interface IGameManager
     void SaveGame();
 
     /// <summary>
+    /// Clear an entire levels progress from game state
+    /// </summary>
+    /// <param name="lID">level id</param>
+    void ClearLevel(int lID);
+
+    /// <summary>
+    /// clear a sublevels progress from game state
+    /// </summary>
+    /// <param name="lID">level id</param>
+    /// <param name="slID">sub level id</param>
+    void ClearSubLevel(int lID, int slID);
+
+    /// <summary>
     /// handler for quit event booleans for save and exit query
     /// </summary>
+    /// <param name="save">save the game?</param>
+    /// <param name="slID">exit the game?</param>
     void OnQuitEvent(bool save, bool exit);
 }
 
@@ -92,6 +107,8 @@ interface IShapeManager
     public GameObject CreateShape(
         ShapeType shapeType,
         Vector3 position,
+        Quaternion rotation = default,
+        Vector3 scale = default,
         ShapeTags tags = ShapeTags.UseDatabaseDefault
     );
 
@@ -115,4 +132,11 @@ interface IShapeManager
     /// <param name="shape">Shape being taken apart</param>
     /// <returns></returns>
     public HashSet<ShapeType> TakeApartShape(ShapeType shape);
+
+    /// <summary>
+    /// Prevent a shape from being combined for a set amount of time
+    /// </summary>
+    /// <param name="shape">The shape being blacklisted</param>
+    /// <param name="time">Time in seconds</param>
+    public void Blacklist(Shape shape, float time);
 }
