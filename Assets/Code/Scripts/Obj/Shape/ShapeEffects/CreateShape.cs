@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OtherShape : MonoBehaviour
+public class CreateShape : MonoBehaviour
 {
     [SerializeField]
     GameObject prefab;

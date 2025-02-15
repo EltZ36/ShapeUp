@@ -79,6 +79,10 @@ public class ShapeManager : MonoBehaviour
             }
             else
             {
+                if (shapeA.Prefab == null || shapeB.Prefab == null)
+                {
+                    continue;
+                }
                 string combined = CombineShapes(shapeA.Prefab.name, shapeB.Prefab.name);
                 if (!string.IsNullOrEmpty(combined))
                 {

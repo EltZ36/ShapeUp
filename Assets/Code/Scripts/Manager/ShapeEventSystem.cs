@@ -30,7 +30,7 @@ public class ShapeEventSystem : MonoBehaviour
     }
 
     Shape selectedShape = null;
-    Vector3 start = default;
+    Vector3[] start = new Vector3[10];
 
     void Update()
     {
@@ -38,51 +38,71 @@ public class ShapeEventSystem : MonoBehaviour
         {
             return;
         }
-        Vector2 pos = cam.ScreenToWorldPoint(Input.GetTouch(0).position);
-        if (Input.GetTouch(0).phase == TouchPhase.Began)
+        for (int i = 0; i < Input.touchCount; i++)
         {
-            RaycastHit2D hit = Physics2D.Raycast(pos, Vector2.zero);
-            if (hit.collider != null)
+            Vector2 pos = cam.ScreenToWorldPoint(Input.GetTouch(i).position);
+            if (Input.GetTouch(i).phase == TouchPhase.Began)
             {
-                Shape shape = hit.collider.gameObject.GetComponent<Shape>();
-                if (shape == null)
+                RaycastHit2D[] hits = Physics2D.CircleCastAll(pos, 0.1f, Vector2.zero);
+                foreach (RaycastHit2D hit in hits)
                 {
-                    return;
-                }
-                start = pos;
-
-                selectedShape = shape;
-
-                selectedShape.OnTap();
-                selectedShape.OnDragStart(pos);
-            }
-        }
-        else if (Input.GetTouch(0).phase == TouchPhase.Moved)
-        {
-            if (selectedShape != null)
-            {
-                selectedShape.OnDrag(start, pos);
-            }
-            else
-            {
-                RaycastHit2D hit = Physics2D.Raycast(pos, Vector2.zero);
-                if (hit.collider != null)
-                {
-                    Shape shape = hit.collider.gameObject.GetComponent<Shape>();
-                    if (shape == null)
+                    if (hit.collider != null)
                     {
-                        return;
+                        Shape shape = hit.collider.gameObject.GetComponent<Shape>();
+                        if (shape != null)
+                        {
+                            start[i] = pos;
+                            selectedShape = shape;
+                            selectedShape.OnTap();
+                            selectedShape.OnDragStart(pos);
+                            break;
+                        }
                     }
-                    shape.OnSlice();
+                }
+            }
+            else if (Input.GetTouch(i).phase == TouchPhase.Moved)
+            {
+                if (selectedShape != null)
+                {
+                    selectedShape.OnDrag(start[i], pos);
+                }
+                else
+                {
+                    RaycastHit2D[] hits = Physics2D.CircleCastAll(pos, 0.1f, Vector2.zero);
+                    foreach (RaycastHit2D hit in hits)
+                    {
+                        if (hit.collider != null)
+                        {
+                            Shape shape = hit.collider.gameObject.GetComponent<Shape>();
+                            if (shape != null)
+                            {
+                                shape.OnSlice();
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+            else if (Input.GetTouch(i).phase == TouchPhase.Ended)
+            {
+                if (selectedShape != null)
+                {
+                    selectedShape.OnDragEnd(pos);
+                    selectedShape = null;
                 }
             }
         }
-        else if (Input.GetTouch(0).phase == TouchPhase.Ended)
+    }
+
+    void OnDrawGizmos()
+    {
+        if (Input.touchCount > 0)
         {
-            if (selectedShape != null)
+            Gizmos.color = Color.red;
+            for (int i = 0; i < Input.touchCount; i++)
             {
-                selectedShape.OnDragEnd(Input.mousePosition);
-                selectedShape = null;
+                Vector3 pos = cam.ScreenToWorldPoint(Input.GetTouch(i).position);
+                Gizmos.DrawSphere(pos, 0.1f);
             }
         }
     }

@@ -7,18 +7,21 @@ public class Durability : MonoBehaviour
 {
     [SerializeField]
     Sprite[] sprites;
+
+    [SerializeField]
+    GameObject target;
     int i = 0;
 
     public void TakeDamage(EventInfo eventInfo)
     {
         if (i < sprites.Count())
         {
-            eventInfo.TargetObject.GetComponent<SpriteRenderer>().sprite = sprites[i];
+            target.GetComponent<SpriteRenderer>().sprite = sprites[i];
             i++;
         }
         else
         {
-            Destroy(eventInfo.TargetObject);
+            Destroy(target);
         }
     }
 }

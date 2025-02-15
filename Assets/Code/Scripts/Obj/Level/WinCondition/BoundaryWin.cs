@@ -14,7 +14,7 @@ public class BoundaryWin : MonoBehaviour
         if (shape.gameObject.name == shapeName)
         {
             StartCoroutine(CameraController.ZoomOut());
-            Destroy(shape);
+            Destroy(shape.gameObject);
             LevelManager.Instance.OnCurrentSubLevelComplete();
         }
     }
