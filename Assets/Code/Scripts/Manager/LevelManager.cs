@@ -377,7 +377,8 @@ public class LevelManager : MonoBehaviour, ILevelManager
         thumbnails = GameObject.FindGameObjectsWithTag("thumbnail");
         foreach (var thumbnail in thumbnails)
         {
-            thumbnail.SetActive(false);
+            thumbnail.GetComponent<Collider2D>().enabled = false;
+            thumbnail.GetComponentInChildren<Canvas>().enabled = false;
         }
     }
 
@@ -385,7 +386,8 @@ public class LevelManager : MonoBehaviour, ILevelManager
     {
         foreach (var thumbnail in thumbnails)
         {
-            thumbnail.SetActive(true);
+            thumbnail.GetComponent<Collider2D>().enabled = true;
+            thumbnail.GetComponentInChildren<Canvas>().enabled = true;
         }
     }
 }
