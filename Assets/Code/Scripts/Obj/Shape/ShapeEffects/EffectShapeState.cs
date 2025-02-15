@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SetShapeState : MonoBehaviour
+public class EffectShapeState : MonoBehaviour
 {
     [SerializeField]
     GameObject[] shapes;

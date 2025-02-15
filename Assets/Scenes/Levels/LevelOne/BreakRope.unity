@@ -711,6 +711,7 @@ GameObject:
   - component: {fileID: 2086034750}
   - component: {fileID: 2086034751}
   - component: {fileID: 2086034754}
+  - component: {fileID: 2086034756}
   - component: {fileID: 2086034753}
   - component: {fileID: 2086034752}
   - component: {fileID: 2086034755}
@@ -820,9 +821,9 @@ MonoBehaviour:
   OnSliceEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: 5dd4cddefea05d245a6eb46862a933ac, type: 2}
-        m_TargetAssemblyTypeName: ShapeEffect, Assembly-CSharp
-        m_MethodName: DestroyShape
+      - m_Target: {fileID: 2086034756}
+        m_TargetAssemblyTypeName: EffectExistShape, Assembly-CSharp
+        m_MethodName: DestroyTarget
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -954,6 +955,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.17739296, y: 3.8242185}
   m_EdgeRadius: 0
+--- !u!114 &2086034756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2086034749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 103cebde2a330634c92c7a0ca0724c3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 2086034749}
+  offset: {x: 0, y: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

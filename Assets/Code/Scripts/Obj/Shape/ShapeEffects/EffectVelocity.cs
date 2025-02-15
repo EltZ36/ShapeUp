@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SetVelocity : MonoBehaviour
+public class EffectVelocity : MonoBehaviour
 {
     [SerializeField]
     GameObject target;

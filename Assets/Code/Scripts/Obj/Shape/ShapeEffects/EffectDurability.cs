@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class Durability : MonoBehaviour
+public class EffectDurability : MonoBehaviour
 {
     [SerializeField]
     Sprite[] sprites;
@@ -22,6 +22,20 @@ public class Durability : MonoBehaviour
         else
         {
             Destroy(target);
+        }
+    }
+
+    public void HealDamage(EventInfo eventInfo)
+    {
+        if (target == null)
+        {
+            return;
+        }
+
+        if (i > 0)
+        {
+            i--;
+            target.GetComponent<SpriteRenderer>().sprite = sprites[i];
         }
     }
 }

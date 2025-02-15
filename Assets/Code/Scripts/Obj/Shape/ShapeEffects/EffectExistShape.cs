@@ -2,20 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CreateShape : MonoBehaviour
+public class EffectExistShape : MonoBehaviour
 {
     [SerializeField]
-    GameObject prefab;
+    GameObject target;
 
     [SerializeField]
     Vector2 offset;
 
-    public void InstantiatePrefab(EventInfo eventInfo)
+    public void InstantiateTarget(EventInfo eventInfo)
     {
         Instantiate(
-            prefab,
+            target,
             eventInfo.TargetObject.gameObject.transform.position + (Vector3)offset,
             Quaternion.identity
         );
+    }
+
+    public void DestroyTarget(EventInfo eventInfo)
+    {
+        Destroy(target);
     }
 }

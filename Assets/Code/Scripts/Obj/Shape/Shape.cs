@@ -74,14 +74,19 @@ public class Shape : MonoBehaviour
         OnDragEndEvent.Invoke(new EventInfo(targetObject: gameObject, vectorOne: touchPos));
     }
 
-    public void OnPinch(Vector3 fingerOne, Vector3 fingerTwo)
+    public void OnPinch(float initialDist, Vector3 fingerOne, Vector3 fingerTwo)
     {
         if ((Tags & ShapeTags.OnPinch) != ShapeTags.OnPinch)
         {
             return;
         }
         OnPinchEvent.Invoke(
-            new EventInfo(targetObject: gameObject, vectorOne: fingerOne, vectorTwo: fingerTwo)
+            new EventInfo(
+                targetObject: gameObject,
+                floatValue: initialDist,
+                vectorOne: fingerOne,
+                vectorTwo: fingerTwo
+            )
         );
     }
 

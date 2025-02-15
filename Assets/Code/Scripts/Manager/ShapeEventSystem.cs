@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -22,6 +23,7 @@ public class ShapeEventSystem : MonoBehaviour
             _instance = this;
             DontDestroyOnLoad(this.gameObject);
         }
+        Input.gyro.enabled = true;
     }
     #endregion
     private Camera cam
@@ -29,21 +31,74 @@ public class ShapeEventSystem : MonoBehaviour
         get { return Camera.main; }
     }
 
-    Shape selectedShape = null;
-    Vector3[] start = new Vector3[10];
+    #region SensorVariables
+    [SerializeField]
+    float accelCooldown = 1;
+
+    [SerializeField]
+    float accelSens = 1;
+
+    [SerializeField]
+    float gyroSens = 1;
+
+    public event Action<Vector3> OnAccelChange;
+
+    public event Action<Quaternion> OnGyroChange;
+
+    private Vector3 pastAccel = Vector3.zero;
+    private Vector3 newAccel;
+    bool accelRecent = false;
+
+    private Quaternion pastGyro;
+    #endregion
+
+    private static int maxTouches = 10;
+    private static float touchSize = 0.1f;
+
+    Shape[] selectedShape = new Shape[maxTouches];
+    Vector3[] start = new Vector3[maxTouches];
+
+    private Shape pinchShape;
+    private float initialPinchDist;
 
     void Update()
     {
+        CheckAcceleration();
+        CheckGyroscope();
         if (Input.touchCount < 1)
         {
             return;
         }
-        for (int i = 0; i < Input.touchCount; i++)
+        if (pinchShape != null || checkPinching(out pinchShape))
+        {
+            pinchShape.OnPinch(
+                initialPinchDist,
+                cam.ScreenToWorldPoint(Input.touches[0].position),
+                cam.ScreenToWorldPoint(Input.touches[1].position)
+            );
+            if (
+                Input.touches[0].phase == TouchPhase.Ended
+                || Input.touches[1].phase == TouchPhase.Ended
+            )
+            {
+                initialPinchDist = 0;
+                pinchShape = null;
+            }
+        }
+        else
+        {
+            handleSingleGestures();
+        }
+    }
+
+    void handleSingleGestures()
+    {
+        for (int i = 0; i < Mathf.Min(Input.touchCount, maxTouches); i++)
         {
             Vector2 pos = cam.ScreenToWorldPoint(Input.GetTouch(i).position);
             if (Input.GetTouch(i).phase == TouchPhase.Began)
             {
-                RaycastHit2D[] hits = Physics2D.CircleCastAll(pos, 0.1f, Vector2.zero);
+                RaycastHit2D[] hits = Physics2D.CircleCastAll(pos, touchSize, Vector2.zero);
                 foreach (RaycastHit2D hit in hits)
                 {
                     if (hit.collider != null)
@@ -52,23 +107,24 @@ public class ShapeEventSystem : MonoBehaviour
                         if (shape != null)
                         {
                             start[i] = pos;
-                            selectedShape = shape;
-                            selectedShape.OnTap();
-                            selectedShape.OnDragStart(pos);
+                            selectedShape[i] = shape;
+                            selectedShape[i].OnTap();
+                            selectedShape[i].OnDragStart(pos);
                             break;
                         }
                     }
                 }
+                selectedShape[i] = null;
             }
             else if (Input.GetTouch(i).phase == TouchPhase.Moved)
             {
-                if (selectedShape != null)
+                if (selectedShape[i] != null)
                 {
-                    selectedShape.OnDrag(start[i], pos);
+                    selectedShape[i].OnDrag(start[i], pos);
                 }
                 else
                 {
-                    RaycastHit2D[] hits = Physics2D.CircleCastAll(pos, 0.1f, Vector2.zero);
+                    RaycastHit2D[] hits = Physics2D.CircleCastAll(pos, touchSize, Vector2.zero);
                     foreach (RaycastHit2D hit in hits)
                     {
                         if (hit.collider != null)
@@ -85,13 +141,72 @@ public class ShapeEventSystem : MonoBehaviour
             }
             else if (Input.GetTouch(i).phase == TouchPhase.Ended)
             {
-                if (selectedShape != null)
+                if (selectedShape[i] != null)
                 {
-                    selectedShape.OnDragEnd(pos);
-                    selectedShape = null;
+                    selectedShape[i].OnDragEnd(pos);
+                    selectedShape[i] = null;
                 }
             }
         }
+    }
+
+    bool checkPinching(out Shape pinchShape)
+    {
+        if (Input.touchCount != 2)
+        {
+            initialPinchDist = 0;
+            pinchShape = null;
+            return false;
+        }
+        Vector3 pointOne = cam.ScreenToWorldPoint(Input.touches[0].position);
+        Vector3 pointTwo = cam.ScreenToWorldPoint(Input.touches[1].position);
+        Vector2 midpoint = (pointOne + pointTwo) / 2;
+        RaycastHit2D[] hits = Physics2D.CircleCastAll(midpoint, 0.2f, Vector2.zero);
+        foreach (RaycastHit2D hit in hits)
+        {
+            if (hit.collider != null)
+            {
+                Shape shape = hit.collider.gameObject.GetComponent<Shape>();
+                if (shape != null && ((shape.Tags & ShapeTags.OnPinch) == ShapeTags.OnPinch))
+                {
+                    initialPinchDist = Vector2.Distance(pointOne, pointTwo);
+                    pinchShape = shape;
+                    return true;
+                }
+            }
+        }
+        initialPinchDist = 0;
+        pinchShape = null;
+        return false;
+    }
+
+    private void CheckAcceleration()
+    {
+        newAccel = Input.acceleration;
+        Vector3 accelDiff = newAccel - pastAccel;
+        if (accelDiff.magnitude > accelSens && accelRecent == false)
+        {
+            accelRecent = true;
+            OnAccelChange?.Invoke(accelDiff);
+            StartCoroutine(ResetAccel());
+        }
+        pastAccel = newAccel;
+    }
+
+    private void CheckGyroscope()
+    {
+        Quaternion currGyro = Input.gyro.attitude;
+        if (Quaternion.Angle(currGyro, pastGyro) > gyroSens)
+        {
+            OnGyroChange?.Invoke(currGyro);
+            pastGyro = currGyro;
+        }
+    }
+
+    private IEnumerator ResetAccel()
+    {
+        yield return new WaitForSeconds(accelCooldown);
+        accelRecent = false;
     }
 
     void OnDrawGizmos()
@@ -102,7 +217,7 @@ public class ShapeEventSystem : MonoBehaviour
             for (int i = 0; i < Input.touchCount; i++)
             {
                 Vector3 pos = cam.ScreenToWorldPoint(Input.GetTouch(i).position);
-                Gizmos.DrawSphere(pos, 0.1f);
+                Gizmos.DrawSphere(pos, touchSize);
             }
         }
     }

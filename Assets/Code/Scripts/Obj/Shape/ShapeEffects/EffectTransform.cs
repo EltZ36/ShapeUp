@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SetTransform : MonoBehaviour
+public class EffectTransform : MonoBehaviour
 {
     [SerializeField]
     Vector3 position;
