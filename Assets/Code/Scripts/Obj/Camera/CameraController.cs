@@ -10,11 +10,17 @@ public class CameraController : MonoBehaviour
     private float zoom;
 
     private Bounds _cameraBounds;
-    private Vector3 _targetPosition, deltaPosition;
+    private Vector3 _targetPosition,
+        deltaPosition;
 
     private void Start()
     {
         zoom = 1f;
+        resetBounds();
+    }
+
+    void OnEnable()
+    {
         resetBounds();
     }
 
@@ -34,6 +40,21 @@ public class CameraController : MonoBehaviour
 
     void handleOneTouch()
     {
+        if (Input.touches[0].phase == TouchPhase.Began)
+        {
+            Vector3 pointOne = Camera.main.ScreenToWorldPoint(Input.touches[0].position);
+            Vector2 pointOne2D = new Vector2(pointOne.x, pointOne.y);
+            RaycastHit2D hit = Physics2D.Raycast(pointOne2D, Camera.main.transform.forward);
+            Debug.Log(hit.transform.gameObject);
+            if (hit.collider != null)
+            {
+                if (hit.transform.gameObject.CompareTag("thumbnail"))
+                {
+                    Vector2 levelPosition = hit.transform.position;
+                    StartCoroutine(ZoomIn(levelPosition));
+                }
+            }
+        }
         Vector2 touchDeltaPosition = Input.GetTouch(0).deltaPosition;
         deltaPosition = new Vector3(
             -touchDeltaPosition.x * speed * Time.deltaTime,
@@ -112,6 +133,27 @@ public class CameraController : MonoBehaviour
         GameManager.Instance.SaveGame();
         SceneManager.UnloadSceneAsync("LevelUI");
         LevelManager.Instance.UnloadCurrentSubLevel();
+    }
+
+    public static IEnumerator ZoomIn(Vector2 _levelPosition)
+    {
+        float StartSize = Camera.main.orthographicSize;
+        float EndSize = 5f;
+        float StartX = Camera.main.transform.position.x;
+        float StartY = Camera.main.transform.position.y;
+        float time = 1.0f;
+        float elapsed = 0.0f;
+        while (elapsed / time < 1)
+        {
+            elapsed += Time.deltaTime;
+            Camera.main.orthographicSize = EaseOutQuad(StartSize, EndSize, elapsed / time);
+            Camera.main.transform.position = new Vector3(
+                EaseOutQuad(StartX, _levelPosition.x, elapsed / time),
+                EaseOutQuad(StartY, _levelPosition.y, elapsed / time),
+                Camera.main.transform.position.z
+            );
+            yield return null;
+        }
     }
 
     //Created by C.J. Kimberlin https://gist.github.com/cjddmut/d789b9eb78216998e95c
