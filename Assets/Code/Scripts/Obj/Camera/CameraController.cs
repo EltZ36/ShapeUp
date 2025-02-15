@@ -9,9 +9,13 @@ public class CameraController : MonoBehaviour
     public float speed;
     private float zoom;
 
+    private Bounds _cameraBounds;
+    private Vector3 _targetPosition, deltaPosition;
+
     private void Start()
     {
         zoom = 1f;
+        resetBounds();
     }
 
     void Update()
@@ -31,11 +35,38 @@ public class CameraController : MonoBehaviour
     void handleOneTouch()
     {
         Vector2 touchDeltaPosition = Input.GetTouch(0).deltaPosition;
-        transform.Translate(
+        deltaPosition = new Vector3(
             -touchDeltaPosition.x * speed * Time.deltaTime,
             -touchDeltaPosition.y * speed * Time.deltaTime,
-            0
+            0f
         );
+        _targetPosition = transform.position + deltaPosition;
+        _targetPosition = getCameraBounds();
+        transform.position = _targetPosition;
+    }
+
+    private Vector3 getCameraBounds()
+    {
+        return new Vector3(
+            Mathf.Clamp(_targetPosition.x, _cameraBounds.min.x, _cameraBounds.max.x),
+            Mathf.Clamp(_targetPosition.y, _cameraBounds.min.y, _cameraBounds.max.y),
+            transform.position.z
+        );
+    }
+
+    private void resetBounds()
+    {
+        var height = Camera.main.orthographicSize;
+        var width = height * Camera.main.aspect;
+
+        var minX = Globals.WorldBounds.min.x + width;
+        var maxX = Globals.WorldBounds.extents.x - width;
+
+        var minY = Globals.WorldBounds.min.y + height;
+        var maxY = Globals.WorldBounds.extents.y - height;
+
+        _cameraBounds = new Bounds();
+        _cameraBounds.SetMinMax(new Vector3(minX, minY, 0f), new Vector3(maxX, maxY, 0f));
     }
 
     void handleTwoTouches()
@@ -63,6 +94,7 @@ public class CameraController : MonoBehaviour
             );
             Camera.main.orthographicSize = scaleChange;
             zoom = Vector2.Distance(Input.touches[0].position, Input.touches[1].position);
+            resetBounds();
         }
     }
 
