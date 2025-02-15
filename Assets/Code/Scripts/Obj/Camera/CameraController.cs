@@ -45,7 +45,7 @@ public class CameraController : MonoBehaviour
             Vector3 pointOne = Camera.main.ScreenToWorldPoint(Input.touches[0].position);
             Vector2 pointOne2D = new Vector2(pointOne.x, pointOne.y);
             RaycastHit2D hit = Physics2D.Raycast(pointOne2D, Camera.main.transform.forward);
-            Debug.Log(hit.transform.gameObject);
+
             if (hit.collider != null)
             {
                 if (hit.transform.gameObject.CompareTag("thumbnail"))

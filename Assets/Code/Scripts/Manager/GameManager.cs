@@ -28,11 +28,12 @@ public class GameManager : MonoBehaviour, IGameManager
         {
             _instance = this;
             DontDestroyOnLoad(this.gameObject);
+
+            //you can find this in C:\Users\<user>\AppData\LocalLow\<company name>
+            //for me (Elton) on windows, it's C:\Users\<user>\AppData\LocalLow\DefaultCompany/ShapeUp/gamedata.json
+            saveFile = Path.Combine(Application.persistentDataPath, "gamedata.json");
+            ReadFile();
         }
-        //you can find this in C:\Users\<user>\AppData\LocalLow\<company name>
-        //for me (Elton) on windows, it's C:\Users\<user>\AppData\LocalLow\DefaultCompany/ShapeUp/gamedata.json
-        saveFile = Path.Combine(Application.persistentDataPath, "gamedata.json");
-        ReadFile();
     }
     #endregion
 

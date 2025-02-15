@@ -111,6 +111,9 @@ public class GameData
     {
         //check the serialize to make sure the keys are supposed to be there
         // go through the base dict by key
+        SerialLevels.Clear();
+        SerialSubLevels.Clear();
+
         foreach (var levelNum in LevelCompleteMap.Keys)
         {
             serializedLevel sl;
