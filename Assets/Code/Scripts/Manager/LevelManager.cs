@@ -378,7 +378,9 @@ public class LevelManager : MonoBehaviour, ILevelManager
         foreach (var thumbnail in thumbnails)
         {
             thumbnail.GetComponent<Collider2D>().enabled = false;
-            thumbnail.GetComponentInChildren<Canvas>().enabled = false;
+            thumbnail.GetComponentInChildren<SpriteRenderer>().sprite = thumbnail
+                .GetComponent<ThumbnailSprites>()
+                .sprites[1];
         }
     }
 
@@ -387,7 +389,9 @@ public class LevelManager : MonoBehaviour, ILevelManager
         foreach (var thumbnail in thumbnails)
         {
             thumbnail.GetComponent<Collider2D>().enabled = true;
-            thumbnail.GetComponentInChildren<Canvas>().enabled = true;
+            thumbnail.GetComponentInChildren<SpriteRenderer>().sprite = thumbnail
+                .GetComponent<ThumbnailSprites>()
+                .sprites[0];
         }
     }
 }
