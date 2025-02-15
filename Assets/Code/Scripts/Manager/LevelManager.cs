@@ -181,6 +181,8 @@ public class LevelManager : MonoBehaviour, ILevelManager
                     }
                 }
             }
+            ShapeManager.Instance.shapeRecipes = null;
+            ShapeManager.Instance.shapeDatabase = null;
             currentSubLevelID = subLevelID;
             Camera.main.GetComponent<CameraController>().enabled = false;
             string name = Levels[currentLevelID].SubLevels[currentSubLevelID].SceneName;

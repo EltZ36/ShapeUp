@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EventInfoEffects : MonoBehaviour
+public class EffectLocalEventInfo : MonoBehaviour
 {
     [SerializeField]
     float maxSize = 3f;

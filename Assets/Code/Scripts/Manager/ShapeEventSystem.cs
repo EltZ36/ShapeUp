@@ -36,7 +36,7 @@ public class ShapeEventSystem : MonoBehaviour
     float accelCooldown = 1;
 
     [SerializeField]
-    float accelSens = 1;
+    float accelSens = 2;
 
     [SerializeField]
     float gyroSens = 1;
@@ -99,6 +99,7 @@ public class ShapeEventSystem : MonoBehaviour
             if (Input.GetTouch(i).phase == TouchPhase.Began)
             {
                 RaycastHit2D[] hits = Physics2D.CircleCastAll(pos, touchSize, Vector2.zero);
+                selectedShape[i] = null;
                 foreach (RaycastHit2D hit in hits)
                 {
                     if (hit.collider != null)
@@ -114,7 +115,6 @@ public class ShapeEventSystem : MonoBehaviour
                         }
                     }
                 }
-                selectedShape[i] = null;
             }
             else if (Input.GetTouch(i).phase == TouchPhase.Moved)
             {
@@ -186,6 +186,7 @@ public class ShapeEventSystem : MonoBehaviour
         Vector3 accelDiff = newAccel - pastAccel;
         if (accelDiff.magnitude > accelSens && accelRecent == false)
         {
+            Debug.Log(accelDiff.magnitude);
             accelRecent = true;
             OnAccelChange?.Invoke(accelDiff);
             StartCoroutine(ResetAccel());
@@ -220,5 +221,13 @@ public class ShapeEventSystem : MonoBehaviour
                 Gizmos.DrawSphere(pos, touchSize);
             }
         }
+
+        Quaternion currGyro = Input.gyro.attitude;
+
+        Gizmos.color = Color.blue;
+        Gizmos.DrawLine(
+            Vector2.zero,
+            Quaternion.Euler(0, 0, currGyro.eulerAngles.z) * Vector2.left
+        );
     }
 }

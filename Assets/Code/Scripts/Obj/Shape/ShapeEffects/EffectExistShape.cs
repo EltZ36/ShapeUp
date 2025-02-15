@@ -23,4 +23,9 @@ public class EffectExistShape : MonoBehaviour
     {
         Destroy(target);
     }
+
+    public void TakeApart(EventInfo eventInfo)
+    {
+        ShapeManager.Instance.TakeApartShape(eventInfo.TargetObject.GetComponent<Shape>());
+    }
 }

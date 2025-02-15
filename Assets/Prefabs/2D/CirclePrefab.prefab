@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Tags: 0
-  Prefab: {fileID: 1740465846098495637}
+  PrefabName: CirclePrefab
   OnFixedUpdateEvent:
     m_PersistentCalls:
       m_Calls: []

@@ -52,7 +52,7 @@ public class ShapeDatabaseEditor : Editor
 
                 GUILayout.Label("Name");
                 GUILayout.Label(name != null ? name : "null");
-                GUILayout.Label("Prefab");
+                GUILayout.Label("Game Object");
                 EditorGUILayout.PropertyField(prefabProp, GUIContent.none);
 
                 if (name != null)

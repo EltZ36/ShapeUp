@@ -11,7 +11,7 @@ public class ShapeEditor : Editor
 {
     #region SerializedProperties
     SerializedProperty Tags;
-    SerializedProperty Prefab;
+    SerializedProperty PrefabName;
 
     SerializedProperty OnFixedUpdateEvent;
     SerializedProperty OnDragStartEvent;
@@ -44,7 +44,7 @@ public class ShapeEditor : Editor
     private void OnEnable()
     {
         Tags = serializedObject.FindProperty("Tags");
-        Prefab = serializedObject.FindProperty("Prefab");
+        PrefabName = serializedObject.FindProperty("PrefabName");
 
         OnFixedUpdateEvent = serializedObject.FindProperty("OnFixedUpdateEvent");
         OnDragStartEvent = serializedObject.FindProperty("OnDragStartEvent");
@@ -78,7 +78,8 @@ public class ShapeEditor : Editor
         Tags.intValue = (int)
             (ShapeTags)EditorGUILayout.EnumFlagsField("Flags", (ShapeTags)Tags.intValue);
         checkTags = (ShapeTags)Tags.intValue;
-        EditorGUILayout.PropertyField(Prefab);
+
+        EditorGUILayout.PropertyField(PrefabName);
 
         DrawFoldoutEvent(
             ShapeTags.OnFixedUpdate,

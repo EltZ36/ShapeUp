@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,7 +8,22 @@ public class Shape : MonoBehaviour
 {
     public ShapeTags Tags;
 
-    public GameObject Prefab;
+    [SerializeField]
+    private string PrefabName = null;
+    public string ShapeName
+    {
+        get
+        {
+            if (String.IsNullOrEmpty(PrefabName))
+            {
+                return gameObject.name;
+            }
+            else
+            {
+                return PrefabName;
+            }
+        }
+    }
 
     #region UnityEvents
     [SerializeField]
@@ -128,8 +144,22 @@ public class Shape : MonoBehaviour
         );
     }
 
+    void Awake()
+    {
+        gameObject.layer = LayerMask.NameToLayer("Shape");
+    }
+
     void Start()
     {
+        if ((Tags & ShapeTags.OnAttitudeChange) == ShapeTags.OnAttitudeChange)
+        {
+            ShapeEventSystem.Instance.OnGyroChange += OnAttitudeChange;
+        }
+        if ((Tags & ShapeTags.OnAccelerate) == ShapeTags.OnAccelerate)
+        {
+            ShapeEventSystem.Instance.OnAccelChange += OnAccelerate;
+        }
+
         ShapeManager.Instance.CreateShapeEvent(this);
         if ((Tags & ShapeTags.OnCreate) != ShapeTags.OnCreate)
         {
@@ -149,6 +179,15 @@ public class Shape : MonoBehaviour
 
     void OnDestroy()
     {
+        if ((Tags & ShapeTags.OnAttitudeChange) == ShapeTags.OnAttitudeChange)
+        {
+            ShapeEventSystem.Instance.OnGyroChange -= OnAttitudeChange;
+        }
+        if ((Tags & ShapeTags.OnAccelerate) == ShapeTags.OnAccelerate)
+        {
+            ShapeEventSystem.Instance.OnAccelChange -= OnAccelerate;
+        }
+
         //https://stackoverflow.com/a/68126990
         if (!gameObject.scene.isLoaded)
         {
