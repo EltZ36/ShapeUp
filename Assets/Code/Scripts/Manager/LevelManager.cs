@@ -45,6 +45,7 @@ public class LevelManager : MonoBehaviour, ILevelManager
 
     public int currentLevelID { get; private set; } = -1;
     private int currentSubLevelID = -1;
+    private GameObject[] thumbnails;
 
     #region Interface Methods
 
@@ -184,6 +185,7 @@ public class LevelManager : MonoBehaviour, ILevelManager
             currentSubLevelID = subLevelID;
             Camera.main.GetComponent<CameraController>().enabled = false;
             string name = Levels[currentLevelID].SubLevels[currentSubLevelID].SceneName;
+            DisableThumbnails();
             SceneManager.LoadSceneAsync(name, LoadSceneMode.Additive).completed += (operation) =>
             {
                 Scene subLevel = SceneManager.GetSceneByName(name);
@@ -209,7 +211,7 @@ public class LevelManager : MonoBehaviour, ILevelManager
         if (currentSubLevelID != -1)
         {
             Camera.main.GetComponent<CameraController>().enabled = true;
-
+            EnableThumbails();
             UpdateActiveShapePositions();
             Debug.Log(currentSubLevelID);
             SceneManager.UnloadSceneAsync(
@@ -368,5 +370,22 @@ public class LevelManager : MonoBehaviour, ILevelManager
             return direction.normalized * (distance > strength ? strength : distance);
         }
         return Vector2.zero;
+    }
+
+    private void DisableThumbnails()
+    {
+        thumbnails = GameObject.FindGameObjectsWithTag("thumbnail");
+        foreach (var thumbnail in thumbnails)
+        {
+            thumbnail.SetActive(false);
+        }
+    }
+
+    private void EnableThumbails()
+    {
+        foreach (var thumbnail in thumbnails)
+        {
+            thumbnail.SetActive(true);
+        }
     }
 }
