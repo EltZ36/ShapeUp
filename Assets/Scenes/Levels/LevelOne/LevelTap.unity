@@ -372,6 +372,10 @@ PrefabInstance:
       propertyPath: shapeName
       value: CirclePrefab
       objectReference: {fileID: 0}
+    - target: {fileID: 7660474081948110169, guid: 06704280bc57b3f4897fc9c85f37e846, type: 3}
+      propertyPath: shapeTarget
+      value: 
+      objectReference: {fileID: 3102746493065940331}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -613,10 +617,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 963aaa2aa587da5418cfe7ea98f84534, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprites:
-  - {fileID: 21300000, guid: 61d6260cfe162214cabdac8607d1fc78, type: 3}
-  - {fileID: 21300000, guid: a26e4e1092381be468e22949e1f3d7e2, type: 3}
-  - {fileID: 21300000, guid: 034f5ea930119b34398fab80a3bc9039, type: 3}
+  health: 3
   target: {fileID: 1740465847005310710}
 --- !u!1 &1601496521
 GameObject:
@@ -763,6 +764,7 @@ GameObject:
   - component: {fileID: 581297036458384084}
   - component: {fileID: 1578493546}
   - component: {fileID: 1578493545}
+  - component: {fileID: 4232612940261273164}
   - component: {fileID: 3102746493498640926}
   - component: {fileID: 4232612940261273163}
   - component: {fileID: 2361894182342962411}
@@ -841,7 +843,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Tags: 0
-  Prefab: {fileID: 1740465846631328131}
+  spriteName: 
+  uniqueID: 
   OnFixedUpdateEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -897,7 +900,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Tags: 272
-  Prefab: {fileID: 0}
+  spriteName: circle_break_1
+  uniqueID: 
   OnFixedUpdateEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -922,6 +926,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1578493546}
         m_TargetAssemblyTypeName: Durability, Assembly-CSharp
         m_MethodName: TakeDamage
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4232612940261273164}
+        m_TargetAssemblyTypeName: EffectOverlay, Assembly-CSharp
+        m_MethodName: AddOverlay
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1103,6 +1119,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4232612940261273164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1740465847005310710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66fd9461c36974d4a92eb924b78d87b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 21300000, guid: 61d6260cfe162214cabdac8607d1fc78, type: 3}
+  - {fileID: 21300000, guid: a26e4e1092381be468e22949e1f3d7e2, type: 3}
+  - {fileID: 21300000, guid: 034f5ea930119b34398fab80a3bc9039, type: 3}
+  pickRandom: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

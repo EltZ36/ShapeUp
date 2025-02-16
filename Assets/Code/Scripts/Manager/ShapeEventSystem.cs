@@ -31,6 +31,8 @@ public class ShapeEventSystem : MonoBehaviour
         get { return Camera.main; }
     }
 
+    [SerializeField]
+    float tapTimer; //if it's longer than this it's not a tap;
     #region SensorVariables
     [SerializeField]
     float accelCooldown = 1;
@@ -186,7 +188,6 @@ public class ShapeEventSystem : MonoBehaviour
         Vector3 accelDiff = newAccel - pastAccel;
         if (accelDiff.magnitude > accelSens && accelRecent == false)
         {
-            Debug.Log(accelDiff.magnitude);
             accelRecent = true;
             OnAccelChange?.Invoke(accelDiff);
             StartCoroutine(ResetAccel());

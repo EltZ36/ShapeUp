@@ -212,7 +212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0681317709d3b540b76159a2438a1c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  accelCooldown: 0.1
+  accelCooldown: 0.2
   accelSens: 2
   gyroSens: 1
 --- !u!1 &463834130

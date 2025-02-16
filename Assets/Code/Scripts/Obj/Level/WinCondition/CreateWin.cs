@@ -6,12 +6,15 @@ using UnityEngine;
 public class CreateWin : MonoBehaviour
 {
     [SerializeField]
-    string[] shapes;
+    Shape[] shapes;
+
+    string[] names;
 
     List<string> active = new List<string>();
 
     void Awake()
     {
+        names = shapes.Select(s => s.ShapeName).ToArray();
         ShapeManager.Instance.OnDestroyShape += RemoveShape;
         ShapeManager.Instance.OnCreateShape += AddShape;
     }
@@ -25,7 +28,6 @@ public class CreateWin : MonoBehaviour
     void AddShape(Shape shape)
     {
         active.Add(shape.ShapeName);
-        Debug.Log("shape.ShapeName");
         CheckActive();
     }
 
@@ -36,7 +38,7 @@ public class CreateWin : MonoBehaviour
 
     void CheckActive()
     {
-        if (ShapeManager.ContainsSet(active.ToArray(), shapes))
+        if (ShapeManager.ContainsSet(active.ToArray(), names))
         {
             Debug.Log("Victory");
             LevelManager.Instance.OnCurrentSubLevelComplete();

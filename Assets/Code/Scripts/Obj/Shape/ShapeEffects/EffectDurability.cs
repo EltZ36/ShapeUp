@@ -6,18 +6,26 @@ using UnityEngine;
 public class EffectDurability : MonoBehaviour
 {
     [SerializeField]
-    Sprite[] sprites;
+    int health;
+
+    [SerializeField]
+    bool regen = false;
+
+    [SerializeField]
+    float regenDelay = 1;
 
     [SerializeField]
     GameObject target;
-    int i = 0;
 
     public void TakeDamage(EventInfo eventInfo)
     {
-        if (i < sprites.Count())
+        if (health > 0)
         {
-            target.GetComponent<SpriteRenderer>().sprite = sprites[i];
-            i++;
+            health--;
+            if (regen)
+            {
+                StartCoroutine(regenHealth(regenDelay));
+            }
         }
         else
         {
@@ -32,10 +40,15 @@ public class EffectDurability : MonoBehaviour
             return;
         }
 
-        if (i > 0)
+        if (health > 0)
         {
-            i--;
-            target.GetComponent<SpriteRenderer>().sprite = sprites[i];
+            health++;
         }
+    }
+
+    IEnumerator regenHealth(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        health++;
     }
 }

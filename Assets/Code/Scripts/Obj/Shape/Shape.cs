@@ -9,21 +9,31 @@ public class Shape : MonoBehaviour
     public ShapeTags Tags;
 
     [SerializeField]
-    private string PrefabName = null;
+    private string spriteName = null;
+
+    [SerializeField]
+    private string uniqueID = null;
     public string ShapeName
     {
         get
         {
-            if (String.IsNullOrEmpty(PrefabName))
+            if (String.IsNullOrEmpty(uniqueID))
             {
-                return gameObject.name;
+                return spriteName;
             }
-            else
-            {
-                return PrefabName;
-            }
+            return $"{spriteName}-{uniqueID}";
         }
     }
+    public string SpriteName
+    {
+        get { return spriteName; }
+    }
+    public string UniqueID
+    {
+        get { return uniqueID; }
+    }
+
+    bool combined;
 
     #region UnityEvents
     [SerializeField]
@@ -149,6 +159,11 @@ public class Shape : MonoBehaviour
         gameObject.layer = LayerMask.NameToLayer("Shape");
     }
 
+    public void Combined()
+    {
+        combined = true;
+    }
+
     void Start()
     {
         if ((Tags & ShapeTags.OnAttitudeChange) == ShapeTags.OnAttitudeChange)
@@ -194,7 +209,7 @@ public class Shape : MonoBehaviour
             return;
         }
         ShapeManager.Instance.DestroyShapeEvent(this);
-        if ((Tags & ShapeTags.OnDestroy) != ShapeTags.OnDestroy)
+        if (combined || (Tags & ShapeTags.OnDestroy) != ShapeTags.OnDestroy)
         {
             return;
         }

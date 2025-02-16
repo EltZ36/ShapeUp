@@ -6,12 +6,19 @@ public class BoundaryWin : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField]
-    string shapeName;
+    Shape shapeTarget;
+
+    string targetName;
+
+    void Awake()
+    {
+        targetName = shapeTarget.ShapeName;
+    }
 
     void OnTriggerExit2D(Collider2D collision)
     {
         Shape shape = collision.gameObject.GetComponent<Shape>();
-        if (shape.gameObject.name == shapeName)
+        if (shape.ShapeName == targetName)
         {
             StartCoroutine(CameraController.ZoomOut());
             Destroy(shape.gameObject);

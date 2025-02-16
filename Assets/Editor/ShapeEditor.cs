@@ -11,7 +11,8 @@ public class ShapeEditor : Editor
 {
     #region SerializedProperties
     SerializedProperty Tags;
-    SerializedProperty PrefabName;
+    SerializedProperty uniqueID;
+    SerializedProperty spriteName;
 
     SerializedProperty OnFixedUpdateEvent;
     SerializedProperty OnDragStartEvent;
@@ -44,7 +45,8 @@ public class ShapeEditor : Editor
     private void OnEnable()
     {
         Tags = serializedObject.FindProperty("Tags");
-        PrefabName = serializedObject.FindProperty("PrefabName");
+        uniqueID = serializedObject.FindProperty("uniqueID");
+        spriteName = serializedObject.FindProperty("spriteName");
 
         OnFixedUpdateEvent = serializedObject.FindProperty("OnFixedUpdateEvent");
         OnDragStartEvent = serializedObject.FindProperty("OnDragStartEvent");
@@ -72,6 +74,28 @@ public class ShapeEditor : Editor
     public override void OnInspectorGUI()
     {
         serializedObject.Update();
+        Shape shape = (Shape)target;
+        EditorGUILayout.BeginHorizontal();
+        Collider2D c2D = shape.GetComponent<Collider2D>();
+        if (c2D == null)
+        {
+            EditorGUILayout.HelpBox("Missing Collider2D", MessageType.Warning);
+        }
+        Rigidbody2D rb = shape.GetComponent<Rigidbody2D>();
+        if (rb == null)
+        {
+            EditorGUILayout.HelpBox("Missing RigidBody2D", MessageType.Warning);
+        }
+        EditorGUILayout.EndHorizontal();
+        SpriteRenderer sr = shape.GetComponent<SpriteRenderer>();
+        if (sr == null || sr.sprite == null)
+        {
+            EditorGUILayout.HelpBox(
+                "Please add Sprite Renderer and a Default Sprite",
+                MessageType.Error
+            );
+            return;
+        }
 
         // ChatGpt, EnumFlag dropdown menu
         // https://chatgpt.com/share/67af83c5-25a0-8010-806a-9da3bf897dca
@@ -79,7 +103,28 @@ public class ShapeEditor : Editor
             (ShapeTags)EditorGUILayout.EnumFlagsField("Flags", (ShapeTags)Tags.intValue);
         checkTags = (ShapeTags)Tags.intValue;
 
-        EditorGUILayout.PropertyField(PrefabName);
+        spriteName.stringValue = sr.sprite.name;
+        serializedObject.ApplyModifiedProperties();
+
+        EditorGUILayout.PropertyField(uniqueID);
+
+        EditorGUILayout.BeginHorizontal();
+        EditorGUILayout.LabelField(
+            "Sprite Name:",
+            new GUIStyle(EditorStyles.boldLabel) { alignment = TextAnchor.LowerCenter },
+            GUILayout.MaxWidth(80)
+        );
+        EditorGUILayout.LabelField(
+            shape.ShapeName,
+            new GUIStyle(EditorStyles.helpBox)
+            {
+                fontSize = 14,
+                fontStyle = FontStyle.Bold,
+                alignment = TextAnchor.MiddleLeft,
+                padding = new RectOffset(5, 5, 3, 3),
+            }
+        );
+        EditorGUILayout.EndHorizontal();
 
         DrawFoldoutEvent(
             ShapeTags.OnFixedUpdate,

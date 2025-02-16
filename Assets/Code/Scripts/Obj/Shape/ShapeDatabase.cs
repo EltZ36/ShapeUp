@@ -8,7 +8,7 @@ public class ShapeDatabase : MonoBehaviour
     private List<string> shapeNames = new List<string>();
 
     [SerializeField]
-    private List<GameObject> prefabs = new List<GameObject>();
+    private List<Shape> shapes = new List<Shape>();
 
     public List<string> ShapeNames
     {
@@ -25,7 +25,8 @@ public class ShapeDatabase : MonoBehaviour
         {
             if (!string.IsNullOrEmpty(shapeNames[i]) && !ShapeDict.ContainsKey(shapeNames[i]))
             {
-                ShapeDict[shapeNames[i]] = prefabs[i];
+                ShapeDict[shapeNames[i]] = Instantiate(shapes[i].gameObject);
+                ShapeDict[shapeNames[i]].SetActive(false);
             }
         }
     }
