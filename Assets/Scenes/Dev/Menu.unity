@@ -213,7 +213,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trailPrefab: {fileID: 8449138510180305575, guid: 9e255c5fbc568cd4eb31d143614df71e, type: 3}
-  tapTimer: 0
+  tapTimer: 0.1
   accelCooldown: 0.2
   accelSens: 2
   gyroSens: 1

@@ -35,7 +35,7 @@ public class ShapeEventSystem : MonoBehaviour
     }
 
     [SerializeField]
-    float tapTimer; //if it's longer than this it's not a tap;
+    float tapTimer = 0.1f; //if it's longer than this it's not a tap;
     #region SensorVariables
     [SerializeField]
     float accelCooldown = 1;
@@ -63,8 +63,9 @@ public class ShapeEventSystem : MonoBehaviour
     private static int maxTouches = 10;
     private static float touchSize = 0.1f;
 
-    Shape[] selectedShape = new Shape[maxTouches];
-    Vector3[] start = new Vector3[maxTouches];
+    private Dictionary<int, Shape> selectedShape = new Dictionary<int, Shape>();
+    private Dictionary<int, Vector3> start = new Dictionary<int, Vector3>();
+
     private Dictionary<int, GameObject> trails = new Dictionary<int, GameObject>();
 
     private Shape pinchShape;
@@ -112,7 +113,7 @@ public class ShapeEventSystem : MonoBehaviour
             if (touch.phase == TouchPhase.Began)
             {
                 RaycastHit2D[] hits = Physics2D.CircleCastAll(pos, touchSize, Vector2.zero);
-                selectedShape[i] = null;
+
                 foreach (RaycastHit2D hit in hits)
                 {
                     if (hit.collider != null)
@@ -120,28 +121,25 @@ public class ShapeEventSystem : MonoBehaviour
                         Shape shape = hit.collider.gameObject.GetComponent<Shape>();
                         if (shape != null)
                         {
-                            start[i] = pos;
-                            selectedShape[i] = shape;
-                            selectedShape[i].OnTap();
-                            selectedShape[i].OnDragStart(pos);
+                            start[id] = pos;
+                            selectedShape[id] = shape;
+                            StartCoroutine(CheckTap(id, shape));
+                            selectedShape[id].OnDragStart(pos);
                             break;
                         }
                     }
                 }
                 //add trail
-                if (selectedShape[i] == null)
+                if (!selectedShape.ContainsKey(id) && !trails.ContainsKey(id))
                 {
-                    if (!trails.ContainsKey(id))
-                    {
-                        trails[id] = Instantiate(trailPrefab, pos, Quaternion.identity);
-                    }
+                    trails[id] = Instantiate(trailPrefab, pos, Quaternion.identity);
                 }
             }
             else if (touch.phase == TouchPhase.Moved)
             {
-                if (selectedShape[i] != null)
+                if (selectedShape.ContainsKey(id))
                 {
-                    selectedShape[i].OnDrag(start[i], pos);
+                    selectedShape[id].OnDrag(start[id], pos);
                 }
                 else
                 {
@@ -166,10 +164,14 @@ public class ShapeEventSystem : MonoBehaviour
             }
             else if (touch.phase == TouchPhase.Ended || touch.phase == TouchPhase.Canceled)
             {
-                if (selectedShape[i] != null)
+                if (selectedShape.ContainsKey(id))
                 {
-                    selectedShape[i].OnDragEnd(pos);
-                    selectedShape[i] = null;
+                    selectedShape[id].OnDragEnd(pos);
+                    selectedShape.Remove(id);
+                }
+                if (start.ContainsKey(id))
+                {
+                    start.Remove(id);
                 }
                 if (trails.ContainsKey(id))
                 {
@@ -247,6 +249,15 @@ public class ShapeEventSystem : MonoBehaviour
     {
         yield return new WaitForSeconds(accelCooldown);
         accelRecent = false;
+    }
+
+    private IEnumerator CheckTap(int id, Shape shape)
+    {
+        yield return new WaitForSeconds(tapTimer);
+        if (!selectedShape.ContainsKey(id))
+        {
+            shape.OnTap();
+        }
     }
 
     void OnDrawGizmos()
