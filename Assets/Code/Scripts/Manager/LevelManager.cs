@@ -212,7 +212,6 @@ public class LevelManager : MonoBehaviour, ILevelManager
         {
             Camera.main.GetComponent<CameraController>().enabled = true;
             EnableThumbails();
-            UpdateActiveShapePositions();
             Debug.Log(currentSubLevelID);
             SceneManager.UnloadSceneAsync(
                 Levels[currentLevelID].SubLevels[currentSubLevelID].SceneName
@@ -384,7 +383,7 @@ public class LevelManager : MonoBehaviour, ILevelManager
         }
     }
 
-    private void EnableThumbails()
+    private void EnableThumbnails()
     {
         foreach (var thumbnail in thumbnails)
         {
