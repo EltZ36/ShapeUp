@@ -12,6 +12,9 @@ public class ShapeEventSystem : MonoBehaviour
         get { return _instance; }
     }
 
+    [SerializeField]
+    GameObject trailPrefab;
+
     void Awake()
     {
         if (_instance != null && _instance != this)
@@ -59,6 +62,7 @@ public class ShapeEventSystem : MonoBehaviour
 
     Shape[] selectedShape = new Shape[maxTouches];
     Vector3[] start = new Vector3[maxTouches];
+    private Dictionary<int, GameObject> trails = new Dictionary<int, GameObject>();
 
     private Shape pinchShape;
     private float initialPinchDist;
@@ -97,14 +101,17 @@ public class ShapeEventSystem : MonoBehaviour
     {
         for (int i = 0; i < Mathf.Min(Input.touchCount, maxTouches); i++)
         {
-            Vector2 pos = cam.ScreenToWorldPoint(Input.GetTouch(i).position);
-            if (Input.GetTouch(i).phase == TouchPhase.Began)
+            Touch touch = Input.GetTouch(i);
+            Vector2 pos = cam.ScreenToWorldPoint(touch.position);
+            int id = touch.fingerId;
+
+            if (touch.phase == TouchPhase.Began)
             {
                 RaycastHit2D[] hits = Physics2D.CircleCastAll(pos, touchSize, Vector2.zero);
                 selectedShape[i] = null;
                 foreach (RaycastHit2D hit in hits)
                 {
-                    if (hit.collider != null)
+                    if (hit.collider != null && trails[i] == null)
                     {
                         Shape shape = hit.collider.gameObject.GetComponent<Shape>();
                         if (shape != null)
@@ -117,8 +124,16 @@ public class ShapeEventSystem : MonoBehaviour
                         }
                     }
                 }
+                //add trail
+                if (selectedShape[i] == null)
+                {
+                    if (!trails.ContainsKey(id))
+                    {
+                        trails[id] = Instantiate(trailPrefab, pos, Quaternion.identity);
+                    }
+                }
             }
-            else if (Input.GetTouch(i).phase == TouchPhase.Moved)
+            else if (touch.phase == TouchPhase.Moved)
             {
                 if (selectedShape[i] != null)
                 {
@@ -139,14 +154,23 @@ public class ShapeEventSystem : MonoBehaviour
                             }
                         }
                     }
+                    if (trails.ContainsKey(id))
+                    {
+                        trails[id].transform.position = pos;
+                    }
                 }
             }
-            else if (Input.GetTouch(i).phase == TouchPhase.Ended)
+            else if (touch.phase == TouchPhase.Ended || touch.phase == TouchPhase.Canceled)
             {
                 if (selectedShape[i] != null)
                 {
                     selectedShape[i].OnDragEnd(pos);
                     selectedShape[i] = null;
+                }
+                if (trails.ContainsKey(id))
+                {
+                    Destroy(trails[id]);
+                    trails.Remove(id);
                 }
             }
         }
