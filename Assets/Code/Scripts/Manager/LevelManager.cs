@@ -211,7 +211,7 @@ public class LevelManager : MonoBehaviour, ILevelManager
         if (currentSubLevelID != -1)
         {
             Camera.main.GetComponent<CameraController>().enabled = true;
-            EnableThumbails();
+            EnableThumbnails();
             Debug.Log(currentSubLevelID);
             SceneManager.UnloadSceneAsync(
                 Levels[currentLevelID].SubLevels[currentSubLevelID].SceneName
