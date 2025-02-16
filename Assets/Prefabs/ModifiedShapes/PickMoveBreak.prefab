@@ -53,7 +53,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 3
   regen: 1
-  regenDelay: 1
+  regenDelay: 2
   target: {fileID: 1740465846098495637}
 --- !u!114 &-5942387285331955404
 MonoBehaviour:
@@ -70,10 +70,11 @@ MonoBehaviour:
   sprites:
   - {fileID: 21300000, guid: 225b669e3a920644dafe381a584ecba9, type: 3}
   - {fileID: 21300000, guid: 29d5b9d7da01a8f44bb9bcd18735a86c, type: 3}
+  oneActive: 1
   pickRandom: 0
-  randomRotation: 1
-  randomPosition: 1
-  lifespan: 1
+  randomRotation: 0
+  randomPosition: 0
+  lifespan: 2
 --- !u!114 &-9039294850626063948
 MonoBehaviour:
   m_ObjectHideFlags: 0

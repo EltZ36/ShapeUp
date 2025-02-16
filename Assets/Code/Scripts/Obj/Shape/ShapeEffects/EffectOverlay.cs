@@ -11,6 +11,9 @@ public class EffectOverlay : MonoBehaviour
     Sprite[] sprites;
 
     [SerializeField]
+    bool oneActive = true;
+
+    [SerializeField]
     bool pickRandom = false;
 
     [SerializeField]
@@ -24,15 +27,34 @@ public class EffectOverlay : MonoBehaviour
     [SerializeField]
     float lifespan = 1;
 
+    GameObject oneOverlay;
+    SpriteRenderer osr;
+
     void Awake()
     {
         order = GetComponent<SpriteRenderer>().sortingOrder;
+        if (oneActive)
+        {
+            oneOverlay = new GameObject("overlay");
+            oneOverlay.transform.parent = transform;
+            osr = oneOverlay.AddComponent<SpriteRenderer>();
+            osr.sortingOrder = order + 1;
+        }
     }
 
     GameObject GetSprite()
     {
-        GameObject overlay = new GameObject("overlay " + i);
-        overlay.transform.parent = transform;
+        GameObject overlay;
+        if (!oneActive)
+        {
+            overlay = new GameObject("overlay " + i);
+            overlay.transform.parent = transform;
+        }
+        else
+        {
+            overlay = oneOverlay;
+        }
+
         overlay.transform.localRotation = randomRotation ? Random.rotation : Quaternion.identity;
         overlay.transform.localPosition = randomPosition ? Random.onUnitSphere / 2 : Vector3.zero;
         overlay.transform.localScale = Vector3.one;
@@ -44,16 +66,24 @@ public class EffectOverlay : MonoBehaviour
         {
             sprite = sprites[Random.Range(0, sprites.Count())];
         }
-        SpriteRenderer sr = overlay.AddComponent<SpriteRenderer>();
-        sr.sortingOrder = order + i;
-        sr.sprite = sprite;
+        if (!oneActive)
+        {
+            SpriteRenderer sr = overlay.AddComponent<SpriteRenderer>();
+            sr.sortingOrder = order + i;
+            sr.sprite = sprite;
+        }
+        else
+        {
+            osr.sprite = sprite;
+        }
+
         return overlay;
     }
 
     public void AddOverlay(EventInfo eventInfo)
     {
         GetSprite();
-        if (transform.childCount > sprites.Count())
+        if (!oneActive && transform.childCount > sprites.Count())
         {
             Destroy(transform.GetChild(0).gameObject);
         }
@@ -70,7 +100,15 @@ public class EffectOverlay : MonoBehaviour
         yield return new WaitForSeconds(lifespan);
         if (overlay != null)
         {
-            Destroy(overlay);
+            if (!oneActive)
+            {
+                Destroy(overlay);
+            }
+            else
+            {
+                int d = System.Array.IndexOf(sprites, osr.sprite) - 1;
+                osr.sprite = d >= 0 ? sprites[d] : null;
+            }
         }
         i--;
     }

@@ -19,9 +19,9 @@ public class EffectDurability : MonoBehaviour
 
     public void TakeDamage(EventInfo eventInfo)
     {
+        health--;
         if (health > 0)
         {
-            health--;
             if (regen)
             {
                 StartCoroutine(regenHealth(regenDelay));
