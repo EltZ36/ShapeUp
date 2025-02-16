@@ -1,56 +1,76 @@
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(
-    fileName = "ShapeRecipesScriptableObject",
-    menuName = "Shapes/ShapeRecipesScriptableObject"
-)]
-public class ShapeRecipes : ScriptableObject
+public class ShapeRecipes : MonoBehaviour
 {
     [SerializeField]
-    private List<RecipeInfo> shapeRecipesList;
-    public Dictionary<HashSet<ShapeType>, ShapeType> ShapeRecipesDict { get; private set; }
-    public Dictionary<ShapeType, HashSet<ShapeType>> ShapeRecipesDictInverse { get; private set; }
+    private ShapeDatabase shapeDatabase;
 
-    //This assumes that there is only 1 recipe for each  shape
-    public void OnEnable()
+    [SerializeField]
+    private List<RecipeInfo> shapeRecipesList = new List<RecipeInfo>();
+
+    public ShapeDatabase ShapeDatabase
     {
-        if (shapeRecipesList != null && ShapeRecipesDict == null && ShapeRecipesDictInverse == null)
+        get { return shapeDatabase; }
+    }
+
+    public Dictionary<(string, string), string> CombineRecipes { get; private set; } =
+        new Dictionary<(string, string), string>(new ShapePairComparer());
+    public Dictionary<string, (string, string)> SeparateRecipes { get; private set; } =
+        new Dictionary<string, (string, string)>();
+
+    void Awake()
+    {
+        CombineRecipes.Clear();
+        SeparateRecipes.Clear();
+        foreach (RecipeInfo recipeInfo in shapeRecipesList)
         {
-            ShapeRecipesDict = new Dictionary<HashSet<ShapeType>, ShapeType>(
-                new ShapePairComparer()
-            );
-            ShapeRecipesDictInverse = new Dictionary<ShapeType, HashSet<ShapeType>>();
-            foreach (RecipeInfo recipe in shapeRecipesList)
+            (string, string) pair = (recipeInfo.shapeA, recipeInfo.shapeB);
+            string single = recipeInfo.shapeC;
+            if (
+                recipeInfo.recipeType == RecipeType.Combine
+                || recipeInfo.recipeType == RecipeType.Both
+            )
             {
-                HashSet<ShapeType> pair = new HashSet<ShapeType> { recipe.shapeA, recipe.shapeB };
-                if (!ShapeRecipesDict.ContainsKey(pair))
+                if (!CombineRecipes.ContainsKey(pair))
                 {
-                    ShapeRecipesDict.Add(pair, recipe.shapeResult);
+                    CombineRecipes.Add(pair, single);
                 }
-                if (!ShapeRecipesDictInverse.ContainsKey(recipe.shapeResult))
+            }
+            if (
+                recipeInfo.recipeType == RecipeType.Separate
+                || recipeInfo.recipeType == RecipeType.Both
+            )
+            {
+                if (!SeparateRecipes.ContainsKey(single))
                 {
-                    ShapeRecipesDictInverse.Add(recipe.shapeResult, pair);
+                    SeparateRecipes.Add(single, pair);
                 }
             }
         }
     }
 
-    private class ShapePairComparer : IEqualityComparer<HashSet<ShapeType>>
+    void Start()
     {
-        public bool Equals(HashSet<ShapeType> x, HashSet<ShapeType> y)
+        ShapeManager.Instance.shapeRecipes = this;
+    }
+
+    private class ShapePairComparer : IEqualityComparer<(string, string)>
+    {
+        public bool Equals((string, string) x, (string, string) y)
         {
-            return x.SetEquals(y);
+            return (x.Item1 == y.Item1 && x.Item2 == y.Item2)
+                || (x.Item1 == y.Item2 && x.Item2 == y.Item1);
         }
 
-        public int GetHashCode(HashSet<ShapeType> pair)
+        public int GetHashCode((string, string) pair)
         {
-            int hash = 0;
-            foreach (ShapeType shape in pair)
-            {
-                hash ^= shape.GetHashCode();
-            }
-            return hash;
+            string[] names = new string[] { pair.Item1, pair.Item2 };
+            Array.Sort(names);
+
+            return HashCode.Combine(names[0], names[1]);
         }
     }
 }

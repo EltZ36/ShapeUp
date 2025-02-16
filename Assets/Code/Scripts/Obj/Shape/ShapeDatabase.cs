@@ -1,38 +1,37 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(
-    fileName = "ShapeDatabaseScriptableObject",
-    menuName = "Shapes/ShapeDatabaseScriptableObject"
-)]
-public class ShapeDatabase : ScriptableObject
+public class ShapeDatabase : MonoBehaviour
 {
     [SerializeField]
-    private List<ShapeInfo> shapeInfoList;
+    private List<string> shapeNames = new List<string>();
 
-    private Dictionary<ShapeType, ShapeInfo> shapeInfoDict;
+    [SerializeField]
+    private List<GameObject> prefabs = new List<GameObject>();
 
-    private void OnEnable()
+    public List<string> ShapeNames
     {
-        if (shapeInfoDict == null && shapeInfoList != null)
+        get { return shapeNames; }
+    }
+
+    public Dictionary<string, GameObject> ShapeDict { get; private set; } =
+        new Dictionary<string, GameObject>();
+
+    void Awake()
+    {
+        ShapeDict.Clear();
+        for (int i = 0; i < shapeNames.Count; i++)
         {
-            shapeInfoDict = new Dictionary<ShapeType, ShapeInfo>();
-            foreach (var shapeInfo in shapeInfoList)
+            if (!string.IsNullOrEmpty(shapeNames[i]) && !ShapeDict.ContainsKey(shapeNames[i]))
             {
-                if (!shapeInfoDict.ContainsKey(shapeInfo.Shape))
-                {
-                    shapeInfoDict.Add(shapeInfo.Shape, shapeInfo);
-                }
+                ShapeDict[shapeNames[i]] = prefabs[i];
             }
         }
     }
 
-    public ShapeInfo GetShapeInfo(ShapeType shape)
+    void Start()
     {
-        if (shapeInfoDict.TryGetValue(shape, out ShapeInfo info))
-        {
-            return info;
-        }
-        return null;
+        ShapeManager.Instance.shapeDatabase = this;
     }
 }
