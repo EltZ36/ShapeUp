@@ -9,21 +9,31 @@ public class Shape : MonoBehaviour
     public ShapeTags Tags;
 
     [SerializeField]
-    private string PrefabName = null;
+    private string spriteName = null;
+
+    [SerializeField]
+    private string uniqueID = null;
     public string ShapeName
     {
         get
         {
-            if (String.IsNullOrEmpty(PrefabName))
+            if (String.IsNullOrEmpty(uniqueID))
             {
-                return gameObject.name;
+                return spriteName;
             }
-            else
-            {
-                return PrefabName;
-            }
+            return $"{spriteName}-{uniqueID}";
         }
     }
+    public string SpriteName
+    {
+        get { return spriteName; }
+    }
+    public string UniqueID
+    {
+        get { return uniqueID; }
+    }
+
+    bool combined;
 
     #region UnityEvents
     [SerializeField]
@@ -52,6 +62,9 @@ public class Shape : MonoBehaviour
 
     [SerializeField]
     private UnityEvent<EventInfo> OnAttitudeChangeEvent;
+
+    [SerializeField]
+    private UnityEvent<EventInfo> OnGravityChangeEvent;
 
     [SerializeField]
     private UnityEvent<EventInfo> OnCreateEvent;
@@ -144,20 +157,38 @@ public class Shape : MonoBehaviour
         );
     }
 
+    public void OnGravityChange(Vector3 gravity)
+    {
+        if ((Tags & ShapeTags.OnGravityChange) != ShapeTags.OnGravityChange)
+        {
+            return;
+        }
+        OnGravityChangeEvent.Invoke(new EventInfo(vectorOne: gravity));
+    }
+
     void Awake()
     {
         gameObject.layer = LayerMask.NameToLayer("Shape");
     }
 
+    public void Combined()
+    {
+        combined = true;
+    }
+
     void Start()
     {
+        if ((Tags & ShapeTags.OnAccelerate) == ShapeTags.OnAccelerate)
+        {
+            ShapeEventSystem.Instance.OnAccelChange += OnAccelerate;
+        }
         if ((Tags & ShapeTags.OnAttitudeChange) == ShapeTags.OnAttitudeChange)
         {
             ShapeEventSystem.Instance.OnGyroChange += OnAttitudeChange;
         }
-        if ((Tags & ShapeTags.OnAccelerate) == ShapeTags.OnAccelerate)
+        if ((Tags & ShapeTags.OnGravityChange) == ShapeTags.OnGravityChange)
         {
-            ShapeEventSystem.Instance.OnAccelChange += OnAccelerate;
+            ShapeEventSystem.Instance.OnGravChange += OnGravityChange;
         }
 
         ShapeManager.Instance.CreateShapeEvent(this);
@@ -179,13 +210,17 @@ public class Shape : MonoBehaviour
 
     void OnDestroy()
     {
+        if ((Tags & ShapeTags.OnAccelerate) == ShapeTags.OnAccelerate)
+        {
+            ShapeEventSystem.Instance.OnAccelChange -= OnAccelerate;
+        }
         if ((Tags & ShapeTags.OnAttitudeChange) == ShapeTags.OnAttitudeChange)
         {
             ShapeEventSystem.Instance.OnGyroChange -= OnAttitudeChange;
         }
-        if ((Tags & ShapeTags.OnAccelerate) == ShapeTags.OnAccelerate)
+        if ((Tags & ShapeTags.OnGravityChange) == ShapeTags.OnGravityChange)
         {
-            ShapeEventSystem.Instance.OnAccelChange -= OnAccelerate;
+            ShapeEventSystem.Instance.OnGravChange -= OnGravityChange;
         }
 
         //https://stackoverflow.com/a/68126990
@@ -194,7 +229,7 @@ public class Shape : MonoBehaviour
             return;
         }
         ShapeManager.Instance.DestroyShapeEvent(this);
-        if ((Tags & ShapeTags.OnDestroy) != ShapeTags.OnDestroy)
+        if (combined || (Tags & ShapeTags.OnDestroy) != ShapeTags.OnDestroy)
         {
             return;
         }
@@ -233,6 +268,9 @@ public class Shape : MonoBehaviour
 
     [SerializeField]
     private bool showAttitude;
+
+    [SerializeField]
+    private bool showGravity;
 
     [SerializeField]
     private bool showCreate;

@@ -8,14 +8,14 @@ using UnityEngine;
 public class ShapeDatabaseEditor : Editor
 {
     SerializedProperty shapeNames;
-    SerializedProperty prefabs;
+    SerializedProperty shapes;
 
     private bool showShapes = true;
 
     private void OnEnable()
     {
         shapeNames = serializedObject.FindProperty("shapeNames");
-        prefabs = serializedObject.FindProperty("prefabs");
+        shapes = serializedObject.FindProperty("shapes");
     }
 
     public override void OnInspectorGUI()
@@ -25,11 +25,11 @@ public class ShapeDatabaseEditor : Editor
         bool duplicates = false;
         HashSet<string> keys = new HashSet<string>();
 
-        int listSize = prefabs.arraySize;
+        int listSize = shapes.arraySize;
         listSize = EditorGUILayout.IntField("Size", listSize);
-        if (listSize != prefabs.arraySize)
+        if (listSize != shapes.arraySize)
         {
-            prefabs.arraySize = listSize;
+            shapes.arraySize = listSize;
         }
 
         showShapes = EditorGUILayout.Foldout(
@@ -45,15 +45,15 @@ public class ShapeDatabaseEditor : Editor
             {
                 EditorGUILayout.BeginHorizontal();
 
-                SerializedProperty prefabProp = prefabs.GetArrayElementAtIndex(i);
+                SerializedProperty shapeProp = shapes.GetArrayElementAtIndex(i);
 
-                GameObject prefab = (GameObject)prefabProp.objectReferenceValue;
-                string name = prefab != null ? prefab.name : null;
+                Shape shape = (Shape)shapeProp.objectReferenceValue;
+                string name = shape != null ? shape.ShapeName : null;
 
                 GUILayout.Label("Name");
                 GUILayout.Label(name != null ? name : "null");
-                GUILayout.Label("Game Object");
-                EditorGUILayout.PropertyField(prefabProp, GUIContent.none);
+                GUILayout.Label("Shape");
+                EditorGUILayout.PropertyField(shapeProp, GUIContent.none);
 
                 if (name != null)
                 {
@@ -69,7 +69,7 @@ public class ShapeDatabaseEditor : Editor
 
                 if (GUILayout.Button("x"))
                 {
-                    prefabs.DeleteArrayElementAtIndex(i);
+                    shapes.DeleteArrayElementAtIndex(i);
                     break;
                 }
 
@@ -78,7 +78,7 @@ public class ShapeDatabaseEditor : Editor
 
             if (GUILayout.Button("+ Add Shape"))
             {
-                prefabs.arraySize++;
+                shapes.arraySize++;
             }
             EditorGUI.indentLevel--;
         }

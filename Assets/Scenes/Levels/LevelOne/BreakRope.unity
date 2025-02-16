@@ -319,7 +319,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: c03aeb42efb976c43a11693a6999f639, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 64b432df7daad3448855c6e17b1b9b64, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -343,7 +343,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Tags: 0
-  Prefab: {fileID: 0}
+  spriteName: square
+  uniqueID: 
   OnFixedUpdateEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -371,6 +372,9 @@ MonoBehaviour:
   OnAttitudeChangeEvent:
     m_PersistentCalls:
       m_Calls: []
+  OnGravityChangeEvent:
+    m_PersistentCalls:
+      m_Calls: []
   OnCreateEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -384,6 +388,7 @@ MonoBehaviour:
   showTap: 0
   showAccelerate: 0
   showAttitude: 0
+  showGravity: 0
   showCreate: 0
   showDestroy: 0
 --- !u!50 &1133249983
@@ -449,14 +454,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.8603516, y: 1.6445312}
+    oldSize: {x: 1.4462891, y: 1.4462891}
     newSize: {x: 1.8603516, y: 1.6445312}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.8603516, y: 1.6445312}
+  m_Size: {x: 1.4462891, y: 1.4462891}
   m_EdgeRadius: 0
 --- !u!1001 &1786227513
 PrefabInstance:
@@ -522,6 +527,10 @@ PrefabInstance:
       propertyPath: shapeName
       value: Box
       objectReference: {fileID: 0}
+    - target: {fileID: 7660474081948110169, guid: 06704280bc57b3f4897fc9c85f37e846, type: 3}
+      propertyPath: shapeTarget
+      value: 
+      objectReference: {fileID: 1133249982}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -731,8 +740,8 @@ Transform:
   m_GameObject: {fileID: 2086034749}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -2.56, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: -2.5553, z: 0}
+  m_LocalScale: {x: 1, y: 1.0025, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 476380442}
@@ -801,8 +810,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dc6d39d28c20b04b9ac3475e8874f2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Tags: 264
-  Prefab: {fileID: 0}
+  Tags: 520
+  spriteName: rope_long
+  uniqueID: 
   OnFixedUpdateEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -842,6 +852,9 @@ MonoBehaviour:
   OnAttitudeChangeEvent:
     m_PersistentCalls:
       m_Calls: []
+  OnGravityChangeEvent:
+    m_PersistentCalls:
+      m_Calls: []
   OnCreateEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -879,6 +892,7 @@ MonoBehaviour:
   showTap: 0
   showAccelerate: 0
   showAttitude: 0
+  showGravity: 0
   showCreate: 0
   showDestroy: 1
 --- !u!114 &2086034753
@@ -942,7 +956,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.009563774, y: -0.07957721}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -953,7 +967,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.17739296, y: 3.8242185}
+  m_Size: {x: 0.29215825, y: 3.6650639}
   m_EdgeRadius: 0
 --- !u!114 &2086034756
 MonoBehaviour:

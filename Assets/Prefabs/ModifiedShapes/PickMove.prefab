@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2361894183180487304}
   - component: {fileID: 3605227548273023478}
   m_Layer: 0
-  m_Name: Cone
+  m_Name: PickMove
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -62,7 +62,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Tags: 2
-  PrefabName: Cone
+  spriteName: circle
+  uniqueID: 
   OnFixedUpdateEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -157,7 +158,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   showFixedUpdate: 0
-  showDrag: 0
+  showDrag: 1
   showPinch: 0
   showSlice: 0
   showTap: 0
@@ -205,8 +206,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 84850e878af660e4ab7b6539b4c38520, type: 3}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: 0454ddaf2845e2249a90762f0a0a6656, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

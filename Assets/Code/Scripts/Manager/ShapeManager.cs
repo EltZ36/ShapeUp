@@ -81,6 +81,7 @@ public class ShapeManager : MonoBehaviour
 
     public void Blacklist(Shape shape, float time)
     {
+        shape.gameObject.SetActive(true);
         blacklistShapes.Add(shape);
         StartCoroutine(RemoveFromBlacklist(shape, time));
     }
@@ -150,9 +151,12 @@ public class ShapeManager : MonoBehaviour
                     Vector3 pointB = shapeB.gameObject.transform.position;
                     Vector3 midpoint = (pointA + pointB) / 2;
 
-                    Instantiate(shapeDatabase.ShapeDict[combined], midpoint, Quaternion.identity);
+                    Instantiate(shapeDatabase.ShapeDict[combined], midpoint, Quaternion.identity)
+                        .SetActive(true);
                     used.Add(shapeA);
                     used.Add(shapeB);
+                    shapeA.Combined();
+                    shapeB.Combined();
                     Destroy(shapeA.gameObject);
                     Destroy(shapeB.gameObject);
                 }

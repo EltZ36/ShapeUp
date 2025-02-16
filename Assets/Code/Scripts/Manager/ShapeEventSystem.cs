@@ -12,6 +12,9 @@ public class ShapeEventSystem : MonoBehaviour
         get { return _instance; }
     }
 
+    [SerializeField]
+    GameObject trailPrefab;
+
     void Awake()
     {
         if (_instance != null && _instance != this)
@@ -31,6 +34,8 @@ public class ShapeEventSystem : MonoBehaviour
         get { return Camera.main; }
     }
 
+    [SerializeField]
+    float tapTimer = 0.1f; //if it's longer than this it's not a tap;
     #region SensorVariables
     [SerializeField]
     float accelCooldown = 1;
@@ -45,8 +50,11 @@ public class ShapeEventSystem : MonoBehaviour
 
     public event Action<Quaternion> OnGyroChange;
 
+    public event Action<Vector3> OnGravChange;
+
     private Vector3 pastAccel = Vector3.zero;
     private Vector3 newAccel;
+    private Vector3 pastGravity = default;
     bool accelRecent = false;
 
     private Quaternion pastGyro;
@@ -55,8 +63,12 @@ public class ShapeEventSystem : MonoBehaviour
     private static int maxTouches = 10;
     private static float touchSize = 0.1f;
 
-    Shape[] selectedShape = new Shape[maxTouches];
-    Vector3[] start = new Vector3[maxTouches];
+    private Dictionary<int, Shape> selectedShape = new Dictionary<int, Shape>();
+    private Dictionary<int, Vector3> start = new Dictionary<int, Vector3>();
+
+    private Dictionary<int, Vector3> lastPos = new Dictionary<int, Vector3>();
+
+    private Dictionary<int, GameObject> trails = new Dictionary<int, GameObject>();
 
     private Shape pinchShape;
     private float initialPinchDist;
@@ -65,6 +77,7 @@ public class ShapeEventSystem : MonoBehaviour
     {
         CheckAcceleration();
         CheckGyroscope();
+        CheckGravity();
         if (Input.touchCount < 1)
         {
             return;
@@ -95,11 +108,15 @@ public class ShapeEventSystem : MonoBehaviour
     {
         for (int i = 0; i < Mathf.Min(Input.touchCount, maxTouches); i++)
         {
-            Vector2 pos = cam.ScreenToWorldPoint(Input.GetTouch(i).position);
-            if (Input.GetTouch(i).phase == TouchPhase.Began)
+            Touch touch = Input.GetTouch(i);
+            Vector2 pos = cam.ScreenToWorldPoint(touch.position);
+            int id = touch.fingerId;
+
+            if (touch.phase == TouchPhase.Began)
             {
                 RaycastHit2D[] hits = Physics2D.CircleCastAll(pos, touchSize, Vector2.zero);
-                selectedShape[i] = null;
+                start[id] = pos;
+                lastPos[id] = pos;
                 foreach (RaycastHit2D hit in hits)
                 {
                     if (hit.collider != null)
@@ -107,24 +124,28 @@ public class ShapeEventSystem : MonoBehaviour
                         Shape shape = hit.collider.gameObject.GetComponent<Shape>();
                         if (shape != null)
                         {
-                            start[i] = pos;
-                            selectedShape[i] = shape;
-                            selectedShape[i].OnTap();
-                            selectedShape[i].OnDragStart(pos);
+                            selectedShape[id] = shape;
+                            StartCoroutine(CheckTap(id, shape));
+                            selectedShape[id].OnDragStart(pos);
                             break;
                         }
                     }
                 }
-            }
-            else if (Input.GetTouch(i).phase == TouchPhase.Moved)
-            {
-                if (selectedShape[i] != null)
+                //add trail
+                if (!selectedShape.ContainsKey(id) && !trails.ContainsKey(id))
                 {
-                    selectedShape[i].OnDrag(start[i], pos);
+                    trails[id] = Instantiate(trailPrefab, pos, Quaternion.identity);
+                }
+            }
+            else if (touch.phase == TouchPhase.Moved)
+            {
+                if (selectedShape.ContainsKey(id))
+                {
+                    selectedShape[id].OnDrag(start[id], pos);
                 }
                 else
                 {
-                    RaycastHit2D[] hits = Physics2D.CircleCastAll(pos, touchSize, Vector2.zero);
+                    RaycastHit2D[] hits = Physics2D.LinecastAll(pos, lastPos[id]);
                     foreach (RaycastHit2D hit in hits)
                     {
                         if (hit.collider != null)
@@ -137,14 +158,32 @@ public class ShapeEventSystem : MonoBehaviour
                             }
                         }
                     }
+                    if (trails.ContainsKey(id))
+                    {
+                        trails[id].transform.position = pos;
+                    }
                 }
+                lastPos[id] = pos;
             }
-            else if (Input.GetTouch(i).phase == TouchPhase.Ended)
+            else if (touch.phase == TouchPhase.Ended || touch.phase == TouchPhase.Canceled)
             {
-                if (selectedShape[i] != null)
+                if (selectedShape.ContainsKey(id))
                 {
-                    selectedShape[i].OnDragEnd(pos);
-                    selectedShape[i] = null;
+                    selectedShape[id].OnDragEnd(pos);
+                    selectedShape.Remove(id);
+                }
+                if (start.ContainsKey(id))
+                {
+                    start.Remove(id);
+                }
+                if (lastPos.ContainsKey(id))
+                {
+                    lastPos.Remove(id);
+                }
+                if (trails.ContainsKey(id))
+                {
+                    Destroy(trails[id]);
+                    trails.Remove(id);
                 }
             }
         }
@@ -186,7 +225,6 @@ public class ShapeEventSystem : MonoBehaviour
         Vector3 accelDiff = newAccel - pastAccel;
         if (accelDiff.magnitude > accelSens && accelRecent == false)
         {
-            Debug.Log(accelDiff.magnitude);
             accelRecent = true;
             OnAccelChange?.Invoke(accelDiff);
             StartCoroutine(ResetAccel());
@@ -204,10 +242,29 @@ public class ShapeEventSystem : MonoBehaviour
         }
     }
 
+    private void CheckGravity()
+    {
+        Vector3 currGravity = Input.gyro.gravity;
+        if (currGravity != pastGravity)
+        {
+            OnGravChange?.Invoke(currGravity);
+            pastGravity = currGravity;
+        }
+    }
+
     private IEnumerator ResetAccel()
     {
         yield return new WaitForSeconds(accelCooldown);
         accelRecent = false;
+    }
+
+    private IEnumerator CheckTap(int id, Shape shape)
+    {
+        yield return new WaitForSeconds(tapTimer);
+        if (!selectedShape.ContainsKey(id))
+        {
+            shape.OnTap();
+        }
     }
 
     void OnDrawGizmos()

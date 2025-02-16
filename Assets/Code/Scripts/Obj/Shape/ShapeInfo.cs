@@ -12,6 +12,7 @@ public enum ShapeTags
     OnTap = 1 << 4,
     OnAccelerate = 1 << 5,
     OnAttitudeChange = 1 << 6,
-    OnCreate = 1 << 7,
-    OnDestroy = 1 << 8,
+    OnGravityChange = 1 << 7,
+    OnCreate = 1 << 8,
+    OnDestroy = 1 << 9,
 }

@@ -47,7 +47,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Tags: 0
-  Prefab: {fileID: 0}
+  spriteName: sphere_greyfill
+  uniqueID: 
   OnFixedUpdateEvent:
     m_PersistentCalls:
       m_Calls: []
