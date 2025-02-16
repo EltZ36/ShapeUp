@@ -1,55 +1,206 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Shape : MonoBehaviour
 {
-    public ShapeInfo LocalShapeInfo;
+    public ShapeTags Tags;
 
     [SerializeField]
-    private Rigidbody2D rb;
-
-    public void SetShapeInfo(ShapeInfo shapeInfo)
+    private string PrefabName = null;
+    public string ShapeName
     {
-        LocalShapeInfo = shapeInfo;
-    }
-
-    public void SetShapeTags(ShapeTags tags)
-    {
-        if (LocalShapeInfo != null)
+        get
         {
-            LocalShapeInfo.Tags = tags;
+            if (String.IsNullOrEmpty(PrefabName))
+            {
+                return gameObject.name;
+            }
+            else
+            {
+                return PrefabName;
+            }
         }
     }
 
-    public void ToggleShapeTags(ShapeTags tags)
+    #region UnityEvents
+    [SerializeField]
+    private UnityEvent<EventInfo> OnFixedUpdateEvent;
+
+    [SerializeField]
+    private UnityEvent<EventInfo> OnDragStartEvent;
+
+    [SerializeField]
+    private UnityEvent<EventInfo> OnDragEvent;
+
+    [SerializeField]
+    private UnityEvent<EventInfo> OnDragEndEvent;
+
+    [SerializeField]
+    private UnityEvent<EventInfo> OnPinchEvent;
+
+    [SerializeField]
+    private UnityEvent<EventInfo> OnSliceEvent;
+
+    [SerializeField]
+    private UnityEvent<EventInfo> OnTapEvent;
+
+    [SerializeField]
+    private UnityEvent<EventInfo> OnAccelerateEvent;
+
+    [SerializeField]
+    private UnityEvent<EventInfo> OnAttitudeChangeEvent;
+
+    [SerializeField]
+    private UnityEvent<EventInfo> OnCreateEvent;
+
+    [SerializeField]
+    private UnityEvent<EventInfo> OnDestroyEvent;
+    #endregion
+
+    #region EventMethods
+    public void OnDragStart(Vector3 touchPos)
     {
-        if (LocalShapeInfo != null)
+        if ((Tags & ShapeTags.OnDrag) != ShapeTags.OnDrag)
         {
-            LocalShapeInfo.Tags ^= tags;
+            return;
         }
+        OnDragStartEvent.Invoke(new EventInfo(targetObject: gameObject, vectorOne: touchPos));
+    }
+
+    public void OnDrag(Vector3 startPos, Vector3 currentPos)
+    {
+        if ((Tags & ShapeTags.OnDrag) != ShapeTags.OnDrag)
+        {
+            return;
+        }
+        OnDragEvent.Invoke(
+            new EventInfo(targetObject: gameObject, vectorOne: startPos, vectorTwo: currentPos)
+        );
+    }
+
+    public void OnDragEnd(Vector3 touchPos)
+    {
+        if ((Tags & ShapeTags.OnDrag) != ShapeTags.OnDrag)
+        {
+            return;
+        }
+        OnDragEndEvent.Invoke(new EventInfo(targetObject: gameObject, vectorOne: touchPos));
+    }
+
+    public void OnPinch(float initialDist, Vector3 fingerOne, Vector3 fingerTwo)
+    {
+        if ((Tags & ShapeTags.OnPinch) != ShapeTags.OnPinch)
+        {
+            return;
+        }
+        OnPinchEvent.Invoke(
+            new EventInfo(
+                targetObject: gameObject,
+                floatValue: initialDist,
+                vectorOne: fingerOne,
+                vectorTwo: fingerTwo
+            )
+        );
+    }
+
+    public void OnSlice()
+    {
+        if ((Tags & ShapeTags.OnSlice) != ShapeTags.OnSlice)
+        {
+            return;
+        }
+        OnSliceEvent.Invoke(new EventInfo(targetObject: gameObject));
+    }
+
+    public void OnTap()
+    {
+        if ((Tags & ShapeTags.OnTap) != ShapeTags.OnTap)
+        {
+            return;
+        }
+        OnTapEvent.Invoke(new EventInfo(targetObject: gameObject));
+    }
+
+    public void OnAccelerate(Vector3 acceleration)
+    {
+        if ((Tags & ShapeTags.OnAccelerate) != ShapeTags.OnAccelerate)
+        {
+            return;
+        }
+        OnAccelerateEvent.Invoke(new EventInfo(targetObject: gameObject, vectorOne: acceleration));
+    }
+
+    public void OnAttitudeChange(Quaternion attitude)
+    {
+        if ((Tags & ShapeTags.OnAttitudeChange) != ShapeTags.OnAttitudeChange)
+        {
+            return;
+        }
+        OnAttitudeChangeEvent.Invoke(
+            new EventInfo(targetObject: gameObject, quaternionValue: attitude)
+        );
+    }
+
+    void Awake()
+    {
+        gameObject.layer = LayerMask.NameToLayer("Shape");
     }
 
     void Start()
     {
-        if (LocalShapeInfo.Prefab == null)
+        if ((Tags & ShapeTags.OnAttitudeChange) == ShapeTags.OnAttitudeChange)
         {
-            Destroy(gameObject);
-            if (
-                LevelManager.Instance == null
-                || LevelManager.Instance.CurrentSubLevelInfo().firstLoad == false
-            )
-            {
-                ShapeManager.Instance.CreateShape(
-                    LocalShapeInfo.Shape,
-                    transform.position,
-                    transform.rotation,
-                    transform.localScale,
-                    LocalShapeInfo.Tags
-                );
-            }
+            ShapeEventSystem.Instance.OnGyroChange += OnAttitudeChange;
         }
+        if ((Tags & ShapeTags.OnAccelerate) == ShapeTags.OnAccelerate)
+        {
+            ShapeEventSystem.Instance.OnAccelChange += OnAccelerate;
+        }
+
+        ShapeManager.Instance.CreateShapeEvent(this);
+        if ((Tags & ShapeTags.OnCreate) != ShapeTags.OnCreate)
+        {
+            return;
+        }
+        OnCreateEvent.Invoke(new EventInfo(targetObject: gameObject));
     }
+
+    void FixedUpdate()
+    {
+        if ((Tags & ShapeTags.OnFixedUpdate) != ShapeTags.OnFixedUpdate)
+        {
+            return;
+        }
+        OnFixedUpdateEvent.Invoke(new EventInfo(targetObject: gameObject));
+    }
+
+    void OnDestroy()
+    {
+        if ((Tags & ShapeTags.OnAttitudeChange) == ShapeTags.OnAttitudeChange)
+        {
+            ShapeEventSystem.Instance.OnGyroChange -= OnAttitudeChange;
+        }
+        if ((Tags & ShapeTags.OnAccelerate) == ShapeTags.OnAccelerate)
+        {
+            ShapeEventSystem.Instance.OnAccelChange -= OnAccelerate;
+        }
+
+        //https://stackoverflow.com/a/68126990
+        if (!gameObject.scene.isLoaded)
+        {
+            return;
+        }
+        ShapeManager.Instance.DestroyShapeEvent(this);
+        if ((Tags & ShapeTags.OnDestroy) != ShapeTags.OnDestroy)
+        {
+            return;
+        }
+        OnDestroyEvent.Invoke(new EventInfo(targetObject: gameObject));
+    }
+    #endregion
 
     void OnCollisionEnter2D(Collision2D collision)
     {
@@ -60,4 +211,33 @@ public class Shape : MonoBehaviour
             ShapeManager.Instance.CheckShapeCollide((shape, this));
         }
     }
+
+#if UNITY_EDITOR
+    [SerializeField]
+    private bool showFixedUpdate;
+
+    [SerializeField]
+    private bool showDrag;
+
+    [SerializeField]
+    private bool showPinch;
+
+    [SerializeField]
+    private bool showSlice;
+
+    [SerializeField]
+    private bool showTap;
+
+    [SerializeField]
+    private bool showAccelerate;
+
+    [SerializeField]
+    private bool showAttitude;
+
+    [SerializeField]
+    private bool showCreate;
+
+    [SerializeField]
+    private bool showDestroy;
+#endif
 }

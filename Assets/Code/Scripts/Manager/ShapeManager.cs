@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShapeManager : MonoBehaviour, IShapeManager
+public class ShapeManager : MonoBehaviour
 {
     #region Singleton Pattern
     public static ShapeManager _instance;
@@ -25,133 +25,58 @@ public class ShapeManager : MonoBehaviour, IShapeManager
         }
     }
     #endregion
-    [SerializeField]
-    private ShapeDatabase shapeDatabase;
 
-    [SerializeField]
-    private ShapeRecipes shapeRecipes;
+    [HideInInspector]
+    public ShapeDatabase shapeDatabase;
+
+    [HideInInspector]
+    public ShapeRecipes shapeRecipes;
+
+    public event Action<Shape> OnCreateShape;
+    public event Action<Shape> OnDestroyShape;
 
     private List<(Shape, Shape)> checkShapes = new List<(Shape, Shape)>();
     private List<Shape> blacklistShapes = new List<Shape>();
 
-    //event that tells subscriber a new shape was created
-    public event Action<Shape> OnCreateShape;
-    public event Action<Shape> OnDestroyShape;
-
-    #region Interface Methods
-
-    public GameObject CreateShape(
-        ShapeType shapeType,
-        Vector3 position,
-        Quaternion rotation = default,
-        Vector3 scale = default,
-        ShapeTags tags = ShapeTags.UseDatabaseDefault
-    )
+    public void CreateShapeEvent(Shape shape)
     {
-        ShapeInfo shapeInfo = shapeDatabase.GetShapeInfo(shapeType);
-        if (shapeInfo != null)
-        {
-            if (rotation == default)
-            {
-                rotation = Quaternion.identity;
-            }
-            if (scale == default)
-            {
-                scale = Vector3.one;
-            }
-            GameObject shapeObj = Instantiate(shapeInfo.Prefab, position, rotation);
-
-            Rigidbody2D shapeRB = shapeObj.GetComponent<Rigidbody2D>();
-            shapeObj.transform.localScale = scale;
-            Shape shape = shapeObj.GetComponent<Shape>();
-            shape.SetShapeInfo(new ShapeInfo(shapeType, shapeInfo.Prefab));
-            if (tags == ShapeTags.UseDatabaseDefault)
-            {
-                shape.SetShapeTags(shapeInfo.Tags);
-            }
-            else
-            {
-                shape.SetShapeTags(tags);
-            }
-            if ((shape.LocalShapeInfo.Tags & ShapeTags.Gravity) != ShapeTags.Gravity)
-            {
-                shapeRB.gravityScale = 0;
-            }
-            if ((shape.LocalShapeInfo.Tags & ShapeTags.FreezeX) == ShapeTags.FreezeX)
-            {
-                shapeRB.constraints ^= RigidbodyConstraints2D.FreezePositionX;
-            }
-            if ((shape.LocalShapeInfo.Tags & ShapeTags.FreezeY) == ShapeTags.FreezeY)
-            {
-                shapeRB.constraints ^= RigidbodyConstraints2D.FreezePositionY;
-            }
-            if ((shape.LocalShapeInfo.Tags & ShapeTags.FreezeRotation) == ShapeTags.FreezeRotation)
-            {
-                shapeRB.constraints ^= RigidbodyConstraints2D.FreezeRotation;
-            }
-            //add components here
-            if ((shape.LocalShapeInfo.Tags & ShapeTags.ShakeBreak) == ShapeTags.ShakeBreak)
-            {
-                shapeObj.AddComponent<ShakeBreak>();
-            }
-            if ((shape.LocalShapeInfo.Tags & ShapeTags.GyroscopeF) == ShapeTags.GyroscopeF)
-            {
-                shapeObj.AddComponent<GyroscopeForce>();
-            }
-            if ((shape.LocalShapeInfo.Tags & ShapeTags.GyroscopeR) == ShapeTags.GyroscopeR)
-            {
-                shapeObj.AddComponent<GyroscopeRotation>();
-            }
-            if ((shape.LocalShapeInfo.Tags & ShapeTags.Zoom) == ShapeTags.Zoom)
-            {
-                shapeObj.AddComponent<Zoom>();
-            }
-            if ((shape.LocalShapeInfo.Tags & ShapeTags.Frictionless) == ShapeTags.Frictionless)
-            {
-                PhysicsMaterial2D frictionless = new PhysicsMaterial2D();
-                frictionless.friction = 0f;
-                shapeObj.GetComponent<Collider2D>().sharedMaterial = frictionless;
-            }
-            if ((shape.LocalShapeInfo.Tags & ShapeTags.Drag) == ShapeTags.Drag)
-            {
-                shapeObj.AddComponent<DragBehavior>();
-            }
-
-            OnCreateShape?.Invoke(shape);
-            shapeObj.GetComponent<SpriteRenderer>().sortingOrder = 1;
-            return shapeObj;
-        }
-        return null;
+        OnCreateShape?.Invoke(shape);
     }
 
-    public void DestroyShape(Shape shape)
+    public void DestroyShapeEvent(Shape shape)
     {
         OnDestroyShape?.Invoke(shape);
-        Destroy(shape.gameObject);
     }
 
-    public ShapeType? CombineShapes(ShapeType shapeA, ShapeType shapeB)
+    public void TakeApartShape(Shape shape)
     {
-        HashSet<ShapeType> pair = new HashSet<ShapeType> { shapeA, shapeB };
-        if (shapeRecipes.ShapeRecipesDict.TryGetValue(pair, out ShapeType shape))
+        if (shape.gameObject != null)
         {
-            return shape;
+            (string, string) pair = SeparateShapes(shape.ShapeName);
+            if (pair.Item1 != null)
+            {
+                Blacklist(
+                    Instantiate(
+                            shapeDatabase.ShapeDict[pair.Item1],
+                            (Vector2)shape.gameObject.transform.position
+                                + UnityEngine.Random.insideUnitCircle,
+                            Quaternion.identity
+                        )
+                        .GetComponent<Shape>(),
+                    1f
+                );
+                Blacklist(
+                    Instantiate(
+                            shapeDatabase.ShapeDict[pair.Item2],
+                            (Vector2)shape.gameObject.transform.position
+                                + UnityEngine.Random.insideUnitCircle,
+                            Quaternion.identity
+                        )
+                        .GetComponent<Shape>(),
+                    1f
+                );
+            }
         }
-        return null;
-    }
-
-    public HashSet<ShapeType> TakeApartShape(ShapeType shape)
-    {
-        if (shapeRecipes.ShapeRecipesDictInverse.TryGetValue(shape, out HashSet<ShapeType> shapes))
-        {
-            return shapes;
-        }
-        return null;
-    }
-
-    public void CheckShapeCollide((Shape, Shape) pair)
-    {
-        checkShapes.Add(pair);
     }
 
     public void Blacklist(Shape shape, float time)
@@ -159,7 +84,6 @@ public class ShapeManager : MonoBehaviour, IShapeManager
         blacklistShapes.Add(shape);
         StartCoroutine(RemoveFromBlacklist(shape, time));
     }
-    #endregion
 
     IEnumerator RemoveFromBlacklist(Shape shape, float time)
     {
@@ -167,45 +91,105 @@ public class ShapeManager : MonoBehaviour, IShapeManager
         blacklistShapes.Remove(shape);
     }
 
-    #region Monobehavior
+    public void CheckShapeCollide((Shape, Shape) pair)
+    {
+        checkShapes.Add(pair);
+    }
+
+    public string CombineShapes(string shapeA, string shapeB)
+    {
+        (string, string) pair = (shapeA, shapeB);
+        if (shapeRecipes.CombineRecipes.TryGetValue(pair, out string name))
+        {
+            return name;
+        }
+        return null;
+    }
+
+    public (string, string) SeparateShapes(string shape)
+    {
+        if (
+            shapeRecipes != null
+            && shapeRecipes.SeparateRecipes.TryGetValue(shape, out (string, string) pair)
+        )
+        {
+            return pair;
+        }
+        return (null, null);
+    }
+
     public void LateUpdate()
     {
-        if (checkShapes.Count >= 1)
+        if (checkShapes.Count < 1 || shapeRecipes == null)
         {
-            HashSet<Shape> used = new HashSet<Shape>();
-            foreach (Shape shape in blacklistShapes)
+            return;
+        }
+        HashSet<Shape> used = new HashSet<Shape>();
+        foreach (Shape shape in blacklistShapes)
+        {
+            used.Add(shape);
+        }
+        foreach ((Shape, Shape) pair in checkShapes)
+        {
+            Shape shapeA = pair.Item1;
+            Shape shapeB = pair.Item2;
+            if (used.Contains(shapeA) || used.Contains(shapeB))
             {
-                used.Add(shape);
+                continue;
             }
-            foreach ((Shape, Shape) pair in checkShapes)
+            else
             {
-                Shape shapeA = pair.Item1;
-                Shape shapeB = pair.Item2;
-                if (used.Contains(shapeA) || used.Contains(shapeB))
+                if (shapeA == null || shapeB == null)
                 {
                     continue;
                 }
-                else
+                string combined = CombineShapes(shapeA.ShapeName, shapeB.ShapeName);
+                if (!string.IsNullOrEmpty(combined))
                 {
-                    ShapeType? combined = CombineShapes(
-                        shapeA.LocalShapeInfo.Shape,
-                        shapeB.LocalShapeInfo.Shape
-                    );
-                    if (combined.HasValue)
-                    {
-                        Vector3 pointA = shapeA.gameObject.transform.position;
-                        Vector3 pointB = shapeB.gameObject.transform.position;
-                        Vector3 midpoint = (pointA + pointB) / 2;
-                        CreateShape((ShapeType)combined, midpoint);
-                        used.Add(shapeA);
-                        used.Add(shapeB);
-                        DestroyShape(shapeA);
-                        DestroyShape(shapeB);
-                    }
+                    Vector3 pointA = shapeA.gameObject.transform.position;
+                    Vector3 pointB = shapeB.gameObject.transform.position;
+                    Vector3 midpoint = (pointA + pointB) / 2;
+
+                    Instantiate(shapeDatabase.ShapeDict[combined], midpoint, Quaternion.identity);
+                    used.Add(shapeA);
+                    used.Add(shapeB);
+                    Destroy(shapeA.gameObject);
+                    Destroy(shapeB.gameObject);
                 }
             }
         }
         checkShapes.Clear();
     }
-    #endregion
+
+    public static bool ContainsSet(string[] subset, string[] superset)
+    {
+        Dictionary<string, int> supersetCount = new Dictionary<string, int>();
+
+        foreach (string name in superset)
+        {
+            if (supersetCount.ContainsKey(name))
+                supersetCount[name]++;
+            else
+                supersetCount[name] = 1;
+        }
+
+        foreach (string name in subset)
+        {
+            if (!supersetCount.ContainsKey(name))
+            {
+                continue;
+            }
+
+            supersetCount[name]--;
+        }
+        foreach (int val in supersetCount.Values)
+        {
+            if (val > 0)
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
 }

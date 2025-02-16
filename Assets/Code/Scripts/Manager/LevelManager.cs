@@ -182,6 +182,8 @@ public class LevelManager : MonoBehaviour, ILevelManager
                     }
                 }
             }
+            ShapeManager.Instance.shapeRecipes = null;
+            ShapeManager.Instance.shapeDatabase = null;
             currentSubLevelID = subLevelID;
             Camera.main.GetComponent<CameraController>().enabled = false;
             string name = Levels[currentLevelID].SubLevels[currentSubLevelID].SceneName;
@@ -197,7 +199,6 @@ public class LevelManager : MonoBehaviour, ILevelManager
                     root.transform.position = position;
                 }
                 SceneManager.SetActiveScene(subLevel);
-                LoadSavedActiveShapes();
             };
             //replace with a call to UI Manager
             SceneManager.LoadSceneAsync("LevelUI", LoadSceneMode.Additive);
@@ -211,8 +212,7 @@ public class LevelManager : MonoBehaviour, ILevelManager
         if (currentSubLevelID != -1)
         {
             Camera.main.GetComponent<CameraController>().enabled = true;
-            EnableThumbails();
-            UpdateActiveShapePositions();
+            EnableThumbnails();
             Debug.Log(currentSubLevelID);
             SceneManager.UnloadSceneAsync(
                 Levels[currentLevelID].SubLevels[currentSubLevelID].SceneName
@@ -262,59 +262,6 @@ public class LevelManager : MonoBehaviour, ILevelManager
         for (int i = 0; i < levelNames.Count; i++)
         {
             Levels.Add(i, null);
-        }
-        ShapeManager.Instance.OnCreateShape += AddShapeToSubLevelActive;
-        ShapeManager.Instance.OnDestroyShape += RemoveShapeFromSubLevelActive;
-    }
-
-    private void AddShapeToSubLevelActive(Shape shape)
-    {
-        CurrentSubLevelInfo()
-            .ActiveShapes.Add(
-                shape,
-                new ShapeSaveInfo(
-                    shape.LocalShapeInfo.Shape,
-                    shape.LocalShapeInfo.Tags,
-                    shape.gameObject.transform
-                )
-            );
-    }
-
-    private void RemoveShapeFromSubLevelActive(Shape shape)
-    {
-        CurrentSubLevelInfo().ActiveShapes.Remove(shape);
-    }
-
-    //call this before leaving a level
-    private void UpdateActiveShapePositions()
-    {
-        var activeShapes = CurrentSubLevelInfo().ActiveShapes;
-        foreach (Shape shape in activeShapes.Keys.ToList())
-        {
-            activeShapes[shape].transformInfo = new TransformInfo(shape.gameObject.transform);
-        }
-    }
-
-    private void LoadSavedActiveShapes()
-    {
-        var subLevelShapes = CurrentSubLevelInfo().ActiveShapes;
-        if (subLevelShapes.Count == 0)
-        {
-            return;
-        }
-        CurrentSubLevelInfo().firstLoad = true;
-        var savedShapes = subLevelShapes.Values.ToList();
-        CurrentSubLevelInfo().ActiveShapes.Clear();
-
-        foreach (ShapeSaveInfo shapeSave in savedShapes)
-        {
-            ShapeManager.Instance.CreateShape(
-                shapeSave.shapeType,
-                shapeSave.transformInfo.position,
-                shapeSave.transformInfo.rotation,
-                shapeSave.transformInfo.scale,
-                shapeSave.shapeTags
-            );
         }
     }
 
@@ -384,7 +331,7 @@ public class LevelManager : MonoBehaviour, ILevelManager
         }
     }
 
-    private void EnableThumbails()
+    private void EnableThumbnails()
     {
         foreach (var thumbnail in thumbnails)
         {
