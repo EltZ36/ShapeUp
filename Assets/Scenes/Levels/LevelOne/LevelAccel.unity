@@ -754,7 +754,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dc6d39d28c20b04b9ac3475e8874f2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Tags: 288
+  Tags: 544
   spriteName: prism_greyfill
   uniqueID: 
   OnFixedUpdateEvent:
@@ -808,6 +808,9 @@ MonoBehaviour:
   OnAttitudeChangeEvent:
     m_PersistentCalls:
       m_Calls: []
+  OnGravityChangeEvent:
+    m_PersistentCalls:
+      m_Calls: []
   OnCreateEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -833,7 +836,8 @@ MonoBehaviour:
   showTap: 0
   showAccelerate: 1
   showAttitude: 0
-  showCreate: 0
+  showGravity: 0
+  showCreate: 1
   showDestroy: 1
 --- !u!212 &4232612939947347146
 SpriteRenderer:
@@ -1110,6 +1114,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: f8929010c9081a04b9a64ab1f60bb142, type: 3}
   - {fileID: 21300000, guid: 225b669e3a920644dafe381a584ecba9, type: 3}
   - {fileID: 21300000, guid: 29d5b9d7da01a8f44bb9bcd18735a86c, type: 3}
+  oneActive: 1
   pickRandom: 0
   randomRotation: 1
   randomPosition: 1

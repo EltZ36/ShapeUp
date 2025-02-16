@@ -23,6 +23,7 @@ public class ShapeEditor : Editor
     SerializedProperty OnTapEvent;
     SerializedProperty OnAccelerateEvent;
     SerializedProperty OnAttitudeChangeEvent;
+    SerializedProperty OnGravityChangeEvent;
     SerializedProperty OnCreateEvent;
     SerializedProperty OnDestroyEvent;
     #endregion
@@ -35,6 +36,7 @@ public class ShapeEditor : Editor
     SerializedProperty showTap;
     SerializedProperty showAccelerate;
     SerializedProperty showAttitude;
+    SerializedProperty showGravity;
     SerializedProperty showCreate;
     SerializedProperty showDestroy;
 
@@ -57,6 +59,7 @@ public class ShapeEditor : Editor
         OnTapEvent = serializedObject.FindProperty("OnTapEvent");
         OnAccelerateEvent = serializedObject.FindProperty("OnAccelerateEvent");
         OnAttitudeChangeEvent = serializedObject.FindProperty("OnAttitudeChangeEvent");
+        OnGravityChangeEvent = serializedObject.FindProperty("OnGravityChangeEvent");
         OnCreateEvent = serializedObject.FindProperty("OnCreateEvent");
         OnDestroyEvent = serializedObject.FindProperty("OnDestroyEvent");
 
@@ -67,6 +70,7 @@ public class ShapeEditor : Editor
         showTap = serializedObject.FindProperty("showTap");
         showAccelerate = serializedObject.FindProperty("showAccelerate");
         showAttitude = serializedObject.FindProperty("showAttitude");
+        showGravity = serializedObject.FindProperty("showGravity");
         showCreate = serializedObject.FindProperty("showCreate");
         showDestroy = serializedObject.FindProperty("showDestroy");
     }
@@ -154,6 +158,12 @@ public class ShapeEditor : Editor
             showAttitude,
             "Attitude Change Event",
             OnAttitudeChangeEvent
+        );
+        DrawFoldoutEvent(
+            ShapeTags.OnGravityChange,
+            showGravity,
+            "Gravity Change Event",
+            OnGravityChangeEvent
         );
         DrawFoldoutEvent(ShapeTags.OnCreate, showCreate, "Create Event", OnCreateEvent);
         DrawFoldoutEvent(ShapeTags.OnDestroy, showDestroy, "Destroy Event", OnDestroyEvent);

@@ -260,7 +260,7 @@ Transform:
   m_GameObject: {fileID: 746816341}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.01, y: -4.95, z: 0}
+  m_LocalPosition: {x: 8.03, y: -4.95, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -502,7 +502,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.053809643, y: 4.8643537}
+  m_Offset: {x: 0.8774209, y: 4.8643537}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -513,7 +513,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 16.00201, y: 0.74171543}
+  m_Size: {x: 17.649231, y: 0.74171543}
   m_EdgeRadius: 0
 --- !u!1 &1225275206
 GameObject:
@@ -625,7 +625,7 @@ Transform:
   m_GameObject: {fileID: 1415582658}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -9.79, z: 0}
+  m_LocalPosition: {x: 0, y: -9.73, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -663,7 +663,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.053809643, y: 4.8643537}
+  m_Offset: {x: 0.9669411, y: 4.8643537}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -674,7 +674,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 16.00201, y: 0.74171543}
+  m_Size: {x: 17.82828, y: 0.74171543}
   m_EdgeRadius: 0
 --- !u!1 &1892670468
 GameObject:
@@ -858,6 +858,7 @@ GameObject:
   - component: {fileID: 2080903586}
   - component: {fileID: 2080903589}
   - component: {fileID: 2080903588}
+  - component: {fileID: 2080903591}
   m_Layer: 0
   m_Name: SeeSaw
   m_TagString: Untagged
@@ -875,7 +876,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.020000007, y: -2.11, z: 0}
-  m_LocalScale: {x: 1.8, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 949842587}
@@ -944,7 +945,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dc6d39d28c20b04b9ac3475e8874f2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Tags: 64
+  Tags: 128
   spriteName: seesaw-board
   uniqueID: 
   OnFixedUpdateEvent:
@@ -986,6 +987,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnGravityChangeEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2080903590}
+        m_TargetAssemblyTypeName: EffectTilt, Assembly-CSharp
+        m_MethodName: ChangeTilt
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnCreateEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -999,6 +1015,7 @@ MonoBehaviour:
   showTap: 0
   showAccelerate: 0
   showAttitude: 1
+  showGravity: 1
   showCreate: 0
   showDestroy: 0
 --- !u!61 &2080903588
@@ -1087,6 +1104,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   torqueAmount: 10
   rotationDamping: 5
+--- !u!233 &2080903591
+HingeJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2080903584}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 0}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_BreakAction: 3
+  m_AutoConfigureConnectedAnchor: 1
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: 0.020000007, y: -2.11}
+  m_UseMotor: 0
+  m_Motor:
+    m_MotorSpeed: 0
+    m_MaximumMotorForce: 10000
+  m_UseLimits: 1
+  m_AngleLimits:
+    m_LowerAngle: -15
+    m_UpperAngle: 15
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

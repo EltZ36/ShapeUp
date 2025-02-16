@@ -64,6 +64,9 @@ public class Shape : MonoBehaviour
     private UnityEvent<EventInfo> OnAttitudeChangeEvent;
 
     [SerializeField]
+    private UnityEvent<EventInfo> OnGravityChangeEvent;
+
+    [SerializeField]
     private UnityEvent<EventInfo> OnCreateEvent;
 
     [SerializeField]
@@ -154,6 +157,15 @@ public class Shape : MonoBehaviour
         );
     }
 
+    public void OnGravityChange(Vector3 gravity)
+    {
+        if ((Tags & ShapeTags.OnGravityChange) != ShapeTags.OnGravityChange)
+        {
+            return;
+        }
+        OnGravityChangeEvent.Invoke(new EventInfo(vectorOne: gravity));
+    }
+
     void Awake()
     {
         gameObject.layer = LayerMask.NameToLayer("Shape");
@@ -166,13 +178,17 @@ public class Shape : MonoBehaviour
 
     void Start()
     {
+        if ((Tags & ShapeTags.OnAccelerate) == ShapeTags.OnAccelerate)
+        {
+            ShapeEventSystem.Instance.OnAccelChange += OnAccelerate;
+        }
         if ((Tags & ShapeTags.OnAttitudeChange) == ShapeTags.OnAttitudeChange)
         {
             ShapeEventSystem.Instance.OnGyroChange += OnAttitudeChange;
         }
-        if ((Tags & ShapeTags.OnAccelerate) == ShapeTags.OnAccelerate)
+        if ((Tags & ShapeTags.OnGravityChange) == ShapeTags.OnGravityChange)
         {
-            ShapeEventSystem.Instance.OnAccelChange += OnAccelerate;
+            ShapeEventSystem.Instance.OnGravChange += OnGravityChange;
         }
 
         ShapeManager.Instance.CreateShapeEvent(this);
@@ -194,13 +210,17 @@ public class Shape : MonoBehaviour
 
     void OnDestroy()
     {
+        if ((Tags & ShapeTags.OnAccelerate) == ShapeTags.OnAccelerate)
+        {
+            ShapeEventSystem.Instance.OnAccelChange -= OnAccelerate;
+        }
         if ((Tags & ShapeTags.OnAttitudeChange) == ShapeTags.OnAttitudeChange)
         {
             ShapeEventSystem.Instance.OnGyroChange -= OnAttitudeChange;
         }
-        if ((Tags & ShapeTags.OnAccelerate) == ShapeTags.OnAccelerate)
+        if ((Tags & ShapeTags.OnGravityChange) == ShapeTags.OnGravityChange)
         {
-            ShapeEventSystem.Instance.OnAccelChange -= OnAccelerate;
+            ShapeEventSystem.Instance.OnGravChange -= OnGravityChange;
         }
 
         //https://stackoverflow.com/a/68126990
@@ -248,6 +268,9 @@ public class Shape : MonoBehaviour
 
     [SerializeField]
     private bool showAttitude;
+
+    [SerializeField]
+    private bool showGravity;
 
     [SerializeField]
     private bool showCreate;

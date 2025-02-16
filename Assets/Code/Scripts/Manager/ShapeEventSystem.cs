@@ -50,8 +50,11 @@ public class ShapeEventSystem : MonoBehaviour
 
     public event Action<Quaternion> OnGyroChange;
 
+    public event Action<Vector3> OnGravChange;
+
     private Vector3 pastAccel = Vector3.zero;
     private Vector3 newAccel;
+    private Vector3 pastGravity = default;
     bool accelRecent = false;
 
     private Quaternion pastGyro;
@@ -71,6 +74,7 @@ public class ShapeEventSystem : MonoBehaviour
     {
         CheckAcceleration();
         CheckGyroscope();
+        CheckGravity();
         if (Input.touchCount < 1)
         {
             return;
@@ -111,7 +115,7 @@ public class ShapeEventSystem : MonoBehaviour
                 selectedShape[i] = null;
                 foreach (RaycastHit2D hit in hits)
                 {
-                    if (hit.collider != null && trails[i] == null)
+                    if (hit.collider != null)
                     {
                         Shape shape = hit.collider.gameObject.GetComponent<Shape>();
                         if (shape != null)
@@ -226,6 +230,16 @@ public class ShapeEventSystem : MonoBehaviour
         {
             OnGyroChange?.Invoke(currGyro);
             pastGyro = currGyro;
+        }
+    }
+
+    private void CheckGravity()
+    {
+        Vector3 currGravity = Input.gyro.gravity;
+        if (currGravity != pastGravity)
+        {
+            OnGravChange?.Invoke(currGravity);
+            pastGravity = currGravity;
         }
     }
 

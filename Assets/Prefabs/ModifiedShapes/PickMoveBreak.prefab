@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dc6d39d28c20b04b9ac3475e8874f2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Tags: 274
+  Tags: 530
   spriteName: sphere_greyfill
   uniqueID: 
   OnFixedUpdateEvent:
@@ -214,6 +214,9 @@ MonoBehaviour:
   OnAttitudeChangeEvent:
     m_PersistentCalls:
       m_Calls: []
+  OnGravityChangeEvent:
+    m_PersistentCalls:
+      m_Calls: []
   OnCreateEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -239,8 +242,9 @@ MonoBehaviour:
   showTap: 1
   showAccelerate: 0
   showAttitude: 0
+  showGravity: 0
   showCreate: 0
-  showDestroy: 0
+  showDestroy: 1
 --- !u!212 &-4990759095755913176
 SpriteRenderer:
   m_ObjectHideFlags: 0

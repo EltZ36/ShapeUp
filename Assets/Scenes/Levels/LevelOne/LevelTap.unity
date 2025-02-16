@@ -617,7 +617,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 963aaa2aa587da5418cfe7ea98f84534, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 3
+  health: 4
+  regen: 0
+  regenDelay: 1
   target: {fileID: 1740465847005310710}
 --- !u!1 &1601496521
 GameObject:
@@ -843,7 +845,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Tags: 0
-  spriteName: 
+  spriteName: circle
   uniqueID: 
   OnFixedUpdateEvent:
     m_PersistentCalls:
@@ -872,6 +874,9 @@ MonoBehaviour:
   OnAttitudeChangeEvent:
     m_PersistentCalls:
       m_Calls: []
+  OnGravityChangeEvent:
+    m_PersistentCalls:
+      m_Calls: []
   OnCreateEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -885,6 +890,7 @@ MonoBehaviour:
   showTap: 0
   showAccelerate: 0
   showAttitude: 0
+  showGravity: 0
   showCreate: 0
   showDestroy: 0
 --- !u!114 &3102746493498640926
@@ -899,7 +905,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dc6d39d28c20b04b9ac3475e8874f2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Tags: 272
+  Tags: 528
   spriteName: circle_break_1
   uniqueID: 
   OnFixedUpdateEvent:
@@ -953,6 +959,9 @@ MonoBehaviour:
   OnAttitudeChangeEvent:
     m_PersistentCalls:
       m_Calls: []
+  OnGravityChangeEvent:
+    m_PersistentCalls:
+      m_Calls: []
   OnCreateEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -978,6 +987,7 @@ MonoBehaviour:
   showTap: 1
   showAccelerate: 0
   showAttitude: 0
+  showGravity: 0
   showCreate: 0
   showDestroy: 1
 --- !u!58 &3605227549879859424
@@ -1135,7 +1145,11 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 61d6260cfe162214cabdac8607d1fc78, type: 3}
   - {fileID: 21300000, guid: a26e4e1092381be468e22949e1f3d7e2, type: 3}
   - {fileID: 21300000, guid: 034f5ea930119b34398fab80a3bc9039, type: 3}
+  oneActive: 1
   pickRandom: 0
+  randomRotation: 0
+  randomPosition: 0
+  lifespan: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
