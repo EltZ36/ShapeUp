@@ -66,6 +66,8 @@ public class ShapeEventSystem : MonoBehaviour
     private Dictionary<int, Shape> selectedShape = new Dictionary<int, Shape>();
     private Dictionary<int, Vector3> start = new Dictionary<int, Vector3>();
 
+    private Dictionary<int, Vector3> lastPos = new Dictionary<int, Vector3>();
+
     private Dictionary<int, GameObject> trails = new Dictionary<int, GameObject>();
 
     private Shape pinchShape;
@@ -113,7 +115,8 @@ public class ShapeEventSystem : MonoBehaviour
             if (touch.phase == TouchPhase.Began)
             {
                 RaycastHit2D[] hits = Physics2D.CircleCastAll(pos, touchSize, Vector2.zero);
-
+                start[id] = pos;
+                lastPos[id] = pos;
                 foreach (RaycastHit2D hit in hits)
                 {
                     if (hit.collider != null)
@@ -121,7 +124,6 @@ public class ShapeEventSystem : MonoBehaviour
                         Shape shape = hit.collider.gameObject.GetComponent<Shape>();
                         if (shape != null)
                         {
-                            start[id] = pos;
                             selectedShape[id] = shape;
                             StartCoroutine(CheckTap(id, shape));
                             selectedShape[id].OnDragStart(pos);
@@ -143,7 +145,7 @@ public class ShapeEventSystem : MonoBehaviour
                 }
                 else
                 {
-                    RaycastHit2D[] hits = Physics2D.CircleCastAll(pos, touchSize, Vector2.zero);
+                    RaycastHit2D[] hits = Physics2D.LinecastAll(pos, lastPos[id]);
                     foreach (RaycastHit2D hit in hits)
                     {
                         if (hit.collider != null)
@@ -161,6 +163,7 @@ public class ShapeEventSystem : MonoBehaviour
                         trails[id].transform.position = pos;
                     }
                 }
+                lastPos[id] = pos;
             }
             else if (touch.phase == TouchPhase.Ended || touch.phase == TouchPhase.Canceled)
             {
@@ -172,6 +175,10 @@ public class ShapeEventSystem : MonoBehaviour
                 if (start.ContainsKey(id))
                 {
                     start.Remove(id);
+                }
+                if (lastPos.ContainsKey(id))
+                {
+                    lastPos.Remove(id);
                 }
                 if (trails.ContainsKey(id))
                 {
