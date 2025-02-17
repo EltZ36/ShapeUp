@@ -30,7 +30,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels/LevelOne/LevelOneFinal.unity
     guid: f8103cf9875955748986369ce2697e9a
   - enabled: 1
-    path: Assets/Scenes/Levels/LevelOne/BreakRope.unity
+    path: Assets/Scenes/Levels/LevelOne/BreakRopeNonParticle.unity
     guid: a28b718d19ec1434a9029d9252777888
   - enabled: 1
     path: Assets/Scenes/Levels/LevelOne/LevelAccel.unity
