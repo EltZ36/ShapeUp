@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -47,8 +48,16 @@ public class CameraController : MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(pointOne2D, Camera.main.transform.forward);
             if (hit.collider != null)
             {
-                if (hit.transform.gameObject.CompareTag("thumbnail"))
+                LevelInfo levelInfo = LevelManager.Instance.Levels[
+                    LevelManager.Instance.currentLevelID
+                ];
+                Debug.Log(hit.collider.gameObject.name);
+                SubLevelInfo sublevel = levelInfo.SubLevels.FirstOrDefault(sublevel =>
+                    sublevel.Thumbnail == hit.collider.gameObject
+                );
+                if (sublevel != null && sublevel.IsComplete != true)
                 {
+                    Debug.Log(sublevel.SceneName);
                     Vector2 levelPosition = hit.transform.position;
                     StartCoroutine(ZoomIn(levelPosition));
                 }
