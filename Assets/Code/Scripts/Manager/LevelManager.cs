@@ -60,6 +60,10 @@ public class LevelManager : MonoBehaviour, ILevelManager
                 if (sl.Value == true)
                 { // set levels accordingly
                     Levels[LNum].SubLevels[sl.Key].IsComplete = true;
+                    Levels[LNum]
+                        .SubLevels[sl.Key]
+                        .Thumbnail.GetComponentInChildren<SpriteRenderer>()
+                        .color = Color.grey;
                 }
             }
         }
@@ -99,8 +103,10 @@ public class LevelManager : MonoBehaviour, ILevelManager
         if (currentLevelID != -1 || currentSubLevelID != -1)
         {
             Levels[currentLevelID].SubLevels[currentSubLevelID].IsComplete = true;
-
-            // cj elton test
+            Levels[currentLevelID]
+                .SubLevels[currentSubLevelID]
+                .Thumbnail.GetComponentInChildren<SpriteRenderer>()
+                .color = Color.grey;
             GameManager.Instance.gameData.SetCompletedSublevel(currentLevelID, currentSubLevelID);
             GameManager.Instance.SaveGame();
         }
@@ -171,17 +177,7 @@ public class LevelManager : MonoBehaviour, ILevelManager
             {
                 return false;
             }
-            // if the level is the last level in the list, only load it if all other levels have been completed
-            if (subLevelID == Levels[currentLevelID].SubLevels.Count - 1)
-            {
-                for (int i = 0; i < subLevelID; i++)
-                {
-                    if (Levels[currentLevelID].SubLevels[i].IsComplete == false)
-                    {
-                        return false;
-                    }
-                }
-            }
+
             ShapeManager.Instance.shapeRecipes = null;
             ShapeManager.Instance.shapeDatabase = null;
             currentSubLevelID = subLevelID;

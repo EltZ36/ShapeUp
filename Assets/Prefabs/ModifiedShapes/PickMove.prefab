@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 581297037832830135}
   - component: {fileID: -9039294850626063948}
+  - component: {fileID: -2829241069871667251}
   - component: {fileID: 3102746494672219261}
   - component: {fileID: -4990759095755913176}
   - component: {fileID: 2361894183180487304}
@@ -49,6 +50,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scale: 1.05
+--- !u!114 &-2829241069871667251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1740465846098495637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69ad51c5ff03d4e48ab8198fa60ff187, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sublevelname: 
 --- !u!114 &3102746494672219261
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61,7 +75,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dc6d39d28c20b04b9ac3475e8874f2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Tags: 2
+  Tags: 258
   spriteName: circle
   uniqueID: 
   OnFixedUpdateEvent:
@@ -151,20 +165,36 @@ MonoBehaviour:
   OnAttitudeChangeEvent:
     m_PersistentCalls:
       m_Calls: []
-  OnCreateEvent:
+  OnGravityChangeEvent:
     m_PersistentCalls:
       m_Calls: []
+  OnCreateEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -2829241069871667251}
+        m_TargetAssemblyTypeName: EffectCheckLevelManager, Assembly-CSharp
+        m_MethodName: DestroyIfIncomplete
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnDestroyEvent:
     m_PersistentCalls:
       m_Calls: []
   showFixedUpdate: 0
-  showDrag: 1
+  showDrag: 0
   showPinch: 0
   showSlice: 0
   showTap: 0
   showAccelerate: 0
   showAttitude: 0
-  showCreate: 0
+  showGravity: 0
+  showCreate: 1
   showDestroy: 0
 --- !u!212 &-4990759095755913176
 SpriteRenderer:

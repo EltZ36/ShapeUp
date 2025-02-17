@@ -90,4 +90,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78e87a882c7f73647b9fc1fd022c7c69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shapeName: 
+  shapeTarget: {fileID: 0}

@@ -158,7 +158,7 @@ public class ShapeEventSystem : MonoBehaviour
                             }
                         }
                     }
-                    if (trails.ContainsKey(id))
+                    if (trails.ContainsKey(id) && trails[id] != null)
                     {
                         trails[id].transform.position = pos;
                     }

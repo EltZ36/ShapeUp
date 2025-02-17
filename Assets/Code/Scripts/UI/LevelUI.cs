@@ -58,8 +58,11 @@ public class LevelUI : MonoBehaviour
         enableUIElement(save);
     }
 
-    public void OnBackLevelButton()
+    public void OnZoomOutButton()
     {
+        disableUIElement(confirm);
+        disableUIElement(quitWindow);
+        disableUIElement(save);
         StartCoroutine(CameraController.ZoomOut());
     }
 
@@ -113,7 +116,14 @@ public class LevelUI : MonoBehaviour
     public void GoToMenuBar()
     {
         showMenu = !showMenu;
-        enableUIElement(menuScreen);
+        if (showMenu)
+        {
+            enableUIElement(menuScreen);
+        }
+        else
+        {
+            disableUIElement(menuScreen);
+        }
         disableUIElement(quitWindow);
         disableUIElement(confirm);
     }
@@ -148,6 +158,7 @@ public class LevelUI : MonoBehaviour
     public void GoToQuitMenuButton()
     {
         enableUIElement(quitWindow);
+        disableUIElement(confirm);
     }
 
     public void onCancelConfirmButton()
