@@ -60,6 +60,10 @@ public class LevelManager : MonoBehaviour, ILevelManager
                 if (sl.Value == true)
                 { // set levels accordingly
                     Levels[LNum].SubLevels[sl.Key].IsComplete = true;
+                    Levels[LNum]
+                        .SubLevels[sl.Key]
+                        .Thumbnail.GetComponentInChildren<SpriteRenderer>()
+                        .color = Color.grey;
                 }
             }
         }
@@ -99,7 +103,10 @@ public class LevelManager : MonoBehaviour, ILevelManager
         if (currentLevelID != -1 || currentSubLevelID != -1)
         {
             Levels[currentLevelID].SubLevels[currentSubLevelID].IsComplete = true;
-
+            Levels[currentLevelID]
+                .SubLevels[currentSubLevelID]
+                .Thumbnail.GetComponentInChildren<SpriteRenderer>()
+                .color = Color.grey;
             // cj elton test
             GameManager.Instance.gameData.SetCompletedSublevel(currentLevelID, currentSubLevelID);
             GameManager.Instance.SaveGame();

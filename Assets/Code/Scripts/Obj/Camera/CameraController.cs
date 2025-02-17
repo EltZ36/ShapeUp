@@ -57,7 +57,6 @@ public class CameraController : MonoBehaviour
                 );
                 if (sublevel != null && sublevel.IsComplete != true)
                 {
-                    Debug.Log(sublevel.SceneName);
                     Vector2 levelPosition = hit.transform.position;
                     StartCoroutine(ZoomIn(levelPosition));
                 }
