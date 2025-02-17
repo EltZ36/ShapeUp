@@ -362,6 +362,9 @@ MonoBehaviour:
   OnAttitudeChangeEvent:
     m_PersistentCalls:
       m_Calls: []
+  OnGravityChangeEvent:
+    m_PersistentCalls:
+      m_Calls: []
   OnCreateEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -375,6 +378,7 @@ MonoBehaviour:
   showTap: 0
   showAccelerate: 0
   showAttitude: 0
+  showGravity: 0
   showCreate: 0
   showDestroy: 0
 --- !u!1 &315466500
@@ -504,6 +508,9 @@ MonoBehaviour:
   OnAttitudeChangeEvent:
     m_PersistentCalls:
       m_Calls: []
+  OnGravityChangeEvent:
+    m_PersistentCalls:
+      m_Calls: []
   OnCreateEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -517,6 +524,7 @@ MonoBehaviour:
   showTap: 0
   showAccelerate: 0
   showAttitude: 0
+  showGravity: 0
   showCreate: 0
   showDestroy: 0
 --- !u!1001 &422145109
@@ -1042,6 +1050,9 @@ MonoBehaviour:
   OnAttitudeChangeEvent:
     m_PersistentCalls:
       m_Calls: []
+  OnGravityChangeEvent:
+    m_PersistentCalls:
+      m_Calls: []
   OnCreateEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -1055,6 +1066,7 @@ MonoBehaviour:
   showTap: 0
   showAccelerate: 0
   showAttitude: 0
+  showGravity: 0
   showCreate: 0
   showDestroy: 0
 --- !u!1001 &969446600
@@ -1069,6 +1081,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: ded84c4a1adae9a4eb736c4a0b25b9d5, type: 3}
+    - target: {fileID: -2829241069871667251, guid: 679a2627b2c70e14bb4030e7d74977eb, type: 3}
+      propertyPath: sublevelname
+      value: LevelPinch
+      objectReference: {fileID: 0}
     - target: {fileID: 581297037832830135, guid: 679a2627b2c70e14bb4030e7d74977eb, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.8
@@ -1382,6 +1398,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 64b432df7daad3448855c6e17b1b9b64, type: 3}
+    - target: {fileID: -2829241069871667251, guid: 679a2627b2c70e14bb4030e7d74977eb, type: 3}
+      propertyPath: sublevelname
+      value: BreakRope
+      objectReference: {fileID: 0}
     - target: {fileID: 581297037832830135, guid: 679a2627b2c70e14bb4030e7d74977eb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.8
@@ -1489,6 +1509,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1630282083}
     m_Modifications:
+    - target: {fileID: -2829241069871667251, guid: 679a2627b2c70e14bb4030e7d74977eb, type: 3}
+      propertyPath: sublevelname
+      value: LevelTap
+      objectReference: {fileID: 0}
     - target: {fileID: 581297037832830135, guid: 679a2627b2c70e14bb4030e7d74977eb, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.8
@@ -1534,12 +1558,52 @@ PrefabInstance:
       value: Circle
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: 679a2627b2c70e14bb4030e7d74977eb, type: 3}
+      propertyPath: Tags
+      value: 258
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: 679a2627b2c70e14bb4030e7d74977eb, type: 3}
+      propertyPath: showDrag
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: 679a2627b2c70e14bb4030e7d74977eb, type: 3}
       propertyPath: uniqueID
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: 679a2627b2c70e14bb4030e7d74977eb, type: 3}
+      propertyPath: showCreate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: 679a2627b2c70e14bb4030e7d74977eb, type: 3}
       propertyPath: spriteName
       value: circle
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: 679a2627b2c70e14bb4030e7d74977eb, type: 3}
+      propertyPath: OnCreateEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: 679a2627b2c70e14bb4030e7d74977eb, type: 3}
+      propertyPath: OnCreateEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: 679a2627b2c70e14bb4030e7d74977eb, type: 3}
+      propertyPath: OnCreateEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1409910219}
+    - target: {fileID: 3102746494672219261, guid: 679a2627b2c70e14bb4030e7d74977eb, type: 3}
+      propertyPath: OnCreateEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: 679a2627b2c70e14bb4030e7d74977eb, type: 3}
+      propertyPath: OnCreateEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DestroyIfIncomplete
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: 679a2627b2c70e14bb4030e7d74977eb, type: 3}
+      propertyPath: OnCreateEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: EffectCheckLevelManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: 679a2627b2c70e14bb4030e7d74977eb, type: 3}
+      propertyPath: OnCreateEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1551,6 +1615,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 581297037832830135, guid: 679a2627b2c70e14bb4030e7d74977eb, type: 3}
   m_PrefabInstance: {fileID: 1409910217}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1409910219 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -2829241069871667251, guid: 679a2627b2c70e14bb4030e7d74977eb, type: 3}
+  m_PrefabInstance: {fileID: 1409910217}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69ad51c5ff03d4e48ab8198fa60ff187, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1409910222 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3102746494672219261, guid: 679a2627b2c70e14bb4030e7d74977eb, type: 3}
@@ -1775,6 +1850,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1630282083}
     m_Modifications:
+    - target: {fileID: -2829241069871667251, guid: 679a2627b2c70e14bb4030e7d74977eb, type: 3}
+      propertyPath: sublevelname
+      value: LevelGyro
+      objectReference: {fileID: 0}
     - target: {fileID: 581297037832830135, guid: 679a2627b2c70e14bb4030e7d74977eb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.8
@@ -2081,6 +2160,9 @@ MonoBehaviour:
   OnAttitudeChangeEvent:
     m_PersistentCalls:
       m_Calls: []
+  OnGravityChangeEvent:
+    m_PersistentCalls:
+      m_Calls: []
   OnCreateEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -2094,6 +2176,7 @@ MonoBehaviour:
   showTap: 0
   showAccelerate: 0
   showAttitude: 0
+  showGravity: 0
   showCreate: 0
   showDestroy: 0
 --- !u!1001 &1942209541
@@ -2305,6 +2388,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: ded84c4a1adae9a4eb736c4a0b25b9d5, type: 3}
+    - target: {fileID: -2829241069871667251, guid: 679a2627b2c70e14bb4030e7d74977eb, type: 3}
+      propertyPath: sublevelname
+      value: LevelAccel
+      objectReference: {fileID: 0}
     - target: {fileID: 581297037832830135, guid: 679a2627b2c70e14bb4030e7d74977eb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.8
@@ -2379,6 +2466,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 64b432df7daad3448855c6e17b1b9b64, type: 3}
+    - target: {fileID: -2829241069871667251, guid: 679a2627b2c70e14bb4030e7d74977eb, type: 3}
+      propertyPath: sublevelname
+      value: LevelAccel
+      objectReference: {fileID: 0}
     - target: {fileID: 581297037832830135, guid: 679a2627b2c70e14bb4030e7d74977eb, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.8

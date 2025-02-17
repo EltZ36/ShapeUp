@@ -51,7 +51,6 @@ public class CameraController : MonoBehaviour
                 LevelInfo levelInfo = LevelManager.Instance.Levels[
                     LevelManager.Instance.currentLevelID
                 ];
-                Debug.Log(hit.collider.gameObject.name);
                 SubLevelInfo sublevel = levelInfo.SubLevels.FirstOrDefault(sublevel =>
                     sublevel.Thumbnail == hit.collider.gameObject
                 );
