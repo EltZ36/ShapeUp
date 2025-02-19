@@ -61,8 +61,10 @@ public class LevelUI : MonoBehaviour
     public void OnZoomOutButton()
     {
         disableUIElement(confirm);
+        disableUIElement(menuScreen);
+        disableUIElement(victory);
+
         disableUIElement(quitWindow);
-        disableUIElement(save);
         StartCoroutine(CameraController.ZoomOut());
     }
 
