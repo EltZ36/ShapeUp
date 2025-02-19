@@ -40,10 +40,10 @@ public class EffectCrackShader : MonoBehaviour
         if (i > 0)
         {
             SetThreshold(percent);
-        }
-        if (regen > 0)
-        {
-            StartCoroutine(Regen(regen));
+            if (regen > 0)
+            {
+                StartCoroutine(Regen(regen));
+            }
         }
     }
 

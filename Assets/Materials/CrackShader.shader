@@ -5,8 +5,9 @@ Shader "Unlit/CrackShader"
         _MainTex ("Texture", 2D) = "white" {}
         _CrackTex ("CrackTexture", 2D) = "white" {}
         _WorleyNoise("WorleyNoise", 2D) = "white" {}
-        _WorleyZoom("WorleyZoom", int) = 1
         _Threshold ("Threshold", float) = 1.0
+
+        _Zoom("Zoom",float) = 1.0
     }
     SubShader
     {
@@ -41,12 +42,13 @@ Shader "Unlit/CrackShader"
             float4 _MainTex_ST;
 
             sampler2D _WorleyNoise;
-            int _WorleyZoom;
             float4 _WorleyNoise_ST;
 
             sampler2D _CrackTex;
             float4 _CrackTex_ST;
             float _Threshold;
+
+            float _Zoom;
 
             v2f vert (appdata v)
             {
@@ -67,7 +69,7 @@ Shader "Unlit/CrackShader"
                     return col;
                 }
 
-                float2 offsetCord = abs(fmod(current + _CrackTex_ST.zw, 1.0));
+                float2 offsetCord = abs(fmod((current + _CrackTex_ST.zw)*_Zoom, 1.0));
                 float2 worleyOffset = abs(fmod(current + _WorleyNoise_ST.zw, 1.0));
 
 

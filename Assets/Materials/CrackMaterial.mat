@@ -26,18 +26,19 @@ Material:
     - _CrackTex:
         m_Texture: {fileID: 2800000, guid: 1dc74a33cf1f65a44b5e4a1d70140d78, type: 3}
         m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
+        m_Offset: {x: 2.95, y: 0.1494739}
     - _MainTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _WorleyNoise:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 9fba31baf4a0d984d8eb56a8ad6a3bdb, type: 3}
         m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
+        m_Offset: {x: -0.26, y: 0}
     m_Ints: []
     m_Floats:
-    - _Threshold: 1
+    - _Threshold: 0.83
     - _WorleyZoom: 1
+    - _Zoom: 1
     m_Colors: []
   m_BuildTextureStacks: []

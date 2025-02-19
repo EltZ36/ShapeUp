@@ -9,10 +9,7 @@ public class EffectDurability : MonoBehaviour
     int health;
 
     [SerializeField]
-    bool regen = false;
-
-    [SerializeField]
-    float regenDelay = 1;
+    float regen = -1;
 
     [SerializeField]
     GameObject target;
@@ -22,9 +19,9 @@ public class EffectDurability : MonoBehaviour
         health--;
         if (health > 0)
         {
-            if (regen)
+            if (regen > 0)
             {
-                StartCoroutine(regenHealth(regenDelay));
+                StartCoroutine(regenHealth(regen));
             }
         }
         else

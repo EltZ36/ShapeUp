@@ -80,13 +80,14 @@ public class GenerateWorleyNoiseTexture : MonoBehaviour
             }
         }
 
-        // Normalize distances and set pixels
+        // Adjust distribution for a more even spread
+        float range = maxDistGlobal - minDistGlobal;
         for (int y = 0; y < resolution; y++)
         {
             for (int x = 0; x < resolution; x++)
             {
-                float normalizedValue =
-                    (distances[x, y] - minDistGlobal) / (maxDistGlobal - minDistGlobal);
+                float normalizedValue = (distances[x, y] - minDistGlobal) / range;
+                normalizedValue = Mathf.Pow(normalizedValue, 0.75f); // Adjust contrast for even distribution
                 texture.SetPixel(
                     x,
                     y,
