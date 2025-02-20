@@ -215,6 +215,7 @@ GameObject:
   - component: {fileID: 253378277}
   - component: {fileID: 253378276}
   - component: {fileID: 253378275}
+  - component: {fileID: 253378283}
   - component: {fileID: 253378274}
   - component: {fileID: 253378273}
   m_Layer: 0
@@ -263,7 +264,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  sens: 5
+  sens: 10
   cooldown: 0.2
 --- !u!60 &253378274
 PolygonCollider2D:
@@ -406,7 +407,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dc6d39d28c20b04b9ac3475e8874f2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Tags: 640
+  Tags: 672
   spriteName: prism_greyfill
   uniqueID: 
   OnFixedUpdateEvent:
@@ -433,21 +434,9 @@ MonoBehaviour:
   OnAccelerateEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 253378281}
-        m_TargetAssemblyTypeName: EffectDurability, Assembly-CSharp
-        m_MethodName: TakeDamage
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 253378280}
-        m_TargetAssemblyTypeName: EffectCrackShader, Assembly-CSharp
-        m_MethodName: AddCrack
+      - m_Target: {fileID: 253378283}
+        m_TargetAssemblyTypeName: EffectAcceleratePulse, Assembly-CSharp
+        m_MethodName: PulseOffCollider
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -576,6 +565,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &253378283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 253378272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1e43978ce2d4b644bfaeecefe0dca9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  multi: 2
 --- !u!1 &270874257
 GameObject:
   m_ObjectHideFlags: 0
@@ -699,7 +701,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trailPrefab: {fileID: 8449138510180305575, guid: 9e255c5fbc568cd4eb31d143614df71e, type: 3}
   tapTimer: 0.1
-  accelCooldown: 1
   accelSens: 2
   gyroSens: 1
 --- !u!4 &324314429
