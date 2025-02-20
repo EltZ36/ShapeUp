@@ -10,8 +10,16 @@ public class EffectVelocity : MonoBehaviour
     [SerializeField]
     Vector2 velocity;
 
+    [SerializeField]
+    float speed = 1;
+
     public void SetTargetVelocity(EventInfo eventInfo)
     {
-        target.GetComponent<Rigidbody2D>().velocity = velocity;
+        target.GetComponent<Rigidbody2D>().velocity = velocity * speed;
+    }
+
+    public void SetTargetVelocityFromEvent(EventInfo eventInfo)
+    {
+        eventInfo.TargetObject.GetComponent<Rigidbody2D>().velocity = eventInfo.VectorOne * speed;
     }
 }
