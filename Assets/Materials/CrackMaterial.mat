@@ -37,7 +37,7 @@ Material:
         m_Offset: {x: -0.26, y: 0}
     m_Ints: []
     m_Floats:
-    - _Threshold: 0.83
+    - _Threshold: 0.8
     - _WorleyZoom: 1
     - _Zoom: 1
     m_Colors: []

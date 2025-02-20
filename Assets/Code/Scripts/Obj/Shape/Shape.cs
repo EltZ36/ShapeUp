@@ -163,7 +163,7 @@ public class Shape : MonoBehaviour
         {
             return;
         }
-        OnGravityChangeEvent.Invoke(new EventInfo(vectorOne: gravity));
+        OnGravityChangeEvent.Invoke(new EventInfo(targetObject: gameObject, vectorOne: gravity));
     }
 
     void Awake()
