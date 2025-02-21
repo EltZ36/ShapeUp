@@ -9,6 +9,8 @@ public class EffectMove : MonoBehaviour
 
     private Vector3 originalScale;
 
+    private Vector3 targetPos;
+
     void Awake()
     {
         originalScale = gameObject.transform.localScale;
