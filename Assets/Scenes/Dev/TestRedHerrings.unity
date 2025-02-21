@@ -131,6 +131,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 177095324}
+  - component: {fileID: 177095332}
+  - component: {fileID: 177095331}
+  - component: {fileID: 177095330}
   - component: {fileID: 177095325}
   - component: {fileID: 177095329}
   - component: {fileID: 177095328}
@@ -281,17 +284,41 @@ MonoBehaviour:
       m_Calls: []
   OnDragStartEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 177095326}
+        m_TargetAssemblyTypeName: EffectRedDrag, Assembly-CSharp
+        m_MethodName: DragStart
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 177095330}
+        m_TargetAssemblyTypeName: EffectMove, Assembly-CSharp
+        m_MethodName: DefaultSize
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnDragEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 177095326}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 177095330}
+        m_TargetAssemblyTypeName: EffectMove, Assembly-CSharp
+        m_MethodName: MoveShape
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -299,17 +326,29 @@ MonoBehaviour:
         m_CallState: 2
   OnDragEndEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 177095326}
+        m_TargetAssemblyTypeName: EffectRedDrag, Assembly-CSharp
+        m_MethodName: DragBack
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnPinchEvent:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 177095328}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+        m_TargetAssemblyTypeName: EffectRedPinch, Assembly-CSharp
+        m_MethodName: ChangeSizeDist
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -459,7 +498,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSize: 3
-  minSize: 0.5
+  minSize: 1
 --- !u!114 &177095329
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -473,6 +512,49 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tapParticles: {fileID: 3059793695371579445, guid: 09f9e144b7db92541954332bac1d2f3b, type: 3}
+--- !u!114 &177095330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 177095318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c808aecee7e6f6499cd925df513a865, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scale: 1
+--- !u!114 &177095331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 177095318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9e7007171c80b44aaafe172512485c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  crackMaterial: {fileID: 0}
+  max: 3
+  regen: -1
+--- !u!114 &177095332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 177095318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 963aaa2aa587da5418cfe7ea98f84534, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 99999
+  regen: 1
+  target: {fileID: 177095318}
 --- !u!1 &270874257
 GameObject:
   m_ObjectHideFlags: 0

@@ -32,12 +32,23 @@ public class EffectRedPinch : MonoBehaviour
             Mathf.Clamp(originalScale.y + (change / 2), minSize, maxSize),
             1f
         );
-        StartCoroutine(ChangeBackSize());
+        StartCoroutine(ChangeBackSize(eventInfo));
     }
 
-    IEnumerator ChangeBackSize()
+    IEnumerator ChangeBackSize(EventInfo eventInfo)
     {
+        float time = 1.0f;
+        float elapsed = 0.0f;
+        while ((elapsed / time) < 1)
+        {
+            elapsed += Time.deltaTime;
+            eventInfo.TargetObject.transform.localScale = Vector3.Lerp(
+                current.transform.localScale,
+                originalScale,
+                elapsed / time
+            );
+            yield return null;
+        }
         yield return new WaitForSeconds(1f);
-        current.transform.localScale = originalScale;
     }
 }
