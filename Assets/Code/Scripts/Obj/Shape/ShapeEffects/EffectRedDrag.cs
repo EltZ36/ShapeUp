@@ -4,26 +4,6 @@ using UnityEngine;
 
 public class EffectRedDrag : MonoBehaviour
 {
-    Vector3 originalPosition;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        originalPosition = transform.position;
-    }
-
-    // Update is called once per frame
-    public void ChangePosition(EventInfo eventInfo)
-    {
-        eventInfo.TargetObject.transform.position = (Vector2)eventInfo.VectorTwo;
-    }
-
-    public void ChangeBackPosition()
-    {
-        transform.position = originalPosition;
-    }
-
-    //use ondragstart to get initial position
-    //some type of lerp
-    //changebackposition
+    //maybe the same where it cracks and then comes back
+    //spawn particles on where your finger drags and then collision
 }
