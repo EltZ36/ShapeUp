@@ -132,6 +132,7 @@ GameObject:
   m_Component:
   - component: {fileID: 177095324}
   - component: {fileID: 177095332}
+  - component: {fileID: 177095333}
   - component: {fileID: 177095331}
   - component: {fileID: 177095330}
   - component: {fileID: 177095325}
@@ -387,13 +388,13 @@ MonoBehaviour:
   OnAccelerateEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 177095327}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 177095331}
+        m_TargetAssemblyTypeName: EffectCrackShader, Assembly-CSharp
+        m_MethodName: AddCrack
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -537,9 +538,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9e7007171c80b44aaafe172512485c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  crackMaterial: {fileID: 0}
+  crackMaterial: {fileID: 2100000, guid: 2334f040f8e6cda48886d85eef6b8f61, type: 2}
   max: 3
-  regen: -1
+  regen: 1
 --- !u!114 &177095332
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -555,6 +556,20 @@ MonoBehaviour:
   health: 99999
   regen: 1
   target: {fileID: 177095318}
+--- !u!114 &177095333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 177095318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70ae0c8cef10ac74592f8de62e55d7db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
+  maxSpeed: 5
 --- !u!1 &270874257
 GameObject:
   m_ObjectHideFlags: 0

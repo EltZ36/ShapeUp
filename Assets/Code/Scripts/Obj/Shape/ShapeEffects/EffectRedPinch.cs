@@ -17,6 +17,7 @@ public class EffectRedPinch : MonoBehaviour
 
     public void ChangeSizeDist(EventInfo eventInfo)
     {
+        Debug.Log("Changing Size");
         if (current != eventInfo.TargetObject || original != eventInfo.FloatValue)
         {
             current = eventInfo.TargetObject;
@@ -28,10 +29,13 @@ public class EffectRedPinch : MonoBehaviour
         float change = dist - original;
 
         current.transform.localScale = new Vector3(
-            Mathf.Clamp(originalScale.x + (change / 2), minSize, maxSize),
-            Mathf.Clamp(originalScale.y + (change / 2), minSize, maxSize),
+            Mathf.Clamp(originalScale.x, minSize, maxSize),
+            Mathf.Clamp(originalScale.y, minSize, maxSize),
             1f
         );
+
+        //Mathf.Clamp(originalScale.x + (change / 2), minSize, maxSize),
+        //Mathf.Clamp(originalScale.y + (change / 2), minSize, maxSize),
         StartCoroutine(ChangeBackSize(eventInfo));
     }
 
@@ -49,6 +53,6 @@ public class EffectRedPinch : MonoBehaviour
             );
             yield return null;
         }
-        yield return new WaitForSeconds(1f);
+        Debug.Log("Done with Coroutine");
     }
 }
