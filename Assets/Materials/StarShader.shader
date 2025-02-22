@@ -10,9 +10,10 @@ Shader "Unlit/StarShader"
 
         _AnimationSpeed("Animation Speed", float) = 1
 
-        _SpeedLeft ("Speed Left", float) = 0
-        _SpeedRight ("Speed Right", float) = 0
+        _SpeedHorizontal ("Speed Horizontal", float) = 0
+        _SpeedVertical ("Speed Vertical", float) = 0
 
+        _SpeedRotation ("Speed Rotation", float) = 0
     }
     SubShader
     {
@@ -29,6 +30,7 @@ Shader "Unlit/StarShader"
             {
                 float4 vertex : POSITION;
                 float2 uv : TEXCOORD0;
+                float4 color : COLOR;
             };
 
             struct v2f
@@ -36,6 +38,7 @@ Shader "Unlit/StarShader"
                 float2 uv : TEXCOORD0;
                 float4 vertex : SV_POSITION;
                 float3 worldPos : TEXCOORD1;
+                float4 color : COLOR;
             };
 
             sampler2D _MainTex;
@@ -49,8 +52,10 @@ Shader "Unlit/StarShader"
 
             float _AnimationSpeed;
 
-            float _SpeedLeft;
-            float _SpeedRight;
+            float _SpeedHorizontal;
+            float _SpeedVertical;
+
+            float _SpeedRotation;
             
             //https://www.shadertoy.com/view/4djSRW PseudoRandom in shader 
             float2 hash22(float2 p){
@@ -65,6 +70,7 @@ Shader "Unlit/StarShader"
                 o.vertex = UnityObjectToClipPos(v.vertex);
                 o.uv = TRANSFORM_TEX(v.uv, _MainTex);
                 o.worldPos = mul(unity_ObjectToWorld, v.vertex).xyz;
+                o.color = v.color;
                 return o;
             }
 
@@ -72,7 +78,7 @@ Shader "Unlit/StarShader"
             {
                 fixed4 col = tex2D(_MainTex, i.uv);
 
-                float2 worldCoords = i.worldPos.xy + float2(_Time.y*_SpeedLeft,_Time.y*_SpeedRight);
+                float2 worldCoords = i.worldPos.xy + float2(_Time.y*_SpeedHorizontal,_Time.y*_SpeedVertical);
 
                 float2 grid = floor(worldCoords/_GridSize);
                 float2 gridPos = frac(worldCoords/_GridSize);
@@ -98,10 +104,29 @@ Shader "Unlit/StarShader"
                         float2 mid = float2(0.5,0.5);
                         starUV = (starUV-mid)/_SpriteSize + mid;
 
+                        starUV = starUV-mid;
+
+                        float rotOffset = random.y;
+
+                        float cosTime = cos((_Time.y+rotOffset)*_SpeedRotation);
+                        float sinTime = sin((_Time.y+rotOffset)*_SpeedRotation);
+
+                        //https://chatgpt.com/share/67ba3896-97bc-8010-b88a-288f2cb4afee Rotation Matrix
+                        float4x4 rotationMatrix = {
+                            cosTime, -sinTime, 0, 0,
+                            sinTime, cosTime,  0, 0,
+                            0,            0,             1, 0,
+                            0,            0,             0, 1
+                        };
+
+                        starUV = mul(rotationMatrix, starUV);
+
+                        starUV = starUV+mid;
+
                         float indexSize = (1.0/8.0);
 
                         starUV.x *= indexSize;
-                        float starOffset = floor((_Time.y*_AnimationSpeed)%9);
+                        float starOffset = floor(((_Time.y*_AnimationSpeed)+random.x*9)%9);
                         starUV.x += indexSize*starOffset;
                         starUV.x = clamp(starUV.x,indexSize*starOffset,indexSize*(starOffset)+indexSize);
 
@@ -112,11 +137,11 @@ Shader "Unlit/StarShader"
                         
                     }
                     
-                    return col;
+                    return col*i.color;
                 }
 
                 
-                return col;
+                return col*i.color;
             }
             ENDCG
         }

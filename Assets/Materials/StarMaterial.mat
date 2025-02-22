@@ -37,11 +37,14 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _AnimationSpeed: 1
+    - _AnimationSpeed: 0
     - _Frequency: 1
     - _GridSize: 1
-    - _SpeedLeft: 0.9
-    - _SpeedRight: 0.15
+    - _SpeedHorizontal: 0
+    - _SpeedLeft: 0
+    - _SpeedRight: 0
+    - _SpeedRotation: -1.14
+    - _SpeedVertical: 0
     - _SpriteSize: 1
     m_Colors: []
   m_BuildTextureStacks: []
