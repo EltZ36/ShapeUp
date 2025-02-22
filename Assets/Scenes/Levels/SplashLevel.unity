@@ -394,6 +394,10 @@ PrefabInstance:
       value: Pyramid3DPrefab
       objectReference: {fileID: 0}
     - target: {fileID: 2361894183180487304, guid: bc23eb32481c7df41b975c25e5ccabe1, type: 3}
+      propertyPath: m_Mass
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2361894183180487304, guid: bc23eb32481c7df41b975c25e5ccabe1, type: 3}
       propertyPath: m_CollisionDetection
       value: 1
       objectReference: {fileID: 0}
@@ -796,11 +800,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: df10f4879db27f642a31ac4396abfa27, type: 3}
       propertyPath: Tags
-      value: 38
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: df10f4879db27f642a31ac4396abfa27, type: 3}
       propertyPath: showDrag
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: df10f4879db27f642a31ac4396abfa27, type: 3}
       propertyPath: showPinch
@@ -816,7 +820,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: df10f4879db27f642a31ac4396abfa27, type: 3}
       propertyPath: showAccelerate
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: df10f4879db27f642a31ac4396abfa27, type: 3}
       propertyPath: OnDragEvent.m_PersistentCalls.m_Calls.Array.size
@@ -977,7 +981,7 @@ PrefabInstance:
     - target: {fileID: 3102746494672219261, guid: df10f4879db27f642a31ac4396abfa27, type: 3}
       propertyPath: OnGravityChangeEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1590078338}
+      objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: df10f4879db27f642a31ac4396abfa27, type: 3}
       propertyPath: OnAccelerateEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: PulseOffCollider
@@ -1074,9 +1078,6 @@ PrefabInstance:
       addedObject: {fileID: 1590078333}
     - targetCorrespondingSourceObject: {fileID: 1740465846098495637, guid: df10f4879db27f642a31ac4396abfa27, type: 3}
       insertIndex: 3
-      addedObject: {fileID: 1590078338}
-    - targetCorrespondingSourceObject: {fileID: 1740465846098495637, guid: df10f4879db27f642a31ac4396abfa27, type: 3}
-      insertIndex: 4
       addedObject: {fileID: 1590078337}
   m_SourcePrefab: {fileID: 100100000, guid: df10f4879db27f642a31ac4396abfa27, type: 3}
 --- !u!4 &170307573 stripped
@@ -1167,6 +1168,10 @@ PrefabInstance:
     - target: {fileID: 1740465846098495637, guid: 6f0bb0a93a34a6440a871df3bb342b4c, type: 3}
       propertyPath: m_Name
       value: RopePyramid
+      objectReference: {fileID: 0}
+    - target: {fileID: 2361894183180487304, guid: 6f0bb0a93a34a6440a871df3bb342b4c, type: 3}
+      propertyPath: m_Mass
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: 6f0bb0a93a34a6440a871df3bb342b4c, type: 3}
       propertyPath: Tags
@@ -1275,7 +1280,7 @@ PrefabInstance:
     - target: {fileID: 3102746494672219261, guid: 6f0bb0a93a34a6440a871df3bb342b4c, type: 3}
       propertyPath: OnGravityChangeEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1937870926}
+      objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: 6f0bb0a93a34a6440a871df3bb342b4c, type: 3}
       propertyPath: OnAccelerateEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: PulseOffCollider
@@ -1340,12 +1345,9 @@ PrefabInstance:
       addedObject: {fileID: 1937870920}
     - targetCorrespondingSourceObject: {fileID: 1740465846098495637, guid: 6f0bb0a93a34a6440a871df3bb342b4c, type: 3}
       insertIndex: 3
-      addedObject: {fileID: 1937870926}
-    - targetCorrespondingSourceObject: {fileID: 1740465846098495637, guid: 6f0bb0a93a34a6440a871df3bb342b4c, type: 3}
-      insertIndex: 4
       addedObject: {fileID: 1937870919}
     - targetCorrespondingSourceObject: {fileID: 1740465846098495637, guid: 6f0bb0a93a34a6440a871df3bb342b4c, type: 3}
-      insertIndex: 5
+      insertIndex: 4
       addedObject: {fileID: 1937870925}
     - targetCorrespondingSourceObject: {fileID: 1740465846098495637, guid: 6f0bb0a93a34a6440a871df3bb342b4c, type: 3}
       insertIndex: -1
@@ -1420,6 +1422,10 @@ PrefabInstance:
     - target: {fileID: 1740465846098495637, guid: 5c4c90c1f0d89874ebc8043fe66d1ee5, type: 3}
       propertyPath: m_Name
       value: SpherePrefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 2361894183180487304, guid: 5c4c90c1f0d89874ebc8043fe66d1ee5, type: 3}
+      propertyPath: m_Mass
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2361894183180487304, guid: 5c4c90c1f0d89874ebc8043fe66d1ee5, type: 3}
       propertyPath: m_CollisionDetection
@@ -2188,7 +2194,7 @@ PrefabInstance:
     - target: {fileID: 3102746494672219261, guid: 7c367d30fe978434f989e041bd1b9096, type: 3}
       propertyPath: OnGravityChangeEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2108932892}
+      objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: 7c367d30fe978434f989e041bd1b9096, type: 3}
       propertyPath: OnAccelerateEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: PulseOffCollider
@@ -2293,9 +2299,6 @@ PrefabInstance:
       addedObject: {fileID: 2108932887}
     - targetCorrespondingSourceObject: {fileID: 1740465846098495637, guid: 7c367d30fe978434f989e041bd1b9096, type: 3}
       insertIndex: 3
-      addedObject: {fileID: 2108932892}
-    - targetCorrespondingSourceObject: {fileID: 1740465846098495637, guid: 7c367d30fe978434f989e041bd1b9096, type: 3}
-      insertIndex: 4
       addedObject: {fileID: 2108932891}
   m_SourcePrefab: {fileID: 100100000, guid: 7c367d30fe978434f989e041bd1b9096, type: 3}
 --- !u!4 &386249732 stripped
@@ -2715,7 +2718,7 @@ PrefabInstance:
     - target: {fileID: 3102746494672219261, guid: 993186d337e7c5e419a8f1a418011b04, type: 3}
       propertyPath: OnGravityChangeEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1328288007}
+      objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: 993186d337e7c5e419a8f1a418011b04, type: 3}
       propertyPath: OnAccelerateEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: PulseOffCollider
@@ -2812,9 +2815,6 @@ PrefabInstance:
       addedObject: {fileID: 1328288002}
     - targetCorrespondingSourceObject: {fileID: 1740465846098495637, guid: 993186d337e7c5e419a8f1a418011b04, type: 3}
       insertIndex: 3
-      addedObject: {fileID: 1328288007}
-    - targetCorrespondingSourceObject: {fileID: 1740465846098495637, guid: 993186d337e7c5e419a8f1a418011b04, type: 3}
-      insertIndex: 4
       addedObject: {fileID: 1328288006}
   m_SourcePrefab: {fileID: 100100000, guid: 993186d337e7c5e419a8f1a418011b04, type: 3}
 --- !u!4 &470592938 stripped
@@ -3653,6 +3653,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RopeSphere
       objectReference: {fileID: 0}
+    - target: {fileID: 2361894183180487304, guid: 3c0fd5560e2ef3640906b65abca721fd, type: 3}
+      propertyPath: m_Mass
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: 3c0fd5560e2ef3640906b65abca721fd, type: 3}
       propertyPath: Tags
       value: 560
@@ -3760,7 +3764,7 @@ PrefabInstance:
     - target: {fileID: 3102746494672219261, guid: 3c0fd5560e2ef3640906b65abca721fd, type: 3}
       propertyPath: OnGravityChangeEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1004494815}
+      objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: 3c0fd5560e2ef3640906b65abca721fd, type: 3}
       propertyPath: OnAccelerateEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: PulseOffCollider
@@ -3828,9 +3832,6 @@ PrefabInstance:
       addedObject: {fileID: 1004494808}
     - targetCorrespondingSourceObject: {fileID: 1740465846098495637, guid: 3c0fd5560e2ef3640906b65abca721fd, type: 3}
       insertIndex: 4
-      addedObject: {fileID: 1004494815}
-    - targetCorrespondingSourceObject: {fileID: 1740465846098495637, guid: 3c0fd5560e2ef3640906b65abca721fd, type: 3}
-      insertIndex: 5
       addedObject: {fileID: 1004494814}
     - targetCorrespondingSourceObject: {fileID: 1740465846098495637, guid: 3c0fd5560e2ef3640906b65abca721fd, type: 3}
       insertIndex: -1
@@ -3913,20 +3914,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   multi: 20
---- !u!114 &1004494815
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 785132585}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2eb9cd4219bb5be4d8af906481bb1879, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 20
-  maxSpeed: 20
 --- !u!1001 &1239063703
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4222,6 +4209,10 @@ PrefabInstance:
     - target: {fileID: 6229175140517449571, guid: a798cbd2439573e45b73448ffb643156, type: 3}
       propertyPath: m_SortingOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8957736381013655227, guid: a798cbd2439573e45b73448ffb643156, type: 3}
+      propertyPath: m_Mass
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8957736381013655227, guid: a798cbd2439573e45b73448ffb643156, type: 3}
       propertyPath: m_CollisionDetection
@@ -4635,6 +4626,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8957736381013655227, guid: 79bbca3a72f1e394fb0b952f8bceb368, type: 3}
+      propertyPath: m_Mass
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8957736381013655227, guid: 79bbca3a72f1e394fb0b952f8bceb368, type: 3}
       propertyPath: m_CollisionDetection
       value: 1
       objectReference: {fileID: 0}
@@ -4778,26 +4773,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1328287997}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 42b8f02494927a04ba85279e506e6fd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   multi: 2
---- !u!114 &1328288007
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1328287997}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2eb9cd4219bb5be4d8af906481bb1879, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 20
-  maxSpeed: 20
 --- !u!1 &1415592250
 GameObject:
   m_ObjectHideFlags: 0
@@ -4932,26 +4913,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1590078328}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 42b8f02494927a04ba85279e506e6fd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   multi: 2
---- !u!114 &1590078338
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1590078328}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2eb9cd4219bb5be4d8af906481bb1879, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 20
-  maxSpeed: 20
 --- !u!1 &1747217976
 GameObject:
   m_ObjectHideFlags: 0
@@ -5200,6 +5167,10 @@ PrefabInstance:
     - target: {fileID: 1740465846098495637, guid: 8e76d4961ada2644aa783dbe5397cea5, type: 3}
       propertyPath: m_Name
       value: CubePrefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 2361894183180487304, guid: 8e76d4961ada2644aa783dbe5397cea5, type: 3}
+      propertyPath: m_Mass
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2361894183180487304, guid: 8e76d4961ada2644aa783dbe5397cea5, type: 3}
       propertyPath: m_CollisionDetection
@@ -5783,20 +5754,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   multi: 20
---- !u!114 &1937870926
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1937870912}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2eb9cd4219bb5be4d8af906481bb1879, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 20
-  maxSpeed: 20
 --- !u!1001 &1977273725
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5856,6 +5813,10 @@ PrefabInstance:
     - target: {fileID: 1740465846098495637, guid: 3629c9dfc5b531949828afb1ab969d44, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2361894183180487304, guid: 3629c9dfc5b531949828afb1ab969d44, type: 3}
+      propertyPath: m_Mass
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: 3629c9dfc5b531949828afb1ab969d44, type: 3}
       propertyPath: Tags
@@ -6060,7 +6021,7 @@ PrefabInstance:
     - target: {fileID: 3102746494672219261, guid: 3629c9dfc5b531949828afb1ab969d44, type: 3}
       propertyPath: OnGravityChangeEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1977273735}
+      objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: 3629c9dfc5b531949828afb1ab969d44, type: 3}
       propertyPath: OnAccelerateEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: PulseOffCollider
@@ -6165,12 +6126,9 @@ PrefabInstance:
       addedObject: {fileID: 1977273729}
     - targetCorrespondingSourceObject: {fileID: 1740465846098495637, guid: 3629c9dfc5b531949828afb1ab969d44, type: 3}
       insertIndex: 3
-      addedObject: {fileID: 1977273735}
-    - targetCorrespondingSourceObject: {fileID: 1740465846098495637, guid: 3629c9dfc5b531949828afb1ab969d44, type: 3}
-      insertIndex: 4
       addedObject: {fileID: 1977273734}
     - targetCorrespondingSourceObject: {fileID: 1740465846098495637, guid: 3629c9dfc5b531949828afb1ab969d44, type: 3}
-      insertIndex: 5
+      insertIndex: 4
       addedObject: {fileID: 1977273727}
     - targetCorrespondingSourceObject: {fileID: 1740465846098495637, guid: 3629c9dfc5b531949828afb1ab969d44, type: 3}
       insertIndex: -1
@@ -6253,20 +6211,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   multi: 2
---- !u!114 &1977273735
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 693470748}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2eb9cd4219bb5be4d8af906481bb1879, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 20
-  maxSpeed: 20
 --- !u!1 &2108932882 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1740465846098495637, guid: 7c367d30fe978434f989e041bd1b9096, type: 3}
@@ -6306,26 +6250,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2108932882}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 42b8f02494927a04ba85279e506e6fd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   multi: 2
---- !u!114 &2108932892
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2108932882}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2eb9cd4219bb5be4d8af906481bb1879, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 20
-  maxSpeed: 20
 --- !u!1001 &2145147511
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6621,6 +6551,10 @@ PrefabInstance:
     - target: {fileID: 6229175140517449571, guid: 4c01dc9facf67ec48b8a072c0460b4a6, type: 3}
       propertyPath: m_SortingOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8957736381013655227, guid: 4c01dc9facf67ec48b8a072c0460b4a6, type: 3}
+      propertyPath: m_Mass
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8957736381013655227, guid: 4c01dc9facf67ec48b8a072c0460b4a6, type: 3}
       propertyPath: m_CollisionDetection
