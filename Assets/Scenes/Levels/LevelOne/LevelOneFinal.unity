@@ -1287,6 +1287,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sphere
       objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: 857c83ed06324414a97f27953eade22c, type: 3}
+      propertyPath: showDrag
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
