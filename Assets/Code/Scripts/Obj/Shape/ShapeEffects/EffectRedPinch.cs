@@ -29,13 +29,11 @@ public class EffectRedPinch : MonoBehaviour
         float change = dist - original;
 
         current.transform.localScale = new Vector3(
-            Mathf.Clamp(originalScale.x, minSize, maxSize),
-            Mathf.Clamp(originalScale.y, minSize, maxSize),
+            Mathf.Clamp(originalScale.x + (change / 2), minSize, maxSize),
+            Mathf.Clamp(originalScale.y + (change / 2), minSize, maxSize),
             1f
         );
 
-        //Mathf.Clamp(originalScale.x + (change / 2), minSize, maxSize),
-        //Mathf.Clamp(originalScale.y + (change / 2), minSize, maxSize),
         StartCoroutine(ChangeBackSize(eventInfo));
     }
 
@@ -43,7 +41,7 @@ public class EffectRedPinch : MonoBehaviour
     {
         float time = 1.0f;
         float elapsed = 0.0f;
-        while ((elapsed / time) < 1)
+        while ((elapsed / time) < 1.0f)
         {
             elapsed += Time.deltaTime;
             eventInfo.TargetObject.transform.localScale = Vector3.Lerp(
