@@ -796,7 +796,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: df10f4879db27f642a31ac4396abfa27, type: 3}
       propertyPath: Tags
-      value: 262
+      value: 38
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: df10f4879db27f642a31ac4396abfa27, type: 3}
       propertyPath: showDrag
@@ -804,10 +804,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: df10f4879db27f642a31ac4396abfa27, type: 3}
       propertyPath: showPinch
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: df10f4879db27f642a31ac4396abfa27, type: 3}
       propertyPath: showCreate
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: df10f4879db27f642a31ac4396abfa27, type: 3}
+      propertyPath: showGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: df10f4879db27f642a31ac4396abfa27, type: 3}
+      propertyPath: showAccelerate
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: df10f4879db27f642a31ac4396abfa27, type: 3}
@@ -829,6 +837,14 @@ PrefabInstance:
     - target: {fileID: 3102746494672219261, guid: df10f4879db27f642a31ac4396abfa27, type: 3}
       propertyPath: OnDragStartEvent.m_PersistentCalls.m_Calls.Array.size
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: df10f4879db27f642a31ac4396abfa27, type: 3}
+      propertyPath: OnAccelerateEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: df10f4879db27f642a31ac4396abfa27, type: 3}
+      propertyPath: OnGravityChangeEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: df10f4879db27f642a31ac4396abfa27, type: 3}
       propertyPath: OnDragEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -883,6 +899,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: df10f4879db27f642a31ac4396abfa27, type: 3}
+      propertyPath: OnAccelerateEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: df10f4879db27f642a31ac4396abfa27, type: 3}
       propertyPath: OnDragEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: MoveShape
       objectReference: {fileID: 0}
@@ -907,6 +927,10 @@ PrefabInstance:
       value: ChangeSizeDist
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: df10f4879db27f642a31ac4396abfa27, type: 3}
+      propertyPath: OnAccelerateEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1590078337}
+    - target: {fileID: 3102746494672219261, guid: df10f4879db27f642a31ac4396abfa27, type: 3}
       propertyPath: OnCreateEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: DisableCollision
       objectReference: {fileID: 0}
@@ -927,11 +951,19 @@ PrefabInstance:
       value: EnableCollision
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: df10f4879db27f642a31ac4396abfa27, type: 3}
+      propertyPath: OnGravityChangeEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: df10f4879db27f642a31ac4396abfa27, type: 3}
       propertyPath: OnDragStartEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: df10f4879db27f642a31ac4396abfa27, type: 3}
       propertyPath: OnDragStartEvent.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: df10f4879db27f642a31ac4396abfa27, type: 3}
+      propertyPath: OnAccelerateEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: df10f4879db27f642a31ac4396abfa27, type: 3}
@@ -941,6 +973,22 @@ PrefabInstance:
     - target: {fileID: 3102746494672219261, guid: df10f4879db27f642a31ac4396abfa27, type: 3}
       propertyPath: OnDragStartEvent.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: DisableCollision
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: df10f4879db27f642a31ac4396abfa27, type: 3}
+      propertyPath: OnGravityChangeEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1590078338}
+    - target: {fileID: 3102746494672219261, guid: df10f4879db27f642a31ac4396abfa27, type: 3}
+      propertyPath: OnAccelerateEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PulseOffCollider
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: df10f4879db27f642a31ac4396abfa27, type: 3}
+      propertyPath: OnGravityChangeEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: df10f4879db27f642a31ac4396abfa27, type: 3}
+      propertyPath: OnGravityChangeEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetAccelerationDirecion
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: df10f4879db27f642a31ac4396abfa27, type: 3}
       propertyPath: OnDragEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -971,6 +1019,14 @@ PrefabInstance:
       value: EffectMove, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: df10f4879db27f642a31ac4396abfa27, type: 3}
+      propertyPath: OnAccelerateEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: EffectAcceleratePulse, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: df10f4879db27f642a31ac4396abfa27, type: 3}
+      propertyPath: OnGravityChangeEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: EffectAccelerate, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: df10f4879db27f642a31ac4396abfa27, type: 3}
       propertyPath: OnDragEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
@@ -998,6 +1054,14 @@ PrefabInstance:
       propertyPath: OnDragStartEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: df10f4879db27f642a31ac4396abfa27, type: 3}
+      propertyPath: OnAccelerateEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: df10f4879db27f642a31ac4396abfa27, type: 3}
+      propertyPath: OnGravityChangeEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1008,6 +1072,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1740465846098495637, guid: df10f4879db27f642a31ac4396abfa27, type: 3}
       insertIndex: 2
       addedObject: {fileID: 1590078333}
+    - targetCorrespondingSourceObject: {fileID: 1740465846098495637, guid: df10f4879db27f642a31ac4396abfa27, type: 3}
+      insertIndex: 3
+      addedObject: {fileID: 1590078338}
+    - targetCorrespondingSourceObject: {fileID: 1740465846098495637, guid: df10f4879db27f642a31ac4396abfa27, type: 3}
+      insertIndex: 4
+      addedObject: {fileID: 1590078337}
   m_SourcePrefab: {fileID: 100100000, guid: df10f4879db27f642a31ac4396abfa27, type: 3}
 --- !u!4 &170307573 stripped
 Transform:
@@ -1100,11 +1170,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: 6f0bb0a93a34a6440a871df3bb342b4c, type: 3}
       propertyPath: Tags
-      value: 528
+      value: 560
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: 6f0bb0a93a34a6440a871df3bb342b4c, type: 3}
       propertyPath: showTap
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: 6f0bb0a93a34a6440a871df3bb342b4c, type: 3}
       propertyPath: spriteName
@@ -1112,7 +1182,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: 6f0bb0a93a34a6440a871df3bb342b4c, type: 3}
       propertyPath: showDestroy
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: 6f0bb0a93a34a6440a871df3bb342b4c, type: 3}
+      propertyPath: showGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: 6f0bb0a93a34a6440a871df3bb342b4c, type: 3}
+      propertyPath: showAccelerate
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: 6f0bb0a93a34a6440a871df3bb342b4c, type: 3}
       propertyPath: OnTapEvent.m_PersistentCalls.m_Calls.Array.size
@@ -1120,6 +1198,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: 6f0bb0a93a34a6440a871df3bb342b4c, type: 3}
       propertyPath: OnDestroyEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: 6f0bb0a93a34a6440a871df3bb342b4c, type: 3}
+      propertyPath: OnAccelerateEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: 6f0bb0a93a34a6440a871df3bb342b4c, type: 3}
+      propertyPath: OnGravityChangeEvent.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: 6f0bb0a93a34a6440a871df3bb342b4c, type: 3}
@@ -1163,12 +1249,44 @@ PrefabInstance:
       value: AddOverlayTemp
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: 6f0bb0a93a34a6440a871df3bb342b4c, type: 3}
+      propertyPath: OnAccelerateEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: 6f0bb0a93a34a6440a871df3bb342b4c, type: 3}
+      propertyPath: OnAccelerateEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1937870925}
+    - target: {fileID: 3102746494672219261, guid: 6f0bb0a93a34a6440a871df3bb342b4c, type: 3}
       propertyPath: OnDestroyEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: 6f0bb0a93a34a6440a871df3bb342b4c, type: 3}
       propertyPath: OnDestroyEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: TakeApart
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: 6f0bb0a93a34a6440a871df3bb342b4c, type: 3}
+      propertyPath: OnGravityChangeEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: 6f0bb0a93a34a6440a871df3bb342b4c, type: 3}
+      propertyPath: OnAccelerateEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: 6f0bb0a93a34a6440a871df3bb342b4c, type: 3}
+      propertyPath: OnGravityChangeEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1937870926}
+    - target: {fileID: 3102746494672219261, guid: 6f0bb0a93a34a6440a871df3bb342b4c, type: 3}
+      propertyPath: OnAccelerateEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PulseOffCollider
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: 6f0bb0a93a34a6440a871df3bb342b4c, type: 3}
+      propertyPath: OnGravityChangeEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: 6f0bb0a93a34a6440a871df3bb342b4c, type: 3}
+      propertyPath: OnGravityChangeEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetAccelerationDirecion
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: 6f0bb0a93a34a6440a871df3bb342b4c, type: 3}
       propertyPath: OnTapEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -1183,6 +1301,14 @@ PrefabInstance:
       value: EffectExistShape, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: 6f0bb0a93a34a6440a871df3bb342b4c, type: 3}
+      propertyPath: OnAccelerateEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: EffectAcceleratePulse, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: 6f0bb0a93a34a6440a871df3bb342b4c, type: 3}
+      propertyPath: OnGravityChangeEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: EffectAccelerate, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: 6f0bb0a93a34a6440a871df3bb342b4c, type: 3}
       propertyPath: OnTapEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
@@ -1192,6 +1318,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: 6f0bb0a93a34a6440a871df3bb342b4c, type: 3}
       propertyPath: OnDestroyEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: 6f0bb0a93a34a6440a871df3bb342b4c, type: 3}
+      propertyPath: OnAccelerateEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: 6f0bb0a93a34a6440a871df3bb342b4c, type: 3}
+      propertyPath: OnGravityChangeEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1206,7 +1340,13 @@ PrefabInstance:
       addedObject: {fileID: 1937870920}
     - targetCorrespondingSourceObject: {fileID: 1740465846098495637, guid: 6f0bb0a93a34a6440a871df3bb342b4c, type: 3}
       insertIndex: 3
+      addedObject: {fileID: 1937870926}
+    - targetCorrespondingSourceObject: {fileID: 1740465846098495637, guid: 6f0bb0a93a34a6440a871df3bb342b4c, type: 3}
+      insertIndex: 4
       addedObject: {fileID: 1937870919}
+    - targetCorrespondingSourceObject: {fileID: 1740465846098495637, guid: 6f0bb0a93a34a6440a871df3bb342b4c, type: 3}
+      insertIndex: 5
+      addedObject: {fileID: 1937870925}
     - targetCorrespondingSourceObject: {fileID: 1740465846098495637, guid: 6f0bb0a93a34a6440a871df3bb342b4c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1937870915}
@@ -1796,7 +1936,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trailPrefab: {fileID: 8449138510180305575, guid: 9e255c5fbc568cd4eb31d143614df71e, type: 3}
   tapTimer: 0.1
-  accelCooldown: 1
   accelSens: 2
   gyroSens: 1
 --- !u!4 &324314429
@@ -1868,7 +2007,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: 7c367d30fe978434f989e041bd1b9096, type: 3}
       propertyPath: Tags
-      value: 262
+      value: 38
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: 7c367d30fe978434f989e041bd1b9096, type: 3}
       propertyPath: showDrag
@@ -1876,10 +2015,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: 7c367d30fe978434f989e041bd1b9096, type: 3}
       propertyPath: showPinch
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: 7c367d30fe978434f989e041bd1b9096, type: 3}
       propertyPath: showCreate
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: 7c367d30fe978434f989e041bd1b9096, type: 3}
+      propertyPath: showGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: 7c367d30fe978434f989e041bd1b9096, type: 3}
+      propertyPath: showAccelerate
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: 7c367d30fe978434f989e041bd1b9096, type: 3}
@@ -1901,6 +2048,14 @@ PrefabInstance:
     - target: {fileID: 3102746494672219261, guid: 7c367d30fe978434f989e041bd1b9096, type: 3}
       propertyPath: OnDragStartEvent.m_PersistentCalls.m_Calls.Array.size
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: 7c367d30fe978434f989e041bd1b9096, type: 3}
+      propertyPath: OnAccelerateEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: 7c367d30fe978434f989e041bd1b9096, type: 3}
+      propertyPath: OnGravityChangeEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: 7c367d30fe978434f989e041bd1b9096, type: 3}
       propertyPath: OnDragEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -1955,6 +2110,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: 7c367d30fe978434f989e041bd1b9096, type: 3}
+      propertyPath: OnAccelerateEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: 7c367d30fe978434f989e041bd1b9096, type: 3}
       propertyPath: OnDragEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: MoveShape
       objectReference: {fileID: 0}
@@ -1979,6 +2138,10 @@ PrefabInstance:
       value: ChangeSizeDist
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: 7c367d30fe978434f989e041bd1b9096, type: 3}
+      propertyPath: OnAccelerateEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2108932891}
+    - target: {fileID: 3102746494672219261, guid: 7c367d30fe978434f989e041bd1b9096, type: 3}
       propertyPath: OnCreateEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: DisableCollision
       objectReference: {fileID: 0}
@@ -1999,11 +2162,19 @@ PrefabInstance:
       value: EnableCollision
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: 7c367d30fe978434f989e041bd1b9096, type: 3}
+      propertyPath: OnGravityChangeEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: 7c367d30fe978434f989e041bd1b9096, type: 3}
       propertyPath: OnDragStartEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: 7c367d30fe978434f989e041bd1b9096, type: 3}
       propertyPath: OnDragStartEvent.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: 7c367d30fe978434f989e041bd1b9096, type: 3}
+      propertyPath: OnAccelerateEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: 7c367d30fe978434f989e041bd1b9096, type: 3}
@@ -2013,6 +2184,22 @@ PrefabInstance:
     - target: {fileID: 3102746494672219261, guid: 7c367d30fe978434f989e041bd1b9096, type: 3}
       propertyPath: OnDragStartEvent.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: DisableCollision
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: 7c367d30fe978434f989e041bd1b9096, type: 3}
+      propertyPath: OnGravityChangeEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2108932892}
+    - target: {fileID: 3102746494672219261, guid: 7c367d30fe978434f989e041bd1b9096, type: 3}
+      propertyPath: OnAccelerateEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PulseOffCollider
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: 7c367d30fe978434f989e041bd1b9096, type: 3}
+      propertyPath: OnGravityChangeEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: 7c367d30fe978434f989e041bd1b9096, type: 3}
+      propertyPath: OnGravityChangeEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetAccelerationDirecion
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: 7c367d30fe978434f989e041bd1b9096, type: 3}
       propertyPath: OnDragEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -2043,6 +2230,14 @@ PrefabInstance:
       value: EffectMove, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: 7c367d30fe978434f989e041bd1b9096, type: 3}
+      propertyPath: OnAccelerateEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: EffectAcceleratePulse, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: 7c367d30fe978434f989e041bd1b9096, type: 3}
+      propertyPath: OnGravityChangeEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: EffectAccelerate, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: 7c367d30fe978434f989e041bd1b9096, type: 3}
       propertyPath: OnDragEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
@@ -2070,6 +2265,14 @@ PrefabInstance:
       propertyPath: OnDragStartEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: 7c367d30fe978434f989e041bd1b9096, type: 3}
+      propertyPath: OnAccelerateEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: 7c367d30fe978434f989e041bd1b9096, type: 3}
+      propertyPath: OnGravityChangeEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6524447479145971792, guid: 7c367d30fe978434f989e041bd1b9096, type: 3}
       propertyPath: m_CollisionDetection
       value: 1
@@ -2088,6 +2291,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1740465846098495637, guid: 7c367d30fe978434f989e041bd1b9096, type: 3}
       insertIndex: 2
       addedObject: {fileID: 2108932887}
+    - targetCorrespondingSourceObject: {fileID: 1740465846098495637, guid: 7c367d30fe978434f989e041bd1b9096, type: 3}
+      insertIndex: 3
+      addedObject: {fileID: 2108932892}
+    - targetCorrespondingSourceObject: {fileID: 1740465846098495637, guid: 7c367d30fe978434f989e041bd1b9096, type: 3}
+      insertIndex: 4
+      addedObject: {fileID: 2108932891}
   m_SourcePrefab: {fileID: 100100000, guid: 7c367d30fe978434f989e041bd1b9096, type: 3}
 --- !u!4 &386249732 stripped
 Transform:
@@ -2325,7 +2534,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: 993186d337e7c5e419a8f1a418011b04, type: 3}
       propertyPath: Tags
-      value: 262
+      value: 38
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: 993186d337e7c5e419a8f1a418011b04, type: 3}
       propertyPath: showDrag
@@ -2337,6 +2546,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: 993186d337e7c5e419a8f1a418011b04, type: 3}
       propertyPath: showCreate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: 993186d337e7c5e419a8f1a418011b04, type: 3}
+      propertyPath: showGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: 993186d337e7c5e419a8f1a418011b04, type: 3}
+      propertyPath: showAccelerate
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: 993186d337e7c5e419a8f1a418011b04, type: 3}
@@ -2358,6 +2575,14 @@ PrefabInstance:
     - target: {fileID: 3102746494672219261, guid: 993186d337e7c5e419a8f1a418011b04, type: 3}
       propertyPath: OnDragStartEvent.m_PersistentCalls.m_Calls.Array.size
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: 993186d337e7c5e419a8f1a418011b04, type: 3}
+      propertyPath: OnAccelerateEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: 993186d337e7c5e419a8f1a418011b04, type: 3}
+      propertyPath: OnGravityChangeEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: 993186d337e7c5e419a8f1a418011b04, type: 3}
       propertyPath: OnDragEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -2412,6 +2637,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: 993186d337e7c5e419a8f1a418011b04, type: 3}
+      propertyPath: OnAccelerateEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: 993186d337e7c5e419a8f1a418011b04, type: 3}
       propertyPath: OnDragEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: MoveShape
       objectReference: {fileID: 0}
@@ -2436,6 +2665,10 @@ PrefabInstance:
       value: ChangeSizeDist
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: 993186d337e7c5e419a8f1a418011b04, type: 3}
+      propertyPath: OnAccelerateEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1328288006}
+    - target: {fileID: 3102746494672219261, guid: 993186d337e7c5e419a8f1a418011b04, type: 3}
       propertyPath: OnCreateEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: DisableCollision
       objectReference: {fileID: 0}
@@ -2456,11 +2689,19 @@ PrefabInstance:
       value: DefaultSize
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: 993186d337e7c5e419a8f1a418011b04, type: 3}
+      propertyPath: OnGravityChangeEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: 993186d337e7c5e419a8f1a418011b04, type: 3}
       propertyPath: OnDragStartEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: 993186d337e7c5e419a8f1a418011b04, type: 3}
       propertyPath: OnDragStartEvent.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: 993186d337e7c5e419a8f1a418011b04, type: 3}
+      propertyPath: OnAccelerateEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: 993186d337e7c5e419a8f1a418011b04, type: 3}
@@ -2470,6 +2711,22 @@ PrefabInstance:
     - target: {fileID: 3102746494672219261, guid: 993186d337e7c5e419a8f1a418011b04, type: 3}
       propertyPath: OnDragStartEvent.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: DisableCollision
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: 993186d337e7c5e419a8f1a418011b04, type: 3}
+      propertyPath: OnGravityChangeEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1328288007}
+    - target: {fileID: 3102746494672219261, guid: 993186d337e7c5e419a8f1a418011b04, type: 3}
+      propertyPath: OnAccelerateEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PulseOffCollider
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: 993186d337e7c5e419a8f1a418011b04, type: 3}
+      propertyPath: OnGravityChangeEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: 993186d337e7c5e419a8f1a418011b04, type: 3}
+      propertyPath: OnGravityChangeEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetAccelerationDirecion
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: 993186d337e7c5e419a8f1a418011b04, type: 3}
       propertyPath: OnDragEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -2500,6 +2757,14 @@ PrefabInstance:
       value: EffectMove, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: 993186d337e7c5e419a8f1a418011b04, type: 3}
+      propertyPath: OnAccelerateEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: EffectAcceleratePulse, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: 993186d337e7c5e419a8f1a418011b04, type: 3}
+      propertyPath: OnGravityChangeEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: EffectAccelerate, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: 993186d337e7c5e419a8f1a418011b04, type: 3}
       propertyPath: OnDragEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
@@ -2527,6 +2792,14 @@ PrefabInstance:
       propertyPath: OnDragStartEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: 993186d337e7c5e419a8f1a418011b04, type: 3}
+      propertyPath: OnAccelerateEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: 993186d337e7c5e419a8f1a418011b04, type: 3}
+      propertyPath: OnGravityChangeEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2537,6 +2810,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1740465846098495637, guid: 993186d337e7c5e419a8f1a418011b04, type: 3}
       insertIndex: 2
       addedObject: {fileID: 1328288002}
+    - targetCorrespondingSourceObject: {fileID: 1740465846098495637, guid: 993186d337e7c5e419a8f1a418011b04, type: 3}
+      insertIndex: 3
+      addedObject: {fileID: 1328288007}
+    - targetCorrespondingSourceObject: {fileID: 1740465846098495637, guid: 993186d337e7c5e419a8f1a418011b04, type: 3}
+      insertIndex: 4
+      addedObject: {fileID: 1328288006}
   m_SourcePrefab: {fileID: 100100000, guid: 993186d337e7c5e419a8f1a418011b04, type: 3}
 --- !u!4 &470592938 stripped
 Transform:
@@ -2739,7 +3018,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &671825612
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3376,11 +3655,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: 3c0fd5560e2ef3640906b65abca721fd, type: 3}
       propertyPath: Tags
-      value: 528
+      value: 560
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: 3c0fd5560e2ef3640906b65abca721fd, type: 3}
       propertyPath: showTap
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: 3c0fd5560e2ef3640906b65abca721fd, type: 3}
       propertyPath: spriteName
@@ -3388,7 +3667,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: 3c0fd5560e2ef3640906b65abca721fd, type: 3}
       propertyPath: showDestroy
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: 3c0fd5560e2ef3640906b65abca721fd, type: 3}
+      propertyPath: showGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: 3c0fd5560e2ef3640906b65abca721fd, type: 3}
+      propertyPath: showAccelerate
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: 3c0fd5560e2ef3640906b65abca721fd, type: 3}
       propertyPath: OnTapEvent.m_PersistentCalls.m_Calls.Array.size
@@ -3396,6 +3683,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: 3c0fd5560e2ef3640906b65abca721fd, type: 3}
       propertyPath: OnDestroyEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: 3c0fd5560e2ef3640906b65abca721fd, type: 3}
+      propertyPath: OnAccelerateEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: 3c0fd5560e2ef3640906b65abca721fd, type: 3}
+      propertyPath: OnGravityChangeEvent.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: 3c0fd5560e2ef3640906b65abca721fd, type: 3}
@@ -3439,12 +3734,44 @@ PrefabInstance:
       value: AddOverlayTemp
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: 3c0fd5560e2ef3640906b65abca721fd, type: 3}
+      propertyPath: OnAccelerateEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: 3c0fd5560e2ef3640906b65abca721fd, type: 3}
+      propertyPath: OnAccelerateEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1004494814}
+    - target: {fileID: 3102746494672219261, guid: 3c0fd5560e2ef3640906b65abca721fd, type: 3}
       propertyPath: OnDestroyEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: 3c0fd5560e2ef3640906b65abca721fd, type: 3}
       propertyPath: OnDestroyEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: TakeApart
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: 3c0fd5560e2ef3640906b65abca721fd, type: 3}
+      propertyPath: OnGravityChangeEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: 3c0fd5560e2ef3640906b65abca721fd, type: 3}
+      propertyPath: OnAccelerateEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: 3c0fd5560e2ef3640906b65abca721fd, type: 3}
+      propertyPath: OnGravityChangeEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1004494815}
+    - target: {fileID: 3102746494672219261, guid: 3c0fd5560e2ef3640906b65abca721fd, type: 3}
+      propertyPath: OnAccelerateEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PulseOffCollider
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: 3c0fd5560e2ef3640906b65abca721fd, type: 3}
+      propertyPath: OnGravityChangeEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: 3c0fd5560e2ef3640906b65abca721fd, type: 3}
+      propertyPath: OnGravityChangeEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetAccelerationDirecion
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: 3c0fd5560e2ef3640906b65abca721fd, type: 3}
       propertyPath: OnTapEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -3459,6 +3786,14 @@ PrefabInstance:
       value: EffectExistShape, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: 3c0fd5560e2ef3640906b65abca721fd, type: 3}
+      propertyPath: OnAccelerateEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: EffectAcceleratePulse, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: 3c0fd5560e2ef3640906b65abca721fd, type: 3}
+      propertyPath: OnGravityChangeEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: EffectAccelerate, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: 3c0fd5560e2ef3640906b65abca721fd, type: 3}
       propertyPath: OnTapEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
@@ -3468,6 +3803,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: 3c0fd5560e2ef3640906b65abca721fd, type: 3}
       propertyPath: OnDestroyEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: 3c0fd5560e2ef3640906b65abca721fd, type: 3}
+      propertyPath: OnAccelerateEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: 3c0fd5560e2ef3640906b65abca721fd, type: 3}
+      propertyPath: OnGravityChangeEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -3483,6 +3826,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1740465846098495637, guid: 3c0fd5560e2ef3640906b65abca721fd, type: 3}
       insertIndex: 3
       addedObject: {fileID: 1004494808}
+    - targetCorrespondingSourceObject: {fileID: 1740465846098495637, guid: 3c0fd5560e2ef3640906b65abca721fd, type: 3}
+      insertIndex: 4
+      addedObject: {fileID: 1004494815}
+    - targetCorrespondingSourceObject: {fileID: 1740465846098495637, guid: 3c0fd5560e2ef3640906b65abca721fd, type: 3}
+      insertIndex: 5
+      addedObject: {fileID: 1004494814}
     - targetCorrespondingSourceObject: {fileID: 1740465846098495637, guid: 3c0fd5560e2ef3640906b65abca721fd, type: 3}
       insertIndex: -1
       addedObject: {fileID: 785132588}
@@ -3551,6 +3900,33 @@ MonoBehaviour:
   regen: 1
   regenDelay: 2
   target: {fileID: 785132585}
+--- !u!114 &1004494814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 785132585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42b8f02494927a04ba85279e506e6fd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  multi: 20
+--- !u!114 &1004494815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 785132585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eb9cd4219bb5be4d8af906481bb1879, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 20
+  maxSpeed: 20
 --- !u!1001 &1239063703
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4395,6 +4771,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxSize: 3
   minSize: 0.5
+--- !u!114 &1328288006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1328287997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42b8f02494927a04ba85279e506e6fd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  multi: 2
+--- !u!114 &1328288007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1328287997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eb9cd4219bb5be4d8af906481bb1879, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 20
+  maxSpeed: 20
 --- !u!1 &1415592250
 GameObject:
   m_ObjectHideFlags: 0
@@ -4522,6 +4925,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxSize: 3
   minSize: 0.5
+--- !u!114 &1590078337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1590078328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42b8f02494927a04ba85279e506e6fd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  multi: 2
+--- !u!114 &1590078338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1590078328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eb9cd4219bb5be4d8af906481bb1879, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 20
+  maxSpeed: 20
 --- !u!1 &1747217976
 GameObject:
   m_ObjectHideFlags: 0
@@ -5340,6 +5770,33 @@ MonoBehaviour:
   regen: 1
   regenDelay: 2
   target: {fileID: 1937870912}
+--- !u!114 &1937870925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1937870912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42b8f02494927a04ba85279e506e6fd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  multi: 20
+--- !u!114 &1937870926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1937870912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eb9cd4219bb5be4d8af906481bb1879, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 20
+  maxSpeed: 20
 --- !u!1001 &1977273725
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5402,11 +5859,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: 3629c9dfc5b531949828afb1ab969d44, type: 3}
       propertyPath: Tags
-      value: 528
+      value: 560
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: 3629c9dfc5b531949828afb1ab969d44, type: 3}
       propertyPath: showTap
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: 3629c9dfc5b531949828afb1ab969d44, type: 3}
       propertyPath: showDrag
@@ -5418,7 +5875,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: 3629c9dfc5b531949828afb1ab969d44, type: 3}
       propertyPath: showDestroy
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: 3629c9dfc5b531949828afb1ab969d44, type: 3}
+      propertyPath: showGravity
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: 3629c9dfc5b531949828afb1ab969d44, type: 3}
+      propertyPath: showAccelerate
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: 3629c9dfc5b531949828afb1ab969d44, type: 3}
       propertyPath: OnTapEvent.m_PersistentCalls.m_Calls.Array.size
@@ -5439,6 +5904,14 @@ PrefabInstance:
     - target: {fileID: 3102746494672219261, guid: 3629c9dfc5b531949828afb1ab969d44, type: 3}
       propertyPath: OnDragStartEvent.m_PersistentCalls.m_Calls.Array.size
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: 3629c9dfc5b531949828afb1ab969d44, type: 3}
+      propertyPath: OnAccelerateEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: 3629c9dfc5b531949828afb1ab969d44, type: 3}
+      propertyPath: OnGravityChangeEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: 3629c9dfc5b531949828afb1ab969d44, type: 3}
       propertyPath: OnTapEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -5517,6 +5990,10 @@ PrefabInstance:
       value: AddOverlayTemp
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: 3629c9dfc5b531949828afb1ab969d44, type: 3}
+      propertyPath: OnAccelerateEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: 3629c9dfc5b531949828afb1ab969d44, type: 3}
       propertyPath: OnDragEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: MoveShape
       objectReference: {fileID: 0}
@@ -5528,6 +6005,10 @@ PrefabInstance:
       propertyPath: OnDragStartEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: 3629c9dfc5b531949828afb1ab969d44, type: 3}
+      propertyPath: OnAccelerateEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1977273734}
     - target: {fileID: 3102746494672219261, guid: 3629c9dfc5b531949828afb1ab969d44, type: 3}
       propertyPath: OnDestroyEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -5553,11 +6034,19 @@ PrefabInstance:
       value: DefaultSize
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: 3629c9dfc5b531949828afb1ab969d44, type: 3}
+      propertyPath: OnGravityChangeEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: 3629c9dfc5b531949828afb1ab969d44, type: 3}
       propertyPath: OnDragStartEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: 3629c9dfc5b531949828afb1ab969d44, type: 3}
       propertyPath: OnDragStartEvent.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: 3629c9dfc5b531949828afb1ab969d44, type: 3}
+      propertyPath: OnAccelerateEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: 3629c9dfc5b531949828afb1ab969d44, type: 3}
@@ -5567,6 +6056,22 @@ PrefabInstance:
     - target: {fileID: 3102746494672219261, guid: 3629c9dfc5b531949828afb1ab969d44, type: 3}
       propertyPath: OnDragStartEvent.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: ToggleCollision
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: 3629c9dfc5b531949828afb1ab969d44, type: 3}
+      propertyPath: OnGravityChangeEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1977273735}
+    - target: {fileID: 3102746494672219261, guid: 3629c9dfc5b531949828afb1ab969d44, type: 3}
+      propertyPath: OnAccelerateEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PulseOffCollider
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: 3629c9dfc5b531949828afb1ab969d44, type: 3}
+      propertyPath: OnGravityChangeEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: 3629c9dfc5b531949828afb1ab969d44, type: 3}
+      propertyPath: OnGravityChangeEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetAccelerationDirecion
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: 3629c9dfc5b531949828afb1ab969d44, type: 3}
       propertyPath: OnTapEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -5601,6 +6106,14 @@ PrefabInstance:
       value: EffectMove, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: 3629c9dfc5b531949828afb1ab969d44, type: 3}
+      propertyPath: OnAccelerateEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: EffectAcceleratePulse, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: 3629c9dfc5b531949828afb1ab969d44, type: 3}
+      propertyPath: OnGravityChangeEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: EffectAccelerate, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: 3629c9dfc5b531949828afb1ab969d44, type: 3}
       propertyPath: OnTapEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
@@ -5632,6 +6145,14 @@ PrefabInstance:
       propertyPath: OnDragStartEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: 3629c9dfc5b531949828afb1ab969d44, type: 3}
+      propertyPath: OnAccelerateEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102746494672219261, guid: 3629c9dfc5b531949828afb1ab969d44, type: 3}
+      propertyPath: OnGravityChangeEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5644,6 +6165,12 @@ PrefabInstance:
       addedObject: {fileID: 1977273729}
     - targetCorrespondingSourceObject: {fileID: 1740465846098495637, guid: 3629c9dfc5b531949828afb1ab969d44, type: 3}
       insertIndex: 3
+      addedObject: {fileID: 1977273735}
+    - targetCorrespondingSourceObject: {fileID: 1740465846098495637, guid: 3629c9dfc5b531949828afb1ab969d44, type: 3}
+      insertIndex: 4
+      addedObject: {fileID: 1977273734}
+    - targetCorrespondingSourceObject: {fileID: 1740465846098495637, guid: 3629c9dfc5b531949828afb1ab969d44, type: 3}
+      insertIndex: 5
       addedObject: {fileID: 1977273727}
     - targetCorrespondingSourceObject: {fileID: 1740465846098495637, guid: 3629c9dfc5b531949828afb1ab969d44, type: 3}
       insertIndex: -1
@@ -5713,6 +6240,33 @@ MonoBehaviour:
   regen: 1
   regenDelay: 2
   target: {fileID: 693470748}
+--- !u!114 &1977273734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 693470748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42b8f02494927a04ba85279e506e6fd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  multi: 2
+--- !u!114 &1977273735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 693470748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eb9cd4219bb5be4d8af906481bb1879, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 20
+  maxSpeed: 20
 --- !u!1 &2108932882 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1740465846098495637, guid: 7c367d30fe978434f989e041bd1b9096, type: 3}
@@ -5745,6 +6299,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxSize: 3
   minSize: 0.5
+--- !u!114 &2108932891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2108932882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42b8f02494927a04ba85279e506e6fd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  multi: 2
+--- !u!114 &2108932892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2108932882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eb9cd4219bb5be4d8af906481bb1879, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 20
+  maxSpeed: 20
 --- !u!1001 &2145147511
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -9,6 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5592682305873866223}
+  - component: {fileID: 4375262978968918665}
+  - component: {fileID: 3039738844712620238}
   - component: {fileID: 5768105513041947720}
   - component: {fileID: 2874644088406166606}
   - component: {fileID: 5772173609651489485}
@@ -38,6 +40,33 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4375262978968918665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6391162716361227149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eb9cd4219bb5be4d8af906481bb1879, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 20
+  maxSpeed: 20
+--- !u!114 &3039738844712620238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6391162716361227149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42b8f02494927a04ba85279e506e6fd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  multi: 2
 --- !u!114 &5768105513041947720
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64,7 +93,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dc6d39d28c20b04b9ac3475e8874f2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Tags: 8
+  Tags: 168
   spriteName: rope_dynamic_0
   uniqueID: 
   OnFixedUpdateEvent:
@@ -102,13 +131,37 @@ MonoBehaviour:
       m_Calls: []
   OnAccelerateEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3039738844712620238}
+        m_TargetAssemblyTypeName: EffectAcceleratePulse, Assembly-CSharp
+        m_MethodName: PulseOffCollider
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnAttitudeChangeEvent:
     m_PersistentCalls:
       m_Calls: []
   OnGravityChangeEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4375262978968918665}
+        m_TargetAssemblyTypeName: EffectAccelerate, Assembly-CSharp
+        m_MethodName: SetAccelerationDirecion
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnCreateEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -120,9 +173,9 @@ MonoBehaviour:
   showPinch: 0
   showSlice: 1
   showTap: 0
-  showAccelerate: 0
+  showAccelerate: 1
   showAttitude: 0
-  showGravity: 0
+  showGravity: 1
   showCreate: 0
   showDestroy: 0
 --- !u!212 &5772173609651489485

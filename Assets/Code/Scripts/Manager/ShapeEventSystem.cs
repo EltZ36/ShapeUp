@@ -38,9 +38,6 @@ public class ShapeEventSystem : MonoBehaviour
     float tapTimer = 0.1f; //if it's longer than this it's not a tap;
     #region SensorVariables
     [SerializeField]
-    float accelCooldown = 1;
-
-    [SerializeField]
     float accelSens = 2;
 
     [SerializeField]
@@ -55,7 +52,6 @@ public class ShapeEventSystem : MonoBehaviour
     private Vector3 pastAccel = Vector3.zero;
     private Vector3 newAccel;
     private Vector3 pastGravity = default;
-    bool accelRecent = false;
 
     private Quaternion pastGyro;
     #endregion
@@ -223,13 +219,11 @@ public class ShapeEventSystem : MonoBehaviour
     {
         newAccel = Input.acceleration;
         Vector3 accelDiff = newAccel - pastAccel;
-        if (accelDiff.magnitude > accelSens && accelRecent == false)
+        if (accelDiff.magnitude > accelSens)
         {
-            accelRecent = true;
             OnAccelChange?.Invoke(accelDiff);
-            StartCoroutine(ResetAccel());
+            pastAccel = newAccel;
         }
-        pastAccel = newAccel;
     }
 
     private void CheckGyroscope()
@@ -250,12 +244,6 @@ public class ShapeEventSystem : MonoBehaviour
             OnGravChange?.Invoke(currGravity);
             pastGravity = currGravity;
         }
-    }
-
-    private IEnumerator ResetAccel()
-    {
-        yield return new WaitForSeconds(accelCooldown);
-        accelRecent = false;
     }
 
     private IEnumerator CheckTap(int id, Shape shape)
