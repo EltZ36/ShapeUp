@@ -36,6 +36,16 @@ public class EffectMove : MonoBehaviour
         }
     }
 
+    public void EnableCollision(EventInfo eventInfo)
+    {
+        eventInfo.TargetObject.layer = LayerMask.NameToLayer("Shape");
+    }
+
+    public void DisableCollision(EventInfo eventInfo)
+    {
+        eventInfo.TargetObject.layer = LayerMask.NameToLayer("IgnoreShape");
+    }
+
     public void MoveShape(EventInfo eventInfo)
     {
         eventInfo.TargetObject.transform.position = (Vector2)eventInfo.VectorTwo;
