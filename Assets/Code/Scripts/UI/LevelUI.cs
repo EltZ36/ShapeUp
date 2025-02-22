@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -58,8 +59,24 @@ public class LevelUI : MonoBehaviour
 
     public void OnZoomOutButton()
     {
+        GameObject ob = GameObject.FindGameObjectWithTag("hint");
+        if (!ob)
+        {
+            Debug.Log(
+                "could not find hint object to destroy in sublevel. Did you tag hint canvas prefab with 'hint'? "
+            );
+        }
+        else
+        {
+            Destroy(ob);
+        }
         disableUIElement(confirm);
-        StartCoroutine(CameraController.ZoomOut());
+        bool fully = LevelManager.Instance.currentSubLevelID == -1 ? true : false;
+        StartCoroutine(CameraController.ZoomOut(fully));
+        if (showMenu)
+        {
+            ToggleMenu();
+        }
     }
 
     public void OnAreYouSure()
@@ -77,9 +94,10 @@ public class LevelUI : MonoBehaviour
 
     public void OnLevelReset()
     {
-        StartCoroutine(CameraController.ZoomOut());
         GameManager.Instance.ClearLevel(LevelManager.Instance.currentLevelID);
-        LevelManager.Instance.LoadLevel(LevelManager.Instance.currentLevelID);
+        bool fully = LevelManager.Instance.currentSubLevelID == -1 ? true : false;
+        StartCoroutine(CameraController.ZoomOut(fully));
+        ToggleMenu();
     }
 
     void disableUIElement(CanvasGroup element)

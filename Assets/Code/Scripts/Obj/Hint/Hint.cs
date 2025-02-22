@@ -1,7 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
+
+// public interface IHintEvents : IEventSystemHandler
+// {
+//     void buttonsClicked();
+// }
 
 public class Hint : MonoBehaviour
 {
@@ -16,6 +22,12 @@ public class Hint : MonoBehaviour
         ToggleButton.enabled = false;
         StartCoroutine(StartTimer());
     }
+
+    // // listener for toggle from ui button clicks
+    // public void buttonsClicked()
+    // {
+    //     ToggleButton.enabled = false;
+    // }
 
     public void ToggleHint()
     {

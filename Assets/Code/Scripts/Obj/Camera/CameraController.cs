@@ -125,19 +125,32 @@ public class CameraController : MonoBehaviour
         }
     }
 
-    public static IEnumerator ZoomOut(float EndPos = 10, float time = 1f)
+    public static IEnumerator ZoomOut(bool fully, float time = 1f)
     {
-        float StartPos = Camera.main.orthographicSize;
+        float EndPos = fully ? 20 : 10;
+
+        float StartSize = Camera.main.orthographicSize;
+
+        Vector3 StartPos = Camera.main.transform.position;
+
         float elapsed = 0.0f;
         while (elapsed / time < 1)
         {
             elapsed += Time.deltaTime;
-            Camera.main.orthographicSize = EaseOutQuad(StartPos, EndPos, elapsed / time);
+            Camera.main.orthographicSize = EaseOutQuad(StartSize, EndPos, elapsed / time);
+            if (fully)
+            {
+                Camera.main.transform.position = new Vector3(
+                    EaseOutQuad(StartPos.x, 0, elapsed / time),
+                    EaseOutQuad(StartPos.y, 0, elapsed / time),
+                    StartPos.z
+                );
+            }
+
             yield return null;
         }
         Camera.main.orthographicSize = EndPos;
         GameManager.Instance.SaveGame();
-        SceneManager.UnloadSceneAsync("LevelUI");
         LevelManager.Instance.UnloadCurrentSubLevel();
     }
 
