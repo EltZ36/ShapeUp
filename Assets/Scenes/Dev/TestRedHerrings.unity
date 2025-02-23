@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 177095330}
   - component: {fileID: 177095325}
   - component: {fileID: 177095329}
-  - component: {fileID: 177095328}
+  - component: {fileID: 177095334}
   - component: {fileID: 177095326}
   - component: {fileID: 177095322}
   - component: {fileID: 177095321}
@@ -297,10 +297,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 177095330}
-        m_TargetAssemblyTypeName: EffectMove, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 177095326}
+        m_TargetAssemblyTypeName: EffectRedDrag, Assembly-CSharp
+        m_MethodName: DragStart
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -329,8 +329,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 177095326}
         m_TargetAssemblyTypeName: EffectRedDrag, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
+        m_MethodName: DragBack
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -342,9 +342,9 @@ MonoBehaviour:
   OnPinchEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 177095328}
+      - m_Target: {fileID: 177095334}
         m_TargetAssemblyTypeName: EffectRedPinch, Assembly-CSharp
-        m_MethodName: ChangeSizeDist
+        m_MethodName: ChangeSize
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -473,20 +473,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe19909fd71c0d6438caf2a2a5582d8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &177095328
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 177095318}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da9126b12ab298d40b71210c35c6753b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxSize: 5
-  minSize: 0.3
 --- !u!114 &177095329
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -557,6 +543,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   maxSpeed: 5
+--- !u!114 &177095334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 177095318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da9126b12ab298d40b71210c35c6753b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSize: 3
+  minSize: 0.5
 --- !u!1 &270874257
 GameObject:
   m_ObjectHideFlags: 0
