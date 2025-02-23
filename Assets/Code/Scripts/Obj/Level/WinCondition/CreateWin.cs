@@ -47,7 +47,7 @@ public class CreateWin : MonoBehaviour
             Debug.Log("Victory");
             PlayFireworks(active[0], active[1]);
             LevelManager.Instance.OnCurrentSubLevelComplete();
-            StartCoroutine(CameraController.ZoomOut());
+            StartCoroutine(CameraController.ZoomOut(false));
         }
     }
 

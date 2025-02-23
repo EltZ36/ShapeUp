@@ -28,7 +28,7 @@ public class BoundaryWin : MonoBehaviour
         if (shape.ShapeName == targetName)
         {
             PlayFireworks(shape.ShapeName);
-            StartCoroutine(CameraController.ZoomOut());
+            StartCoroutine(CameraController.ZoomOut(false));
             Destroy(shape.gameObject);
             LevelManager.Instance.OnCurrentSubLevelComplete();
         }
