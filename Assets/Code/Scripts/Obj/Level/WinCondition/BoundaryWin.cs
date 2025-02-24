@@ -30,8 +30,10 @@ public class BoundaryWin : MonoBehaviour
             PlayFireworks(shape.ShapeName);
             StartCoroutine(CameraController.ZoomOut(false));
             Destroy(shape.gameObject);
+            Physics2D.gravity = new UnityEngine.Vector2(0f, -9.8f);
             LevelManager.Instance.OnCurrentSubLevelComplete();
         }
+        Destroy(shape.gameObject);
     }
 
     void PlayFireworks(string _shape)
