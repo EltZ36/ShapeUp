@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: brick_tile_01
+  m_Name: head_tile_blind
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 21300000, guid: 46ceee9ed42466b42a7a3d06750baa27, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f76d1fb21c4173a4fa45506124aac090, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
