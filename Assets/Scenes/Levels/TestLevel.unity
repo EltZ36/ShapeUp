@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 4314159}
   - component: {fileID: 4314160}
   m_Layer: 0
-  m_Name: Background (1)
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -148,12 +148,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4314157}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.04, y: -0.43, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1059648354}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4314159
 SpriteRenderer:
@@ -943,7 +943,6 @@ Transform:
   - {fileID: 1565525943}
   - {fileID: 200559516}
   - {fileID: 1641307497}
-  - {fileID: 4314158}
   - {fileID: 1700647863}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1799,6 +1798,7 @@ MonoBehaviour:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 4314158}
   - {fileID: 1733933431}
   - {fileID: 1059648354}
   - {fileID: 203974059}

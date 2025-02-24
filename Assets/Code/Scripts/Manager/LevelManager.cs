@@ -123,6 +123,7 @@ public class LevelManager : MonoBehaviour, ILevelManager
             {
                 Destroy(ob);
             }
+            AudioManager.Instance.Play(7);
         }
         else
         {
