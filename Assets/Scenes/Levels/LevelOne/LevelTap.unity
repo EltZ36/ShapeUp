@@ -1129,8 +1129,12 @@ GameObject:
   m_Component:
   - component: {fileID: 581297036458384084}
   - component: {fileID: 1578493546}
+  - component: {fileID: 4232612940261273168}
   - component: {fileID: 1578493545}
+  - component: {fileID: 4232612940261273167}
   - component: {fileID: 4232612940261273164}
+  - component: {fileID: 4232612940261273166}
+  - component: {fileID: 4232612940261273165}
   - component: {fileID: 3102746493498640926}
   - component: {fileID: 4232612940261273163}
   - component: {fileID: 2361894182342962411}
@@ -1269,7 +1273,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dc6d39d28c20b04b9ac3475e8874f2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Tags: 528
+  Tags: 540
   spriteName: circle_break_1
   uniqueID: 
   OnFixedUpdateEvent:
@@ -1286,10 +1290,34 @@ MonoBehaviour:
       m_Calls: []
   OnPinchEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4232612940261273167}
+        m_TargetAssemblyTypeName: EffectRedPinch, Assembly-CSharp
+        m_MethodName: ChangeSize
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnSliceEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4232612940261273168}
+        m_TargetAssemblyTypeName: EffectEmitParticle, Assembly-CSharp
+        m_MethodName: EmitParticles
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnTapEvent:
     m_PersistentCalls:
       m_Calls:
@@ -1345,9 +1373,9 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   showFixedUpdate: 0
-  showDrag: 0
-  showPinch: 0
-  showSlice: 0
+  showDrag: 1
+  showPinch: 1
+  showSlice: 1
   showTap: 1
   showAccelerate: 0
   showAttitude: 0
@@ -1514,6 +1542,58 @@ MonoBehaviour:
   randomRotation: 0
   randomPosition: 0
   lifespan: 1
+--- !u!114 &4232612940261273165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1740465847005310710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c808aecee7e6f6499cd925df513a865, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scale: 0
+--- !u!114 &4232612940261273166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1740465847005310710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe19909fd71c0d6438caf2a2a5582d8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4232612940261273167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1740465847005310710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da9126b12ab298d40b71210c35c6753b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSize: 3
+  minSize: 0.5
+--- !u!114 &4232612940261273168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1740465847005310710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85a1eac87a26a49489cad881a63f4c6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tapParticles: {fileID: 3059793695371579445, guid: 09f9e144b7db92541954332bac1d2f3b, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
