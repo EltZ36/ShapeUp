@@ -37,9 +37,9 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _AnimationSpeed: 1
+    - _AnimationSpeed: 2
     - _Frequency: 0.25
-    - _GridSize: 1
+    - _GridSize: 6
     - _SpeedHorizontal: 1
     - _SpeedLeft: 0
     - _SpeedRight: 0

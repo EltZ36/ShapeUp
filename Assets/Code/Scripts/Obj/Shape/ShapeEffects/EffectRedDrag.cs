@@ -9,9 +9,23 @@ public class EffectRedDrag : MonoBehaviour
     //spawn particles on where your finger drags and then collision
     Vector3 originalPosition;
 
+    float maxDist = 0.5f;
+
     public void DragStart(EventInfo eventInfo)
     {
-        originalPosition = eventInfo.TargetObject.transform.position;
+        originalPosition = transform.position;
+    }
+
+    public void MoveShapeRedDrag(EventInfo eventInfo)
+    {
+        if (Vector2.Distance(transform.position, originalPosition) > maxDist)
+        {
+            transform.position =
+                ((eventInfo.VectorTwo - originalPosition).normalized * maxDist * 1.1f)
+                + originalPosition;
+            return;
+        }
+        eventInfo.TargetObject.transform.position = (Vector2)eventInfo.VectorTwo;
     }
 
     public void DragBack(EventInfo eventInfo)

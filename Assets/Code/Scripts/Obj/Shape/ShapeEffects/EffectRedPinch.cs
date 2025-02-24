@@ -11,26 +11,33 @@ public class EffectRedPinch : MonoBehaviour
     float minSize = 0.5f;
 
     // Start is called before the first frame update
-    GameObject current;
-    float original;
+
     Vector3 originalScale;
+
+    private Coroutine coroutine;
+
+    void Start()
+    {
+        originalScale = transform.localScale;
+    }
 
     public void ChangeSize(EventInfo eventInfo)
     {
-        current = eventInfo.TargetObject;
-        original = eventInfo.FloatValue;
-        originalScale = current.transform.localScale;
+        float original = eventInfo.FloatValue;
 
         float dist = Vector2.Distance(eventInfo.VectorOne, eventInfo.VectorTwo);
         float change = dist - original;
-        Debug.Log("Change: " + change);
 
-        current.transform.localScale = new Vector3(
+        eventInfo.TargetObject.transform.localScale = new Vector3(
             Mathf.Clamp(originalScale.x + (change / 2), minSize, maxSize),
             Mathf.Clamp(originalScale.y + (change / 2), minSize, maxSize),
             1f
         );
-        StartCoroutine(ChangeBackSize(eventInfo));
+        if (coroutine != null)
+        {
+            StopCoroutine(coroutine);
+        }
+        coroutine = StartCoroutine(ChangeBackSize(eventInfo));
     }
 
     IEnumerator ChangeBackSize(EventInfo eventInfo)
@@ -53,10 +60,8 @@ public class EffectRedPinch : MonoBehaviour
                 ),
                 eventInfo.TargetObject.transform.localScale.z
             );
-            Debug.Log(elapsed / time);
             yield return null;
         }
-        Debug.Log("Done with Coroutine");
     }
 
     //from https://gist.github.com/cjddmut/d789b9eb78216998e95c
