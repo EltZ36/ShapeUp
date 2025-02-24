@@ -5,7 +5,7 @@ using UnityEngine;
 public class EffectRedPinch : MonoBehaviour
 {
     [SerializeField]
-    float maxSize = 10f;
+    float maxSize = 3f;
 
     [SerializeField]
     float minSize = 0.5f;
