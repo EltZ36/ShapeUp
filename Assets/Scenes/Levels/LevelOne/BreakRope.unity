@@ -315,7 +315,7 @@ PrefabInstance:
       objectReference: {fileID: 180762446}
     - target: {fileID: 5592682305873866223, guid: 07db017025bd6ec488c35cd965cd92fe, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.027
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 5592682305873866223, guid: 07db017025bd6ec488c35cd965cd92fe, type: 3}
       propertyPath: m_LocalPosition.y
@@ -360,6 +360,10 @@ PrefabInstance:
     - target: {fileID: 6391162716361227149, guid: 07db017025bd6ec488c35cd965cd92fe, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8468738035421105429, guid: 07db017025bd6ec488c35cd965cd92fe, type: 3}
+      propertyPath: m_Mass
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4375262978968918665, guid: 07db017025bd6ec488c35cd965cd92fe, type: 3}
@@ -5789,6 +5793,22 @@ PrefabInstance:
       propertyPath: OnDestroyEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 1417672022487355362, guid: 93782211bdc23ce48b4154defad46e2f, type: 3}
+      propertyPath: m_Mass
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1767369932375009627, guid: 93782211bdc23ce48b4154defad46e2f, type: 3}
+      propertyPath: m_Mass
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2657869325519857648, guid: 93782211bdc23ce48b4154defad46e2f, type: 3}
+      propertyPath: m_Mass
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4153587635555089265, guid: 93782211bdc23ce48b4154defad46e2f, type: 3}
+      propertyPath: m_Mass
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4742111185688809145, guid: 93782211bdc23ce48b4154defad46e2f, type: 3}
       propertyPath: Tags
       value: 520
@@ -5876,6 +5896,10 @@ PrefabInstance:
     - target: {fileID: 5396786078031423488, guid: 93782211bdc23ce48b4154defad46e2f, type: 3}
       propertyPath: OnDestroyEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5909134755243135007, guid: 93782211bdc23ce48b4154defad46e2f, type: 3}
+      propertyPath: m_Mass
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7660649889759009608, guid: 93782211bdc23ce48b4154defad46e2f, type: 3}
       propertyPath: m_Name
