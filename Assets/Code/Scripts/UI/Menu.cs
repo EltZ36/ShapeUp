@@ -5,6 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
+    void Awake()
+    {
+        SceneManager.LoadSceneAsync("SplashLevel", LoadSceneMode.Additive);
+    }
+
     public void OnDailyButton()
     {
         Debug.Log("Load Daily Puzzle");
