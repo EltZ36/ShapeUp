@@ -186,7 +186,6 @@ public class LevelManager : MonoBehaviour, ILevelManager
     //SubLevel ID is relative to current level
     public bool InjectSubLevel(int subLevelID, Vector3 position)
     {
-        Physics2D.gravity = new Vector2(0f, -9.8f);
         if (currentSubLevelID == -1 && currentLevelID != -1)
         {
             // if the level is complete, don't reload it
