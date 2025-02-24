@@ -23,12 +23,6 @@ public class Hint : MonoBehaviour
         StartCoroutine(StartTimer());
     }
 
-    // // listener for toggle from ui button clicks
-    // public void buttonsClicked()
-    // {
-    //     ToggleButton.enabled = false;
-    // }
-
     public void ToggleHint()
     {
         HintImage.enabled = !HintImage.enabled;
