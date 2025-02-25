@@ -1378,6 +1378,7 @@ GameObject:
   - component: {fileID: 2080903589}
   - component: {fileID: 2080903588}
   - component: {fileID: 2080903591}
+  - component: {fileID: 2080903592}
   m_Layer: 0
   m_Name: SeeSaw
   m_TagString: Untagged
@@ -1521,6 +1522,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2080903592}
+        m_TargetAssemblyTypeName: SoundEmitter, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnCreateEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -1648,6 +1661,19 @@ HingeJoint2D:
   m_AngleLimits:
     m_LowerAngle: -15
     m_UpperAngle: 15
+--- !u!114 &2080903592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2080903584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 374a4a551b0c6729d860db33bacc2935, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound: {fileID: 8300000, guid: 0e4cd6d3fe2a32c73b9e79b7841609b4, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

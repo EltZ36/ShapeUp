@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Audio emitter class
 public class AudioManager : MonoBehaviour
 {
-    public List<AudioClip> sounds;
+    public List<AudioClip> globalSounds;
     private AudioSource asr;
 
     #region Singleton
@@ -30,9 +31,15 @@ public class AudioManager : MonoBehaviour
     }
     #endregion
 
-    public void Play(int index)
+    public void Play(AudioClip sound)
     {
-        asr.clip = sounds[index];
+        asr.clip = sound;
+        asr.Play();
+    }
+
+    public void PlayGlobal(int index)
+    {
+        asr.clip = globalSounds[index];
         asr.Play();
     }
 }

@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 4506461688977846585}
   - component: {fileID: 7540741236546639319}
   - component: {fileID: 6070082308877846452}
+  - component: {fileID: 4977640677316199408}
   m_Layer: 8
   m_Name: rope_dynamic_0
   m_TagString: Untagged
@@ -118,6 +119,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: EffectExistShape, Assembly-CSharp
         m_MethodName: DestroyTarget
         m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4977640677316199408}
+        m_TargetAssemblyTypeName: SoundEmitter, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -341,3 +354,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   connectedAbove: {fileID: 0}
   connectedBelow: {fileID: 0}
+--- !u!114 &4977640677316199408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6391162716361227149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 374a4a551b0c6729d860db33bacc2935, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound: {fileID: 8300000, guid: 93dddf0ff5cff26019551e0fa75c7cee, type: 3}

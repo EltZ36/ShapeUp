@@ -212,8 +212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0681317709d3b540b76159a2438a1c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trailPrefab: {fileID: 8449138510180305575, guid: 9e255c5fbc568cd4eb31d143614df71e,
-    type: 3}
+  trailPrefab: {fileID: 8449138510180305575, guid: 9e255c5fbc568cd4eb31d143614df71e, type: 3}
   tapTimer: 0.1
   accelSens: 2
   gyroSens: 1
@@ -421,7 +420,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 374a4a551b0c6729d860db33bacc2935, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  index: 0
+  sound: {fileID: 8300000, guid: 7ed61cf21062cf86cbfa07eb7bb33397, type: 3}
 --- !u!1 &598914668
 GameObject:
   m_ObjectHideFlags: 0
@@ -579,7 +578,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 374a4a551b0c6729d860db33bacc2935, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  index: 0
+  sound: {fileID: 8300000, guid: 7ed61cf21062cf86cbfa07eb7bb33397, type: 3}
 --- !u!1 &955181430
 GameObject:
   m_ObjectHideFlags: 0
@@ -610,14 +609,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5b3dee9ef4528515b92d702e4f7a6c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sounds:
-  - {fileID: 8300000, guid: 7ed61cf21062cf86cbfa07eb7bb33397, type: 3}
-  - {fileID: 8300000, guid: 32fc9bd5bb62cf4d7987ccfead802cf0, type: 3}
-  - {fileID: 8300000, guid: c45a01f119bb5dbfeac2e68888e3fd47, type: 3}
-  - {fileID: 8300000, guid: 6de119c910a3d69abb3ede5244bb67a3, type: 3}
-  - {fileID: 8300000, guid: 275750e218ff87eee8b20c4a9c803eb2, type: 3}
-  - {fileID: 8300000, guid: ea736c02ec59c4e1984eb6e79dd00fef, type: 3}
-  - {fileID: 8300000, guid: 93dddf0ff5cff26019551e0fa75c7cee, type: 3}
+  globalSounds:
   - {fileID: 8300000, guid: 2f4b296de675da737a2ce407365e2c09, type: 3}
 --- !u!4 &955181434
 Transform:
@@ -1168,7 +1160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 374a4a551b0c6729d860db33bacc2935, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  index: 0
+  sound: {fileID: 8300000, guid: 7ed61cf21062cf86cbfa07eb7bb33397, type: 3}
 --- !u!1 &1686608153
 GameObject:
   m_ObjectHideFlags: 0
@@ -1326,7 +1318,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 374a4a551b0c6729d860db33bacc2935, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  index: 0
+  sound: {fileID: 8300000, guid: 7ed61cf21062cf86cbfa07eb7bb33397, type: 3}
 --- !u!1 &1999705526
 GameObject:
   m_ObjectHideFlags: 0
@@ -1559,7 +1551,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 374a4a551b0c6729d860db33bacc2935, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  index: 0
+  sound: {fileID: 8300000, guid: 7ed61cf21062cf86cbfa07eb7bb33397, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

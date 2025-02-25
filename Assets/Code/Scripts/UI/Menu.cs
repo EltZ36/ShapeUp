@@ -13,7 +13,6 @@ public class Menu : MonoBehaviour
     public void OnDailyButton()
     {
         Debug.Log("Load Daily Puzzle");
-        Physics2D.gravity = new UnityEngine.Vector2(0f, 9.8f);
         LevelManager.Instance.LoadLevel(0);
     }
 

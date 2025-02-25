@@ -123,7 +123,7 @@ public class LevelManager : MonoBehaviour, ILevelManager
             {
                 Destroy(ob);
             }
-            AudioManager.Instance.Play(7);
+            AudioManager.Instance.PlayGlobal(0);
         }
         else
         {

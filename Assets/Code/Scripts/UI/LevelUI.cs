@@ -26,6 +26,7 @@ public class LevelUI : MonoBehaviour
     void Awake()
     {
         cam = Camera.main;
+        Physics2D.gravity = new UnityEngine.Vector2(0f, -9.8f);
     }
 
     private void Start()
