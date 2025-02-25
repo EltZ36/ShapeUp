@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // Audio emitter class
-public class AudioManager : MonoBehaviour
+public class AudioManager : MonoBehaviour, IAudioManager
 {
     public List<AudioClip> globalSounds;
     private AudioSource asr;

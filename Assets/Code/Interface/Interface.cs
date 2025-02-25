@@ -100,7 +100,7 @@ interface ILevelManager
 interface IAudioManager
 {
     /// <summary>
-    /// Plays the sound passed into it, typically from a sound emitter
+    /// Plays the sound passed into it, typically called from a sound emitter
     /// </summary>
     /// <param name="sound"></param>
     void Play(AudioClip sound);
