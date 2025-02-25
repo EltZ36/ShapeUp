@@ -72,6 +72,7 @@ public class LevelUI : MonoBehaviour
         }
         disableUIElement(confirm);
         bool fully = LevelManager.Instance.currentSubLevelID == -1 ? true : false;
+        Physics2D.gravity = new UnityEngine.Vector2(0f, -9.8f);
         StartCoroutine(CameraController.ZoomOut(fully));
         if (showMenu)
         {
