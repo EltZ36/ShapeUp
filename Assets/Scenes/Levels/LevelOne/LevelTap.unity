@@ -982,8 +982,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 963aaa2aa587da5418cfe7ea98f84534, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 4
-  regen: 0
+  health: 9999
+  regen: 1
   target: {fileID: 1740465847005310710}
 --- !u!1 &1601496521
 GameObject:
@@ -1130,6 +1130,7 @@ GameObject:
   - component: {fileID: 581297036458384084}
   - component: {fileID: 1578493546}
   - component: {fileID: 4232612940261273168}
+  - component: {fileID: 4232612940261273170}
   - component: {fileID: 1578493545}
   - component: {fileID: 4232612940261273167}
   - component: {fileID: 4232612940261273164}
@@ -1274,7 +1275,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dc6d39d28c20b04b9ac3475e8874f2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Tags: 540
+  Tags: 572
   spriteName: circle_break_1
   uniqueID: 
   OnFixedUpdateEvent:
@@ -1360,7 +1361,19 @@ MonoBehaviour:
         m_CallState: 2
   OnAccelerateEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4232612940261273170}
+        m_TargetAssemblyTypeName: EffectCrackShader, Assembly-CSharp
+        m_MethodName: AddCrack
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnAttitudeChangeEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -1390,7 +1403,7 @@ MonoBehaviour:
   showPinch: 1
   showSlice: 1
   showTap: 1
-  showAccelerate: 0
+  showAccelerate: 1
   showAttitude: 0
   showGravity: 0
   showCreate: 0
@@ -1620,6 +1633,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sound: {fileID: 8300000, guid: e1b106505c34039d584a3b7b2061dc94, type: 3}
+--- !u!114 &4232612940261273170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1740465847005310710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9e7007171c80b44aaafe172512485c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  crackMaterial: {fileID: 2100000, guid: 2334f040f8e6cda48886d85eef6b8f61, type: 2}
+  max: 3
+  regen: -1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
