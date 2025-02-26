@@ -62,11 +62,19 @@ public class CameraController : MonoBehaviour
             }
         }
         Vector2 touchDeltaPosition = Input.GetTouch(0).deltaPosition;
+#if !UNITY_EDITOR && UNITY_WEBGL
+        deltaPosition = new Vector3(
+            -touchDeltaPosition.x * speed * Time.deltaTime,
+            touchDeltaPosition.y * speed * Time.deltaTime,
+            0f
+        );
+#else
         deltaPosition = new Vector3(
             -touchDeltaPosition.x * speed * Time.deltaTime,
             -touchDeltaPosition.y * speed * Time.deltaTime,
             0f
         );
+#endif
         _targetPosition = transform.position + deltaPosition;
         _targetPosition = getCameraBounds();
         transform.position = _targetPosition;

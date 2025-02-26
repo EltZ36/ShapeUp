@@ -221,7 +221,11 @@ public class ShapeEventSystem : MonoBehaviour
         Vector3 accelDiff = newAccel - pastAccel;
         if (accelDiff.magnitude > accelSens)
         {
+#if !UNITY_EDITOR && UNITY_WEBGL
+            OnAccelChange?.Invoke(Quaternion.Euler(0, 0, 270) * accelDiff);
+#else
             OnAccelChange?.Invoke(accelDiff);
+#endif
             pastAccel = newAccel;
         }
     }
@@ -231,7 +235,12 @@ public class ShapeEventSystem : MonoBehaviour
         Quaternion currGyro = Input.gyro.attitude;
         if (Quaternion.Angle(currGyro, pastGyro) > gyroSens)
         {
+#if !UNITY_EDITOR && UNITY_WEBGL
+            OnGyroChange?.Invoke(Quaternion.Euler(0, 0, 270) * currGyro);
+#else
             OnGyroChange?.Invoke(currGyro);
+#endif
+
             pastGyro = currGyro;
         }
     }
@@ -241,7 +250,11 @@ public class ShapeEventSystem : MonoBehaviour
         Vector3 currGravity = Input.gyro.gravity;
         if (currGravity != pastGravity)
         {
+#if !UNITY_EDITOR && UNITY_WEBGL
+            OnGravChange?.Invoke(Quaternion.Euler(0, 0, 270) * currGravity);
+#else
             OnGravChange?.Invoke(currGravity);
+#endif
             pastGravity = currGravity;
         }
     }
