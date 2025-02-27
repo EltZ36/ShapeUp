@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour, IGameManager
             //for me (Elton) on windows, it's C:\Users\<user>\AppData\LocalLow\DefaultCompany/ShapeUp/gamedata.json
             saveFile = Path.Combine(Application.persistentDataPath, "gamedata.json");
             ReadFile();
+            Screen.orientation = ScreenOrientation.LandscapeRight;
         }
     }
     #endregion
