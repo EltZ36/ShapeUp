@@ -1,0 +1,1253 @@
+fileFormatVersion: 2
+guid: f05174f8ef382724999d2dc79b2ffc19
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: pig_break_spritesheet_compressed_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1320
+        width: 330
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52794b816073a0b49b767d4af7bff131
+      internalID: 1985608549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pig_break_spritesheet_compressed_1
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 1320
+        width: 330
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac6e4bb38d4b4184eb938a3ed3859ddc
+      internalID: 751160129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pig_break_spritesheet_compressed_2
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 1320
+        width: 330
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ba7982d7f4d22a4ba605b47dec68a56
+      internalID: 680980317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pig_break_spritesheet_compressed_3
+      rect:
+        serializedVersion: 2
+        x: 990
+        y: 1320
+        width: 330
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b2a7ba2c9869b54e92a3e4e450f0dcd
+      internalID: 1239225428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pig_break_spritesheet_compressed_4
+      rect:
+        serializedVersion: 2
+        x: 1320
+        y: 1320
+        width: 330
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e11e2d55273c4374fba606298b9b2a4f
+      internalID: -56413657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pig_break_spritesheet_compressed_5
+      rect:
+        serializedVersion: 2
+        x: 1650
+        y: 1320
+        width: 330
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0a79178e0b648744a122659814ed680
+      internalID: -1951282368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pig_break_spritesheet_compressed_6
+      rect:
+        serializedVersion: 2
+        x: 1980
+        y: 1320
+        width: 330
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a6d71fc5a8b0884dab719438f5c7af5
+      internalID: -10228031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pig_break_spritesheet_compressed_7
+      rect:
+        serializedVersion: 2
+        x: 2310
+        y: 1320
+        width: 330
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7115f13f579c8a469b74b3a9cf277d6
+      internalID: 2061950750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pig_break_spritesheet_compressed_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1100
+        width: 330
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be4e3ceb36338e74a872c89f7a76564f
+      internalID: 137609145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pig_break_spritesheet_compressed_9
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 1100
+        width: 330
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f5e754087fdc2c4587fbc061f32878a
+      internalID: -752356995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pig_break_spritesheet_compressed_10
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 1100
+        width: 330
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5a5ec8d7837b0845985ff79cf8271c6
+      internalID: 1095553077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pig_break_spritesheet_compressed_11
+      rect:
+        serializedVersion: 2
+        x: 990
+        y: 1100
+        width: 330
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5df135344e58efc449a96f380b397fb9
+      internalID: 309962961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pig_break_spritesheet_compressed_12
+      rect:
+        serializedVersion: 2
+        x: 1320
+        y: 1100
+        width: 330
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a65204a27a17ab94db43a39f15fba01d
+      internalID: -1128516259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pig_break_spritesheet_compressed_13
+      rect:
+        serializedVersion: 2
+        x: 1650
+        y: 1100
+        width: 330
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2978be43aef0004bbb784f7bc72a9e0
+      internalID: -759360012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pig_break_spritesheet_compressed_14
+      rect:
+        serializedVersion: 2
+        x: 1980
+        y: 1100
+        width: 330
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 088163bdcd61abd48bd05a02be4fa0c4
+      internalID: 1891617519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pig_break_spritesheet_compressed_15
+      rect:
+        serializedVersion: 2
+        x: 2310
+        y: 1100
+        width: 330
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bb0d06631b57fb49b320685b3701543
+      internalID: 594259525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pig_break_spritesheet_compressed_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 880
+        width: 330
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: daf5e5ce3d3f14e48b7d09f1937ab124
+      internalID: -319825317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pig_break_spritesheet_compressed_17
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 880
+        width: 330
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15564f8a6c2b6c54d8e20e8d0ad1eb04
+      internalID: 210796746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pig_break_spritesheet_compressed_18
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 880
+        width: 330
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e92288cf6aee1244ab8bfdb6b92106e
+      internalID: 1935052432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pig_break_spritesheet_compressed_19
+      rect:
+        serializedVersion: 2
+        x: 990
+        y: 880
+        width: 330
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 966c0f57c73adfd46bdbc4e891b84bc8
+      internalID: -926533666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pig_break_spritesheet_compressed_20
+      rect:
+        serializedVersion: 2
+        x: 1320
+        y: 880
+        width: 330
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b181a0b6685b74e44bd17fe83950301e
+      internalID: -1924870930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pig_break_spritesheet_compressed_21
+      rect:
+        serializedVersion: 2
+        x: 1650
+        y: 880
+        width: 330
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03530313fab36184a99607fd04436956
+      internalID: 628790645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pig_break_spritesheet_compressed_22
+      rect:
+        serializedVersion: 2
+        x: 1980
+        y: 880
+        width: 330
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25c89dd84486e2442b96447890698252
+      internalID: 1901619677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pig_break_spritesheet_compressed_23
+      rect:
+        serializedVersion: 2
+        x: 2310
+        y: 880
+        width: 330
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f9e422148ac47e40a7e7b6cbb20acfa
+      internalID: 1615881786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pig_break_spritesheet_compressed_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 660
+        width: 330
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 688ddb926bf649f4d98bb37493ccad2f
+      internalID: -625193864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pig_break_spritesheet_compressed_25
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 660
+        width: 330
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1eb2b9bf5528bbf44bd77dbad132ddf0
+      internalID: -1822739487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pig_break_spritesheet_compressed_26
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 660
+        width: 330
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34869d816da5e954cbb183a5907b7975
+      internalID: 1504667844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pig_break_spritesheet_compressed_27
+      rect:
+        serializedVersion: 2
+        x: 990
+        y: 660
+        width: 330
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69f0e0ab26480cc4ca7562ce8f9d59a4
+      internalID: 454222616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pig_break_spritesheet_compressed_28
+      rect:
+        serializedVersion: 2
+        x: 1320
+        y: 660
+        width: 330
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38133ed2a562475488f46c6c566c16e0
+      internalID: 997192696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pig_break_spritesheet_compressed_29
+      rect:
+        serializedVersion: 2
+        x: 1650
+        y: 660
+        width: 330
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: daadef00c7476fd4ea671215edba29fb
+      internalID: -378963123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pig_break_spritesheet_compressed_30
+      rect:
+        serializedVersion: 2
+        x: 1980
+        y: 660
+        width: 330
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ef92817d4f9b6642b8e22e8ce7f6bea
+      internalID: 583480474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pig_break_spritesheet_compressed_31
+      rect:
+        serializedVersion: 2
+        x: 2310
+        y: 660
+        width: 330
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03eb15a265fff9b4295e7d9bd20e0668
+      internalID: 361797729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pig_break_spritesheet_compressed_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 440
+        width: 330
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c927355d77b907c4f9e68dffcc1053c7
+      internalID: -1516237300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pig_break_spritesheet_compressed_33
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 440
+        width: 330
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b80b335bd310ab843bce6907be5aa67e
+      internalID: -1295896306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pig_break_spritesheet_compressed_34
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 440
+        width: 330
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fbfe17723e5d894cb219212c1b68f77
+      internalID: -2144761725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pig_break_spritesheet_compressed_35
+      rect:
+        serializedVersion: 2
+        x: 990
+        y: 440
+        width: 330
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbb76069cdd39ea4ba93490f4c162715
+      internalID: 1371613752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pig_break_spritesheet_compressed_36
+      rect:
+        serializedVersion: 2
+        x: 1320
+        y: 440
+        width: 330
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef94d60d1713c664fb235f1dbc5aaa0d
+      internalID: 535420239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pig_break_spritesheet_compressed_37
+      rect:
+        serializedVersion: 2
+        x: 1650
+        y: 440
+        width: 330
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74160f8c59c97e34c8f2da42c9a699e3
+      internalID: 832008942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pig_break_spritesheet_compressed_38
+      rect:
+        serializedVersion: 2
+        x: 1980
+        y: 440
+        width: 330
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8683c84d1fe89043892287ec7aa159d
+      internalID: -326680630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pig_break_spritesheet_compressed_39
+      rect:
+        serializedVersion: 2
+        x: 2310
+        y: 440
+        width: 330
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f678f48080f7e454b82f96e6c24f575e
+      internalID: 373378040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pig_break_spritesheet_compressed_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 220
+        width: 330
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed0afe1747af03e4490c590c5a4e8315
+      internalID: 1194609955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pig_break_spritesheet_compressed_41
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 220
+        width: 330
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27cf7db7f22dddb48b26bc6832160313
+      internalID: -993825434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pig_break_spritesheet_compressed_42
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 220
+        width: 330
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8e1a20bf976e5e43bb1f38774006e7d
+      internalID: 488193475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pig_break_spritesheet_compressed_43
+      rect:
+        serializedVersion: 2
+        x: 990
+        y: 220
+        width: 330
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4e29bafb0183444780c687b02fa0eb2
+      internalID: -1233133604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pig_break_spritesheet_compressed_44
+      rect:
+        serializedVersion: 2
+        x: 1320
+        y: 220
+        width: 330
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4877e50058de22f428bf8c7ff7031245
+      internalID: -1368694132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pig_break_spritesheet_compressed_45
+      rect:
+        serializedVersion: 2
+        x: 1650
+        y: 220
+        width: 330
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b15c2aecabf214a43842c3387b6add09
+      internalID: -1627128051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pig_break_spritesheet_compressed_46
+      rect:
+        serializedVersion: 2
+        x: 1980
+        y: 220
+        width: 330
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b004646b6956960499286a7bff176109
+      internalID: 613924307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pig_break_spritesheet_compressed_47
+      rect:
+        serializedVersion: 2
+        x: 2310
+        y: 220
+        width: 330
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 765efbcce7d1fb54f8f72d22df1276f9
+      internalID: -2073426101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pig_break_spritesheet_compressed_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 330
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c61372c6f49922740a92ca941b203cf8
+      internalID: 1419799162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pig_break_spritesheet_compressed_49
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 0
+        width: 330
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d7db77de9a008d4dbd7e3902aa8c996
+      internalID: 336526145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      pig_break_spritesheet_compressed_0: 1985608549
+      pig_break_spritesheet_compressed_1: 751160129
+      pig_break_spritesheet_compressed_10: 1095553077
+      pig_break_spritesheet_compressed_11: 309962961
+      pig_break_spritesheet_compressed_12: -1128516259
+      pig_break_spritesheet_compressed_13: -759360012
+      pig_break_spritesheet_compressed_14: 1891617519
+      pig_break_spritesheet_compressed_15: 594259525
+      pig_break_spritesheet_compressed_16: -319825317
+      pig_break_spritesheet_compressed_17: 210796746
+      pig_break_spritesheet_compressed_18: 1935052432
+      pig_break_spritesheet_compressed_19: -926533666
+      pig_break_spritesheet_compressed_2: 680980317
+      pig_break_spritesheet_compressed_20: -1924870930
+      pig_break_spritesheet_compressed_21: 628790645
+      pig_break_spritesheet_compressed_22: 1901619677
+      pig_break_spritesheet_compressed_23: 1615881786
+      pig_break_spritesheet_compressed_24: -625193864
+      pig_break_spritesheet_compressed_25: -1822739487
+      pig_break_spritesheet_compressed_26: 1504667844
+      pig_break_spritesheet_compressed_27: 454222616
+      pig_break_spritesheet_compressed_28: 997192696
+      pig_break_spritesheet_compressed_29: -378963123
+      pig_break_spritesheet_compressed_3: 1239225428
+      pig_break_spritesheet_compressed_30: 583480474
+      pig_break_spritesheet_compressed_31: 361797729
+      pig_break_spritesheet_compressed_32: -1516237300
+      pig_break_spritesheet_compressed_33: -1295896306
+      pig_break_spritesheet_compressed_34: -2144761725
+      pig_break_spritesheet_compressed_35: 1371613752
+      pig_break_spritesheet_compressed_36: 535420239
+      pig_break_spritesheet_compressed_37: 832008942
+      pig_break_spritesheet_compressed_38: -326680630
+      pig_break_spritesheet_compressed_39: 373378040
+      pig_break_spritesheet_compressed_4: -56413657
+      pig_break_spritesheet_compressed_40: 1194609955
+      pig_break_spritesheet_compressed_41: -993825434
+      pig_break_spritesheet_compressed_42: 488193475
+      pig_break_spritesheet_compressed_43: -1233133604
+      pig_break_spritesheet_compressed_44: -1368694132
+      pig_break_spritesheet_compressed_45: -1627128051
+      pig_break_spritesheet_compressed_46: 613924307
+      pig_break_spritesheet_compressed_47: -2073426101
+      pig_break_spritesheet_compressed_48: 1419799162
+      pig_break_spritesheet_compressed_49: 336526145
+      pig_break_spritesheet_compressed_5: -1951282368
+      pig_break_spritesheet_compressed_6: -10228031
+      pig_break_spritesheet_compressed_7: 2061950750
+      pig_break_spritesheet_compressed_8: 137609145
+      pig_break_spritesheet_compressed_9: -752356995
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
