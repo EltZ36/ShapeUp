@@ -55,6 +55,9 @@ public class Shape : MonoBehaviour
     private UnityEvent<EventInfo> OnSliceEvent;
 
     [SerializeField]
+    private UnityEvent<EventInfo> OnSliceEndEvent;
+
+    [SerializeField]
     private UnityEvent<EventInfo> OnTapEvent;
 
     [SerializeField]
@@ -126,6 +129,15 @@ public class Shape : MonoBehaviour
             return;
         }
         OnSliceEvent.Invoke(new EventInfo(targetObject: gameObject));
+    }
+
+    public void OnSliceEnd(Vector3 touchPos)
+    {
+        if ((Tags & ShapeTags.OnSlice) != ShapeTags.OnSlice)
+        {
+            return;
+        }
+        OnSliceEndEvent.Invoke(new EventInfo(targetObject: gameObject, vectorOne: touchPos));
     }
 
     public void OnTap()

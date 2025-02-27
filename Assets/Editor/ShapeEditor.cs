@@ -20,6 +20,7 @@ public class ShapeEditor : Editor
     SerializedProperty OnDragEndEvent;
     SerializedProperty OnPinchEvent;
     SerializedProperty OnSliceEvent;
+    SerializedProperty OnSliceEndEvent;
     SerializedProperty OnTapEvent;
     SerializedProperty OnAccelerateEvent;
     SerializedProperty OnAttitudeChangeEvent;
@@ -56,6 +57,7 @@ public class ShapeEditor : Editor
         OnDragEndEvent = serializedObject.FindProperty("OnDragEndEvent");
         OnPinchEvent = serializedObject.FindProperty("OnPinchEvent");
         OnSliceEvent = serializedObject.FindProperty("OnSliceEvent");
+        OnSliceEndEvent = serializedObject.FindProperty("OnSliceEndEvent");
         OnTapEvent = serializedObject.FindProperty("OnTapEvent");
         OnAccelerateEvent = serializedObject.FindProperty("OnAccelerateEvent");
         OnAttitudeChangeEvent = serializedObject.FindProperty("OnAttitudeChangeEvent");
@@ -145,7 +147,13 @@ public class ShapeEditor : Editor
             OnDragEndEvent
         );
         DrawFoldoutEvent(ShapeTags.OnPinch, showPinch, "Pinch Event", OnPinchEvent);
-        DrawFoldoutEvent(ShapeTags.OnSlice, showSlice, "Slice Event", OnSliceEvent);
+        DrawFoldoutEvent(
+            ShapeTags.OnSlice,
+            showSlice,
+            "Slice Event",
+            OnSliceEvent,
+            OnSliceEndEvent
+        );
         DrawFoldoutEvent(ShapeTags.OnTap, showTap, "Tap Event", OnTapEvent);
         DrawFoldoutEvent(
             ShapeTags.OnAccelerate,
