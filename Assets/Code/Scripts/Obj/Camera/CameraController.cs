@@ -14,6 +14,9 @@ public class CameraController : MonoBehaviour
     private Vector3 _targetPosition,
         deltaPosition;
 
+    float lastX,
+        lastY;
+
     private void Start()
     {
         zoom = 1f;
@@ -43,6 +46,8 @@ public class CameraController : MonoBehaviour
     {
         if (Input.touches[0].phase == TouchPhase.Began)
         {
+            lastX = Input.GetTouch(0).position.x;
+            lastY = Input.GetTouch(0).position.y;
             Vector3 pointOne = Camera.main.ScreenToWorldPoint(Input.touches[0].position);
             Vector2 pointOne2D = new Vector2(pointOne.x, pointOne.y);
             RaycastHit2D hit = Physics2D.Raycast(pointOne2D, Camera.main.transform.forward);
@@ -61,14 +66,20 @@ public class CameraController : MonoBehaviour
                 }
             }
         }
-        Vector2 touchDeltaPosition = Input.GetTouch(0).deltaPosition;
+        // Vector2 touchDeltaPosition = Input.touches[0].deltaPosition;
+        // Debug.Log(touchDeltaPosition);
+        float deltaX = Input.GetTouch(0).position.x - lastX;
+        float deltaY = Input.GetTouch(0).position.y - lastY;
+        Vector2 touchDeltaPosition = new Vector2(deltaX, deltaY);
 #if !UNITY_EDITOR && UNITY_WEBGL
+        Debug.Log("WebGL");
         deltaPosition = new Vector3(
             -touchDeltaPosition.x * speed * Time.deltaTime,
-            touchDeltaPosition.y * speed * Time.deltaTime,
+            -touchDeltaPosition.y * speed * Time.deltaTime,
             0f
         );
 #else
+        Debug.Log("Editor");
         deltaPosition = new Vector3(
             -touchDeltaPosition.x * speed * Time.deltaTime,
             -touchDeltaPosition.y * speed * Time.deltaTime,
@@ -78,6 +89,9 @@ public class CameraController : MonoBehaviour
         _targetPosition = transform.position + deltaPosition;
         _targetPosition = getCameraBounds();
         transform.position = _targetPosition;
+
+        lastX = Input.GetTouch(0).position.x;
+        lastY = Input.GetTouch(0).position.y;
     }
 
     private Vector3 getCameraBounds()
