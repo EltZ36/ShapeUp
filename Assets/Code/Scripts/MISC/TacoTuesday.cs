@@ -2,7 +2,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Lights;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 /// <summary>
 /// contains 'locks' for a given 'light'
@@ -40,22 +42,24 @@ public class TacoTuesday : MonoBehaviour
 {
     // need a mask
     public Sprite maskSpr;
-    private List<(CircleCollider2D, SpriteMask)> activeLights;
+    private List<(CircleCollider2D, Light2D)> activeLights;
     private List<LockContainer> locks;
 
     // bunch of constants to deal with scaling, initial sizes, and timings.
-    private const float maxLightSize = 2f;
-    private const float scaleFactor = 1.7f;
+    private const float maxLightSize = 2.25f;
+    private const float scaleFactor = 1.5f;
     private const float growTime = 1f;
     private const float shrinkTime = 5f;
     private const int delayBeforeShrinking = 2000;
 
+    private const int maxActiveLights = 2;
+
     // limit the number of lights that can exist in the scene at a given time.
-    private static int activeMasks = 0;
+    private static int lightCounter = 0;
 
     void Awake()
     {
-        activeLights = new List<(CircleCollider2D, SpriteMask)>();
+        activeLights = new List<(CircleCollider2D, Light2D)>();
         locks = new List<LockContainer>();
     }
 
@@ -93,7 +97,7 @@ public class TacoTuesday : MonoBehaviour
     /// <param name="pos"></param>
     private void CreateLight(Vector2 pos)
     {
-        if (activeMasks > 5)
+        if (lightCounter >= maxActiveLights)
         {
             return;
         }
@@ -102,17 +106,18 @@ public class TacoTuesday : MonoBehaviour
         maskObject.transform.position = pos;
         maskObject.transform.localScale = new Vector3(0.5f, 0.5f);
 
-        SpriteMask spriteMask = maskObject.AddComponent<SpriteMask>();
-        spriteMask.sprite = maskSpr;
+        Light2D light = maskObject.AddComponent<Light2D>();
 
         CircleCollider2D collider = maskObject.AddComponent<CircleCollider2D>();
         collider.isTrigger = true;
         collider.radius = 0.5f;
         collider.transform.position = new Vector3(pos.x, pos.y, -2);
 
-        activeLights.Add((collider, spriteMask));
+        maskObject.AddComponent<LightsEnable>();
+
+        activeLights.Add((collider, light));
         locks.Add(new LockContainer(false, false));
-        activeMasks++;
+        lightCounter++;
 
         IncreaseLightSize(maskObject);
     }
@@ -126,8 +131,8 @@ public class TacoTuesday : MonoBehaviour
         try
         {
             // if the user tapped on an already existing light, get its scale
-            Vector3 ls = ob.GetComponent<CircleCollider2D>().transform.localScale;
-            if (ls.x >= maxLightSize)
+            float ls = ob.GetComponent<CircleCollider2D>().radius;
+            if (ls >= maxLightSize)
             {
                 return;
             }
@@ -158,6 +163,8 @@ public class TacoTuesday : MonoBehaviour
                     async () =>
                     {
                         locks[index].isGrowing = false; // done!
+                        ob.GetComponent<CircleCollider2D>().radius =
+                            ob.GetComponent<Light2D>().pointLightOuterRadius;
                         await Task.Delay(delayBeforeShrinking); // wait before starting to shrink
                         if (locks[index].isGrowing == true || locks[index].isShrinking == true) // if we got tapped on (non deterministic)
                         {
@@ -173,7 +180,7 @@ public class TacoTuesday : MonoBehaviour
                                     Destroy(activeLights[index].Item1.gameObject);
                                     activeLights[index] = (null, null); // these prob should get cleaned up, tricky to schedule a time when the user 'wont' tap to claim mutex on the list.
                                     locks[index] = null;
-                                    activeMasks--;
+                                    lightCounter--;
                                 }
                             )
                         );
@@ -197,21 +204,17 @@ public class TacoTuesday : MonoBehaviour
     /// <param name="sm">Sprite mask to grow</param>
     /// <param name="done">Callback to invoke when the sclae is finished</param>
     /// <returns></returns>
-    private IEnumerator Scale(bool grow, SpriteMask sm, Action done)
+    private IEnumerator Scale(bool grow, Light2D sm, Action done)
     {
-        Vector3 StartSizeSM = sm.transform.localScale;
-        Vector3 EndSizeSM = grow ? StartSizeSM * scaleFactor : StartSizeSM * 0f;
+        float StartSizeSM = sm.pointLightOuterRadius;
+        float EndSizeSM = grow ? StartSizeSM * scaleFactor : StartSizeSM * 0f;
 
         float time = grow ? growTime : shrinkTime;
         float elapsed = 0.0f;
         while (elapsed / time < 1)
         {
             elapsed += Time.deltaTime;
-            sm.transform.localScale = new Vector3(
-                EaseInBounce(StartSizeSM.x, EndSizeSM.x, elapsed / time),
-                EaseInBounce(StartSizeSM.y, EndSizeSM.y, elapsed / time),
-                StartSizeSM.z
-            );
+            sm.pointLightOuterRadius = EaseInBounce(StartSizeSM, EndSizeSM, elapsed / time);
             yield return null;
         }
         done.Invoke();
