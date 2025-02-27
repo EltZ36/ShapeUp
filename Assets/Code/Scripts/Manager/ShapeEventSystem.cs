@@ -179,7 +179,10 @@ public class ShapeEventSystem : MonoBehaviour
                 {
                     foreach (Shape shape in slicedShape[id])
                     {
-                        shape.OnSliceEnd(pos);
+                        if (shape != null)
+                        {
+                            shape.OnSliceEnd(pos);
+                        }
                     }
                     slicedShape.Remove(id);
                 }
