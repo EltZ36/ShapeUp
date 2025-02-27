@@ -982,8 +982,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 963aaa2aa587da5418cfe7ea98f84534, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 9999
-  regen: 1
+  health: 4
+  regen: -1
   target: {fileID: 1740465847005310710}
 --- !u!1 &1601496521
 GameObject:
