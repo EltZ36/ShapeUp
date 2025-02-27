@@ -6,13 +6,14 @@ using UnityEngine.Rendering.Universal;
 public class EffectTurnOffLights : MonoBehaviour
 {
     // Start is called before the first frame update
-    List<Light2D> lightsList = new List<Light2D>();
+    List<GameObject> houseList = new List<GameObject>();
 
     public void turnOffLights()
     {
-        foreach (Light2D light in lightsList)
+        foreach (GameObject house in houseList)
         {
-            light.enabled = false;
+            //there are four light2ds in each house object
+            house.GetComponentInChildren<Light2D>().enabled = false;
         }
     }
 }
