@@ -38,13 +38,13 @@ Material:
     m_Ints: []
     m_Floats:
     - _AnimationSpeed: 2
-    - _Frequency: 0.25
+    - _Frequency: 2
     - _GridSize: 6
     - _SpeedHorizontal: 1
     - _SpeedLeft: 0
     - _SpeedRight: 0
     - _SpeedRotation: -1.14
     - _SpeedVertical: 1
-    - _SpriteSize: 0.7
+    - _SpriteSize: 0.3
     m_Colors: []
   m_BuildTextureStacks: []
