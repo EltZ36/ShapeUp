@@ -12,6 +12,9 @@ public class StopParticle : MonoBehaviour
 
     public void Stop(EventInfo eventInfo)
     {
-        target.Stop(true, ParticleSystemStopBehavior.StopEmitting);
+        if (target != null)
+        {
+            target.Stop(true, ParticleSystemStopBehavior.StopEmitting);
+        }
     }
 }

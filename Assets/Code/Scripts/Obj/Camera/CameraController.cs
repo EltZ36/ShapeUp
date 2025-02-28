@@ -14,6 +14,9 @@ public class CameraController : MonoBehaviour
     private Vector3 _targetPosition,
         deltaPosition;
 
+    float lastX,
+        lastY;
+
     private void Start()
     {
         zoom = 1f;
@@ -43,6 +46,8 @@ public class CameraController : MonoBehaviour
     {
         if (Input.touches[0].phase == TouchPhase.Began)
         {
+            lastX = Input.GetTouch(0).position.x;
+            lastY = Input.GetTouch(0).position.y;
             Vector3 pointOne = Camera.main.ScreenToWorldPoint(Input.touches[0].position);
             Vector2 pointOne2D = new Vector2(pointOne.x, pointOne.y);
             RaycastHit2D hit = Physics2D.Raycast(pointOne2D, Camera.main.transform.forward);
@@ -61,15 +66,32 @@ public class CameraController : MonoBehaviour
                 }
             }
         }
-        Vector2 touchDeltaPosition = Input.GetTouch(0).deltaPosition;
+        // Vector2 touchDeltaPosition = Input.touches[0].deltaPosition;
+        // Debug.Log(touchDeltaPosition);
+        float deltaX = Input.GetTouch(0).position.x - lastX;
+        float deltaY = Input.GetTouch(0).position.y - lastY;
+        Vector2 touchDeltaPosition = new Vector2(deltaX, deltaY);
+#if !UNITY_EDITOR && UNITY_WEBGL
+        Debug.Log("WebGL");
         deltaPosition = new Vector3(
             -touchDeltaPosition.x * speed * Time.deltaTime,
             -touchDeltaPosition.y * speed * Time.deltaTime,
             0f
         );
+#else
+        Debug.Log("Editor");
+        deltaPosition = new Vector3(
+            -touchDeltaPosition.x * speed * Time.deltaTime,
+            -touchDeltaPosition.y * speed * Time.deltaTime,
+            0f
+        );
+#endif
         _targetPosition = transform.position + deltaPosition;
         _targetPosition = getCameraBounds();
         transform.position = _targetPosition;
+
+        lastX = Input.GetTouch(0).position.x;
+        lastY = Input.GetTouch(0).position.y;
     }
 
     private Vector3 getCameraBounds()
@@ -125,19 +147,32 @@ public class CameraController : MonoBehaviour
         }
     }
 
-    public static IEnumerator ZoomOut(float EndPos = 10, float time = 1f)
+    public static IEnumerator ZoomOut(bool fully, float time = 1f)
     {
-        float StartPos = Camera.main.orthographicSize;
+        float EndPos = fully ? 20 : 10;
+
+        float StartSize = Camera.main.orthographicSize;
+
+        Vector3 StartPos = Camera.main.transform.position;
+
         float elapsed = 0.0f;
         while (elapsed / time < 1)
         {
             elapsed += Time.deltaTime;
-            Camera.main.orthographicSize = EaseOutQuad(StartPos, EndPos, elapsed / time);
+            Camera.main.orthographicSize = EaseOutQuad(StartSize, EndPos, elapsed / time);
+            if (fully)
+            {
+                Camera.main.transform.position = new Vector3(
+                    EaseOutQuad(StartPos.x, 0, elapsed / time),
+                    EaseOutQuad(StartPos.y, 0, elapsed / time),
+                    StartPos.z
+                );
+            }
+
             yield return null;
         }
         Camera.main.orthographicSize = EndPos;
         GameManager.Instance.SaveGame();
-        SceneManager.UnloadSceneAsync("LevelUI");
         LevelManager.Instance.UnloadCurrentSubLevel();
     }
 

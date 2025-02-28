@@ -30,7 +30,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels/LevelOne/LevelOneFinal.unity
     guid: f8103cf9875955748986369ce2697e9a
   - enabled: 1
-    path: Assets/Scenes/Levels/LevelOne/BreakRopeNonParticle.unity
+    path: Assets/Scenes/Levels/LevelOne/BreakRope.unity
     guid: a28b718d19ec1434a9029d9252777888
   - enabled: 1
     path: Assets/Scenes/Levels/LevelOne/LevelAccel.unity
@@ -44,4 +44,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/LevelOne/LevelPinch.unity
     guid: 3c5cdcd7d30d24c4d9f64229661b61e0
-  m_configObjects: {}
+  - enabled: 1
+    path: Assets/Scenes/Levels/SplashLevel.unity
+    guid: 196deb87d40373b4e818d6f1dafbe0ae
+  m_configObjects:
+    com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 5acb6dc0ef378be47959efcf50c27298, type: 2}
+    com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: a491f95ff7262104f8d70dba4b2e36d8, type: 2}

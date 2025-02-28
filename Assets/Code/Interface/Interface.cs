@@ -90,3 +90,27 @@ interface ILevelManager
     /// </summary>
     void UnloadCurrentSubLevel();
 }
+
+/// <summary>
+/// Responsible for playing sounds in the game
+/// interacts with sound emitter script which has a unique sound
+/// or can put sounds that are global (bad name) in the list and reference them
+/// with fn playglobal
+/// </summary>
+interface IAudioManager
+{
+    /// <summary>
+    /// Plays the sound passed into it, typically called from a sound emitter
+    /// </summary>
+    /// <param name="sound"></param>
+    void Play(AudioClip sound);
+
+    /// <summary>
+    /// Play a sound from the global sounds list given the index
+    /// try to avoid using this as much as possible and prefer play
+    /// there are situations though where the audio manager instance is referenced
+    /// directly (levelManager 126) and this is the easiest way in that case (prob not)
+    /// </summary>
+    /// <param name="index"></param>
+    void PlayGlobal(int index);
+}

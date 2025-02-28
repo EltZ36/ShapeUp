@@ -359,7 +359,7 @@ TrailRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 4
   m_Time: 0.3
-  m_PreviewTimeScale: 0
+  m_PreviewTimeScale: 1
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1

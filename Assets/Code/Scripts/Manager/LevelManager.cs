@@ -44,7 +44,7 @@ public class LevelManager : MonoBehaviour, ILevelManager
         new Dictionary<int, LevelInfo>();
 
     public int currentLevelID { get; private set; } = -1;
-    private int currentSubLevelID = -1;
+    public int currentSubLevelID { get; private set; } = -1;
     private GameObject[] thumbnails;
 
     #region Interface Methods
@@ -76,6 +76,8 @@ public class LevelManager : MonoBehaviour, ILevelManager
         if (Levels[lID].SubLevels[slID] == null)
             return;
         Levels[lID].SubLevels[slID].IsComplete = false;
+        Levels[lID].SubLevels[slID].Thumbnail.GetComponentInChildren<SpriteRenderer>().color =
+            Color.white;
     }
 
     public void ClearAllLevelProgress(int lID)
@@ -83,6 +85,7 @@ public class LevelManager : MonoBehaviour, ILevelManager
         foreach (var subLevel in Levels[lID].SubLevels)
         {
             subLevel.IsComplete = false;
+            subLevel.Thumbnail.GetComponentInChildren<SpriteRenderer>().color = Color.white;
         }
     }
 
@@ -109,6 +112,18 @@ public class LevelManager : MonoBehaviour, ILevelManager
                 .color = Color.grey;
             GameManager.Instance.gameData.SetCompletedSublevel(currentLevelID, currentSubLevelID);
             GameManager.Instance.SaveGame();
+            GameObject ob = GameObject.FindGameObjectWithTag("hint");
+            if (!ob)
+            {
+                Debug.Log(
+                    "could not find hint object to destroy in sublevel. Did you tag hint canvas prefab with 'hint'? "
+                );
+            }
+            else
+            {
+                Destroy(ob);
+            }
+            AudioManager.Instance.PlayGlobal(0);
         }
         else
         {
@@ -165,6 +180,7 @@ public class LevelManager : MonoBehaviour, ILevelManager
         currentLevelID = levelID;
         string name = levelNames[levelID];
         SceneManager.LoadScene(name);
+        SceneManager.LoadSceneAsync("LevelUI", LoadSceneMode.Additive);
     }
 
     //SubLevel ID is relative to current level
@@ -196,8 +212,6 @@ public class LevelManager : MonoBehaviour, ILevelManager
                 }
                 SceneManager.SetActiveScene(subLevel);
             };
-            //replace with a call to UI Manager
-            SceneManager.LoadSceneAsync("LevelUI", LoadSceneMode.Additive);
             return true;
         }
         return false;

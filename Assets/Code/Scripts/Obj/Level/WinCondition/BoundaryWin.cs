@@ -28,10 +28,12 @@ public class BoundaryWin : MonoBehaviour
         if (shape.ShapeName == targetName)
         {
             PlayFireworks(shape.ShapeName);
-            StartCoroutine(CameraController.ZoomOut());
+            StartCoroutine(CameraController.ZoomOut(false));
             Destroy(shape.gameObject);
+            Physics2D.gravity = new UnityEngine.Vector2(0f, -9.8f);
             LevelManager.Instance.OnCurrentSubLevelComplete();
         }
+        Destroy(shape.gameObject);
     }
 
     void PlayFireworks(string _shape)
@@ -42,7 +44,7 @@ public class BoundaryWin : MonoBehaviour
         Animator anim1 = winEffect1.GetComponent<Animator>();
         Animator anim2 = winEffect2.GetComponent<Animator>();
 
-        anim1.Play("Base Layer." + _shape + "Win", 5);
-        anim2.Play("Base Layer." + _shape + "Win", 5);
+        anim1.Play("Base Layer." + _shape + "Win");
+        anim2.Play("Base Layer." + _shape + "Win");
     }
 }

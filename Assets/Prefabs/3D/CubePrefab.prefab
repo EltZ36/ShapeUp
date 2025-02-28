@@ -77,6 +77,9 @@ MonoBehaviour:
   OnAttitudeChangeEvent:
     m_PersistentCalls:
       m_Calls: []
+  OnGravityChangeEvent:
+    m_PersistentCalls:
+      m_Calls: []
   OnCreateEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -90,6 +93,7 @@ MonoBehaviour:
   showTap: 0
   showAccelerate: 0
   showAttitude: 0
+  showGravity: 0
   showCreate: 0
   showDestroy: 0
 --- !u!212 &-4990759095755913176

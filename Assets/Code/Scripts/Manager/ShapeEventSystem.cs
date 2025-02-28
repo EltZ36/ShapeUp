@@ -38,9 +38,6 @@ public class ShapeEventSystem : MonoBehaviour
     float tapTimer = 0.1f; //if it's longer than this it's not a tap;
     #region SensorVariables
     [SerializeField]
-    float accelCooldown = 1;
-
-    [SerializeField]
     float accelSens = 2;
 
     [SerializeField]
@@ -55,7 +52,6 @@ public class ShapeEventSystem : MonoBehaviour
     private Vector3 pastAccel = Vector3.zero;
     private Vector3 newAccel;
     private Vector3 pastGravity = default;
-    bool accelRecent = false;
 
     private Quaternion pastGyro;
     #endregion
@@ -64,6 +60,8 @@ public class ShapeEventSystem : MonoBehaviour
     private static float touchSize = 0.1f;
 
     private Dictionary<int, Shape> selectedShape = new Dictionary<int, Shape>();
+
+    private Dictionary<int, HashSet<Shape>> slicedShape = new Dictionary<int, HashSet<Shape>>();
     private Dictionary<int, Vector3> start = new Dictionary<int, Vector3>();
 
     private Dictionary<int, Vector3> lastPos = new Dictionary<int, Vector3>();
@@ -153,7 +151,12 @@ public class ShapeEventSystem : MonoBehaviour
                             Shape shape = hit.collider.gameObject.GetComponent<Shape>();
                             if (shape != null)
                             {
+                                if (!slicedShape.ContainsKey(id))
+                                {
+                                    slicedShape[id] = new HashSet<Shape>();
+                                }
                                 shape.OnSlice();
+                                slicedShape[id].Add(shape);
                                 break;
                             }
                         }
@@ -171,6 +174,14 @@ public class ShapeEventSystem : MonoBehaviour
                 {
                     selectedShape[id].OnDragEnd(pos);
                     selectedShape.Remove(id);
+                }
+                if (slicedShape.ContainsKey(id))
+                {
+                    foreach (Shape shape in slicedShape[id])
+                    {
+                        shape.OnSliceEnd(pos);
+                    }
+                    slicedShape.Remove(id);
                 }
                 if (start.ContainsKey(id))
                 {
@@ -223,13 +234,15 @@ public class ShapeEventSystem : MonoBehaviour
     {
         newAccel = Input.acceleration;
         Vector3 accelDiff = newAccel - pastAccel;
-        if (accelDiff.magnitude > accelSens && accelRecent == false)
+        if (accelDiff.magnitude > accelSens)
         {
-            accelRecent = true;
+#if !UNITY_EDITOR && UNITY_WEBGL
+            OnAccelChange?.Invoke(Quaternion.Euler(0, 0, 270) * accelDiff);
+#else
             OnAccelChange?.Invoke(accelDiff);
-            StartCoroutine(ResetAccel());
+#endif
+            pastAccel = newAccel;
         }
-        pastAccel = newAccel;
     }
 
     private void CheckGyroscope()
@@ -237,7 +250,12 @@ public class ShapeEventSystem : MonoBehaviour
         Quaternion currGyro = Input.gyro.attitude;
         if (Quaternion.Angle(currGyro, pastGyro) > gyroSens)
         {
+#if !UNITY_EDITOR && UNITY_WEBGL
+            OnGyroChange?.Invoke(Quaternion.Euler(0, 0, 270) * currGyro);
+#else
             OnGyroChange?.Invoke(currGyro);
+#endif
+
             pastGyro = currGyro;
         }
     }
@@ -247,15 +265,13 @@ public class ShapeEventSystem : MonoBehaviour
         Vector3 currGravity = Input.gyro.gravity;
         if (currGravity != pastGravity)
         {
+#if !UNITY_EDITOR && UNITY_WEBGL
+            OnGravChange?.Invoke(Quaternion.Euler(0, 0, 270) * currGravity);
+#else
             OnGravChange?.Invoke(currGravity);
+#endif
             pastGravity = currGravity;
         }
-    }
-
-    private IEnumerator ResetAccel()
-    {
-        yield return new WaitForSeconds(accelCooldown);
-        accelRecent = false;
     }
 
     private IEnumerator CheckTap(int id, Shape shape)

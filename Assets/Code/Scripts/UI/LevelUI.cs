@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -12,108 +13,34 @@ public class LevelUI : MonoBehaviour
     public Canvas Default;
 
     [SerializeField]
-    public Image hintImage,
-        victoryImage,
-        menuImage,
-        quitImage,
+    public Image menuImage,
         confirmImage;
-    private Camera cam;
-    public bool hints;
-    public bool showMenu;
-    public GameManager GameManager;
 
-    private CanvasGroup victory,
-        menuScreen,
-        save,
-        quitWindow,
+    public GameManager GameManager;
+    private Camera cam;
+    private CanvasGroup menuScreen,
         confirm;
+
+    private bool showMenu;
 
     void Awake()
     {
         cam = Camera.main;
+        Physics2D.gravity = new UnityEngine.Vector2(0f, -9.8f);
     }
 
     private void Start()
     {
-        victory = victoryImage.GetComponent<CanvasGroup>();
-        disableUIElement(victory);
-
         menuScreen = menuImage.GetComponent<CanvasGroup>();
         disableUIElement(menuScreen);
-
-        quitWindow = quitImage.GetComponent<CanvasGroup>();
-        disableUIElement(quitWindow);
 
         confirm = confirmImage.GetComponent<CanvasGroup>();
         disableUIElement(confirm);
 
-        hintImage.enabled = false;
-        hints = false;
         showMenu = false;
     }
 
-    public void OnBackMenuButton()
-    {
-        // Load Save UI
-        enableUIElement(save);
-    }
-
-    public void OnZoomOutButton()
-    {
-        disableUIElement(confirm);
-        disableUIElement(quitWindow);
-        disableUIElement(save);
-        StartCoroutine(CameraController.ZoomOut());
-    }
-
-    public void OnRefreshButton()
-    {
-        // Revert level to starting state
-        Debug.Log("Refresh Level");
-        hintImage.enabled = false;
-        hints = false;
-    }
-
-    public void OnHintButton()
-    {
-        // Show Hint Icons
-        Debug.Log("Show Hints");
-        hintImage.enabled = true;
-        hints = true;
-    }
-
-    public void OnVictoryButton()
-    {
-        // Load Victory UI
-        //enableUIElement(victory);
-        StartCoroutine(CameraController.ZoomOut());
-        LevelManager.Instance.OnCurrentSubLevelComplete();
-    }
-
-    public void VictoryScreen()
-    {
-        enableUIElement(victory);
-    }
-
-    public void OnNextButton()
-    {
-        // Load Next Level
-        Debug.Log("Next Level");
-        disableUIElement(victory);
-        LevelManager.Instance.OnCurrentSubLevelComplete();
-        LevelManager.Instance.UnloadCurrentSubLevel();
-        CameraController.ZoomOut();
-    }
-
-    public void OnMenuButton()
-    {
-        // Load Menu
-        Debug.Log("Menu");
-        disableUIElement(victory);
-        SceneManager.LoadScene("Menu");
-    }
-
-    public void GoToMenuBar()
+    public void ToggleMenu()
     {
         showMenu = !showMenu;
         if (showMenu)
@@ -124,48 +51,55 @@ public class LevelUI : MonoBehaviour
         {
             disableUIElement(menuScreen);
         }
-        disableUIElement(quitWindow);
-        disableUIElement(confirm);
     }
 
     public void GoToConfirmButton()
     {
         enableUIElement(confirm);
-        disableUIElement(quitWindow);
     }
 
-    public void OnSaveAndQuitButton()
+    public void OnZoomOutButton()
     {
-        LevelManager.Instance.LeaveCurrentLevel();
-        GameManager.Instance.SaveGame();
-        SceneManager.LoadScene("Menu");
+        GameObject ob = GameObject.FindGameObjectWithTag("hint");
+        if (!ob)
+        {
+            Debug.Log(
+                "could not find hint object to destroy in sublevel. Did you tag hint canvas prefab with 'hint'? "
+            );
+        }
+        else
+        {
+            Destroy(ob);
+        }
+        disableUIElement(confirm);
+        bool fully = LevelManager.Instance.currentSubLevelID == -1 ? true : false;
+        Physics2D.gravity = new UnityEngine.Vector2(0f, -9.8f);
+        StartCoroutine(CameraController.ZoomOut(fully));
+        if (showMenu)
+        {
+            ToggleMenu();
+        }
     }
 
-    public void OnSaveButton()
-    {
-        GameManager.Instance.SaveGame();
-    }
-
-    public void OnQuitButton()
+    public void OnAreYouSure()
     {
         // Quit game, load menu
-        Debug.Log("Quit");
-        Debug.Log("Menu");
         LevelManager.Instance.LeaveCurrentLevel();
         SceneManager.LoadScene("Menu");
     }
 
-    public void GoToQuitMenuButton()
+    public void OnCancelButton()
     {
-        enableUIElement(quitWindow);
         disableUIElement(confirm);
+        ToggleMenu();
     }
 
-    public void onCancelConfirmButton()
+    public void OnLevelReset()
     {
-        disableUIElement(save);
-        disableUIElement(quitWindow);
-        disableUIElement(confirm);
+        GameManager.Instance.ClearLevel(LevelManager.Instance.currentLevelID);
+        bool fully = LevelManager.Instance.currentSubLevelID == -1 ? true : false;
+        StartCoroutine(CameraController.ZoomOut(fully));
+        ToggleMenu();
     }
 
     void disableUIElement(CanvasGroup element)
