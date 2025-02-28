@@ -143,7 +143,10 @@ public class ShapeEventSystem : MonoBehaviour
                 }
                 else
                 {
-                    RaycastHit2D[] hits = Physics2D.LinecastAll(pos, lastPos[id]);
+                    RaycastHit2D[] hits = Physics2D.LinecastAll(
+                        pos,
+                        lastPos.ContainsKey(id) ? lastPos[id] : pos
+                    );
                     foreach (RaycastHit2D hit in hits)
                     {
                         if (hit.collider != null)
