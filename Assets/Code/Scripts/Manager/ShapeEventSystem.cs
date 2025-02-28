@@ -60,6 +60,8 @@ public class ShapeEventSystem : MonoBehaviour
     private static float touchSize = 0.1f;
 
     private Dictionary<int, Shape> selectedShape = new Dictionary<int, Shape>();
+
+    private Dictionary<int, HashSet<Shape>> slicedShape = new Dictionary<int, HashSet<Shape>>();
     private Dictionary<int, Vector3> start = new Dictionary<int, Vector3>();
 
     private Dictionary<int, Vector3> lastPos = new Dictionary<int, Vector3>();
@@ -149,7 +151,12 @@ public class ShapeEventSystem : MonoBehaviour
                             Shape shape = hit.collider.gameObject.GetComponent<Shape>();
                             if (shape != null)
                             {
+                                if (!slicedShape.ContainsKey(id))
+                                {
+                                    slicedShape[id] = new HashSet<Shape>();
+                                }
                                 shape.OnSlice();
+                                slicedShape[id].Add(shape);
                                 break;
                             }
                         }
@@ -167,6 +174,14 @@ public class ShapeEventSystem : MonoBehaviour
                 {
                     selectedShape[id].OnDragEnd(pos);
                     selectedShape.Remove(id);
+                }
+                if (slicedShape.ContainsKey(id))
+                {
+                    foreach (Shape shape in slicedShape[id])
+                    {
+                        shape.OnSliceEnd(pos);
+                    }
+                    slicedShape.Remove(id);
                 }
                 if (start.ContainsKey(id))
                 {
