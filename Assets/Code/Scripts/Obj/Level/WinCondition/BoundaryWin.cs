@@ -25,15 +25,18 @@ public class BoundaryWin : MonoBehaviour
     void OnTriggerExit2D(Collider2D collision)
     {
         Shape shape = collision.gameObject.GetComponent<Shape>();
-        if (shape.ShapeName == targetName)
+        if (shape != null)
         {
-            PlayFireworks(shape.ShapeName);
-            StartCoroutine(CameraController.ZoomOut(false));
-            Destroy(shape.gameObject);
-            Physics2D.gravity = new UnityEngine.Vector2(0f, -9.8f);
-            LevelManager.Instance.OnCurrentSubLevelComplete();
+            if (shape.ShapeName == targetName)
+            {
+                PlayFireworks(shape.ShapeName);
+                StartCoroutine(CameraController.ZoomOut(false));
+                Destroy(shape.gameObject);
+                Physics2D.gravity = new UnityEngine.Vector2(0f, -9.8f);
+                LevelManager.Instance.OnCurrentSubLevelComplete();
+            }
         }
-        Destroy(shape.gameObject);
+        Destroy(collision.gameObject);
     }
 
     void PlayFireworks(string _shape)
