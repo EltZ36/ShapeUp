@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EffectDurabilityVariable : MonoBehaviour
@@ -20,6 +21,8 @@ public class EffectDurabilityVariable : MonoBehaviour
 
     [SerializeField]
     GameObject target;
+
+    public AudioClip swipeSound;
 
     public void TapDamage(EventInfo eventInfo)
     {
@@ -42,6 +45,7 @@ public class EffectDurabilityVariable : MonoBehaviour
         if (swipeEnd)
         {
             health -= swipeDamage;
+            AudioManager.Instance.Play(swipeSound);
             if (health > 0)
             {
                 if (regen > 0)
@@ -54,7 +58,6 @@ public class EffectDurabilityVariable : MonoBehaviour
                 Destroy(target);
             }
             swipeEnd = false;
-            StartCoroutine(waitForSwipeEnd());
         }
     }
 
@@ -93,21 +96,8 @@ public class EffectDurabilityVariable : MonoBehaviour
         health++;
     }
 
-    IEnumerator waitForSwipeEnd()
+    public void SetSwipeEnd(EventInfo eventInfo)
     {
-        float timer = 0.0f;
-        while (swipeEnd == false || timer < 5.0F)
-        {
-            if (Input.touchCount >= 1)
-            {
-                if (Input.touches[0].phase == TouchPhase.Ended)
-                {
-                    swipeEnd = true;
-                }
-                timer += Time.deltaTime;
-            }
-            yield return null;
-        }
-        yield return null;
+        swipeEnd = true;
     }
 }

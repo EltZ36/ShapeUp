@@ -63,7 +63,6 @@ public class EffectCrackShaderVariable : MonoBehaviour
             {
                 i += swipeDamage;
                 swipeEnd = false;
-                StartCoroutine(waitForSwipeEnd());
             }
             if (i > 0)
             {
@@ -121,21 +120,8 @@ public class EffectCrackShaderVariable : MonoBehaviour
         SetThreshold(percent);
     }
 
-    IEnumerator waitForSwipeEnd()
+    public void SetSwipeEnd(EventInfo eventInfo)
     {
-        float timer = 0.0f;
-        while (swipeEnd == false || timer < 5.0F)
-        {
-            if (Input.touchCount >= 1)
-            {
-                if (Input.touches[0].phase == TouchPhase.Ended)
-                {
-                    swipeEnd = true;
-                }
-                timer += Time.deltaTime;
-            }
-            yield return null;
-        }
-        yield return null;
+        swipeEnd = true;
     }
 }
