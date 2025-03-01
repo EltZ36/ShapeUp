@@ -11,6 +11,6 @@ public class SoundEmitter : MonoBehaviour
 
     public void PlaySound()
     {
-        AudioManager.Instance.Play(sound);
+        AudioManager.Instance.Play(false, sound, -1);
     }
 }
