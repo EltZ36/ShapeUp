@@ -1,12 +1,13 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 // Audio emitter class
-public class AudioManager : MonoBehaviour, IAudioManager
+public class AudioManager : MonoBehaviour
 {
     public List<AudioClip> globalSounds;
-    private AudioSource asr;
+    private List<AudioSource> asrs;
 
     #region Singleton
     private static AudioManager _instance;
@@ -27,19 +28,44 @@ public class AudioManager : MonoBehaviour, IAudioManager
             DontDestroyOnLoad(this.gameObject);
         }
 
-        asr = GetComponent<AudioSource>();
+        globalSounds = new List<AudioClip>();
+        asrs = new List<AudioSource>();
     }
     #endregion
 
-    public void Play(AudioClip sound)
+    public void Play(bool useGlobal, AudioClip sound, int index)
     {
-        asr.clip = sound;
-        asr.Play();
+        if (!useGlobal)
+        {
+            invoke(sound);
+        }
+        else
+        {
+            if (globalSounds[index])
+                invoke(globalSounds[index]);
+            else
+                Debug.LogWarning(
+                    "trying to run global audio that doesnt exist in list -> index not found"
+                );
+        }
     }
 
-    public void PlayGlobal(int index)
+    public void invoke(AudioClip sound)
     {
-        asr.clip = globalSounds[index];
-        asr.Play();
+        var i = asrs.FindIndex(asr => asr.clip == sound);
+
+        if (i == -1)
+        {
+            var asr = gameObject.AddComponent<AudioSource>();
+            asr.enabled = true;
+            asr.playOnAwake = false;
+            asr.clip = sound;
+            asr.Play();
+            asrs.Add(asr);
+        }
+        else
+        {
+            asrs[i].Play();
+        }
     }
 }
