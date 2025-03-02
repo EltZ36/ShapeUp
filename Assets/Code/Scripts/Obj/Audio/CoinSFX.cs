@@ -8,7 +8,10 @@ public class CoinSFX : MonoBehaviour
     public AudioClip rollSound;
     private float rollLength;
     private bool rolling;
-    [SerializeField] Rigidbody2D rb;
+
+    [SerializeField]
+    Rigidbody2D rb;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,19 +21,17 @@ public class CoinSFX : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        AudioManager.Instance.Play(impactSound);
+        AudioManager.Instance.Play(false, impactSound, 0);
     }
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if (rb.velocity.sqrMagnitude > 0.1f && !rolling)
+        if (rb.velocity.sqrMagnitude > 0.5f && !rolling)
         {
-            AudioManager.Instance.Play(rollSound);
+            AudioManager.Instance.Play(false, rollSound, 0);
             rolling = true;
             StartCoroutine(DelayRollReplay());
-
         }
-        
     }
 
     IEnumerator DelayRollReplay()

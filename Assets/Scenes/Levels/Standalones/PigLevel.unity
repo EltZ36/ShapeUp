@@ -207,6 +207,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1535158336}
     m_Modifications:
+    - target: {fileID: 1545174357464340488, guid: 77ba542a5b8ebf94980341de105a6daf, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1545174357464340488, guid: 77ba542a5b8ebf94980341de105a6daf, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1545174357464340488, guid: 77ba542a5b8ebf94980341de105a6daf, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 448.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5430313142282174262, guid: 77ba542a5b8ebf94980341de105a6daf, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -287,6 +299,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5735579781906999951, guid: 77ba542a5b8ebf94980341de105a6daf, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a6db671c4bc08c44ebec14ae45eed166, type: 3}
     - target: {fileID: 8466740039623743362, guid: 77ba542a5b8ebf94980341de105a6daf, type: 3}
       propertyPath: m_Name
       value: HintCanvas
@@ -1776,11 +1792,12 @@ PolygonCollider2D:
       - {x: 1.010858, y: -2.1007147}
       - {x: 0.39766645, y: -2.1385984}
       - {x: -0.24891615, y: -2.1772556}
-      - {x: -1.0080328, y: -2.20157}
-      - {x: -1.5290422, y: -2.1661782}
-      - {x: -2.3516178, y: -2.0961723}
-      - {x: -2.936495, y: -1.9785415}
-      - {x: -3.418685, y: -1.87419}
+      - {x: -0.9945864, y: -2.169198}
+      - {x: -1.6412758, y: -2.1281505}
+      - {x: -2.391721, y: -2.028517}
+      - {x: -2.7095375, y: -1.9585109}
+      - {x: -2.8355432, y: -1.9510089}
+      - {x: -3.3544428, y: -1.791593}
       - {x: -3.9254405, y: -1.3608372}
       - {x: -4.335307, y: -0.7012004}
       - {x: -4.4084077, y: -0.12819883}
@@ -4632,9 +4649,7 @@ GameObject:
   m_Component:
   - component: {fileID: 952380116}
   - component: {fileID: 952380121}
-  - component: {fileID: 952380123}
   - component: {fileID: 952380122}
-  - component: {fileID: 952380124}
   - component: {fileID: 952380117}
   - component: {fileID: 952380115}
   - component: {fileID: 952380118}
@@ -4706,7 +4721,7 @@ Transform:
   m_GameObject: {fileID: 952380114}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.47288468, y: 0.4119758, z: 0.10935037}
+  m_LocalPosition: {x: -0.47288468, y: -0.92, z: 0.10935037}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4746,18 +4761,6 @@ MonoBehaviour:
   OnSliceEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 952380123}
-        m_TargetAssemblyTypeName: EffectDurabilityVariable, Assembly-CSharp
-        m_MethodName: SwipeDamage
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 952380122}
         m_TargetAssemblyTypeName: EffectCrackShaderVariable, Assembly-CSharp
         m_MethodName: AddSwipeCrack
@@ -4773,18 +4776,6 @@ MonoBehaviour:
   OnSliceEndEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 952380123}
-        m_TargetAssemblyTypeName: EffectDurabilityVariable, Assembly-CSharp
-        m_MethodName: SetSwipeEnd
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 952380122}
         m_TargetAssemblyTypeName: EffectCrackShaderVariable, Assembly-CSharp
         m_MethodName: SetSwipeEnd
@@ -4800,18 +4791,6 @@ MonoBehaviour:
   OnTapEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 952380123}
-        m_TargetAssemblyTypeName: EffectDurabilityVariable, Assembly-CSharp
-        m_MethodName: TapDamage
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 952380122}
         m_TargetAssemblyTypeName: EffectCrackShaderVariable, Assembly-CSharp
         m_MethodName: AddTapCrack
@@ -4824,49 +4803,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 952380124}
-        m_TargetAssemblyTypeName: SoundEmitter, Assembly-CSharp
-        m_MethodName: PlaySound
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
   OnAccelerateEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 952380123}
-        m_TargetAssemblyTypeName: EffectDurabilityVariable, Assembly-CSharp
-        m_MethodName: ShakeDamage
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 952380122}
         m_TargetAssemblyTypeName: EffectCrackShaderVariable, Assembly-CSharp
         m_MethodName: AddShakeCrack
         m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 952380124}
-        m_TargetAssemblyTypeName: SoundEmitter, Assembly-CSharp
-        m_MethodName: PlaySound
-        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4914,7 +4857,7 @@ MonoBehaviour:
   showFixedUpdate: 0
   showDrag: 0
   showPinch: 0
-  showSlice: 0
+  showSlice: 1
   showTap: 0
   showAccelerate: 0
   showAttitude: 0
@@ -5143,42 +5086,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   crackMaterial: {fileID: 2100000, guid: 2334f040f8e6cda48886d85eef6b8f61, type: 2}
   max: 30
-  tapDamage: 1
-  swipeDamage: 5
-  shakeDamage: 10
-  regen: 0
---- !u!114 &952380123
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 952380114}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5473893b2370a045b2933b734e7467e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   health: 30
   tapDamage: 1
   swipeDamage: 5
   shakeDamage: 10
-  regen: 0
   target: {fileID: 952380114}
-  swipeSound: {fileID: 8300000, guid: e7c43b112000dbd9bb55a4836b3c731a, type: 3}
---- !u!114 &952380124
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 952380114}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 374a4a551b0c6729d860db33bacc2935, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sound: {fileID: 8300000, guid: 25bbc6a2d0314af5f8279253fad2c1a2, type: 3}
+  tapSound: {fileID: 8300000, guid: c5322b633b11e8447a0dd06accd4b46e, type: 3}
+  swipeSound: {fileID: 8300000, guid: 6dca1d9728515a743bbeeb9ee5a29bb5, type: 3}
+  shakeSound: {fileID: 8300000, guid: 2f8c64e985d613a4382870edc2c474a8, type: 3}
+  tapBuffer: 1
 --- !u!1 &961240325
 GameObject:
   m_ObjectHideFlags: 0
@@ -5365,7 +5281,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -4990759095755913176, guid: 993186d337e7c5e419a8f1a418011b04, type: 3}
       propertyPath: m_SortingOrder
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 581297037832830135, guid: 993186d337e7c5e419a8f1a418011b04, type: 3}
       propertyPath: m_LocalScale.x
@@ -5381,11 +5297,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 581297037832830135, guid: 993186d337e7c5e419a8f1a418011b04, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.47288468
+      value: -1.22
       objectReference: {fileID: 0}
     - target: {fileID: 581297037832830135, guid: 993186d337e7c5e419a8f1a418011b04, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.13
+      value: 3.79
       objectReference: {fileID: 0}
     - target: {fileID: 581297037832830135, guid: 993186d337e7c5e419a8f1a418011b04, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5427,6 +5343,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2361894183180487304, guid: 993186d337e7c5e419a8f1a418011b04, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5457,8 +5377,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1d6060a224d5e44cac89057752bd293, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  impactSound: {fileID: 8300000, guid: 93dddf0ff5cff26019551e0fa75c7cee, type: 3}
-  rollSound: {fileID: 8300000, guid: 1cb2bd4d2fadbf745bdad35ee3b2bd28, type: 3}
+  impactSound: {fileID: 8300000, guid: fb765d7d7c4a7e44d81556d5c44ba748, type: 3}
+  rollSound: {fileID: 8300000, guid: c67c84eb69f2b2d4691c3cfab16be20f, type: 3}
   rb: {fileID: 985180730}
 --- !u!1 &990673153
 GameObject:
@@ -6689,6 +6609,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 20
   power: 2
+  explodeSound: {fileID: 8300000, guid: 7105bd520acb5914a96e2fffb6951af3, type: 3}
 --- !u!1001 &1344713362
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7159,6 +7080,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1357040016}
+  - component: {fileID: 1357040017}
   m_Layer: 0
   m_Name: BrokenPig
   m_TagString: Untagged
@@ -7175,7 +7097,7 @@ Transform:
   m_GameObject: {fileID: 1357040015}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.47288468, y: 0.3939758, z: 0.024300173}
+  m_LocalPosition: {x: -0.47288468, y: -0.92, z: 0.024300173}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7232,6 +7154,70 @@ Transform:
   - {fileID: 2027667677}
   m_Father: {fileID: 1535158336}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1357040017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1357040015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8dc6d39d28c20b04b9ac3475e8874f2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Tags: 0
+  spriteName: 
+  uniqueID: 
+  OnFixedUpdateEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDragStartEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDragEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDragEndEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPinchEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnSliceEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnSliceEndEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnTapEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnAccelerateEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnAttitudeChangeEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnGravityChangeEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnCreateEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDestroyEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  showFixedUpdate: 0
+  showDrag: 0
+  showPinch: 0
+  showSlice: 0
+  showTap: 0
+  showAccelerate: 0
+  showAttitude: 0
+  showGravity: 0
+  showCreate: 0
+  showDestroy: 0
 --- !u!1 &1370367468
 GameObject:
   m_ObjectHideFlags: 0

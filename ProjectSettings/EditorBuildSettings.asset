@@ -6,55 +6,55 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Dev/Menu.unity
+    path: Assets/Scenes/General/Menu.unity
     guid: 753e18ebee5c87f47a861770b11b9768
   - enabled: 1
-    path: Assets/Scenes/Dev/LevelUI.unity
+    path: Assets/Scenes/General/LevelUI.unity
     guid: 2a2d37a460264c545a126f6de0a94216
   - enabled: 1
-    path: Assets/Scenes/Prod/SampleLevel.unity
+    path: Assets/Scenes/Dev/SampleLevel.unity
     guid: 7d67fc5996778ff4baa007adf4420a58
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
-    path: Assets/Scenes/Dev/LevelSelect.unity
+    path: Assets/Scenes/General/LevelSelect.unity
     guid: aaa5cf57f7efa93479d4503e96055c19
   - enabled: 1
-    path: Assets/Scenes/Levels/TestLevel.unity
+    path: Assets/Scenes/Levels/SuperCluster/TestLevel.unity
     guid: 9d8b1c9b7ee8b8247b21cabc3cf93170
   - enabled: 1
-    path: Assets/Scenes/Levels/LevelOne/LevelTap.unity
+    path: Assets/Scenes/Levels/SuperCluster/SubLevels/LevelTap.unity
     guid: cdd9abd48538a83409d26ef5716cb8b5
   - enabled: 1
-    path: Assets/Scenes/Levels/LevelOne/LevelOneFinal.unity
+    path: Assets/Scenes/Levels/SuperCluster/SubLevels/LevelOneFinal.unity
     guid: f8103cf9875955748986369ce2697e9a
   - enabled: 1
-    path: Assets/Scenes/Levels/LevelOne/BreakRope.unity
+    path: Assets/Scenes/Levels/SuperCluster/SubLevels/BreakRope.unity
     guid: a28b718d19ec1434a9029d9252777888
   - enabled: 1
-    path: Assets/Scenes/Levels/LevelOne/LevelAccel.unity
+    path: Assets/Scenes/Levels/SuperCluster/SubLevels/LevelAccel.unity
     guid: 339fb2f0406b82842a3b741a94b4f334
   - enabled: 1
-    path: Assets/Scenes/Levels/LevelOne/LevelGyro.unity
+    path: Assets/Scenes/Levels/SuperCluster/SubLevels/LevelGyro.unity
     guid: c6d5aa4ab74672045a39140105750583
   - enabled: 1
-    path: Assets/Scenes/Levels/SubLevel.unity
+    path: Assets/Scenes/Dev/SubLevel.unity
     guid: 06e126fe5dba14f4489da4fcaab7ce66
   - enabled: 1
-    path: Assets/Scenes/Levels/LevelOne/LevelPinch.unity
+    path: Assets/Scenes/Levels/SuperCluster/SubLevels/LevelPinch.unity
     guid: 3c5cdcd7d30d24c4d9f64229661b61e0
   - enabled: 1
-    path: Assets/Scenes/Levels/SplashLevel.unity
+    path: Assets/Scenes/General/SplashLevel.unity
     guid: 196deb87d40373b4e818d6f1dafbe0ae
   - enabled: 1
-    path: Assets/Scenes/Levels/PigLevel/PigLevel.unity
+    path: Assets/Scenes/Levels/Standalones/PigLevel.unity
     guid: 3b16a1ef9107d434bb05fc55680a76d0
   - enabled: 1
-    path: Assets/Scenes/Levels/LevelTwo/HouseLevel.unity
+    path: Assets/Scenes/Levels/Standalones/HouseLevel.unity
     guid: d467090722e954849a8d7c874afa843d
   - enabled: 1
-    path: Assets/Scenes/Dev/CutTheRopes.unity
+    path: Assets/Scenes/Levels/Standalones/CutTheRopes.unity
     guid: 71d225c2e17da8ee4a162685f123f076
   - enabled: 1
     path: Assets/Scenes/Levels/Standalones/MazeLevel.unity

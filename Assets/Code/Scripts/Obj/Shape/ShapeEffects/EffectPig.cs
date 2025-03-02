@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class EffectCrackShaderVariable : MonoBehaviour
+public class EffectPig : MonoBehaviour
 {
     int i = 0;
 
@@ -14,14 +14,24 @@ public class EffectCrackShaderVariable : MonoBehaviour
     int max = 3;
 
     [SerializeField]
+    int health;
+
+    [SerializeField]
     int tapDamage,
         swipeDamage,
         shakeDamage;
 
     [SerializeField]
-    float regen = -1;
+    GameObject target;
+    public AudioClip tapSound,
+        swipeSound,
+        shakeSound;
 
     bool swipeEnd = true;
+    bool tapEnd = true;
+
+    [SerializeField]
+    float tapBuffer;
 
     float percent
     {
@@ -41,16 +51,23 @@ public class EffectCrackShaderVariable : MonoBehaviour
 
     public void AddTapCrack(EventInfo eventInfo)
     {
-        if (i < max)
+        if (tapEnd)
         {
-            i += tapDamage;
-        }
-        if (i > 0)
-        {
-            SetThreshold(percent);
-            if (regen > 0)
+            tapEnd = false;
+            health -= tapDamage;
+            AudioManager.Instance.Play(false, tapSound, 0);
+            StartCoroutine(TapDelay());
+            if (health <= 0)
             {
-                StartCoroutine(Regen(regen));
+                Destroy(target);
+            }
+            if (i < max)
+            {
+                i += tapDamage;
+            }
+            if (i > 0)
+            {
+                SetThreshold(percent);
             }
         }
     }
@@ -59,6 +76,12 @@ public class EffectCrackShaderVariable : MonoBehaviour
     {
         if (swipeEnd)
         {
+            health -= swipeDamage;
+            AudioManager.Instance.Play(false, swipeSound, 0);
+            if (health <= 0)
+            {
+                Destroy(target);
+            }
             if (i < max)
             {
                 i += swipeDamage;
@@ -67,16 +90,18 @@ public class EffectCrackShaderVariable : MonoBehaviour
             if (i > 0)
             {
                 SetThreshold(percent);
-                if (regen > 0)
-                {
-                    StartCoroutine(Regen(regen));
-                }
             }
         }
     }
 
     public void AddShakeCrack(EventInfo eventInfo)
     {
+        health -= shakeDamage;
+        AudioManager.Instance.Play(false, shakeSound, 0);
+        if (health <= 0)
+        {
+            Destroy(target);
+        }
         if (i < max)
         {
             i += shakeDamage;
@@ -84,10 +109,6 @@ public class EffectCrackShaderVariable : MonoBehaviour
         if (i > 0)
         {
             SetThreshold(percent);
-            if (regen > 0)
-            {
-                StartCoroutine(Regen(regen));
-            }
         }
     }
 
@@ -113,15 +134,20 @@ public class EffectCrackShaderVariable : MonoBehaviour
         sr.SetPropertyBlock(block);
     }
 
-    IEnumerator Regen(float time)
-    {
-        yield return new WaitForSeconds(time);
-        i--;
-        SetThreshold(percent);
-    }
-
     public void SetSwipeEnd(EventInfo eventInfo)
     {
         swipeEnd = true;
+    }
+
+    IEnumerator TapDelay()
+    {
+        float elapsed = 0.0f;
+        while (elapsed / tapBuffer < 1)
+        {
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+        tapEnd = true;
+        yield return null;
     }
 }
