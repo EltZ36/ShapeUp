@@ -5,22 +5,55 @@ using UnityEngine.SceneManagement;
 
 public class LevelComplete : MonoBehaviour
 {
+    public string thisLevelName;
+    public string nextLevelName;
+
+    public int levelID;
+
     public void RestartLevel()
     {
-        GameManager.Instance.ClearLevel(LevelManager.Instance.currentLevelID);
-        LevelManager.Instance.LoadLevel(LevelManager.Instance.currentLevelID);
-        Destroy(gameObject);
+        if (LevelManager.Instance.currentLevelID == -1)
+        {
+            // do nothing
+        }
+        else
+        {
+            GameManager.Instance.ClearLevel(LevelManager.Instance.currentLevelID);
+            LevelManager.Instance.LoadLevel(LevelManager.Instance.currentLevelID);
+            Destroy(gameObject);
+        }
     }
 
     public void NextLevel()
     {
-        LevelManager.Instance.LoadLevel(LevelManager.Instance.currentLevelID + 1);
-        Destroy(gameObject);
+        if (LevelManager.Instance != null)
+        {
+            if (LevelManager.Instance.currentLevelID == -1)
+            {
+                SceneManager.LoadScene(nextLevelName);
+            }
+            else
+            {
+                LevelManager.Instance.LoadLevel(LevelManager.Instance.currentLevelID + 1);
+                Destroy(gameObject);
+            }
+        }
+        else
+        {
+            SceneManager.LoadScene(nextLevelName);
+        }
     }
 
     public void GoToMenu()
     {
-        LevelManager.Instance.LeaveCurrentLevel();
+        Debug.Log("Hello");
+        if (LevelManager.Instance != null)
+        {
+            if (LevelManager.Instance.currentLevelID >= 0)
+            {
+                LevelManager.Instance.LeaveCurrentLevel();
+            }
+        }
         SceneManager.LoadScene("Menu");
         Destroy(gameObject);
     }

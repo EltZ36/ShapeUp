@@ -133,7 +133,7 @@ public class LevelManager : MonoBehaviour, ILevelManager
             {
                 DontDestroyOnLoad(Instantiate(levelCompleteUI));
             }
-            AudioManager.Instance.PlayGlobal(0);
+            AudioManager.Instance.Play(true, null, 0);
         }
         else
         {
