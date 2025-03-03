@@ -40,6 +40,9 @@ public class LevelManager : MonoBehaviour, ILevelManager
     [SerializeField]
     private List<string> levelNames = new List<string>();
 
+    [SerializeField]
+    private GameObject levelCompleteUI;
+
     public Dictionary<int, LevelInfo> Levels { get; private set; } =
         new Dictionary<int, LevelInfo>();
 
@@ -123,7 +126,14 @@ public class LevelManager : MonoBehaviour, ILevelManager
             {
                 Destroy(ob);
             }
-            AudioManager.Instance.PlayGlobal(0);
+            if (
+                levelCompleteUI != null
+                && currentSubLevelID == Levels[currentLevelID].SubLevels.Count - 1
+            )
+            {
+                DontDestroyOnLoad(Instantiate(levelCompleteUI));
+            }
+            AudioManager.Instance.Play(true, null, 0);
         }
         else
         {

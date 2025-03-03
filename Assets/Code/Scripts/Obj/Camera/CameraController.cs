@@ -72,14 +72,14 @@ public class CameraController : MonoBehaviour
         float deltaY = Input.GetTouch(0).position.y - lastY;
         Vector2 touchDeltaPosition = new Vector2(deltaX, deltaY);
 #if !UNITY_EDITOR && UNITY_WEBGL
-        Debug.Log("WebGL");
+        //Debug.Log("WebGL");
         deltaPosition = new Vector3(
             -touchDeltaPosition.x * speed * Time.deltaTime,
             -touchDeltaPosition.y * speed * Time.deltaTime,
             0f
         );
 #else
-        Debug.Log("Editor");
+        //Debug.Log("Editor");
         deltaPosition = new Vector3(
             -touchDeltaPosition.x * speed * Time.deltaTime,
             -touchDeltaPosition.y * speed * Time.deltaTime,

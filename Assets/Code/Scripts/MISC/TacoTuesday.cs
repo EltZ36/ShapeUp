@@ -41,7 +41,6 @@ public class LockContainer
 public class TacoTuesday : MonoBehaviour
 {
     // need a mask
-    public Sprite maskSpr;
     private List<(CircleCollider2D, Light2D)> activeLights;
     private List<LockContainer> locks;
 
