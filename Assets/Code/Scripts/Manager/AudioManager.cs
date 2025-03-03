@@ -6,7 +6,7 @@ using UnityEngine;
 // Audio emitter class
 public class AudioManager : MonoBehaviour
 {
-    public List<AudioClip> globalSounds;
+    public List<AudioClip> globalSounds = new List<AudioClip>();
     private List<AudioSource> asrs;
 
     #region Singleton
@@ -28,25 +28,20 @@ public class AudioManager : MonoBehaviour
             DontDestroyOnLoad(this.gameObject);
         }
 
-        globalSounds = new List<AudioClip>();
         asrs = new List<AudioSource>();
     }
     #endregion
 
     public void Play(bool useGlobal, AudioClip sound, int index)
     {
+        Debug.Log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" + index);
         if (!useGlobal)
         {
             invoke(sound);
         }
         else
         {
-            if (globalSounds[index])
-                invoke(globalSounds[index]);
-            else
-                Debug.LogWarning(
-                    "trying to run global audio that doesnt exist in list -> index not found"
-                );
+            invoke(globalSounds[index]);
         }
     }
 
