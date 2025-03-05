@@ -6,6 +6,7 @@ public class Explode : MonoBehaviour
 {
     public float radius = 5.0F;
     public float power = 10.0F;
+    public AudioClip explodeSound;
 
     void Start()
     {
@@ -20,5 +21,6 @@ public class Explode : MonoBehaviour
             if (rb != null)
                 rb.AddForce(forceDirection * power, ForceMode2D.Impulse);
         }
+        AudioManager.Instance.Play(false, explodeSound, 0);
     }
 }
