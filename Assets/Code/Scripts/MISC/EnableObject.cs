@@ -18,7 +18,10 @@ public class EnableObject : MonoBehaviour
         {
             foreach (GameObject obj in objects)
             {
-                obj.SetActive(true);
+                if (obj != null)
+                {
+                    obj.SetActive(true);
+                }
             }
         }
     }
