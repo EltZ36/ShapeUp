@@ -10,22 +10,18 @@ public class Menu : MonoBehaviour
         SceneManager.LoadSceneAsync("SplashLevel", LoadSceneMode.Additive);
     }
 
-    public void OnDailyButton()
-    {
-        Debug.Log("Load Daily Puzzle");
-        LevelManager.Instance.LoadLevel(0);
-    }
-
     public void OnSuperButton()
     {
         // SceneManager.LoadScene(2);
         Debug.Log("Load Supercluster");
+        LevelManager.Instance.LoadLevel(0);
     }
 
     public void OnStandaloneButton()
     {
         // SceneManager.LoadScene(3);
         Debug.Log("Load Standalone");
+        SceneManager.LoadScene("LevelSelect");
     }
 
     public void OnSettingsButton()
