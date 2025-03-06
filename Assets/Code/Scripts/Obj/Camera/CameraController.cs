@@ -51,7 +51,11 @@ public class CameraController : MonoBehaviour
             Vector3 pointOne = Camera.main.ScreenToWorldPoint(Input.touches[0].position);
             Vector2 pointOne2D = new Vector2(pointOne.x, pointOne.y);
             RaycastHit2D hit = Physics2D.Raycast(pointOne2D, Camera.main.transform.forward);
-            if (hit.collider != null)
+            bool isOverUI = UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject(
+                Input.GetTouch(0).fingerId
+            );
+            Debug.Log(isOverUI);
+            if (hit.collider != null && !isOverUI)
             {
                 LevelInfo levelInfo = LevelManager.Instance.Levels[
                     LevelManager.Instance.currentLevelID
