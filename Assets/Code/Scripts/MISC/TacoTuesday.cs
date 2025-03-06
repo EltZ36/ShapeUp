@@ -75,6 +75,12 @@ public class TacoTuesday : MonoBehaviour
         }
     }
 
+    void OnDestroy()
+    {
+        Debug.Log("destroying");
+        StopAllCoroutines();
+    }
+
     private void HandleTouch(Vector2 position)
     {
         Vector2 tapPos = Camera.main.ScreenToWorldPoint(position);
