@@ -10,7 +10,8 @@ public class AudioManager : MonoBehaviour
     public List<AudioClip> globalSounds = new List<AudioClip>();
     private List<AudioSource> asrs;
     public AudioClip[] bgm;
-    public AudioSource bgmAudio;
+
+    private AudioSource bgmAudio;
 
     #region Singleton
     private static AudioManager _instance;
@@ -32,9 +33,14 @@ public class AudioManager : MonoBehaviour
         }
 
         asrs = new List<AudioSource>();
+        bgmAudio = gameObject.AddComponent<AudioSource>();
+        bgmAudio.loop = true;
+
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
     #endregion
+
+
 
     public void Play(bool useGlobal, AudioClip sound, int index)
     {
@@ -71,29 +77,33 @@ public class AudioManager : MonoBehaviour
     //code take from https://discussions.unity.com/t/how-to-have-different-background-music-through-different-scenes/245897
     void OnSceneLoaded(Scene scene, LoadSceneMode sceneMode)
     {
-        // Replacement variable (doesn't change the original audio source)
-        AudioSource source = gameObject.AddComponent<AudioSource>();
-
         // Plays different music in different scenes
+        AudioClip clip;
         switch (scene.name)
         {
             case "Menu":
-                source.clip = bgm[0];
+                clip = bgm[0];
                 break;
             case "TestLevel":
-                source.clip = bgm[1];
+                clip = bgm[1];
                 break;
             default:
-                source.clip = bgm[0];
+                clip = null;
                 break;
         }
-
-        // Only switch the music if it changed
-        if (source.clip != bgmAudio.clip)
+        if (clip == null)
         {
-            bgmAudio.enabled = false;
-            bgmAudio.clip = source.clip;
-            bgmAudio.enabled = true;
+            return;
+        }
+        if (bgmAudio.clip == null || bgmAudio.clip != clip)
+        {
+            Debug.Log("LOADED" + scene.name);
+            if (bgmAudio.isPlaying)
+            {
+                bgmAudio.Stop();
+            }
+            bgmAudio.clip = clip;
+            bgmAudio.Play();
         }
     }
 }
