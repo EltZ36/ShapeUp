@@ -3735,6 +3735,7 @@ GameObject:
   m_Component:
   - component: {fileID: 798500897}
   - component: {fileID: 798500898}
+  - component: {fileID: 798500899}
   m_Layer: 0
   m_Name: hint_pinch
   m_TagString: Untagged
@@ -3809,6 +3810,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &798500899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 798500896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58517e63235761049aa1cae932c69e1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  globalEvent: 3
 --- !u!1 &899821759
 GameObject:
   m_ObjectHideFlags: 0
@@ -4420,6 +4434,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1207324152}
   - component: {fileID: 1207324153}
+  - component: {fileID: 1207324154}
   m_Layer: 0
   m_Name: hint_tap_to_break_shape
   m_TagString: Untagged
@@ -4494,6 +4509,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1207324154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1207324151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58517e63235761049aa1cae932c69e1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  globalEvent: 0
 --- !u!1 &1235279691
 GameObject:
   m_ObjectHideFlags: 0
@@ -4504,6 +4532,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1235279692}
   - component: {fileID: 1235279693}
+  - component: {fileID: 1235279694}
   m_Layer: 0
   m_Name: hint_tilt
   m_TagString: Untagged
@@ -4578,6 +4607,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1235279694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1235279691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58517e63235761049aa1cae932c69e1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  globalEvent: 5
 --- !u!1001 &1239063703
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5780,8 +5822,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1518505026}
   - component: {fileID: 1518505027}
+  - component: {fileID: 1518505028}
   m_Layer: 0
-  m_Name: hint_swipe
+  m_Name: hint_slice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5854,6 +5897,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1518505028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1518505025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58517e63235761049aa1cae932c69e1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  globalEvent: 2
 --- !u!1 &1525961169
 GameObject:
   m_ObjectHideFlags: 0
@@ -5951,7 +6007,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58517e63235761049aa1cae932c69e1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  globalEvent: 2
+  globalEvent: 1
 --- !u!1 &1590078328 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1740465846098495637, guid: df10f4879db27f642a31ac4396abfa27, type: 3}
@@ -6019,6 +6075,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1611528686}
   - component: {fileID: 1611528687}
+  - component: {fileID: 1611528688}
   m_Layer: 0
   m_Name: hint_shake
   m_TagString: Untagged
@@ -6093,6 +6150,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1611528688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1611528685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58517e63235761049aa1cae932c69e1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  globalEvent: 4
 --- !u!1 &1747217976
 GameObject:
   m_ObjectHideFlags: 0

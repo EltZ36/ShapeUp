@@ -82,6 +82,9 @@ public class Shape : MonoBehaviour
     public static event Action GlobalSlice;
 
     public static event Action GlobalPinch;
+    public static event Action GlobalAccel;
+
+    public static event Action GlobalTilt;
     #endregion
 
     #region EventMethods
@@ -168,6 +171,7 @@ public class Shape : MonoBehaviour
             return;
         }
         OnAccelerateEvent.Invoke(new EventInfo(targetObject: gameObject, vectorOne: acceleration));
+        GlobalAccel?.Invoke();
     }
 
     public void OnAttitudeChange(Quaternion attitude)
@@ -188,6 +192,7 @@ public class Shape : MonoBehaviour
             return;
         }
         OnGravityChangeEvent.Invoke(new EventInfo(targetObject: gameObject, vectorOne: gravity));
+        GlobalTilt?.Invoke();
     }
 
     void Awake()

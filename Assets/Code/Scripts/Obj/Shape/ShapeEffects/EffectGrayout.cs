@@ -9,8 +9,10 @@ public class EffectGrayout : MonoBehaviour
     {
         Tap,
         Drag,
-        Swipe,
+        Slice,
         Pinch,
+        Accelerate,
+        Tilt,
     }
 
     [SerializeField]
@@ -26,19 +28,23 @@ public class EffectGrayout : MonoBehaviour
             case GlobalEvents.Drag:
                 Shape.GlobalDrag += SetGray;
                 break;
-            case GlobalEvents.Swipe:
-                Debug.Log("correct");
+            case GlobalEvents.Slice:
                 Shape.GlobalSlice += SetGray;
                 break;
             case GlobalEvents.Pinch:
                 Shape.GlobalPinch += SetGray;
+                break;
+            case GlobalEvents.Accelerate:
+                Shape.GlobalAccel += SetGray;
+                break;
+            case GlobalEvents.Tilt:
+                Shape.GlobalTilt += SetGray;
                 break;
         }
     }
 
     public void SetGray()
     {
-        Debug.Log("setGray");
         gameObject.GetComponent<SpriteRenderer>().color = Color.gray;
     }
 
