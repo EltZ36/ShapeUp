@@ -265,7 +265,7 @@ GameObject:
   - component: {fileID: 10943905}
   - component: {fileID: 10943904}
   m_Layer: 0
-  m_Name: THE SHI
+  m_Name: Loader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

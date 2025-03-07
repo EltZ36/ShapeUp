@@ -15,6 +15,7 @@ public class LevelComplete : MonoBehaviour
         if (LevelManager.Instance.currentLevelID == -1)
         {
             // do nothing
+            SceneManager.LoadScene(thisLevelName);
         }
         else
         {
