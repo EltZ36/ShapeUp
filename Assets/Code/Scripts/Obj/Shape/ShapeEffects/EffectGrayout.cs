@@ -27,6 +27,7 @@ public class EffectGrayout : MonoBehaviour
                 Shape.GlobalDrag += SetGray;
                 break;
             case GlobalEvents.Swipe:
+                Debug.Log("correct");
                 Shape.GlobalSlice += SetGray;
                 break;
             case GlobalEvents.Pinch:
