@@ -7,7 +7,10 @@ public class Menu : MonoBehaviour
 {
     void Awake()
     {
-        SceneManager.LoadSceneAsync("SplashLevel", LoadSceneMode.Additive);
+        if (SceneManager.GetSceneByName("Menu").IsValid())
+        {
+            SceneManager.LoadSceneAsync("SplashLevel", LoadSceneMode.Additive);
+        }
     }
 
     public void OnSuperButton()
@@ -32,7 +35,11 @@ public class Menu : MonoBehaviour
 
     public void OnCreditsButton()
     {
-        // SceneManager.LoadScene(5);
-        Debug.Log("Load Credits");
+        SceneManager.LoadScene("Credits");
+    }
+
+    public void OnMenuButton()
+    {
+        SceneManager.LoadScene("Menu");
     }
 }
