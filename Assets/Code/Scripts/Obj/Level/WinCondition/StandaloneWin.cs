@@ -24,6 +24,7 @@ namespace StandAloneWin
     public class StandaloneWin : MonoBehaviour, IStandAloneWinEvent
     {
         public GameObject ob;
+        public int levelID;
 
         void Awake()
         {
@@ -32,6 +33,11 @@ namespace StandAloneWin
 
         public void OnWin()
         {
+            GameManager.Instance.gameData.AddLevelToSaveMapping(
+                levelID,
+                new LevelInfo(levelID.ToString())
+            );
+            GameManager.Instance.SaveGame();
             ob.SetActive(true);
         }
     }

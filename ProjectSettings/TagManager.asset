@@ -6,6 +6,10 @@ TagManager:
   tags:
   - thumbnail
   - hint
+  - T1
+  - T2
+  - T3
+  - T4
   layers:
   - Default
   - TransparentFX
