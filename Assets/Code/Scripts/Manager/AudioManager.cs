@@ -2,12 +2,16 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 // Audio emitter class
 public class AudioManager : MonoBehaviour
 {
     public List<AudioClip> globalSounds = new List<AudioClip>();
     private List<AudioSource> asrs;
+    public AudioClip[] bgm;
+
+    private AudioSource bgmAudio;
 
     #region Singleton
     private static AudioManager _instance;
@@ -29,8 +33,14 @@ public class AudioManager : MonoBehaviour
         }
 
         asrs = new List<AudioSource>();
+        bgmAudio = gameObject.AddComponent<AudioSource>();
+        bgmAudio.loop = true;
+
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
     #endregion
+
+
 
     public void Play(bool useGlobal, AudioClip sound, int index)
     {
@@ -61,6 +71,39 @@ public class AudioManager : MonoBehaviour
         else
         {
             asrs[i].Play();
+        }
+    }
+
+    //code take from https://discussions.unity.com/t/how-to-have-different-background-music-through-different-scenes/245897
+    void OnSceneLoaded(Scene scene, LoadSceneMode sceneMode)
+    {
+        // Plays different music in different scenes
+        AudioClip clip;
+        switch (scene.name)
+        {
+            case "Menu":
+                clip = bgm[0];
+                break;
+            case "TestLevel":
+                clip = bgm[1];
+                break;
+            default:
+                clip = null;
+                break;
+        }
+        if (clip == null)
+        {
+            return;
+        }
+        if (bgmAudio.clip == null || bgmAudio.clip != clip)
+        {
+            Debug.Log("LOADED" + scene.name);
+            if (bgmAudio.isPlaying)
+            {
+                bgmAudio.Stop();
+            }
+            bgmAudio.clip = clip;
+            bgmAudio.Play();
         }
     }
 }
