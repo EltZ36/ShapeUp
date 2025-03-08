@@ -22,7 +22,8 @@ public class EffectPig : MonoBehaviour
         shakeDamage;
 
     [SerializeField]
-    GameObject target;
+    GameObject target,
+        deadObject;
     public AudioClip tapSound,
         swipeSound,
         shakeSound;
@@ -38,6 +39,11 @@ public class EffectPig : MonoBehaviour
         get { return i * (1 / (float)max); }
     }
     SpriteRenderer sr;
+
+    [SerializeField]
+    Collider2D coinBox;
+
+    PiggyBank piggyBank;
     MaterialPropertyBlock block;
 
     void Start()
@@ -45,6 +51,8 @@ public class EffectPig : MonoBehaviour
         block = new MaterialPropertyBlock();
         sr = GetComponent<SpriteRenderer>();
         sr.material = crackMaterial;
+
+        piggyBank = GetComponent<PiggyBank>();
 
         InitializeMaterialProperties();
     }
@@ -59,7 +67,7 @@ public class EffectPig : MonoBehaviour
             StartCoroutine(TapDelay());
             if (health <= 0)
             {
-                Destroy(target);
+                Die();
             }
             if (i < max)
             {
@@ -80,7 +88,7 @@ public class EffectPig : MonoBehaviour
             AudioManager.Instance.Play(false, swipeSound, 0);
             if (health <= 0)
             {
-                Destroy(target);
+                Die();
             }
             if (i < max)
             {
@@ -100,7 +108,7 @@ public class EffectPig : MonoBehaviour
         AudioManager.Instance.Play(false, shakeSound, 0);
         if (health <= 0)
         {
-            Destroy(target);
+            Die();
         }
         if (i < max)
         {
@@ -149,5 +157,13 @@ public class EffectPig : MonoBehaviour
         }
         tapEnd = true;
         yield return null;
+    }
+
+    public void Die()
+    {
+        sr.enabled = false;
+        coinBox.enabled = false;
+        deadObject.SetActive(true);
+        piggyBank.Invoke();
     }
 }

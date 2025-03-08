@@ -6,8 +6,10 @@ public class CoinSFX : MonoBehaviour
 {
     public AudioClip impactSound;
     public AudioClip rollSound;
-    private float rollLength;
-    private bool rolling;
+    private float rollLength,
+        impactLength;
+    private bool rolling,
+        impacting;
 
     [SerializeField]
     Rigidbody2D rb;
@@ -17,11 +19,19 @@ public class CoinSFX : MonoBehaviour
     {
         rollLength = rollSound.length;
         rolling = false;
+
+        impactLength = impactSound.length;
+        impacting = false;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        AudioManager.Instance.Play(false, impactSound, 0);
+        if (collision.relativeVelocity.magnitude > 5f && !impacting)
+        {
+            AudioManager.Instance.Play(false, impactSound, 0);
+            impacting = true;
+            StartCoroutine(DelayImpactReplay());
+        }
     }
 
     private void OnCollisionStay2D(Collision2D collision)
@@ -43,6 +53,18 @@ public class CoinSFX : MonoBehaviour
             yield return null;
         }
         rolling = false;
+        yield return null;
+    }
+
+    IEnumerator DelayImpactReplay()
+    {
+        float elapsed = 0.0f;
+        while (elapsed / impactLength < 1)
+        {
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+        impacting = false;
         yield return null;
     }
 }
