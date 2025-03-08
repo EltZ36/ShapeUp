@@ -52,4 +52,14 @@ public class EffectGrayout : MonoBehaviour
     {
         gameObject.GetComponent<SpriteRenderer>().color = Color.white;
     }
+
+    public void OnDisable()
+    {
+        Shape.GlobalTap -= SetGray;
+        Shape.GlobalDrag -= SetGray;
+        Shape.GlobalSlice -= SetGray;
+        Shape.GlobalPinch -= SetGray;
+        Shape.GlobalAccel -= SetGray;
+        Shape.GlobalTilt -= SetGray;
+    }
 }
