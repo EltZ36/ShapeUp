@@ -25,16 +25,15 @@ public class PiggyBank : MonoBehaviour, IStandAloneWin
         {
             if (shape.ShapeName == targetName)
             {
-                Destroy(shape.gameObject);
                 Invoke();
             }
         }
-        Destroy(collision.gameObject);
     }
 
     // IMPORTANT -> use this to send message to the standalone win module.
     public void Invoke()
     {
+        Debug.Log("invoke");
         ExecuteEvents.Execute<IStandAloneWinEvent>(target, null, (x, y) => x.OnWin());
     }
 }
