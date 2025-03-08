@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
+    [SerializeField]
+    GameObject settings;
+
     void Awake()
     {
         if (SceneManager.GetSceneByName("Menu").IsValid())
@@ -29,8 +32,7 @@ public class Menu : MonoBehaviour
 
     public void OnSettingsButton()
     {
-        // SceneManager.LoadScene(4);
-        Debug.Log("Load Settings");
+        settings.SetActive(!settings.activeSelf);
     }
 
     public void OnCreditsButton()
