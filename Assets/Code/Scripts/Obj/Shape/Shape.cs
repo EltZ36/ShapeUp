@@ -74,6 +74,17 @@ public class Shape : MonoBehaviour
 
     [SerializeField]
     private UnityEvent<EventInfo> OnDestroyEvent;
+
+    public static event Action GlobalTap;
+
+    public static event Action GlobalDrag;
+
+    public static event Action GlobalSlice;
+
+    public static event Action GlobalPinch;
+    public static event Action GlobalAccel;
+
+    public static event Action GlobalTilt;
     #endregion
 
     #region EventMethods
@@ -95,6 +106,7 @@ public class Shape : MonoBehaviour
         OnDragEvent.Invoke(
             new EventInfo(targetObject: gameObject, vectorOne: startPos, vectorTwo: currentPos)
         );
+        GlobalDrag?.Invoke();
     }
 
     public void OnDragEnd(Vector3 touchPos)
@@ -120,6 +132,7 @@ public class Shape : MonoBehaviour
                 vectorTwo: fingerTwo
             )
         );
+        GlobalPinch?.Invoke();
     }
 
     public void OnSlice()
@@ -129,6 +142,7 @@ public class Shape : MonoBehaviour
             return;
         }
         OnSliceEvent.Invoke(new EventInfo(targetObject: gameObject));
+        GlobalSlice?.Invoke();
     }
 
     public void OnSliceEnd(Vector3 touchPos)
@@ -147,6 +161,7 @@ public class Shape : MonoBehaviour
             return;
         }
         OnTapEvent.Invoke(new EventInfo(targetObject: gameObject));
+        GlobalTap?.Invoke();
     }
 
     public void OnAccelerate(Vector3 acceleration)
@@ -156,6 +171,7 @@ public class Shape : MonoBehaviour
             return;
         }
         OnAccelerateEvent.Invoke(new EventInfo(targetObject: gameObject, vectorOne: acceleration));
+        GlobalAccel?.Invoke();
     }
 
     public void OnAttitudeChange(Quaternion attitude)
@@ -176,6 +192,7 @@ public class Shape : MonoBehaviour
             return;
         }
         OnGravityChangeEvent.Invoke(new EventInfo(targetObject: gameObject, vectorOne: gravity));
+        GlobalTilt?.Invoke();
     }
 
     void Awake()
