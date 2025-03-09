@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEditor.ProjectWindowCallback;
 using UnityEngine;
 
 public class EffectAnimationMove : MonoBehaviour
@@ -10,72 +12,61 @@ public class EffectAnimationMove : MonoBehaviour
 
     [SerializeField]
     private ParticleSystem particles;
-    private ParticleSystem particlesInstance;
 
-    public void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject == ObjectToMoveTo)
-        {
-            particlesInstance = Instantiate(
-                particles,
-                OriginalObject.transform.position,
-                Quaternion.identity
-            );
-            OriginalObject.SetActive(false);
-            Debug.Log("MoveToObject");
-            //MoveToObject(null);
-        }
-    }
+    [SerializeField]
+    private bool isCounterClockwise;
+    private ParticleSystem particlesInstance;
 
     public void MoveToObject(EventInfo eventInfo)
     {
         // OriginalObject.transform.position = ObjectToMoveTo.transform.position;
         //if (ObjectToMoveTo.GetComponent<Collider>() != null)
         //{
-        StartCoroutine(EasingObject(eventInfo.TargetObject, ObjectToMoveTo));
-        /*  particlesInstance = Instantiate(
-              particles,
-              eventInfo.TargetObject.transform.position,
-              Quaternion.identity
-          ); */
+        StartCoroutine(MoveObject(eventInfo.TargetObject, ObjectToMoveTo, isCounterClockwise));
     }
 
-    IEnumerator EasingObject(GameObject OriginalObject, GameObject ObjectToMoveTo)
+    //from gpt: https://chatgpt.com/share/67ce1ee5-0044-800c-9802-0f01071f1320
+    IEnumerator MoveObject(
+        GameObject OriginalObject,
+        GameObject ObjectToMoveTo,
+        bool counterClockwise
+    )
     {
+        float duration = 4.0f; // Reduce duration for faster movement
         float time = 0;
-        while (time < 3.0f)
+
+        Vector3 startPos = OriginalObject.transform.position;
+        Vector3 endPos = ObjectToMoveTo.transform.position;
+
+        // Calculate a midpoint for a flatter arc
+        Vector3 center = (startPos + endPos) / 2 + Vector3.up * 1.0f; // Lower height for a flatter arc
+
+        while (time < duration)
         {
-            OriginalObject.transform.position = new Vector3(
-                EaseInOutQuart(
-                    OriginalObject.transform.position.x,
-                    ObjectToMoveTo.transform.position.x,
-                    time
-                ),
-                EaseInOutQuart(
-                    OriginalObject.transform.position.y,
-                    ObjectToMoveTo.transform.position.y,
-                    time
-                ),
-                EaseInOutQuart(
-                    OriginalObject.transform.position.z,
-                    ObjectToMoveTo.transform.position.z,
-                    time
-                )
-            );
+            float t = time / duration;
+            t = Mathf.SmoothStep(0, 1, t); // Ease-in-out for a natural feel
+
+            // Calculate the angle for the arc
+            float angle = t * 180f; // Less than 180° for a flatter arc
+            if (counterClockwise)
+                angle = -angle;
+
+            Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward); // Rotate around the center
+            Vector3 newPos = center + rotation * (startPos - center);
+
+            OriginalObject.transform.position = newPos;
+
             time += Time.deltaTime;
             yield return null;
         }
-        Debug.Log("Done");
-    }
 
-    //easing function obtained from https://gist.github.com/cjddmut/d789b9eb78216998e95c
-    public static float EaseInOutQuart(float start, float end, float value)
-    {
-        value /= .5f;
-        end -= start;
-        if (value < 1)
-            return end * 0.5f * value * value * value * value + start;
-        value -= 2;
-        return -end * 0.5f * (value * value * value * value - 2) + start;
+        OriginalObject.transform.position = endPos; // Snap to final position
+        OriginalObject.SetActive(false);
+        particlesInstance = Instantiate(
+            particles,
+            OriginalObject.transform.position,
+            Quaternion.identity
+        );
+        Debug.Log("Done");
     }
 }
