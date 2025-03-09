@@ -44,4 +44,11 @@ public class Menu : MonoBehaviour
     {
         SceneManager.LoadScene("Menu");
     }
+
+    public void OnHowToPlayButton()
+    {
+        // SceneManager.LoadScene(5);
+        Debug.Log("Load How To Play");
+        SceneManager.LoadScene("HowToPlay");
+    }
 }

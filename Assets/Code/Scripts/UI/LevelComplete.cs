@@ -8,8 +8,6 @@ public class LevelComplete : MonoBehaviour
     public string thisLevelName;
     public string nextLevelName;
 
-    public int levelID;
-
     public void RestartLevel()
     {
         if (LevelManager.Instance.currentLevelID == -1)
