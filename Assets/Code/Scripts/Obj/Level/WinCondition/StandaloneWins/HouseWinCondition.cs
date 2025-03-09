@@ -49,7 +49,6 @@ public class HouseWinCondition : MonoBehaviour, IStandAloneWin
     {
         if (ShapeManager.ContainsSet(active.ToArray(), names))
         {
-            Debug.Log("Victory");
             PlayFireworks(active[0], active[1]);
             Invoke();
             zoomCanvas.gameObject.SetActive(false);

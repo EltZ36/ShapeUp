@@ -11,7 +11,6 @@ public class Reset : MonoBehaviour
         GameManager.Instance.ClearLevel(LevelManager.Instance.currentLevelID);
         GameManager.Instance.gameData.Serialize();
         GameManager.Instance.SaveGame();
-        Debug.Log("Level Reset");
         LevelManager.Instance.LeaveCurrentLevel();
         SceneManager.LoadScene("Menu");
     }

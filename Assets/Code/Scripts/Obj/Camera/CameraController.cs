@@ -54,7 +54,6 @@ public class CameraController : MonoBehaviour
             bool isOverUI = UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject(
                 Input.GetTouch(0).fingerId
             );
-            Debug.Log(isOverUI);
             if (hit.collider != null && !isOverUI)
             {
                 LevelInfo levelInfo = LevelManager.Instance.Levels[
@@ -70,20 +69,16 @@ public class CameraController : MonoBehaviour
                 }
             }
         }
-        // Vector2 touchDeltaPosition = Input.touches[0].deltaPosition;
-        // Debug.Log(touchDeltaPosition);
         float deltaX = Input.GetTouch(0).position.x - lastX;
         float deltaY = Input.GetTouch(0).position.y - lastY;
         Vector2 touchDeltaPosition = new Vector2(deltaX, deltaY);
 #if !UNITY_EDITOR && UNITY_WEBGL
-        //Debug.Log("WebGL");
         deltaPosition = new Vector3(
             -touchDeltaPosition.x * speed * Time.deltaTime,
             -touchDeltaPosition.y * speed * Time.deltaTime,
             0f
         );
 #else
-        //Debug.Log("Editor");
         deltaPosition = new Vector3(
             -touchDeltaPosition.x * speed * Time.deltaTime,
             -touchDeltaPosition.y * speed * Time.deltaTime,

@@ -77,7 +77,6 @@ public class TacoTuesday : MonoBehaviour
 
     void OnDestroy()
     {
-        Debug.Log("destroying");
         StopAllCoroutines();
     }
 

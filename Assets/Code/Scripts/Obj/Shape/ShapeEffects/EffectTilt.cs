@@ -24,7 +24,6 @@ public class EffectTilt : MonoBehaviour
         tilt = eventInfo.VectorOne;
         float rotation = tilt.x * 180;
         targetRotation = Quaternion.Euler(0, 0, -rotation);
-        // Debug.Log(tilt);
     }
 
     void FixedUpdate()

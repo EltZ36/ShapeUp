@@ -268,7 +268,6 @@ public class Shape : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        // Debug.Log("COLLLLLISON");
         Shape shape = collision.gameObject.GetComponent<Shape>();
         if (shape != null)
         {
