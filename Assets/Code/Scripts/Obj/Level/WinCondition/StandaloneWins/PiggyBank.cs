@@ -33,7 +33,6 @@ public class PiggyBank : MonoBehaviour, IStandAloneWin
     // IMPORTANT -> use this to send message to the standalone win module.
     public void Invoke()
     {
-        Debug.Log("invoke");
         ExecuteEvents.Execute<IStandAloneWinEvent>(target, null, (x, y) => x.OnWin());
     }
 }
