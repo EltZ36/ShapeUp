@@ -44,7 +44,6 @@ public class AudioManager : MonoBehaviour
 
     public void Play(bool useGlobal, AudioClip sound, int index)
     {
-        Debug.Log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" + index);
         if (!useGlobal)
         {
             invoke(sound);
@@ -97,7 +96,6 @@ public class AudioManager : MonoBehaviour
         }
         if (bgmAudio.clip == null || bgmAudio.clip != clip)
         {
-            Debug.Log("LOADED" + scene.name);
             if (bgmAudio.isPlaying)
             {
                 bgmAudio.Stop();

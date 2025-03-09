@@ -44,7 +44,6 @@ public class CreateWin : MonoBehaviour
     {
         if (ShapeManager.ContainsSet(active.ToArray(), names))
         {
-            Debug.Log("Victory");
             PlayFireworks(active[0], active[1]);
             LevelManager.Instance.OnCurrentSubLevelComplete();
             StartCoroutine(CameraController.ZoomOut(false));

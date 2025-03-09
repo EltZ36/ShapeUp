@@ -12,10 +12,10 @@ public class EffectLocalEventInfo : MonoBehaviour
     float original;
     Vector3 originalScale;
 
-    public void DebugTest(EventInfo eventInfo)
-    {
-        Debug.Log(eventInfo.TargetObject.name);
-    }
+    // public void DebugTest(EventInfo eventInfo)
+    // {
+    //     Debug.Log(eventInfo.TargetObject.name);
+    // }
 
     public void DestroyShape(EventInfo eventInfo)
     {
