@@ -246,6 +246,22 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 60bc2a14df6b33b46ac37006359d987a, type: 3}
+    - target: {fileID: 7572867970371291645, guid: 77ba542a5b8ebf94980341de105a6daf, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9bea5d180dbd421499ca1c7dc2d02cb1, type: 3}
+    - target: {fileID: 7572867970371291645, guid: 77ba542a5b8ebf94980341de105a6daf, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7572867970371291645, guid: 77ba542a5b8ebf94980341de105a6daf, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7572867970371291645, guid: 77ba542a5b8ebf94980341de105a6daf, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8466740039623743362, guid: 77ba542a5b8ebf94980341de105a6daf, type: 3}
       propertyPath: m_Name
       value: HintCanvas
