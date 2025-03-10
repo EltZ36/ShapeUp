@@ -2,11 +2,20 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 
 // Audio emitter class
 public class AudioManager : MonoBehaviour
 {
+    [SerializeField]
+    AudioMixer audioMixer;
+
+    [SerializeField]
+    AudioMixerGroup musicGroup;
+
+    [SerializeField]
+    AudioMixerGroup sfxGroup;
     public List<AudioClip> globalSounds = new List<AudioClip>();
     private List<AudioSource> asrs;
     public AudioClip[] bgm;
@@ -34,7 +43,7 @@ public class AudioManager : MonoBehaviour
 
         asrs = new List<AudioSource>();
         bgmAudio = gameObject.AddComponent<AudioSource>();
-        bgmAudio.loop = true;
+        bgmAudio.outputAudioMixerGroup = musicGroup;
 
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
@@ -44,7 +53,6 @@ public class AudioManager : MonoBehaviour
 
     public void Play(bool useGlobal, AudioClip sound, int index)
     {
-        Debug.Log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" + index);
         if (!useGlobal)
         {
             invoke(sound);
@@ -62,6 +70,7 @@ public class AudioManager : MonoBehaviour
         if (i == -1)
         {
             var asr = gameObject.AddComponent<AudioSource>();
+            asr.outputAudioMixerGroup = sfxGroup;
             asr.enabled = true;
             asr.playOnAwake = false;
             asr.clip = sound;
@@ -97,7 +106,6 @@ public class AudioManager : MonoBehaviour
         }
         if (bgmAudio.clip == null || bgmAudio.clip != clip)
         {
-            Debug.Log("LOADED" + scene.name);
             if (bgmAudio.isPlaying)
             {
                 bgmAudio.Stop();

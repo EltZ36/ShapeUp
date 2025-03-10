@@ -7,7 +7,6 @@ public class StandAlone : MonoBehaviour
 {
     public void OnBackButton()
     {
-        Debug.Log("Load Standalone");
         SceneManager.LoadScene("LevelSelect");
     }
 }

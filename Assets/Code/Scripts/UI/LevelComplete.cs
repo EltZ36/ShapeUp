@@ -45,7 +45,6 @@ public class LevelComplete : MonoBehaviour
 
     public void GoToMenu()
     {
-        Debug.Log("Hello");
         if (LevelManager.Instance != null)
         {
             if (LevelManager.Instance.currentLevelID >= 0)

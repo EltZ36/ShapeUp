@@ -5094,6 +5094,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ob: {fileID: 1028291293}
+  levelID: 2
 --- !u!114 &952380125
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5122,6 +5123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6707f4145bc18741bc27307b24d344a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startTime: 2
 --- !u!1 &961240325
 GameObject:
   m_ObjectHideFlags: 0
@@ -5549,6 +5551,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   globalSounds:
   - {fileID: 8300000, guid: 2f4b296de675da737a2ce407365e2c09, type: 3}
+  bgm: []
 --- !u!1 &991066083
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,35 +5,40 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
+    [SerializeField]
+    GameObject settings;
+
     void Awake()
     {
-        SceneManager.LoadSceneAsync("SplashLevel", LoadSceneMode.Additive);
+        if (SceneManager.GetSceneByName("Menu").IsValid())
+        {
+            SceneManager.LoadSceneAsync("SplashLevel", LoadSceneMode.Additive);
+        }
     }
 
     public void OnSuperButton()
     {
-        // SceneManager.LoadScene(2);
-        Debug.Log("Load Supercluster");
         LevelManager.Instance.LoadLevel(0);
     }
 
     public void OnStandaloneButton()
     {
-        // SceneManager.LoadScene(3);
-        Debug.Log("Load Standalone");
         SceneManager.LoadScene("LevelSelect");
     }
 
     public void OnSettingsButton()
     {
-        // SceneManager.LoadScene(4);
-        Debug.Log("Load Settings");
+        settings.SetActive(!settings.activeSelf);
     }
 
     public void OnCreditsButton()
     {
-        // SceneManager.LoadScene(5);
-        Debug.Log("Load Credits");
+        SceneManager.LoadScene("Credits");
+    }
+
+    public void OnMenuButton()
+    {
+        SceneManager.LoadScene("Menu");
     }
 
     public void OnHowToPlayButton()
