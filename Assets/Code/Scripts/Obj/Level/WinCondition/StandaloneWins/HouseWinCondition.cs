@@ -17,10 +17,6 @@ public class HouseWinCondition : MonoBehaviour, IStandAloneWin
     public Canvas zoomCanvas;
     List<string> active = new List<string>();
 
-    [SerializeField]
-    GameObject winEffect1,
-        winEffect2;
-
     void Start()
     {
         names = shapes.Select(s => s.ShapeName).ToArray();
@@ -49,23 +45,10 @@ public class HouseWinCondition : MonoBehaviour, IStandAloneWin
     {
         if (ShapeManager.ContainsSet(active.ToArray(), names))
         {
-            PlayFireworks(active[0], active[1]);
             Invoke();
             zoomCanvas.gameObject.SetActive(false);
             //StartCoroutine(CameraController.ZoomOut(false));
         }
-    }
-
-    void PlayFireworks(string _shape1, string _shape2)
-    {
-        winEffect1.SetActive(true);
-        winEffect2.SetActive(true);
-
-        Animator anim1 = winEffect1.GetComponent<Animator>();
-        Animator anim2 = winEffect2.GetComponent<Animator>();
-
-        anim1.Play("Base Layer." + _shape1 + "Win", 5);
-        anim2.Play("Base Layer." + _shape2 + "Win", 5);
     }
 
     public void Invoke()
