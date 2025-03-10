@@ -54,10 +54,11 @@ public class TacoTuesday : MonoBehaviour
     private const int maxActiveLights = 2;
 
     // limit the number of lights that can exist in the scene at a given time.
-    private static int lightCounter = 0;
+    private int lightCounter = 0;
 
-    void Awake()
+    void Start()
     {
+        lightCounter = 0;
         activeLights = new List<(CircleCollider2D, Light2D)>();
         locks = new List<LockContainer>();
     }
@@ -75,10 +76,10 @@ public class TacoTuesday : MonoBehaviour
         }
     }
 
-    void OnDestroy()
-    {
-        StopAllCoroutines();
-    }
+    // void OnDestroy()
+    // {
+    //     StopAllCoroutines();
+    // }
 
     private void HandleTouch(Vector2 position)
     {
