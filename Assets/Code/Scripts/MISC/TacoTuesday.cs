@@ -181,6 +181,7 @@ public class TacoTuesday : MonoBehaviour
                                 activeLights[index].Item2,
                                 () =>
                                 {
+                                    AudioManager.Instance.Play(true, null, 1);
                                     Destroy(activeLights[index].Item1.gameObject);
                                     activeLights[index] = (null, null); // these prob should get cleaned up, tricky to schedule a time when the user 'wont' tap to claim mutex on the list.
                                     locks[index] = null;
@@ -210,6 +211,17 @@ public class TacoTuesday : MonoBehaviour
     /// <returns></returns>
     private IEnumerator Scale(bool grow, Light2D sm, Action done)
     {
+        int index;
+        if (grow)
+        {
+            index = 2;
+        }
+        else
+        {
+            index = 3;
+        }
+        AudioManager.Instance.Play(true, null, index);
+
         float StartSizeSM = sm.pointLightOuterRadius;
         float EndSizeSM = grow ? StartSizeSM * scaleFactor : StartSizeSM * 0f;
 

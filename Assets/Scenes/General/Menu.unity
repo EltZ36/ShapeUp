@@ -847,6 +847,9 @@ MonoBehaviour:
   sfxGroup: {fileID: 1910160742649866719, guid: d890ec555167b314e87c936d0f27c0d6, type: 2}
   globalSounds:
   - {fileID: 8300000, guid: 2f4b296de675da737a2ce407365e2c09, type: 3}
+  - {fileID: 8300000, guid: 30827f98deae87b4fb73c80fa4f730ab, type: 3}
+  - {fileID: 8300000, guid: 426db38b4e553762892f2a2994e2d894, type: 3}
+  - {fileID: 8300000, guid: 2b5e51b42c607db91aad99549d6550cb, type: 3}
   bgm:
   - {fileID: 8300000, guid: be38e035a6247a40bbdea27306df0f70, type: 3}
   - {fileID: 8300000, guid: b3b3f5df5dd9013d491b43692ccec875, type: 3}
@@ -1110,6 +1113,7 @@ RectTransform:
   - {fileID: 2028684977}
   - {fileID: 1999705527}
   - {fileID: 943336036}
+  - {fileID: 33474414}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
