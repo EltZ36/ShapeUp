@@ -28,7 +28,8 @@ public class Menu : MonoBehaviour
 
     public void OnSettingsButton()
     {
-        settings.SetActive(!settings.activeSelf);
+        settings.transform.localScale =
+            settings.transform.localScale == Vector3.one ? Vector3.zero : Vector3.one;
     }
 
     public void OnCreditsButton()
