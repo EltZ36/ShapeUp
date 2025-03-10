@@ -6,6 +6,9 @@ public class CameraMove : MonoBehaviour
 {
     private Camera mainCamera;
 
+    [SerializeField]
+    private GameObject ObjectToZoom;
+
     void Awake()
     {
         mainCamera = Camera.main;
@@ -14,7 +17,7 @@ public class CameraMove : MonoBehaviour
     public void ZoomIn(EventInfo eventInfo)
     {
         mainCamera.orthographicSize = 2.0f;
-        mainCamera.transform.position = new Vector3(0, -0.52f, -10);
+        mainCamera.transform.position = new Vector3(0, -1.29f, -10);
     }
 
     public void ZoomOut()
