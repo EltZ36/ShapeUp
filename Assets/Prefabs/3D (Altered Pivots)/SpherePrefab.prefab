@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Tags: 0
-  spriteName: sphere_greyfill
+  spriteName: sphere_greyfill_pivot
   uniqueID: 
   OnFixedUpdateEvent:
     m_PersistentCalls:
@@ -66,6 +66,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   OnSliceEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnSliceEndEvent:
     m_PersistentCalls:
       m_Calls: []
   OnTapEvent:
