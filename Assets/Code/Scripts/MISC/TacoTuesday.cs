@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Lights;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
@@ -40,6 +41,9 @@ public class LockContainer
 /// </summary>
 public class TacoTuesday : MonoBehaviour
 {
+    [SerializeField]
+    GameObject lightObj;
+
     // need a mask
     private List<(CircleCollider2D, Light2D)> activeLights;
     private List<LockContainer> locks;
@@ -109,14 +113,15 @@ public class TacoTuesday : MonoBehaviour
 
         GameObject maskObject = new GameObject("LightSource");
         maskObject.transform.position = pos;
-        maskObject.transform.localScale = new Vector3(0.5f, 0.5f);
+        maskObject.transform.localScale = new Vector3(0.5f, 0.5f, 1.0f);
 
         Light2D light = maskObject.AddComponent<Light2D>();
+        Instantiate(lightObj, pos, quaternion.identity);
 
         CircleCollider2D collider = maskObject.AddComponent<CircleCollider2D>();
         collider.isTrigger = true;
         collider.radius = 0.5f;
-        collider.transform.position = new Vector3(pos.x, pos.y, -2);
+        collider.transform.position = new Vector3(pos.x, pos.y, 0);
 
         maskObject.AddComponent<LightsEnable>();
 
@@ -133,74 +138,40 @@ public class TacoTuesday : MonoBehaviour
     /// <param name="ob"></param>
     private void IncreaseLightSize(GameObject ob)
     {
-        try
+        CircleCollider2D circleCollider2D = ob.GetComponent<CircleCollider2D>();
+
+        if (circleCollider2D == null)
         {
-            // if the user tapped on an already existing light, get its scale
-            float ls = ob.GetComponent<CircleCollider2D>().radius;
-            if (ls >= maxLightSize)
-            {
-                return;
-            }
-
-            // snag the index we are concerned with
-            int index = activeLights.FindIndex((e) => e.Item1 == ob.GetComponent<Collider2D>());
-
-            // not found    ||  the light is already growing
-            if (index == -1 || locks[index].isGrowing == true)
-            {
-                return;
-            }
-
-            // the light is currently shrinking
-            if (locks[index].isShrinking == true)
-            {
-                // stop the shrink!
-                StopCoroutine(locks[index].cr);
-                locks[index].isShrinking = false;
-            }
-
-            // time to grow!
-            locks[index].isGrowing = true;
-            StartCoroutine(
-                Scale(
-                    true,
-                    activeLights[index].Item2,
-                    async () =>
-                    {
-                        locks[index].isGrowing = false; // done!
-                        ob.GetComponent<CircleCollider2D>().radius =
-                            ob.GetComponent<Light2D>().pointLightOuterRadius;
-                        await Task.Delay(delayBeforeShrinking); // wait before starting to shrink
-                        if (locks[index].isGrowing == true || locks[index].isShrinking == true) // if we got tapped on (non deterministic)
-                        {
-                            return;
-                        }
-                        locks[index].isShrinking = true; // shrink time
-                        Coroutine cr = StartCoroutine(
-                            Scale(
-                                false,
-                                activeLights[index].Item2,
-                                () =>
-                                {
-                                    AudioManager.Instance.Play(true, null, 1);
-                                    Destroy(activeLights[index].Item1.gameObject);
-                                    activeLights[index] = (null, null); // these prob should get cleaned up, tricky to schedule a time when the user 'wont' tap to claim mutex on the list.
-                                    locks[index] = null;
-                                    lightCounter--;
-                                }
-                            )
-                        );
-                        locks[index].cr = cr; // store the coroutine ref now
-                    }
-                )
-            );
-        }
-        catch (System.Exception)
-        {
-            // the user tapped on something that was not a light, therefore make light in that spot.
             CreateLight(ob.transform.position);
             return;
         }
+        // if the user tapped on an already existing light, get its scale
+        float ls = circleCollider2D.radius;
+        if (ls >= maxLightSize)
+        {
+            return;
+        }
+
+        // snag the index we are concerned with
+        int index = activeLights.FindIndex((e) => e.Item1 == ob.GetComponent<Collider2D>());
+
+        // not found    ||  the light is already growing
+        if (index == -1 || locks[index].isGrowing == true)
+        {
+            return;
+        }
+
+        // the light is currently shrinking
+        if (locks[index].isShrinking == true)
+        {
+            // stop the shrink!
+            StopCoroutine(locks[index].cr);
+            locks[index].isShrinking = false;
+        }
+
+        // time to grow!
+        locks[index].isGrowing = true;
+        StartCoroutine(Scale(true, activeLights[index].Item2, ob));
     }
 
     /// <summary>
@@ -210,7 +181,7 @@ public class TacoTuesday : MonoBehaviour
     /// <param name="sm">Sprite mask to grow</param>
     /// <param name="done">Callback to invoke when the sclae is finished</param>
     /// <returns></returns>
-    private IEnumerator Scale(bool grow, Light2D sm, Action done)
+    private IEnumerator Scale(bool grow, Light2D sm, GameObject ob)
     {
         int index;
         if (grow)
@@ -234,7 +205,33 @@ public class TacoTuesday : MonoBehaviour
             sm.pointLightOuterRadius = EaseInBounce(StartSizeSM, EndSizeSM, elapsed / time);
             yield return null;
         }
-        done.Invoke();
+        if (grow)
+        {
+            if (index >= locks.Count)
+            {
+                CreateLight(ob.transform.position);
+                yield break;
+            }
+            locks[index].isGrowing = false; // done!
+            ob.GetComponent<CircleCollider2D>().radius =
+                ob.GetComponent<Light2D>().pointLightOuterRadius;
+            yield return new WaitForSeconds(delayBeforeShrinking / 1000);
+            if (locks[index].isGrowing == true || locks[index].isShrinking == true) // if we got tapped on (non deterministic)
+            {
+                yield break;
+            }
+            locks[index].isShrinking = true; // shrink time
+            Coroutine cr = StartCoroutine(Scale(false, activeLights[index].Item2, ob));
+            locks[index].cr = cr; // store the coroutine ref now
+        }
+        else
+        {
+            AudioManager.Instance.Play(true, null, 1);
+            Destroy(activeLights[index].Item1.gameObject);
+            activeLights[index] = (null, null); // these prob should get cleaned up, tricky to schedule a time when the user 'wont' tap to claim mutex on the list.
+            locks[index] = null;
+            lightCounter--;
+        }
     }
 
     //Created by C.J. Kimberlin https://gist.github.com/cjddmut/d789b9eb78216998e95c

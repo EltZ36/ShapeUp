@@ -3028,6 +3028,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ab7044aa8262e4a6afab3bad3cc7d7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lightObj: {fileID: 5313606032084140503, guid: e5ed65258a066ad438f16fd524378277, type: 3}
 --- !u!50 &1139523062 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 8468738035421105429, guid: 07db017025bd6ec488c35cd965cd92fe, type: 3}
