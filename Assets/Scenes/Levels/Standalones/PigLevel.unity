@@ -245,7 +245,7 @@ PrefabInstance:
     - target: {fileID: 5735579781906999951, guid: 77ba542a5b8ebf94980341de105a6daf, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: a6db671c4bc08c44ebec14ae45eed166, type: 3}
+      objectReference: {fileID: 21300000, guid: 9bc656f32de62d34aab06d549c98458b, type: 3}
     - target: {fileID: 8466740039623743362, guid: 77ba542a5b8ebf94980341de105a6daf, type: 3}
       propertyPath: m_Name
       value: HintCanvas
@@ -4834,7 +4834,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 952380126}
         m_TargetAssemblyTypeName: EffectRawTilt, Assembly-CSharp
-        m_MethodName: ChangeTilt
+        m_MethodName: CheckUpsideDown
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5125,6 +5125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startTime: 2
+  flipTime: 1
 --- !u!1 &961240325
 GameObject:
   m_ObjectHideFlags: 0
