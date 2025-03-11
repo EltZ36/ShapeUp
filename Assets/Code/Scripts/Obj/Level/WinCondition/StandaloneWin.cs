@@ -25,6 +25,7 @@ namespace StandAloneWin
     {
         public GameObject ob;
         public int levelID;
+        public AudioClip winSound;
 
         void Awake()
         {
@@ -39,6 +40,7 @@ namespace StandAloneWin
             );
             GameManager.Instance.SaveGame();
             ob.SetActive(true);
+            AudioManager.Instance.Play(false, winSound, 0);
         }
     }
 }

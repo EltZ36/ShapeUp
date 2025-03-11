@@ -5095,6 +5095,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ob: {fileID: 1028291293}
   levelID: 2
+  winSound: {fileID: 8300000, guid: 2f4b296de675da737a2ce407365e2c09, type: 3}
 --- !u!114 &952380125
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5549,6 +5550,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5b3dee9ef4528515b92d702e4f7a6c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioMixer: {fileID: 0}
+  musicGroup: {fileID: 0}
+  sfxGroup: {fileID: 0}
   globalSounds:
   - {fileID: 8300000, guid: 2f4b296de675da737a2ce407365e2c09, type: 3}
   bgm: []
