@@ -54,7 +54,7 @@ public class TacoTuesday : MonoBehaviour
     private const float growTime = 1f;
     private const float shrinkTime = 5f;
     private const int delayBeforeShrinking = 2;
-    private const int maxActiveLights = 2;
+    private const int maxActiveLights = 5;
 
     // limit the number of lights that can exist in the scene at a given time.
     private int lightCounter = 0;
@@ -196,6 +196,8 @@ public class TacoTuesday : MonoBehaviour
                 EndSizeSM,
                 elapsed / time
             );
+            ob.GetComponent<CircleCollider2D>().radius =
+                ob.GetComponent<Light2D>().pointLightOuterRadius;
             yield return null;
         }
         if (grow)
