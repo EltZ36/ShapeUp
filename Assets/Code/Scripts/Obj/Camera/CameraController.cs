@@ -175,6 +175,31 @@ public class CameraController : MonoBehaviour
         LevelManager.Instance.UnloadCurrentSubLevel();
     }
 
+    public static IEnumerator ZoomOutAndReset(float time = 1f)
+    {
+        float EndPos = 20;
+
+        float StartSize = Camera.main.orthographicSize;
+
+        Vector3 StartPos = Camera.main.transform.position;
+
+        float elapsed = 0.0f;
+        while (elapsed / time < 1)
+        {
+            elapsed += Time.deltaTime;
+            Camera.main.orthographicSize = EaseOutQuad(StartSize, EndPos, elapsed / time);
+            Camera.main.transform.position = new Vector3(
+                EaseOutQuad(StartPos.x, 0, elapsed / time),
+                EaseOutQuad(StartPos.y, 0, elapsed / time),
+                StartPos.z
+            );
+            yield return null;
+        }
+        Camera.main.orthographicSize = EndPos;
+        LevelManager.Instance.LoadLevel(0);
+        GameManager.Instance.SaveGame();
+    }
+
     public static IEnumerator ZoomIn(Vector2 _levelPosition)
     {
         float StartSize = Camera.main.orthographicSize;

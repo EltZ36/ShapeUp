@@ -97,9 +97,7 @@ public class LevelUI : MonoBehaviour
     public void OnLevelReset()
     {
         GameManager.Instance.ClearLevel(LevelManager.Instance.currentLevelID);
-        bool fully = LevelManager.Instance.currentSubLevelID == -1 ? true : false;
-        StartCoroutine(CameraController.ZoomOut(fully));
-        ToggleMenu();
+        StartCoroutine(CameraController.ZoomOutAndReset());
     }
 
     void disableUIElement(CanvasGroup element)
