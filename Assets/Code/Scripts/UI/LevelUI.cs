@@ -14,12 +14,14 @@ public class LevelUI : MonoBehaviour
 
     [SerializeField]
     public Image menuImage,
-        confirmImage;
+        confirmRestartImage,
+        confirmExitImage;
 
     public GameManager GameManager;
     private Camera cam;
     private CanvasGroup menuScreen,
-        confirm;
+        confirmRestart,
+        confirmExit;
 
     private bool showMenu;
 
@@ -34,8 +36,11 @@ public class LevelUI : MonoBehaviour
         menuScreen = menuImage.GetComponent<CanvasGroup>();
         disableUIElement(menuScreen);
 
-        confirm = confirmImage.GetComponent<CanvasGroup>();
-        disableUIElement(confirm);
+        confirmRestart = confirmRestartImage.GetComponent<CanvasGroup>();
+        disableUIElement(confirmRestart);
+
+        confirmExit = confirmExitImage.GetComponent<CanvasGroup>();
+        disableUIElement(confirmExit);
 
         showMenu = false;
     }
@@ -53,9 +58,16 @@ public class LevelUI : MonoBehaviour
         }
     }
 
-    public void GoToConfirmButton()
+    public void GoToConfirmRestartButton()
     {
-        enableUIElement(confirm);
+        enableUIElement(confirmRestart);
+        disableUIElement(confirmExit);
+    }
+
+    public void GoToConfirmExitButton()
+    {
+        enableUIElement(confirmExit);
+        disableUIElement(confirmRestart);
     }
 
     public void OnZoomOutButton()
@@ -71,7 +83,8 @@ public class LevelUI : MonoBehaviour
         {
             Destroy(ob);
         }
-        disableUIElement(confirm);
+        disableUIElement(confirmExit);
+        disableUIElement(confirmRestart);
         bool fully = LevelManager.Instance.currentSubLevelID == -1 ? true : false;
         Physics2D.gravity = new UnityEngine.Vector2(0f, -9.8f);
         StartCoroutine(CameraController.ZoomOut(fully));
@@ -88,9 +101,15 @@ public class LevelUI : MonoBehaviour
         SceneManager.LoadScene("Menu");
     }
 
-    public void OnCancelButton()
+    public void OnCancelRestartButton()
     {
-        disableUIElement(confirm);
+        disableUIElement(confirmRestart);
+        ToggleMenu();
+    }
+
+    public void OnCancelExitButton()
+    {
+        disableUIElement(confirmExit);
         ToggleMenu();
     }
 
