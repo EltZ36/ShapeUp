@@ -6032,6 +6032,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6727857194341825601, guid: 4a4fe9eef26b5d1489d2dffff5f541d7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7077005557384614011, guid: 4a4fe9eef26b5d1489d2dffff5f541d7, type: 3}
       propertyPath: nextLevelName
       value: MazeLevel
