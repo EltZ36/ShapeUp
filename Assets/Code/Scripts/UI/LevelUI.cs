@@ -94,7 +94,8 @@ public class LevelUI : MonoBehaviour
         }
     }
 
-    public void OnAreYouSure()
+    // Confirm Restart
+    public void OnExitToMenu()
     {
         // Quit game, load menu
         LevelManager.Instance.LeaveCurrentLevel();
@@ -115,6 +116,7 @@ public class LevelUI : MonoBehaviour
 
     public void OnLevelReset()
     {
+        OnCancelRestartButton();
         GameManager.Instance.ClearLevel(LevelManager.Instance.currentLevelID);
         StartCoroutine(CameraController.ZoomOutAndReset());
     }
