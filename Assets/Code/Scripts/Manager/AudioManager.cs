@@ -88,6 +88,10 @@ public class AudioManager : MonoBehaviour
     {
         // Plays different music in different scenes
         AudioClip clip;
+        if (bgm.Length == 0)
+        {
+            return;
+        }
         switch (scene.name)
         {
             case "Menu":
@@ -100,7 +104,7 @@ public class AudioManager : MonoBehaviour
                 clip = null;
                 break;
         }
-        if (clip == null)
+        if (clip == null || bgmAudio == null)
         {
             return;
         }

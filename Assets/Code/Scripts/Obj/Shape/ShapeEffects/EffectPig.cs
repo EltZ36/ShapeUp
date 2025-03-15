@@ -43,6 +43,8 @@ public class EffectPig : MonoBehaviour
     [SerializeField]
     Collider2D coinBox;
 
+    Collider2D coinTrigger;
+
     PiggyBank piggyBank;
     MaterialPropertyBlock block;
 
@@ -51,6 +53,8 @@ public class EffectPig : MonoBehaviour
         block = new MaterialPropertyBlock();
         sr = GetComponent<SpriteRenderer>();
         sr.material = crackMaterial;
+
+        coinTrigger = GetComponent<Collider2D>();
 
         piggyBank = GetComponent<PiggyBank>();
 
@@ -163,6 +167,7 @@ public class EffectPig : MonoBehaviour
     {
         sr.enabled = false;
         coinBox.enabled = false;
+        coinTrigger.enabled = false;
         deadObject.SetActive(true);
         piggyBank.Invoke();
     }
