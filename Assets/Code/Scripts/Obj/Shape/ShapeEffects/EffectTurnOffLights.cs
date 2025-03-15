@@ -17,7 +17,10 @@ public class EffectTurnOffLights : MonoBehaviour
         foreach (GameObject house in houseList)
         {
             //there are four light2ds in each house object
-
+            if (house == null)
+            {
+                continue;
+            }
             foreach (Light2D light in house.GetComponentsInChildren<Light2D>())
             {
                 light.enabled = false;
@@ -28,5 +31,21 @@ public class EffectTurnOffLights : MonoBehaviour
     public void turnOnGlobal(EventInfo eventInfo)
     {
         global.intensity = 1;
+    }
+
+    public void turnOnLights(EventInfo eventInfo)
+    {
+        foreach (GameObject house in houseList)
+        {
+            //there are four light2ds in each house object
+            if (house == null)
+            {
+                continue;
+            }
+            foreach (Light2D light in house.GetComponentsInChildren<Light2D>())
+            {
+                light.enabled = true;
+            }
+        }
     }
 }

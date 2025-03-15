@@ -10,6 +10,9 @@ public class EnableObject : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField]
     private List<GameObject> objects = new List<GameObject>();
+
+    [SerializeField]
+    private GameObject house;
     public bool isComplete = false;
 
     public void EnableObjectsFromList(EventInfo eventInfo)
@@ -18,7 +21,10 @@ public class EnableObject : MonoBehaviour
         {
             foreach (GameObject obj in objects)
             {
-                obj.SetActive(true);
+                if (obj != null)
+                {
+                    obj.SetActive(true);
+                }
             }
         }
     }
@@ -26,5 +32,13 @@ public class EnableObject : MonoBehaviour
     public void setComplete(EventInfo eventInfo)
     {
         isComplete = true;
+    }
+
+    public void setHouseComplete(EventInfo eventInfo)
+    {
+        if (house.activeSelf == true)
+        {
+            isComplete = true;
+        }
     }
 }

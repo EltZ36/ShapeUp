@@ -85,7 +85,6 @@ public class GameManager : MonoBehaviour, IGameManager
     {
         if (File.Exists(saveFile))
         {
-            Debug.Log("Reading from save");
             string fileContents = File.ReadAllText(saveFile);
             gameData = JsonUtility.FromJson<GameData>(fileContents);
             gameData.Deserialize();
@@ -93,7 +92,6 @@ public class GameManager : MonoBehaviour, IGameManager
         //I also used gpt, conversation: https://chatgpt.com/share/679499f9-167c-800c-95e6-f3774649f3f7 for this to make sure that there is a new save file in case it doesn't exist
         else
         {
-            Debug.Log("No save file found. Creating a new save file.");
             //make new gameData class and then make a new save.
             gameData = new GameData();
         }
@@ -106,7 +104,6 @@ public class GameManager : MonoBehaviour, IGameManager
     {
         if (gameData == null)
         {
-            Debug.Log("gameData is null");
             gameData = new GameData();
         }
         gameData.Serialize();
@@ -115,7 +112,6 @@ public class GameManager : MonoBehaviour, IGameManager
             try
             {
                 File.WriteAllText(saveFile, gameDataJSON);
-                Debug.Log("Game saved: " + JsonUtility.ToJson(gameData, true));
             }
             catch (System.Exception ex)
             {

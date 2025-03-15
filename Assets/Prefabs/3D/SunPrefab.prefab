@@ -33,7 +33,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.7000698, w: 0.7140745}
   m_LocalPosition: {x: 15.68, y: 6.39, z: 0}
-  m_LocalScale: {x: 5.3, y: 5.3, z: 5.3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -79,8 +79,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 323c0e106bf149a4b94464b21436b617, type: 3}
-  m_Color: {r: 1, g: 0.96717316, b: 0.7028302, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 5e192d4c90ac6594982c0790889bda42, type: 3}
+  m_Color: {r: 0.9622642, g: 0.9622642, b: 0.9622642, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -130,7 +130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Tags: 778
-  spriteName: temp_sun
+  spriteName: sun
   uniqueID: 
   OnFixedUpdateEvent:
     m_PersistentCalls:
@@ -261,9 +261,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.000000009443567, y: 0.00000047674362}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 2.428358
 --- !u!50 &882724749084602654
 Rigidbody2D:
   serializedVersion: 4

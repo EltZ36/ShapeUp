@@ -51,7 +51,10 @@ public class CameraController : MonoBehaviour
             Vector3 pointOne = Camera.main.ScreenToWorldPoint(Input.touches[0].position);
             Vector2 pointOne2D = new Vector2(pointOne.x, pointOne.y);
             RaycastHit2D hit = Physics2D.Raycast(pointOne2D, Camera.main.transform.forward);
-            if (hit.collider != null)
+            bool isOverUI = UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject(
+                Input.GetTouch(0).fingerId
+            );
+            if (hit.collider != null && !isOverUI)
             {
                 LevelInfo levelInfo = LevelManager.Instance.Levels[
                     LevelManager.Instance.currentLevelID
@@ -66,20 +69,16 @@ public class CameraController : MonoBehaviour
                 }
             }
         }
-        // Vector2 touchDeltaPosition = Input.touches[0].deltaPosition;
-        // Debug.Log(touchDeltaPosition);
         float deltaX = Input.GetTouch(0).position.x - lastX;
         float deltaY = Input.GetTouch(0).position.y - lastY;
         Vector2 touchDeltaPosition = new Vector2(deltaX, deltaY);
 #if !UNITY_EDITOR && UNITY_WEBGL
-        Debug.Log("WebGL");
         deltaPosition = new Vector3(
             -touchDeltaPosition.x * speed * Time.deltaTime,
             -touchDeltaPosition.y * speed * Time.deltaTime,
             0f
         );
 #else
-        Debug.Log("Editor");
         deltaPosition = new Vector3(
             -touchDeltaPosition.x * speed * Time.deltaTime,
             -touchDeltaPosition.y * speed * Time.deltaTime,
@@ -174,6 +173,31 @@ public class CameraController : MonoBehaviour
         Camera.main.orthographicSize = EndPos;
         GameManager.Instance.SaveGame();
         LevelManager.Instance.UnloadCurrentSubLevel();
+    }
+
+    public static IEnumerator ZoomOutAndReset(float time = 1f)
+    {
+        float EndPos = 20;
+
+        float StartSize = Camera.main.orthographicSize;
+
+        Vector3 StartPos = Camera.main.transform.position;
+
+        float elapsed = 0.0f;
+        while (elapsed / time < 1)
+        {
+            elapsed += Time.deltaTime;
+            Camera.main.orthographicSize = EaseOutQuad(StartSize, EndPos, elapsed / time);
+            Camera.main.transform.position = new Vector3(
+                EaseOutQuad(StartPos.x, 0, elapsed / time),
+                EaseOutQuad(StartPos.y, 0, elapsed / time),
+                StartPos.z
+            );
+            yield return null;
+        }
+        Camera.main.orthographicSize = EndPos;
+        LevelManager.Instance.LoadLevel(0);
+        GameManager.Instance.SaveGame();
     }
 
     public static IEnumerator ZoomIn(Vector2 _levelPosition)

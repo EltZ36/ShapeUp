@@ -59,7 +59,8 @@ public class ShapeManager : MonoBehaviour
                     Instantiate(
                             shapeDatabase.ShapeDict[pair.Item1],
                             (Vector2)shape.gameObject.transform.position
-                                + UnityEngine.Random.insideUnitCircle,
+                                + UnityEngine.Random.insideUnitCircle
+                                    * shape.gameObject.transform.localScale,
                             Quaternion.identity
                         )
                         .GetComponent<Shape>(),
@@ -69,7 +70,8 @@ public class ShapeManager : MonoBehaviour
                     Instantiate(
                             shapeDatabase.ShapeDict[pair.Item2],
                             (Vector2)shape.gameObject.transform.position
-                                + UnityEngine.Random.insideUnitCircle,
+                                + UnityEngine.Random.insideUnitCircle
+                                    * shape.gameObject.transform.localScale,
                             Quaternion.identity
                         )
                         .GetComponent<Shape>(),

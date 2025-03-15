@@ -44,7 +44,6 @@ public class CreateWin : MonoBehaviour
     {
         if (ShapeManager.ContainsSet(active.ToArray(), names))
         {
-            Debug.Log("Victory");
             PlayFireworks(active[0], active[1]);
             LevelManager.Instance.OnCurrentSubLevelComplete();
             StartCoroutine(CameraController.ZoomOut(false));
@@ -56,10 +55,10 @@ public class CreateWin : MonoBehaviour
         winEffect1.SetActive(true);
         winEffect2.SetActive(true);
 
-        Animator anim1 = winEffect1.GetComponent<Animator>();
-        Animator anim2 = winEffect2.GetComponent<Animator>();
+        // Animator anim1 = winEffect1.GetComponent<Animator>();
+        // Animator anim2 = winEffect2.GetComponent<Animator>();
 
-        anim1.Play("Base Layer." + _shape1 + "Win", 5);
-        anim2.Play("Base Layer." + _shape2 + "Win", 5);
+        // anim1.Play("Base Layer." + _shape1 + "Win", 5);
+        // anim2.Play("Base Layer." + _shape2 + "Win", 5);
     }
 }
