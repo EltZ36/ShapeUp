@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: StringTable Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: StringTable
+  m_TableCollectionNameGuidString: 4912def05b3a65d4fa810a46b1d502f1
+  m_Entries:
+  - m_Id: 699516222443520
+    m_Key: credits
+    m_Metadata:
+      m_Items: []
+  - m_Id: 699753137704960
+    m_Key: credits_acknowledgements
+    m_Metadata:
+      m_Items: []
+  - m_Id: 704187339116544
+    m_Key: options_text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 706785454592000
+    m_Key: exit_to_menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 706937040932864
+    m_Key: restart
+    m_Metadata:
+      m_Items: []
+  - m_Id: 708504066461696
+    m_Key: are_you_sure
+    m_Metadata:
+      m_Items: []
+  - m_Id: 709265261334528
+    m_Key: yes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 709324061282304
+    m_Key: no
+    m_Metadata:
+      m_Items: []
+  - m_Id: 712281846714368
+    m_Key: how_to_play
+    m_Metadata:
+      m_Items: []
+  - m_Id: 712375522299904
+    m_Key: stand_alone
+    m_Metadata:
+      m_Items: []
+  - m_Id: 712656666497024
+    m_Key: supercluster
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 2575235566790770712
+  references:
+    version: 2
+    RefIds:
+    - rid: 2575235566790770712
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1743815150045
