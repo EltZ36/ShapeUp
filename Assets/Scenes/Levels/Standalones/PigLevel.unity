@@ -4854,7 +4854,7 @@ MonoBehaviour:
   showDrag: 0
   showPinch: 0
   showSlice: 0
-  showTap: 0
+  showTap: 1
   showAccelerate: 0
   showAttitude: 0
   showGravity: 0
