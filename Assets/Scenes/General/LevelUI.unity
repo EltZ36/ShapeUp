@@ -366,7 +366,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 802252195}
         m_TargetAssemblyTypeName: LevelUI, Assembly-CSharp
-        m_MethodName: GoToConfirmExitButton
+        m_MethodName: OnExitToMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2041,7 +2041,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1092304475
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2976,7 +2976,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 802252195}
         m_TargetAssemblyTypeName: LevelUI, Assembly-CSharp
-        m_MethodName: OnExitToMenu
+        m_MethodName: OnAreYouSure
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
