@@ -56,14 +56,8 @@ MonoBehaviour:
       Michael Wong'
     m_Metadata:
       m_Items: []
-  - m_Id: 704187339116544
-    m_Localized: 'Volume Principal
-
-
-      Volume de la Musique
-
-
-      Effets Sonores'
+  - m_Id: 2878697261764608
+    m_Localized: Effets Sonores
     m_Metadata:
       m_Items: []
   - m_Id: 706785454592000
@@ -96,6 +90,22 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 712656666497024
     m_Localized: Superamas
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2848822794653696
+    m_Localized: Niveau Suivant
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2878644749078528
+    m_Localized: Volume Principal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2878672171438080
+    m_Localized: Volume de la Musique
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2878727083266048
+    m_Localized: Langue
     m_Metadata:
       m_Items: []
   references:

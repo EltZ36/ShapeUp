@@ -55,14 +55,8 @@ MonoBehaviour:
       Michael Wong'
     m_Metadata:
       m_Items: []
-  - m_Id: 704187339116544
-    m_Localized: 'Master Volume
-
-
-      Music Volume
-
-
-      Sound Effects'
+  - m_Id: 2878644749078528
+    m_Localized: Master Volume
     m_Metadata:
       m_Items: []
   - m_Id: 706785454592000
@@ -95,6 +89,22 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 712656666497024
     m_Localized: Supercluster
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2848822794653696
+    m_Localized: Next Level
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2878697261764608
+    m_Localized: Sound Effects
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2878672171438080
+    m_Localized: Music Volume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2878727083266048
+    m_Localized: Language
     m_Metadata:
       m_Items: []
   references:

@@ -20,15 +20,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 699753137704960
-    m_Key: credits_acknowledgements
-    m_Metadata:
-      m_Items: []
-  - m_Id: 704187339116544
-    m_Key: options_text
+    m_Key: creditsAcknowledgements
     m_Metadata:
       m_Items: []
   - m_Id: 706785454592000
-    m_Key: exit_to_menu
+    m_Key: exitToMenu
     m_Metadata:
       m_Items: []
   - m_Id: 706937040932864
@@ -36,7 +32,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 708504066461696
-    m_Key: are_you_sure
+    m_Key: areYouSure
     m_Metadata:
       m_Items: []
   - m_Id: 709265261334528
@@ -48,15 +44,35 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 712281846714368
-    m_Key: how_to_play
+    m_Key: howToPlay
     m_Metadata:
       m_Items: []
   - m_Id: 712375522299904
-    m_Key: stand_alone
+    m_Key: standalone
     m_Metadata:
       m_Items: []
   - m_Id: 712656666497024
     m_Key: supercluster
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2848822794653696
+    m_Key: nextLevel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2878644749078528
+    m_Key: masterVolume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2878672171438080
+    m_Key: musicVolume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2878697261764608
+    m_Key: sfxVolume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2878727083266048
+    m_Key: language
     m_Metadata:
       m_Items: []
   m_Metadata:
