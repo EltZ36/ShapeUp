@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,28 +8,37 @@ public class EffectTiltLight : MonoBehaviour
     [SerializeField]
     float radius = 3f;
 
-    [SerializeField]
-    float manualRotation = 0f;
+    // [SerializeField]
+    // float manualRotation = 0f;
 
-    Vector3 tilt;
+    [SerializeField]
+    float initialRotation = Mathf.PI / 2;
+
+    float tilt;
 
     public void ChangeTilt(EventInfo eventInfo)
     {
-        tilt = eventInfo.VectorOne;
-        float rotation = tilt.x * 2f * Mathf.PI;
+        tilt = eventInfo.QuaternionValue.eulerAngles.z;
+        tilt = tilt * Mathf.Deg2Rad;
+        // Debug.Log(tilt.x + "," + tilt.y);
         transform.position = new Vector3(
-            radius * Mathf.Cos(rotation),
-            radius * Mathf.Sin(rotation),
+            radius * Mathf.Cos(initialRotation + tilt) * 2f,
+            (radius * Mathf.Sin(initialRotation + tilt) * 1.5f) - 2f,
             0f
         );
     }
 
-    void Update()
+    public void showAttitude(EventInfo eventInfo)
     {
-        transform.position = new Vector3(
-            radius * Mathf.Cos(manualRotation) * 2f,
-            radius * Mathf.Sin(manualRotation),
-            0f
-        );
+        Debug.Log(eventInfo.QuaternionValue.eulerAngles.z);
     }
+
+    // void Update()
+    // {
+    //     transform.position = new Vector3(
+    //         radius * Mathf.Cos(initialRotation + manualRotation) * 2f,
+    //         (radius * Mathf.Sin(initialRotation + manualRotation) * 1.5f) - 2f,
+    //         0f
+    //     );
+    // }
 }

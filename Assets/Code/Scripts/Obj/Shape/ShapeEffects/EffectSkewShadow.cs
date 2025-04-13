@@ -57,7 +57,14 @@ public class EffectSkewShadow : MonoBehaviour
 
     private float SkewY()
     {
-        float skewedY = Mathf.Min(Mathf.Abs(lightSource.transform.position.x) / 10f, 1f);
-        return skewedY;
+        if (lightSource.transform.position.y < 0f)
+        {
+            return 1f;
+        }
+        else
+        {
+            float skewedY = Mathf.Min(Mathf.Abs(lightSource.transform.position.x) / 10f, 1f);
+            return skewedY;
+        }
     }
 }
