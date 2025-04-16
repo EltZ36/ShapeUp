@@ -21,7 +21,11 @@ public class EffectShadowToShape : MonoBehaviour
 
     public void DropShape(EventInfo eventInfo)
     {
-        if (sun.transform.position.x > -0.5 && sun.transform.position.x < 0.5)
+        if (
+            sun.transform.position.y > 0
+            && sun.transform.position.x > -0.5
+            && sun.transform.position.x < 0.5
+        )
         {
             Destroy(shadow);
             squareSprite.sortingOrder = 3;

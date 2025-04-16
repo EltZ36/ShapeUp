@@ -13,12 +13,17 @@ public class EffectTiltLight : MonoBehaviour
 
     [SerializeField]
     float initialRotation = Mathf.PI / 2;
-
+    private float initialTilt = 0f;
     float tilt;
+
+    void Start()
+    {
+        initialTilt = Input.gyro.attitude.eulerAngles.z;
+    }
 
     public void ChangeTilt(EventInfo eventInfo)
     {
-        tilt = eventInfo.QuaternionValue.eulerAngles.z;
+        tilt = eventInfo.QuaternionValue.eulerAngles.z - initialTilt;
         tilt = tilt * Mathf.Deg2Rad;
         // Debug.Log(tilt.x + "," + tilt.y);
         transform.position = new Vector3(
@@ -30,7 +35,7 @@ public class EffectTiltLight : MonoBehaviour
 
     public void showAttitude(EventInfo eventInfo)
     {
-        Debug.Log(eventInfo.QuaternionValue.eulerAngles.z);
+        // Debug.Log(eventInfo.QuaternionValue.eulerAngles);
     }
 
     // void Update()
