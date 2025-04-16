@@ -82,6 +82,35 @@ MonoBehaviour:
     m_Localized: Idioma
     m_Metadata:
       m_Items: []
+  - m_Id: 4283401002815488
+    m_Localized: "En este juego, debes usar diferentes interacciones m\xF3viles para
+      resolver puzles. \xA1Puedes probarlas todas en el menu principal!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4283737524408320
+    m_Localized: Pellizcar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4283753529872384
+    m_Localized: Arrastrar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4283766251196416
+    m_Localized: Tocar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4283777873612800
+    m_Localized: Deslizar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4283789563138048
+    m_Localized: Inclinar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4283801105862656
+    m_Localized: Agitar
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -114,6 +114,36 @@ MonoBehaviour:
     m_Localized: Langue
     m_Metadata:
       m_Items: []
+  - m_Id: 4283401002815488
+    m_Localized: "Dans ce jeu, vous devrez utiliser diff\xE9rentes interactions mobiles
+      pour r\xE9soudre des \xE9nigmes. Vous pouvez les essayer toutes dans le menu
+      principal!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4283737524408320
+    m_Localized: Pincer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4283753529872384
+    m_Localized: Glisser
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4283766251196416
+    m_Localized: Toucher
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4283777873612800
+    m_Localized: Balayer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4283789563138048
+    m_Localized: Incliner
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4283801105862656
+    m_Localized: Secouer
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

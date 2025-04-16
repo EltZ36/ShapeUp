@@ -75,6 +75,34 @@ MonoBehaviour:
     m_Key: language
     m_Metadata:
       m_Items: []
+  - m_Id: 4283401002815488
+    m_Key: howToPlayDescription
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4283737524408320
+    m_Key: pinch
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4283753529872384
+    m_Key: drag
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4283766251196416
+    m_Key: tap
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4283777873612800
+    m_Key: swipe
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4283789563138048
+    m_Key: tilt
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4283801105862656
+    m_Key: shake
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

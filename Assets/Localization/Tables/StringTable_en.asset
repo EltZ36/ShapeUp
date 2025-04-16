@@ -113,6 +113,35 @@ MonoBehaviour:
     m_Localized: Language
     m_Metadata:
       m_Items: []
+  - m_Id: 4283401002815488
+    m_Localized: In this game you have to use different mobile interactions to solve
+      puzzles. You can try all these out in the main menu!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4283801105862656
+    m_Localized: Shake
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4283789563138048
+    m_Localized: Tilt
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4283777873612800
+    m_Localized: Swipe
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4283766251196416
+    m_Localized: Tap
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4283753529872384
+    m_Localized: Drag
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4283737524408320
+    m_Localized: Pinch
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
