@@ -473,7 +473,7 @@ RectTransform:
   m_GameObject: {fileID: 258253272}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.6, y: 0.43750003, z: 1.0627229}
+  m_LocalScale: {x: 0.59, y: 0.4302083, z: 1.0450107}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 742020361}
@@ -863,7 +863,7 @@ RectTransform:
   m_GameObject: {fileID: 297548462}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.3, y: 1.1, z: 1}
+  m_LocalScale: {x: 2.25, y: 1.1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 742020361}
@@ -896,7 +896,7 @@ MonoBehaviour:
   m_text: How to Play
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9bf47735fccdd2446b1d9d0ce0033337, type: 2}
-  m_sharedMaterial: {fileID: -1433627986105509691, guid: 9bf47735fccdd2446b1d9d0ce0033337, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: facd90c9db7e50747b47712b5ee5d467, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1152,7 +1152,7 @@ MonoBehaviour:
   m_text: Stand-alone
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9bf47735fccdd2446b1d9d0ce0033337, type: 2}
-  m_sharedMaterial: {fileID: -1433627986105509691, guid: 9bf47735fccdd2446b1d9d0ce0033337, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: facd90c9db7e50747b47712b5ee5d467, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2358,7 +2358,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 5
-  m_Spacing: 0
+  m_Spacing: 20
   m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 1
@@ -4053,7 +4053,7 @@ MonoBehaviour:
   m_text: Supercluster
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9bf47735fccdd2446b1d9d0ce0033337, type: 2}
-  m_sharedMaterial: {fileID: -1433627986105509691, guid: 9bf47735fccdd2446b1d9d0ce0033337, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: facd90c9db7e50747b47712b5ee5d467, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5022,7 +5022,7 @@ MonoBehaviour:
   m_text: Credits
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9bf47735fccdd2446b1d9d0ce0033337, type: 2}
-  m_sharedMaterial: {fileID: -1433627986105509691, guid: 9bf47735fccdd2446b1d9d0ce0033337, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: facd90c9db7e50747b47712b5ee5d467, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
