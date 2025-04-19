@@ -7,6 +7,6 @@ public class Settings : MonoBehaviour
 {
     public void OnBackButton()
     {
-        SceneManager.LoadScene("Settings");
+        SceneManager.LoadScene("Menu");
     }
 }

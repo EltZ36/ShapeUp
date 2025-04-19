@@ -43,8 +43,6 @@ public class Menu : MonoBehaviour
 
     public void OnHowToPlayButton()
     {
-        // SceneManager.LoadScene(5);
-        Debug.Log("Load How To Play");
         SceneManager.LoadScene("HowToPlay");
     }
 }

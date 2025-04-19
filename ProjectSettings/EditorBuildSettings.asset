@@ -57,11 +57,11 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels/Standalones/MazeLevel.unity
     guid: 73ac780b360909e47bc19027ccd023c6
   - enabled: 1
+    path: Assets/Scenes/General/HowToPlay.unity
+    guid: fce416ae2977e6e41bf7d299312f8cdf
+  - enabled: 1
     path: Assets/Scenes/General/Credits.unity
     guid: 17cf59116f08c1e4fbe3194d7e1a492b
-  - enabled: 0
-    path: Assets/Scenes/Dev/HowToPlay.unity
-    guid: c2c088a1095f80a40afadcea46617a49
   - enabled: 1
     path: Assets/Scenes/General/Settings.unity
     guid: 420ea8e3923b09f418f3ab4ec111e0bf
