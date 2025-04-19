@@ -59,9 +59,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/General/Credits.unity
     guid: 17cf59116f08c1e4fbe3194d7e1a492b
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Dev/HowToPlay.unity
     guid: c2c088a1095f80a40afadcea46617a49
+  - enabled: 1
+    path: Assets/Scenes/General/Settings.unity
+    guid: 420ea8e3923b09f418f3ab4ec111e0bf
   m_configObjects:
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 5acb6dc0ef378be47959efcf50c27298, type: 2}
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: a491f95ff7262104f8d70dba4b2e36d8, type: 2}
