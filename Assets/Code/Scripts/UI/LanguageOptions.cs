@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Localization.Settings;
-using static UnityEditor.Progress;
 
 public class LanguageOptions : MonoBehaviour
 {
