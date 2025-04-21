@@ -12,35 +12,35 @@ public class EffectTapGrow : MonoBehaviour
 
     void Start()
     {
-        shrinkDelay = 600;
         ob = gameObject;
+        shrinkDelay = 600;
     }
 
     void Update()
     {
         if (isGrowing)
         {
-            if (ob.transform.localScale == maxScale || growDuration == 0)
+            if (transform.localScale == maxScale || growDuration == 0)
             {
                 isGrowing = false;
             }
             else
             {
                 growDuration -= 1;
-                ob.transform.localScale += scaleStep;
+                transform.localScale += scaleStep;
             }
         }
         else
         {
             if (shrinkDelay == 0)
             {
-                if (ob.transform.localScale == minScale)
+                if (transform.localScale == minScale)
                 {
-                    ob.SetActive(false);
+                    transform.position = new Vector3(1000f, 1000f, 1000f);
                 }
                 else
                 {
-                    ob.transform.localScale -= scaleStep;
+                    transform.localScale -= scaleStep;
                 }
             }
             else
@@ -58,5 +58,11 @@ public class EffectTapGrow : MonoBehaviour
             shrinkDelay = 600;
             growDuration = 300;
         }
+    }
+
+    public void ResetShape()
+    {
+        transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+        shrinkDelay = 600;
     }
 }

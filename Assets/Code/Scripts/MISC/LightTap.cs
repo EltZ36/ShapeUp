@@ -1,12 +1,17 @@
+using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using Lights;
+using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class LightTap : MonoBehaviour
 {
-    //NOTE: SCRIPT DOES NOT WORK
     [SerializeField]
-    GameObject lightHolder;
-    private int lightCounter = 0;
+    private GameObject lightHolder;
+    private int lightCounter;
     private const int maxLights = 5;
     private List<GameObject> lightPool;
 
@@ -17,17 +22,19 @@ public class LightTap : MonoBehaviour
         Transform[] lights = lightHolder.GetComponentsInChildren<Transform>();
         foreach (Transform t in lights)
         {
-            lightPool.Add(t.gameObject);
-            t.gameObject.SetActive(false);
+            if (t != lights[0])
+            {
+                lightPool.Add(t.gameObject);
+                t.SetLocalPositionAndRotation(new Vector3(1000f, 1000f, 1000f), t.localRotation);
+                Debug.Log("Added light named " + t.gameObject.name);
+            }
         }
-        Debug.Log(lightPool);
     }
 
     void Update()
     {
         if (Input.touchCount > 0)
         {
-            Debug.Log("Touch");
             Touch touch = Input.GetTouch(0);
             if (touch.phase == TouchPhase.Began)
             {
@@ -42,21 +49,14 @@ public class LightTap : MonoBehaviour
         Vector2 tapPos = Camera.main.ScreenToWorldPoint(position);
         RaycastHit2D hit = Physics2D.Raycast(tapPos, Camera.main.transform.forward);
 
-        if (hit.collider != null)
+        if (hit.collider == null && lightCounter < maxLights)
         {
-            Debug.Log("Hit something.");
-            return;
-        }
-        else if (lightCounter < maxLights)
-        {
-            Debug.Log("Moving Light");
             lightCounter++;
             GameObject newLight = GetLight();
             if (newLight != null)
             {
-                Debug.Log("Found Light");
-                newLight.transform.position = position;
-                newLight.SetActive(true);
+                newLight.GetComponent<EffectTapGrow>().ResetShape();
+                newLight.transform.position = tapPos;
             }
         }
     }
@@ -65,9 +65,8 @@ public class LightTap : MonoBehaviour
     {
         for (int i = 0; i < lightPool.Count; i++)
         {
-            if (!lightPool[i].activeInHierarchy)
+            if (lightPool[i].transform.position.x == 1000f)
             {
-                Debug.Log("Yield Light");
                 return lightPool[i];
             }
         }

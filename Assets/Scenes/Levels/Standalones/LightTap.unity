@@ -179,7 +179,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 54495976}
-  - component: {fileID: 54495978}
+  - component: {fileID: 54495977}
   m_Layer: 0
   m_Name: FourLights
   m_TagString: Untagged
@@ -207,7 +207,7 @@ Transform:
   - {fileID: 1908086971}
   m_Father: {fileID: 458565329}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &54495978
+--- !u!114 &54495977
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2302,7 +2302,8 @@ PrefabInstance:
       propertyPath: shapeTarget
       value: 
       objectReference: {fileID: 1395397090}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7660474081948110169, guid: 06704280bc57b3f4897fc9c85f37e846, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 6593986989481560103, guid: 06704280bc57b3f4897fc9c85f37e846, type: 3}
@@ -2312,6 +2313,9 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 146496557}
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3591388081584527498, guid: 06704280bc57b3f4897fc9c85f37e846, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1550837616}
     - targetCorrespondingSourceObject: {fileID: 3591388081584527498, guid: 06704280bc57b3f4897fc9c85f37e846, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1550837615}
@@ -2339,8 +2343,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ob: {fileID: 1069205538}
-  levelID: 1369
+  levelID: 1451
   winSound: {fileID: 8300000, guid: 2f4b296de675da737a2ce407365e2c09, type: 3}
+--- !u!114 &1550837616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1550837614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 206f0479115934e2eb9e84e89f6cc238, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shapeTarget: {fileID: 1395397090}
+  lights: {fileID: 1111794130}
+  winEffect1: {fileID: 2057304828}
+  winEffect2: {fileID: 146496556}
 --- !u!1 &1558884429
 GameObject:
   m_ObjectHideFlags: 0
@@ -3062,8 +3082,8 @@ Transform:
   m_GameObject: {fileID: 2054274342}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.05, y: -10.10731, z: 0}
-  m_LocalScale: {x: -0.6, y: 0.5, z: 1}
+  m_LocalPosition: {x: 11.22, y: -10.10731, z: 0}
+  m_LocalScale: {x: -0.66, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 458565329}
