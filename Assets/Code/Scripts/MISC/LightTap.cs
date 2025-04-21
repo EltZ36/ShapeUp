@@ -59,6 +59,12 @@ public class LightTap : MonoBehaviour
                 newLight.transform.position = tapPos;
             }
         }
+        //bandaid solution and needs a fix
+        else if (lightCounter == maxLights && hit.collider == null)
+        {
+            Debug.Log("Max lights reached. Cannot add more.");
+            lightCounter -= 5;
+        }
     }
 
     private GameObject GetLight()
