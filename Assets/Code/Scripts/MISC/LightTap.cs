@@ -1,11 +1,5 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Threading.Tasks;
-using Lights;
-using Unity.Mathematics;
 using UnityEngine;
-using UnityEngine.Rendering.Universal;
 
 public class LightTap : MonoBehaviour
 {
@@ -20,13 +14,15 @@ public class LightTap : MonoBehaviour
         lightCounter = 0;
         lightPool = new List<GameObject>();
         Transform[] lights = lightHolder.GetComponentsInChildren<Transform>();
-        foreach (Transform t in lights)
+        foreach (Transform templight in lights)
         {
-            if (t != lights[0])
+            if (templight != lights[0])
             {
-                lightPool.Add(t.gameObject);
-                t.SetLocalPositionAndRotation(new Vector3(1000f, 1000f, 1000f), t.localRotation);
-                Debug.Log("Added light named " + t.gameObject.name);
+                lightPool.Add(templight.gameObject);
+                templight.SetLocalPositionAndRotation(
+                    new Vector3(1000f, 1000f, 1000f),
+                    templight.localRotation
+                );
             }
         }
     }
@@ -59,12 +55,6 @@ public class LightTap : MonoBehaviour
                 newLight.transform.position = tapPos;
             }
         }
-        //bandaid solution and needs a fix
-        else if (lightCounter == maxLights && hit.collider == null)
-        {
-            Debug.Log("Max lights reached. Cannot add more.");
-            lightCounter -= 5;
-        }
     }
 
     private GameObject GetLight()
@@ -77,5 +67,10 @@ public class LightTap : MonoBehaviour
             }
         }
         return null;
+    }
+
+    public void DecrementLights()
+    {
+        lightCounter -= 1;
     }
 }

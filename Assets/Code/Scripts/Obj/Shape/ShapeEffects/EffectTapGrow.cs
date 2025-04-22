@@ -2,19 +2,12 @@ using UnityEngine;
 
 public class EffectTapGrow : MonoBehaviour
 {
-    private GameObject ob;
     private bool isGrowing = false;
-    private int shrinkDelay;
+    private int shrinkDelay = -1;
     private int growDuration;
     private Vector3 maxScale = new(2.25f, 2.25f, 2.25f);
     private Vector3 minScale = new(0.01f, 0.01f, 0.01f);
     private Vector3 scaleStep = new(0.01f, 0.01f, 0.01f);
-
-    void Start()
-    {
-        ob = gameObject;
-        shrinkDelay = 600;
-    }
 
     void Update()
     {
@@ -30,23 +23,21 @@ public class EffectTapGrow : MonoBehaviour
                 transform.localScale += scaleStep;
             }
         }
-        else
+        else if (shrinkDelay == 0)
         {
-            if (shrinkDelay == 0)
+            if (transform.localScale == minScale)
             {
-                if (transform.localScale == minScale)
-                {
-                    transform.position = new Vector3(1000f, 1000f, 1000f);
-                }
-                else
-                {
-                    transform.localScale -= scaleStep;
-                }
+                transform.position = new Vector3(1000f, 1000f, 1000f);
+                transform.parent.GetComponent<LightTap>().DecrementLights();
             }
             else
             {
-                shrinkDelay -= 1;
+                transform.localScale -= scaleStep;
             }
+        }
+        else
+        {
+            shrinkDelay -= 1;
         }
     }
 
