@@ -7607,7 +7607,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea4fe04cf701b5844916e9e14f54077c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  XOffset: 0.2
+  XOffset: 0.5
   YOffset: 0.2
 --- !u!4 &2032690089
 Transform:
