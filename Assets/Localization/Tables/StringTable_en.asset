@@ -142,6 +142,10 @@ MonoBehaviour:
     m_Localized: Pinch
     m_Metadata:
       m_Items: []
+  - m_Id: 6843729161289728
+    m_Localized: Shadowcluster
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

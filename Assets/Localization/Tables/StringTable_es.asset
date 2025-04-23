@@ -111,6 +111,10 @@ MonoBehaviour:
     m_Localized: Agitar
     m_Metadata:
       m_Items: []
+  - m_Id: 6843729161289728
+    m_Localized: "GrupoSombr\xEDo"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

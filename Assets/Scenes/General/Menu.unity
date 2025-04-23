@@ -716,7 +716,7 @@ MonoBehaviour:
     m_TableReference:
       m_TableCollectionName: GUID:4912def05b3a65d4fa810a46b1d502f1
     m_TableEntryReference:
-      m_KeyId: 712375522299904
+      m_KeyId: 6843729161289728
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
@@ -760,7 +760,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Stand-alone
+  m_text: Shadowcluster
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9bf47735fccdd2446b1d9d0ce0033337, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: facd90c9db7e50747b47712b5ee5d467, type: 2}
@@ -2665,6 +2665,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelNames:
   - TestLevel
+  - ShadowCluster
   levelCompleteUI: {fileID: 1046022712350882095, guid: 4a4fe9eef26b5d1489d2dffff5f541d7, type: 3}
 --- !u!4 &1502121287
 Transform:

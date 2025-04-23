@@ -23,7 +23,8 @@ public class Menu : MonoBehaviour
 
     public void OnStandaloneButton()
     {
-        SceneManager.LoadScene("LevelSelect");
+        // SceneManager.LoadScene("LevelSelect");
+        LevelManager.Instance.LoadLevel(1);
     }
 
     public void OnSettingsButton()
