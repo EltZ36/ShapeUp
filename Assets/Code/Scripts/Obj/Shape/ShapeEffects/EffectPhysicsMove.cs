@@ -11,4 +11,14 @@ public class EffectPhysicsMove : MonoBehaviour
     {
         rb2D.MovePosition((Vector2)eventInfo.VectorTwo);
     }
+
+    public void FreezeShape(EventInfo eventInfo)
+    {
+        rb2D.constraints = RigidbodyConstraints2D.FreezeAll;
+    }
+
+    public void UnfreezeShape(EventInfo eventInfo)
+    {
+        rb2D.constraints = RigidbodyConstraints2D.FreezeRotation;
+    }
 }
