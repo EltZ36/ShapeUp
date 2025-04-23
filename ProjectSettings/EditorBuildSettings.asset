@@ -71,6 +71,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/SuperCluster/ShadowSubLevels/ShadowLevel.unity
     guid: 268210aec739167438030991b36951eb
+  - enabled: 1
+    path: Assets/Scenes/Levels/SuperCluster/ShadowSubLevels/TwoShadowLevel.unity
+    guid: be4dc1ab98eb5364f8e6b93a46feb981
   m_configObjects:
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 5acb6dc0ef378be47959efcf50c27298, type: 2}
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: a491f95ff7262104f8d70dba4b2e36d8, type: 2}
