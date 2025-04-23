@@ -1066,10 +1066,10 @@ HingeJoint2D:
   m_Motor:
     m_MotorSpeed: 0
     m_MaximumMotorForce: 10000
-  m_UseLimits: 0
+  m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: 0
-    m_UpperAngle: 359
+    m_LowerAngle: -5
+    m_UpperAngle: 10
 --- !u!114 &1357661442
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1098,8 +1098,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   forcePoint: {fileID: 1796864414}
-  minForce: 1
-  maxForce: 1.5
+  minForce: 1.5
+  maxForce: 2
   checkInterval: 0.1
 --- !u!1 &1459035001
 GameObject:
