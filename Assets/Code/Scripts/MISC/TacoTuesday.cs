@@ -168,7 +168,7 @@ public class TacoTuesday : MonoBehaviour
     /// </summary>
     /// <param name="grow">grow the light (true) | shrink the light (false)</param>
     /// <param name="sm">Sprite mask to grow</param>
-    /// <param name="done">Callback to invoke when the sclae is finished</param>
+    /// <param name="done">Callback to invoke when the scale is finished</param>
     /// <returns></returns>
     private IEnumerator Scale(bool grow, GameObject ob, int index)
     {
