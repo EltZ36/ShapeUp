@@ -53,7 +53,7 @@ public class EffectTapGrow : MonoBehaviour
 
     public void ResetShape()
     {
-        transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+        transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
         shrinkDelay = 600;
     }
 }
