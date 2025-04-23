@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class Menu : MonoBehaviour
 {
     [SerializeField]
-    GameObject settings;
+    CanvasGroup options;
 
     void Awake()
     {
@@ -28,8 +28,7 @@ public class Menu : MonoBehaviour
 
     public void OnSettingsButton()
     {
-        settings.transform.localScale =
-            settings.transform.localScale == Vector3.one ? Vector3.zero : Vector3.one;
+        SceneManager.LoadScene("Settings");
     }
 
     public void OnCreditsButton()
@@ -44,8 +43,6 @@ public class Menu : MonoBehaviour
 
     public void OnHowToPlayButton()
     {
-        // SceneManager.LoadScene(5);
-        Debug.Log("Load How To Play");
         SceneManager.LoadScene("HowToPlay");
     }
 }
