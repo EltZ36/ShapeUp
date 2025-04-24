@@ -1,9 +1,13 @@
 using UnityEngine;
 
-[ExecuteAlways] // So it works in edit mode too
-public class ScaleToFitScreen : MonoBehaviour
+[ExecuteAlways]
+public class ScaleSpriteToScreen : MonoBehaviour
 {
     private SpriteRenderer spriteRenderer;
+
+    [SerializeField] float xScalePadding = 1f, yScalePadding = 1f;
+
+    [SerializeField] bool scaleWidth = false, scaleHeight = false;
 
     void Start()
     {
@@ -32,8 +36,14 @@ public class ScaleToFitScreen : MonoBehaviour
         float spriteHeight = sprite.bounds.size.y;
 
         Vector3 scale = transform.localScale;
-        scale.x = (screenWidth / spriteWidth) * 1.1f;
-        scale.y = (screenHeight / spriteHeight) * 1.1f;
+
+        if (scaleWidth) {
+            scale.x = (screenWidth / spriteWidth) * xScalePadding;
+        }
+
+        if (scaleHeight) {
+            scale.y = (screenHeight / spriteHeight) * yScalePadding;
+        }
 
         transform.localScale = scale;
     }
