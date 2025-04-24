@@ -22,7 +22,7 @@ public class CameraMove : MonoBehaviour
 
     public void ZoomOut()
     {
-        mainCamera.orthographicSize = 10.0f;
+        mainCamera.orthographicSize = 5.0f;
         mainCamera.transform.position = new Vector3(0, 0, -10);
     }
 }
