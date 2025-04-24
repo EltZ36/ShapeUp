@@ -74,6 +74,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/SuperCluster/ShadowSubLevels/TwoShadowLevel.unity
     guid: be4dc1ab98eb5364f8e6b93a46feb981
+  - enabled: 1
+    path: Assets/Scenes/Levels/SuperCluster/ShadowSubLevels/LightbulbLevel.unity
+    guid: b310666fd6fcc324bbbdabf1eea4ce37
+  - enabled: 1
+    path: Assets/Scenes/Levels/SuperCluster/ShadowSubLevels/LightTap.unity
+    guid: b65a6ede918984aa09c55ea96d7fcd56
   m_configObjects:
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 5acb6dc0ef378be47959efcf50c27298, type: 2}
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: a491f95ff7262104f8d70dba4b2e36d8, type: 2}
