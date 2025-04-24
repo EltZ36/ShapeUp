@@ -8,14 +8,6 @@ public class Menu : MonoBehaviour
     [SerializeField]
     CanvasGroup options;
 
-    void Awake()
-    {
-        if (SceneManager.GetSceneByName("Menu").IsValid())
-        {
-            SceneManager.LoadSceneAsync("SplashLevel", LoadSceneMode.Additive);
-        }
-    }
-
     public void OnSuperButton()
     {
         LevelManager.Instance.LoadLevel(0);
