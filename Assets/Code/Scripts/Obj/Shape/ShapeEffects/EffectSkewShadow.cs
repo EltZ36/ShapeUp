@@ -13,6 +13,9 @@ public class EffectSkewShadow : MonoBehaviour
 
     public Vector3[] initialShadowCorners = new Vector3[4];
 
+    [SerializeField]
+    GameObject anchor;
+
     void Start()
     {
         shadow = GetComponent<Light2D>();
@@ -51,19 +54,22 @@ public class EffectSkewShadow : MonoBehaviour
 
     private float SkewX()
     {
-        float skewedX = lightSource.transform.position.x * -1f / 3f;
+        float skewedX = (lightSource.transform.position.x - anchor.transform.position.x) * -1f / 3f;
         return skewedX;
     }
 
     private float SkewY()
     {
-        if (lightSource.transform.position.y < 0f)
+        if ((lightSource.transform.position.y - anchor.transform.position.y) < 0f)
         {
             return 1f;
         }
         else
         {
-            float skewedY = Mathf.Min(Mathf.Abs(lightSource.transform.position.x) / 10f, 1f);
+            float skewedY = Mathf.Min(
+                Mathf.Abs(lightSource.transform.position.x - anchor.transform.position.x) / 10f,
+                1f
+            );
             return skewedY;
         }
     }

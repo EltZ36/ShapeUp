@@ -12,6 +12,9 @@ public class EffectShadowToShape : MonoBehaviour
     SpriteRenderer squareSprite;
     Rigidbody2D squareBody;
 
+    [SerializeField]
+    GameObject anchor;
+
     void Start()
     {
         squareSprite = gameObject.GetComponent<SpriteRenderer>();
@@ -22,9 +25,9 @@ public class EffectShadowToShape : MonoBehaviour
     public void DropShape(EventInfo eventInfo)
     {
         if (
-            sun.transform.position.y > 0
-            && sun.transform.position.x > -0.5
-            && sun.transform.position.x < 0.5
+            (sun.transform.position.y - anchor.transform.position.y) > 0
+            && (sun.transform.position.x - anchor.transform.position.x) > -0.5
+            && (sun.transform.position.x - anchor.transform.position.x) < 0.5
         )
         {
             Destroy(shadow);

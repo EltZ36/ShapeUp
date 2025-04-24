@@ -17,6 +17,9 @@ public class EffectShadowToShapeTwo : MonoBehaviour
     SpriteRenderer triangleSprite;
     Rigidbody2D triangleBody;
 
+    [SerializeField]
+    GameObject anchor;
+
     void Start()
     {
         triangleSprite = gameObject.GetComponent<SpriteRenderer>();
@@ -27,9 +30,9 @@ public class EffectShadowToShapeTwo : MonoBehaviour
     public void DropShape(EventInfo eventInfo)
     {
         if (
-            sun.transform.position.y > 0
-            && sun.transform.position.x > -4.5
-            && sun.transform.position.x < -3.5
+            (sun.transform.position.y - anchor.transform.position.y) > 0
+            && (sun.transform.position.x - anchor.transform.position.x) > -4.5
+            && (sun.transform.position.x - anchor.transform.position.x) < -3.5
         )
         {
             triangleSprite.sortingOrder = 3;
