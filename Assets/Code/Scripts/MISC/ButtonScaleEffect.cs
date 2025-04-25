@@ -4,10 +4,10 @@ using UnityEngine.EventSystems;
 
 public class ButtonPressScaler : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
-    public float pressedScale = 0.95f;
+    public float pressedScale = 0.97f;
     public float animationDuration = 0.1f;
-    public Ease easeIn = Ease.OutQuad;
-    public Ease easeOut = Ease.InQuad;
+    public Ease easeIn = Ease.OutBack;
+    public Ease easeOut = Ease.InOutSine;
 
     private Vector3 originalScale;
     private Tween currentTween;

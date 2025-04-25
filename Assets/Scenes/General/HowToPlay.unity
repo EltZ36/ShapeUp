@@ -871,10 +871,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 222ffdf5e87c8c04b9717955a684fb67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pressedScale: 0.95
+  pressedScale: 0.97
   animationDuration: 0.1
-  easeIn: 6
-  easeOut: 5
+  easeIn: 27
+  easeOut: 4
 --- !u!1 &351455826
 GameObject:
   m_ObjectHideFlags: 0

@@ -546,8 +546,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pressedScale: 0.95
   animationDuration: 0.1
-  easeIn: 6
-  easeOut: 5
+  easeIn: 27
+  easeOut: 4
 --- !u!1 &237399414
 GameObject:
   m_ObjectHideFlags: 0
@@ -995,8 +995,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pressedScale: 0.95
   animationDuration: 0.1
-  easeIn: 6
-  easeOut: 5
+  easeIn: 27
+  easeOut: 4
 --- !u!1 &472942348
 GameObject:
   m_ObjectHideFlags: 0
@@ -1597,8 +1597,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pressedScale: 0.95
   animationDuration: 0.1
-  easeIn: 6
-  easeOut: 5
+  easeIn: 27
+  easeOut: 4
 --- !u!1 &934769512
 GameObject:
   m_ObjectHideFlags: 0
@@ -2475,10 +2475,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 222ffdf5e87c8c04b9717955a684fb67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pressedScale: 0.95
+  pressedScale: 0.97
   animationDuration: 0.1
-  easeIn: 6
-  easeOut: 5
+  easeIn: 27
+  easeOut: 4
 --- !u!1 &1237943079
 GameObject:
   m_ObjectHideFlags: 0
@@ -4519,8 +4519,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pressedScale: 0.95
   animationDuration: 0.1
-  easeIn: 6
-  easeOut: 5
+  easeIn: 27
+  easeOut: 4
 --- !u!1 &2116161010
 GameObject:
   m_ObjectHideFlags: 0
