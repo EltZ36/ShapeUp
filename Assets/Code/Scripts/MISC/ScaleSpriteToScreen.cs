@@ -1,22 +1,20 @@
 using UnityEngine;
 
-[ExecuteAlways]
 public class ScaleSpriteToScreen : MonoBehaviour
 {
+    [SerializeField]
+    float xScale = 1f,
+        yScale = 1f;
+
+    [SerializeField]
+    bool scaleWidth = false,
+        scaleHeight = false;
+
     private SpriteRenderer spriteRenderer;
-
-    [SerializeField] float xScalePadding = 1f, yScalePadding = 1f;
-
-    [SerializeField] bool scaleWidth = false, scaleHeight = false;
 
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        ScaleSprite();
-    }
-
-    void Update()
-    {
         ScaleSprite();
     }
 
@@ -37,12 +35,14 @@ public class ScaleSpriteToScreen : MonoBehaviour
 
         Vector3 scale = transform.localScale;
 
-        if (scaleWidth) {
-            scale.x = (screenWidth / spriteWidth) * xScalePadding;
+        if (scaleWidth)
+        {
+            scale.x = (screenWidth / spriteWidth) * xScale;
         }
 
-        if (scaleHeight) {
-            scale.y = (screenHeight / spriteHeight) * yScalePadding;
+        if (scaleHeight)
+        {
+            scale.y = (screenHeight / spriteHeight) * yScale;
         }
 
         transform.localScale = scale;
