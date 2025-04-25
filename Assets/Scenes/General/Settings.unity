@@ -373,6 +373,7 @@ GameObject:
   - component: {fileID: 232987176}
   - component: {fileID: 232987175}
   - component: {fileID: 232987178}
+  - component: {fileID: 232987179}
   m_Layer: 5
   m_Name: Spanish
   m_TagString: Untagged
@@ -531,6 +532,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sound: {fileID: 8300000, guid: 7ed61cf21062cf86cbfa07eb7bb33397, type: 3}
+--- !u!114 &232987179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 232987173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 222ffdf5e87c8c04b9717955a684fb67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pressedScale: 0.95
+  animationDuration: 0.1
+  easeIn: 6
+  easeOut: 5
 --- !u!1 &237399414
 GameObject:
   m_ObjectHideFlags: 0
@@ -805,6 +822,7 @@ GameObject:
   - component: {fileID: 387358350}
   - component: {fileID: 387358349}
   - component: {fileID: 387358352}
+  - component: {fileID: 387358353}
   m_Layer: 5
   m_Name: English
   m_TagString: Untagged
@@ -963,6 +981,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sound: {fileID: 8300000, guid: 7ed61cf21062cf86cbfa07eb7bb33397, type: 3}
+--- !u!114 &387358353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 387358347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 222ffdf5e87c8c04b9717955a684fb67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pressedScale: 0.95
+  animationDuration: 0.1
+  easeIn: 6
+  easeOut: 5
 --- !u!1 &472942348
 GameObject:
   m_ObjectHideFlags: 0
@@ -1390,6 +1424,7 @@ GameObject:
   - component: {fileID: 841844115}
   - component: {fileID: 841844114}
   - component: {fileID: 841844117}
+  - component: {fileID: 841844118}
   m_Layer: 5
   m_Name: French
   m_TagString: Untagged
@@ -1548,6 +1583,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sound: {fileID: 8300000, guid: 7ed61cf21062cf86cbfa07eb7bb33397, type: 3}
+--- !u!114 &841844118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 841844112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 222ffdf5e87c8c04b9717955a684fb67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pressedScale: 0.95
+  animationDuration: 0.1
+  easeIn: 6
+  easeOut: 5
 --- !u!1 &934769512
 GameObject:
   m_ObjectHideFlags: 0
@@ -2266,6 +2317,7 @@ GameObject:
   - component: {fileID: 1221773338}
   - component: {fileID: 1221773337}
   - component: {fileID: 1221773336}
+  - component: {fileID: 1221773340}
   m_Layer: 5
   m_Name: Back
   m_TagString: Untagged
@@ -2411,6 +2463,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1221773334}
   m_CullTransparentMesh: 1
+--- !u!114 &1221773340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1221773334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 222ffdf5e87c8c04b9717955a684fb67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pressedScale: 0.95
+  animationDuration: 0.1
+  easeIn: 6
+  easeOut: 5
 --- !u!1 &1237943079
 GameObject:
   m_ObjectHideFlags: 0
@@ -4276,6 +4344,7 @@ GameObject:
   - component: {fileID: 2081282329}
   - component: {fileID: 2081282328}
   - component: {fileID: 2081282332}
+  - component: {fileID: 2081282333}
   m_Layer: 5
   m_Name: Language
   m_TagString: Untagged
@@ -4436,6 +4505,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sound: {fileID: 8300000, guid: 7ed61cf21062cf86cbfa07eb7bb33397, type: 3}
+--- !u!114 &2081282333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2081282326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 222ffdf5e87c8c04b9717955a684fb67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pressedScale: 0.95
+  animationDuration: 0.1
+  easeIn: 6
+  easeOut: 5
 --- !u!1 &2116161010
 GameObject:
   m_ObjectHideFlags: 0
