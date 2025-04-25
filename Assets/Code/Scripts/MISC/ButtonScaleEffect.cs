@@ -2,7 +2,7 @@ using DG.Tweening;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class ButtonPressScaler : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
+public class ButtonScaleEffect : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
     public float pressedScale = 0.97f;
     public float animationDuration = 0.1f;
