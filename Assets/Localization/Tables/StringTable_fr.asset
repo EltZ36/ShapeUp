@@ -115,9 +115,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 4283401002815488
-    m_Localized: "Dans ce jeu, vous devrez utiliser diff\xE9rentes interactions mobiles
-      pour r\xE9soudre des \xE9nigmes. Vous pouvez les essayer toutes dans le menu
-      principal!"
+    m_Localized: "Dans ce jeu, utilisez diverses interactions mobiles pour r\xE9soudre
+      des \xE9nigmes. Testez-les toutes dans le menu principal !"
     m_Metadata:
       m_Items: []
   - m_Id: 4283737524408320
