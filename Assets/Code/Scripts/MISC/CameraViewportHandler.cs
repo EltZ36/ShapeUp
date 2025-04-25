@@ -1,6 +1,9 @@
 using UnityEngine;
 
-[ExecuteInEditMode]
+// Code modified from Awesometuts,
+// https://awesometuts.com/blog/support-mobile-screen-sizes-unity/?utm_medium=video&utm_source=youtube&utm_campaign=how_to_make_your_game_look_the_same_on_all_mobile_screen_sizes
+
+[ExecuteAlways]
 [RequireComponent(typeof(Camera))]
 public class CameraViewportHandler : MonoBehaviour
 {
@@ -16,8 +19,6 @@ public class CameraViewportHandler : MonoBehaviour
     public Constraint constraint = Constraint.Portrait;
     public static CameraViewportHandler Instance;
     public new Camera camera;
-
-    public bool executeInUpdate;
 
     private float _width;
     private float _height;
@@ -88,7 +89,7 @@ public class CameraViewportHandler : MonoBehaviour
     #endregion
 
     #region METHODS
-    private void Awake()
+    private void Start()
     {
         camera = GetComponent<Camera>();
         Instance = this;
@@ -114,10 +115,8 @@ public class CameraViewportHandler : MonoBehaviour
         _height = 2f * camera.orthographicSize;
         _width = _height * camera.aspect;
 
-        float cameraX,
-            cameraY;
-        cameraX = camera.transform.position.x;
-        cameraY = camera.transform.position.y;
+        float cameraX = camera.transform.position.x;
+        float cameraY = camera.transform.position.y;
 
         leftX = cameraX - _width / 2;
         rightX = cameraX + _width / 2;
@@ -136,16 +135,6 @@ public class CameraViewportHandler : MonoBehaviour
         _tl = new Vector3(leftX, topY, 0);
         _tc = new Vector3(cameraX, topY, 0);
         _tr = new Vector3(rightX, topY, 0);
-    }
-
-    private void Update()
-    {
-#if UNITY_EDITOR
-
-        if (executeInUpdate)
-            ComputeResolution();
-
-#endif
     }
 
     void OnDrawGizmos()
@@ -180,4 +169,4 @@ public class CameraViewportHandler : MonoBehaviour
         Gizmos.matrix = temp;
     }
     #endregion
-} // class
+}

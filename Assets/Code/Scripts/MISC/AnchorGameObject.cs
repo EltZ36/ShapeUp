@@ -1,7 +1,10 @@
 using System.Collections;
 using UnityEngine;
 
-[ExecuteInEditMode]
+// Code modified from Awesometuts,
+// https://awesometuts.com/blog/support-mobile-screen-sizes-unity/?utm_medium=video&utm_source=youtube&utm_campaign=how_to_make_your_game_look_the_same_on_all_mobile_screen_sizes
+
+[ExecuteAlways]
 public class AnchorGameObject : MonoBehaviour
 {
     public enum AnchorType
@@ -15,52 +18,43 @@ public class AnchorGameObject : MonoBehaviour
         TopLeft,
         TopCenter,
         TopRight,
-    };
-
-    public bool executeInUpdate;
+    }
 
     public AnchorType anchorType;
     public Vector3 anchorOffset;
 
-    IEnumerator updateAnchorRoutine; //Coroutine handle so we don't start it if it's already running
-
-    // Use this for initialization
     void Start()
     {
-        updateAnchorRoutine = UpdateAnchorAsync();
-        StartCoroutine(updateAnchorRoutine);
+        StartCoroutine(AnchorWhenReady());
     }
 
-    /// <summary>
-    /// Coroutine to update the anchor only once CameraFit.Instance is not null.
-    /// </summary>
-    IEnumerator UpdateAnchorAsync()
+    IEnumerator AnchorWhenReady()
     {
         uint cameraWaitCycles = 0;
 
         while (CameraViewportHandler.Instance == null)
         {
             ++cameraWaitCycles;
-            yield return new WaitForEndOfFrame();
+            yield return null;
         }
 
+#if UNITY_EDITOR
         if (cameraWaitCycles > 0)
         {
-            print(
-                string.Format(
-                    "CameraAnchor found CameraFit instance after waiting {0} frame(s). "
-                        + "You might want to check that CameraFit has an earlie execution order.",
-                    cameraWaitCycles
-                )
+            Debug.Log(
+                $"AnchorGameObject waited {cameraWaitCycles} frame(s) for CameraViewportHandler.Instance. "
+                    + "Consider adjusting script execution order if needed."
             );
         }
-
+#endif
         UpdateAnchor();
-        updateAnchorRoutine = null;
     }
 
     void UpdateAnchor()
     {
+        if (CameraViewportHandler.Instance == null)
+            return;
+
         switch (anchorType)
         {
             case AnchorType.BottomLeft:
@@ -101,16 +95,4 @@ public class AnchorGameObject : MonoBehaviour
             transform.position = newPos;
         }
     }
-
-#if UNITY_EDITOR
-    // Update is called once per frame
-    void Update()
-    {
-        if (updateAnchorRoutine == null && executeInUpdate)
-        {
-            updateAnchorRoutine = UpdateAnchorAsync();
-            StartCoroutine(updateAnchorRoutine);
-        }
-    }
-#endif
 }

@@ -3995,7 +3995,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5df95074e48197c4eb3867e09c8728bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  executeInUpdate: 1
   anchorType: 5
   anchorOffset: {x: 0.3, y: 0, z: -1}
 --- !u!50 &725132563
@@ -6675,7 +6674,7 @@ Transform:
   m_GameObject: {fileID: 1113667705}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -0.9416475, y: -4.0724354, z: -0.9135996}
+  m_LocalPosition: {x: -0.9416475, y: -4.567773, z: -0.9135996}
   m_LocalScale: {x: 1, y: 50, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6693,7 +6692,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5df95074e48197c4eb3867e09c8728bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  executeInUpdate: 1
   anchorType: 1
   anchorOffset: {x: 0, y: -0.3, z: -1}
 --- !u!50 &1113667708
@@ -6849,7 +6847,7 @@ Transform:
   m_GameObject: {fileID: 1121245765}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -0.9416475, y: 5.0946107, z: -0.9135996}
+  m_LocalPosition: {x: -0.9416475, y: 5.589949, z: -0.9135996}
   m_LocalScale: {x: 1, y: 50, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6867,7 +6865,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5df95074e48197c4eb3867e09c8728bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  executeInUpdate: 1
   anchorType: 7
   anchorOffset: {x: 0, y: 0.3, z: -1}
 --- !u!50 &1121245768
@@ -7030,7 +7027,6 @@ MonoBehaviour:
   UnitsSize: 17
   constraint: 0
   camera: {fileID: 1133865026}
-  executeInUpdate: 1
 --- !u!114 &1133865024
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7118,7 +7114,7 @@ Camera:
   far clip plane: 100
   field of view: 60
   orthographic: 1
-  orthographic size: 4.283523
+  orthographic size: 4.7788606
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -7503,7 +7499,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5df95074e48197c4eb3867e09c8728bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  executeInUpdate: 1
   anchorType: 3
   anchorOffset: {x: 7, y: 1, z: -1}
 --- !u!1 &1158344454
@@ -7711,7 +7706,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5df95074e48197c4eb3867e09c8728bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  executeInUpdate: 1
   anchorType: 3
   anchorOffset: {x: 10, y: 1, z: -1}
 --- !u!1 &1315023115
@@ -8617,7 +8611,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5df95074e48197c4eb3867e09c8728bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  executeInUpdate: 1
   anchorType: 4
   anchorOffset: {x: 0, y: 0, z: 0}
 --- !u!212 &1504781760
@@ -8735,7 +8728,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5df95074e48197c4eb3867e09c8728bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  executeInUpdate: 1
   anchorType: 3
   anchorOffset: {x: -0.3, y: 0, z: -1}
 --- !u!50 &1569740797
@@ -10166,7 +10158,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5df95074e48197c4eb3867e09c8728bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  executeInUpdate: 1
   anchorType: 3
   anchorOffset: {x: 4, y: 1, z: -1}
 --- !u!1 &1685093645
