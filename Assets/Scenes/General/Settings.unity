@@ -1043,6 +1043,7 @@ GameObject:
   m_Component:
   - component: {fileID: 546124968}
   - component: {fileID: 546124967}
+  - component: {fileID: 546124969}
   m_Layer: 5
   m_Name: Master
   m_TagString: Untagged
@@ -1136,6 +1137,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &546124969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 546124966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2ff60ac8c32dc646a7308888afb74a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pressedScale: 0.92
+  animationDuration: 0.1
+  easeIn: 27
+  easeOut: 4
 --- !u!1 &601410014
 GameObject:
   m_ObjectHideFlags: 0
@@ -1863,6 +1880,7 @@ GameObject:
   m_Component:
   - component: {fileID: 967675240}
   - component: {fileID: 967675241}
+  - component: {fileID: 967675242}
   m_Layer: 5
   m_Name: SFX
   m_TagString: Untagged
@@ -1956,6 +1974,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &967675242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 967675239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2ff60ac8c32dc646a7308888afb74a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pressedScale: 0.92
+  animationDuration: 0.1
+  easeIn: 27
+  easeOut: 4
 --- !u!1 &1027270519
 GameObject:
   m_ObjectHideFlags: 0
@@ -1966,6 +2000,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1027270521}
   - component: {fileID: 1027270520}
+  - component: {fileID: 1027270522}
   m_Layer: 5
   m_Name: Music
   m_TagString: Untagged
@@ -2059,6 +2094,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1027270522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1027270519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2ff60ac8c32dc646a7308888afb74a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pressedScale: 0.92
+  animationDuration: 0.1
+  easeIn: 27
+  easeOut: 4
 --- !u!1 &1049297099
 GameObject:
   m_ObjectHideFlags: 0
