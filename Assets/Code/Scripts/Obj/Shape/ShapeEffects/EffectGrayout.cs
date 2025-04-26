@@ -45,12 +45,12 @@ public class EffectGrayout : MonoBehaviour
 
     public void SetGray()
     {
-        gameObject.GetComponent<SpriteRenderer>().color = Color.gray;
+        gameObject.GetComponent<Image>().color = Color.gray;
     }
 
     public void SetWhite()
     {
-        gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+        gameObject.GetComponent<Image>().color = Color.white;
     }
 
     public void OnDisable()

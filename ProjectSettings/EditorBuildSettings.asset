@@ -42,10 +42,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels/SuperCluster/SubLevels/LevelPinch.unity
     guid: 3c5cdcd7d30d24c4d9f64229661b61e0
   - enabled: 1
-    path: Assets/Scenes/General/SplashLevel.unity
-    guid: 196deb87d40373b4e818d6f1dafbe0ae
-  - enabled: 1
-    path: Assets/Scenes/Levels/SuperCluster/ShadowSubLevels/PigLevel.unity
+    path: Assets/Scenes/Levels/Standalones/PigLevel.unity
     guid: 3b16a1ef9107d434bb05fc55680a76d0
   - enabled: 1
     path: Assets/Scenes/Levels/SuperCluster/ShadowSubLevels/HouseLevel.unity
