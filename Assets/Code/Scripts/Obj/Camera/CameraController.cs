@@ -175,7 +175,7 @@ public class CameraController : MonoBehaviour
         LevelManager.Instance.UnloadCurrentSubLevel();
     }
 
-    public static IEnumerator ZoomOutAndReset(float time = 1f)
+    public static IEnumerator ZoomOutAndReset(float time = 1f, int LevelID = 0)
     {
         float EndPos = 20;
 
@@ -196,7 +196,7 @@ public class CameraController : MonoBehaviour
             yield return null;
         }
         Camera.main.orthographicSize = EndPos;
-        LevelManager.Instance.LoadLevel(0);
+        LevelManager.Instance.LoadLevel(LevelID);
         GameManager.Instance.SaveGame();
     }
 

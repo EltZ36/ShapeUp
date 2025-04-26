@@ -6,15 +6,7 @@ using UnityEngine.SceneManagement;
 public class Menu : MonoBehaviour
 {
     [SerializeField]
-    GameObject settings;
-
-    void Awake()
-    {
-        if (SceneManager.GetSceneByName("Menu").IsValid())
-        {
-            SceneManager.LoadSceneAsync("SplashLevel", LoadSceneMode.Additive);
-        }
-    }
+    CanvasGroup options;
 
     public void OnSuperButton()
     {
@@ -23,13 +15,13 @@ public class Menu : MonoBehaviour
 
     public void OnStandaloneButton()
     {
-        SceneManager.LoadScene("LevelSelect");
+        // SceneManager.LoadScene("LevelSelect");
+        LevelManager.Instance.LoadLevel(1);
     }
 
     public void OnSettingsButton()
     {
-        settings.transform.localScale =
-            settings.transform.localScale == Vector3.one ? Vector3.zero : Vector3.one;
+        SceneManager.LoadScene("Settings");
     }
 
     public void OnCreditsButton()
@@ -44,8 +36,6 @@ public class Menu : MonoBehaviour
 
     public void OnHowToPlayButton()
     {
-        // SceneManager.LoadScene(5);
-        Debug.Log("Load How To Play");
         SceneManager.LoadScene("HowToPlay");
     }
 }

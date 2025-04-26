@@ -2,7 +2,7 @@ using StandAloneWin;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class PiggyBank : MonoBehaviour, IStandAloneWin
+public class PiggyBank : MonoBehaviour
 {
     // specific behaviours
     public Shape shapeTarget;
@@ -25,14 +25,25 @@ public class PiggyBank : MonoBehaviour, IStandAloneWin
         {
             if (shape.ShapeName == targetName)
             {
-                Invoke();
+                PlayFireworks(shape.ShapeName);
+                StartCoroutine(CameraController.ZoomOut(false));
+                Destroy(shape.gameObject);
+                Physics2D.gravity = new UnityEngine.Vector2(0f, -9.8f);
+                LevelManager.Instance.OnCurrentSubLevelComplete();
             }
         }
+        Destroy(collision.gameObject);
     }
 
-    // IMPORTANT -> use this to send message to the standalone win module.
-    public void Invoke()
+    void PlayFireworks(string _shape)
     {
-        ExecuteEvents.Execute<IStandAloneWinEvent>(target, null, (x, y) => x.OnWin());
+        winEffect1.SetActive(true);
+        winEffect2.SetActive(true);
+
+        // Animator anim1 = winEffect1.GetComponent<Animator>();
+        // Animator anim2 = winEffect2.GetComponent<Animator>();
+
+        // anim1.Play("Base Layer." + _shape + "Win");
+        // anim2.Play("Base Layer." + _shape + "Win");
     }
 }

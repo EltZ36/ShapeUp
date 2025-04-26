@@ -103,6 +103,10 @@ MonoBehaviour:
     m_Key: shake
     m_Metadata:
       m_Items: []
+  - m_Id: 6843729161289728
+    m_Key: shadowcluster
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

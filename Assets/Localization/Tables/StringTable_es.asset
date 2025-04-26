@@ -84,7 +84,7 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 4283401002815488
     m_Localized: "En este juego, debes usar diferentes interacciones m\xF3viles para
-      resolver puzles. \xA1Puedes probarlas todas en el menu principal!"
+      resolver acertijos. Pru\xE9balas todas en el menu principal!"
     m_Metadata:
       m_Items: []
   - m_Id: 4283737524408320
@@ -109,6 +109,10 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 4283801105862656
     m_Localized: Agitar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6843729161289728
+    m_Localized: "GrupoSombr\xEDo"
     m_Metadata:
       m_Items: []
   references:

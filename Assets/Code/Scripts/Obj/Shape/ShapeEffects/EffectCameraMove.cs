@@ -16,13 +16,13 @@ public class CameraMove : MonoBehaviour
 
     public void ZoomIn(EventInfo eventInfo)
     {
-        mainCamera.orthographicSize = 2.0f;
-        mainCamera.transform.position = new Vector3(0, -1.29f, -10);
+        mainCamera.orthographicSize = 1.2f;
+        // mainCamera.transform.position = new Vector3(0, -1.29f, -10);
     }
 
     public void ZoomOut()
     {
-        mainCamera.orthographicSize = 10.0f;
-        mainCamera.transform.position = new Vector3(0, 0, -10);
+        mainCamera.orthographicSize = 5.0f;
+        // mainCamera.transform.position = new Vector3(0, 0, -10);
     }
 }
