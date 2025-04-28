@@ -5,23 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
-    [SerializeField]
-    CanvasGroup options;
-
-    public void OnSuperButton()
+    public void OnLevelSelectButton()
     {
-        LevelManager.Instance.LoadLevel(0);
+        SceneManager.LoadScene("LevelSelect");
     }
 
-    public void OnStandaloneButton()
+    public void OnDailyPuzzleButton()
     {
-        // SceneManager.LoadScene("LevelSelect");
-        LevelManager.Instance.LoadLevel(1);
+        // redirect to daily puzzle
     }
 
-    public void OnSettingsButton()
+    public void OnHowToPlayButton()
     {
-        SceneManager.LoadScene("Settings");
+        SceneManager.LoadScene("HowToPlay");
     }
 
     public void OnCreditsButton()
@@ -29,13 +25,13 @@ public class Menu : MonoBehaviour
         SceneManager.LoadScene("Credits");
     }
 
+    public void OnSettingsButton()
+    {
+        SceneManager.LoadScene("Settings");
+    }
+
     public void OnMenuButton()
     {
         SceneManager.LoadScene("Menu");
-    }
-
-    public void OnHowToPlayButton()
-    {
-        SceneManager.LoadScene("HowToPlay");
     }
 }
