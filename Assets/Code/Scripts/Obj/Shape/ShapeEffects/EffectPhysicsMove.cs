@@ -28,7 +28,7 @@ public class EffectPhysicsMove : MonoBehaviour
     {
         rb2D.gravityScale = 1f;
         rb2D.constraints = RigidbodyConstraints2D.None;
-
+    }
 
     public void FreezeShape(EventInfo eventInfo)
     {
