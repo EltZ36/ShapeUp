@@ -118,7 +118,7 @@ public class LevelUI : MonoBehaviour
     {
         OnCancelRestartButton();
         GameManager.Instance.ClearLevel(LevelManager.Instance.currentLevelID);
-        StartCoroutine(CameraController.ZoomOutAndReset());
+        StartCoroutine(CameraController.ZoomOutAndReset(1f, LevelManager.Instance.currentLevelID));
     }
 
     void disableUIElement(CanvasGroup element)

@@ -167,8 +167,6 @@ public class EffectPig : MonoBehaviour
     {
         sr.enabled = false;
         coinBox.enabled = false;
-        coinTrigger.enabled = false;
         deadObject.SetActive(true);
-        piggyBank.Invoke();
     }
 }

@@ -1,0 +1,120 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: StringTable Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: StringTable
+  m_TableCollectionNameGuidString: 4912def05b3a65d4fa810a46b1d502f1
+  m_Entries:
+  - m_Id: 699516222443520
+    m_Key: credits
+    m_Metadata:
+      m_Items: []
+  - m_Id: 699753137704960
+    m_Key: creditsAcknowledgements
+    m_Metadata:
+      m_Items: []
+  - m_Id: 706785454592000
+    m_Key: exitToMenu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 706937040932864
+    m_Key: restart
+    m_Metadata:
+      m_Items: []
+  - m_Id: 708504066461696
+    m_Key: areYouSure
+    m_Metadata:
+      m_Items: []
+  - m_Id: 709265261334528
+    m_Key: yes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 709324061282304
+    m_Key: no
+    m_Metadata:
+      m_Items: []
+  - m_Id: 712281846714368
+    m_Key: howToPlay
+    m_Metadata:
+      m_Items: []
+  - m_Id: 712375522299904
+    m_Key: standalone
+    m_Metadata:
+      m_Items: []
+  - m_Id: 712656666497024
+    m_Key: supercluster
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2848822794653696
+    m_Key: nextLevel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2878644749078528
+    m_Key: masterVolume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2878672171438080
+    m_Key: musicVolume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2878697261764608
+    m_Key: sfxVolume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2878727083266048
+    m_Key: language
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4283401002815488
+    m_Key: howToPlayDescription
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4283737524408320
+    m_Key: pinch
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4283753529872384
+    m_Key: drag
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4283766251196416
+    m_Key: tap
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4283777873612800
+    m_Key: swipe
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4283789563138048
+    m_Key: tilt
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4283801105862656
+    m_Key: shake
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6843729161289728
+    m_Key: shadowcluster
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 2575235566790770712
+  references:
+    version: 2
+    RefIds:
+    - rid: 2575235566790770712
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1743815150045

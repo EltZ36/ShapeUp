@@ -1,0 +1,151 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: StringTable_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 4912def05b3a65d4fa810a46b1d502f1, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 699516222443520
+    m_Localized: Credits
+    m_Metadata:
+      m_Items: []
+  - m_Id: 699753137704960
+    m_Localized: 'Producer
+
+      CJ Moshy
+
+      Engine Lead
+
+      Luke Murayama
+
+      Tools
+      Lead
+
+      Elton Zeng
+
+      Design Lead
+
+      Zeke Davidson
+
+      Playtesting
+      Lead
+
+      Henry Christopher
+
+      Art and Sound Design
+
+      Lorraine Torres
+
+      Art
+      and UI Design
+
+      Michael Wong
+
+
+      Font: Skinny Me by Mike Evans
+
+      Music:
+      That Fascinating Game by Denis Pavlov'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2878644749078528
+    m_Localized: Master Volume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 706785454592000
+    m_Localized: Exit to Menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 706937040932864
+    m_Localized: Restart
+    m_Metadata:
+      m_Items: []
+  - m_Id: 708504066461696
+    m_Localized: Are you Sure?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 709265261334528
+    m_Localized: Yes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 709324061282304
+    m_Localized: No
+    m_Metadata:
+      m_Items: []
+  - m_Id: 712281846714368
+    m_Localized: How to Play
+    m_Metadata:
+      m_Items: []
+  - m_Id: 712375522299904
+    m_Localized: Stand-alone
+    m_Metadata:
+      m_Items: []
+  - m_Id: 712656666497024
+    m_Localized: Supercluster
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2848822794653696
+    m_Localized: Next Level
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2878697261764608
+    m_Localized: Sound Effects
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2878672171438080
+    m_Localized: Music Volume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2878727083266048
+    m_Localized: Language
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4283401002815488
+    m_Localized: In this game, you must use different mobile interactions to solve
+      puzzles. Try all of them out in the main menu!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4283801105862656
+    m_Localized: Shake
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4283789563138048
+    m_Localized: Tilt
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4283777873612800
+    m_Localized: Swipe
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4283766251196416
+    m_Localized: Tap
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4283753529872384
+    m_Localized: Drag
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4283737524408320
+    m_Localized: Pinch
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6843729161289728
+    m_Localized: Shadowcluster
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []
