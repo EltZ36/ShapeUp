@@ -13,6 +13,8 @@ public class CoinSFX : MonoBehaviour
 
     [SerializeField]
     Rigidbody2D rb;
+    [SerializeField]
+    GameObject coinBounds;
 
     // Start is called before the first frame update
     void Start()
@@ -26,8 +28,9 @@ public class CoinSFX : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.relativeVelocity.magnitude > 5f && !impacting)
+        if (collision.relativeVelocity.magnitude > 5f && !impacting && GameObject.ReferenceEquals( collision.gameObject, coinBounds ));
         {
+            Debug.Log(collision.gameObject);
             AudioManager.Instance.Play(false, impactSound, 0);
             impacting = true;
             StartCoroutine(DelayImpactReplay());
