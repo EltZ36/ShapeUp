@@ -292,7 +292,7 @@ public class LevelManager : MonoBehaviour, ILevelManager
             return;
         }
 
-        if (Camera.main.orthographicSize > 6)
+        if (Camera.main.orthographicSize > 7)
         {
             return;
         }

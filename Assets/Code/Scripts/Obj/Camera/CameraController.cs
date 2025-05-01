@@ -40,6 +40,7 @@ public class CameraController : MonoBehaviour
             handleOneTouch();
             handleTwoTouches();
         }
+        resetBounds();
     }
 
     void handleOneTouch()
@@ -108,10 +109,10 @@ public class CameraController : MonoBehaviour
         var width = height * Camera.main.aspect;
 
         var minX = Globals.WorldBounds.min.x + width;
-        var maxX = Globals.WorldBounds.extents.x - width;
+        var maxX = Globals.WorldBounds.extents.x - width - 0.2f;
 
         var minY = Globals.WorldBounds.min.y + height;
-        var maxY = Globals.WorldBounds.extents.y - height;
+        var maxY = Globals.WorldBounds.extents.y - height - 1;
 
         _cameraBounds = new Bounds();
         _cameraBounds.SetMinMax(new Vector3(minX, minY, 0f), new Vector3(maxX, maxY, 0f));
@@ -149,6 +150,11 @@ public class CameraController : MonoBehaviour
     public static IEnumerator ZoomOut(bool fully, float time = 1f)
     {
         float EndPos = fully ? 20 : 10;
+        float aspectRatio = (float)Screen.width / (float)Screen.height;
+        if (aspectRatio < 16f / 9f)
+        {
+            EndPos = (float)EndPos * ((16f / 9f) / aspectRatio);
+        }
 
         float StartSize = Camera.main.orthographicSize;
 
@@ -178,6 +184,11 @@ public class CameraController : MonoBehaviour
     public static IEnumerator ZoomOutAndReset(float time = 1f, int LevelID = 0)
     {
         float EndPos = 20;
+        float aspectRatio = (float)Screen.width / (float)Screen.height;
+        if (aspectRatio < 16f / 9f)
+        {
+            EndPos = (float)EndPos * ((16f / 9f) / aspectRatio);
+        }
 
         float StartSize = Camera.main.orthographicSize;
 
@@ -203,7 +214,12 @@ public class CameraController : MonoBehaviour
     public static IEnumerator ZoomIn(Vector2 _levelPosition)
     {
         float StartSize = Camera.main.orthographicSize;
+        float aspectRatio = (float)Screen.width / (float)Screen.height;
         float EndSize = 5f;
+        if (aspectRatio < 16f / 9f)
+        {
+            EndSize = 5f * ((16f / 9f) / aspectRatio) * 1f;
+        }
         float StartX = Camera.main.transform.position.x;
         float StartY = Camera.main.transform.position.y;
         float time = 1.0f;
