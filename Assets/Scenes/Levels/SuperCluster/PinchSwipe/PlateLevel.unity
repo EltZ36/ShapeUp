@@ -2200,6 +2200,7 @@ MonoBehaviour:
   conePlate: {fileID: 204149778}
   winEffect1: {fileID: 1539307616}
   winEffect2: {fileID: 68445547}
+  shape: {fileID: 803506262}
 --- !u!4 &1549346797
 Transform:
   m_ObjectHideFlags: 0

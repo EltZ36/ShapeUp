@@ -12,12 +12,14 @@ public class EnterWin : MonoBehaviour
     GameObject winEffect1,
         winEffect2;
 
+    [SerializeField]
+    Shape shape;
+
     public void checkWin()
     {
         if (cubePlate.shapeInside && conePlate.shapeInside)
         {
-            //PlayFireworks(shape.ShapeName);
-            Debug.Log("Win!");
+            PlayFireworks(shape.ShapeName);
             LevelManager.Instance.OnCurrentSubLevelComplete();
             StartCoroutine(CameraController.ZoomOut(false));
         }
