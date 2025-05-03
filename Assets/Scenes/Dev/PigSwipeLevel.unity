@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 12781918}
   - component: {fileID: 12781917}
   - component: {fileID: 12781916}
+  - component: {fileID: 12781919}
   m_Layer: 7
   m_Name: pig_break_spritesheet_compressed_7
   m_TagString: Untagged
@@ -320,6 +321,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &12781919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 12781914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9832e15de5a3fbb48845f1f803905e51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  despawnTime: 2
+  randomDespawnTime: 1
+  minDespawnTime: 1
+  maxDespawnTime: 3
+  isDestroying: 0
 --- !u!1 &16475104
 GameObject:
   m_ObjectHideFlags: 0
@@ -332,6 +350,7 @@ GameObject:
   - component: {fileID: 16475108}
   - component: {fileID: 16475107}
   - component: {fileID: 16475106}
+  - component: {fileID: 16475109}
   m_Layer: 7
   m_Name: pig_break_spritesheet_compressed_37
   m_TagString: Untagged
@@ -492,6 +511,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &16475109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 16475104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9832e15de5a3fbb48845f1f803905e51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  despawnTime: 2
+  randomDespawnTime: 1
+  minDespawnTime: 1
+  maxDespawnTime: 3
+  isDestroying: 0
 --- !u!1 &52994309
 GameObject:
   m_ObjectHideFlags: 0
@@ -637,6 +673,7 @@ GameObject:
   - component: {fileID: 73082111}
   - component: {fileID: 73082110}
   - component: {fileID: 73082109}
+  - component: {fileID: 73082112}
   m_Layer: 7
   m_Name: pig_break_spritesheet_compressed_3
   m_TagString: Untagged
@@ -820,6 +857,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &73082112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 73082107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9832e15de5a3fbb48845f1f803905e51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  despawnTime: 2
+  randomDespawnTime: 1
+  minDespawnTime: 1
+  maxDespawnTime: 3
+  isDestroying: 0
 --- !u!1 &202256186
 GameObject:
   m_ObjectHideFlags: 0
@@ -832,6 +886,7 @@ GameObject:
   - component: {fileID: 202256190}
   - component: {fileID: 202256189}
   - component: {fileID: 202256188}
+  - component: {fileID: 202256191}
   m_Layer: 7
   m_Name: pig_break_spritesheet_compressed_18
   m_TagString: Untagged
@@ -1004,6 +1059,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &202256191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 202256186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9832e15de5a3fbb48845f1f803905e51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  despawnTime: 2
+  randomDespawnTime: 1
+  minDespawnTime: 1
+  maxDespawnTime: 3
+  isDestroying: 0
 --- !u!1 &285841456
 GameObject:
   m_ObjectHideFlags: 0
@@ -1146,6 +1218,7 @@ GameObject:
   - component: {fileID: 290242609}
   - component: {fileID: 290242608}
   - component: {fileID: 290242607}
+  - component: {fileID: 290242610}
   m_Layer: 7
   m_Name: pig_break_spritesheet_compressed_32
   m_TagString: Untagged
@@ -1306,6 +1379,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &290242610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 290242605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9832e15de5a3fbb48845f1f803905e51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  despawnTime: 2
+  randomDespawnTime: 1
+  minDespawnTime: 1
+  maxDespawnTime: 3
+  isDestroying: 0
 --- !u!1 &296779159
 GameObject:
   m_ObjectHideFlags: 0
@@ -1318,6 +1408,7 @@ GameObject:
   - component: {fileID: 296779163}
   - component: {fileID: 296779162}
   - component: {fileID: 296779161}
+  - component: {fileID: 296779164}
   m_Layer: 7
   m_Name: pig_break_spritesheet_compressed_30
   m_TagString: Untagged
@@ -1477,6 +1568,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &296779164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 296779159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9832e15de5a3fbb48845f1f803905e51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  despawnTime: 2
+  randomDespawnTime: 1
+  minDespawnTime: 1
+  maxDespawnTime: 3
+  isDestroying: 0
 --- !u!1 &368445242
 GameObject:
   m_ObjectHideFlags: 0
@@ -1489,6 +1597,7 @@ GameObject:
   - component: {fileID: 368445246}
   - component: {fileID: 368445245}
   - component: {fileID: 368445244}
+  - component: {fileID: 368445247}
   m_Layer: 7
   m_Name: pig_break_spritesheet_compressed_29
   m_TagString: Untagged
@@ -1644,6 +1753,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &368445247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 368445242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9832e15de5a3fbb48845f1f803905e51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  despawnTime: 2
+  randomDespawnTime: 1
+  minDespawnTime: 1
+  maxDespawnTime: 3
+  isDestroying: 0
 --- !u!1 &373318889
 GameObject:
   m_ObjectHideFlags: 0
@@ -1660,7 +1786,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &373318890
 Transform:
   m_ObjectHideFlags: 0
@@ -1704,6 +1830,7 @@ GameObject:
   - component: {fileID: 440456820}
   - component: {fileID: 440456819}
   - component: {fileID: 440456818}
+  - component: {fileID: 440456821}
   m_Layer: 7
   m_Name: pig_break_spritesheet_compressed_17
   m_TagString: Untagged
@@ -1871,6 +1998,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &440456821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 440456816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9832e15de5a3fbb48845f1f803905e51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  despawnTime: 2
+  randomDespawnTime: 1
+  minDespawnTime: 1
+  maxDespawnTime: 3
+  isDestroying: 0
 --- !u!1 &462204608
 GameObject:
   m_ObjectHideFlags: 0
@@ -1883,6 +2027,7 @@ GameObject:
   - component: {fileID: 462204612}
   - component: {fileID: 462204611}
   - component: {fileID: 462204610}
+  - component: {fileID: 462204613}
   m_Layer: 7
   m_Name: pig_break_spritesheet_compressed_15
   m_TagString: Untagged
@@ -2043,6 +2188,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &462204613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 462204608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9832e15de5a3fbb48845f1f803905e51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  despawnTime: 2
+  randomDespawnTime: 1
+  minDespawnTime: 1
+  maxDespawnTime: 3
+  isDestroying: 0
 --- !u!1 &474638321
 GameObject:
   m_ObjectHideFlags: 0
@@ -2055,6 +2217,7 @@ GameObject:
   - component: {fileID: 474638325}
   - component: {fileID: 474638324}
   - component: {fileID: 474638323}
+  - component: {fileID: 474638326}
   m_Layer: 7
   m_Name: pig_break_spritesheet_compressed_4
   m_TagString: Untagged
@@ -2232,6 +2395,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &474638326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 474638321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9832e15de5a3fbb48845f1f803905e51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  despawnTime: 2
+  randomDespawnTime: 1
+  minDespawnTime: 1
+  maxDespawnTime: 3
+  isDestroying: 0
 --- !u!1001 &506968657
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2410,6 +2590,7 @@ GameObject:
   - component: {fileID: 612238649}
   - component: {fileID: 612238648}
   - component: {fileID: 612238647}
+  - component: {fileID: 612238650}
   m_Layer: 7
   m_Name: pig_break_spritesheet_compressed_22
   m_TagString: Untagged
@@ -2566,6 +2747,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &612238650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 612238645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9832e15de5a3fbb48845f1f803905e51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  despawnTime: 2
+  randomDespawnTime: 1
+  minDespawnTime: 1
+  maxDespawnTime: 3
+  isDestroying: 0
 --- !u!1 &631303525 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5192334411911865799, guid: fc84a1157f2977e49838a26714928bda, type: 3}
@@ -2730,11 +2928,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 581297037832830135, guid: 993186d337e7c5e419a8f1a418011b04, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.31
+      value: -0.26
       objectReference: {fileID: 0}
     - target: {fileID: 581297037832830135, guid: 993186d337e7c5e419a8f1a418011b04, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.81
+      value: 2.18
       objectReference: {fileID: 0}
     - target: {fileID: 581297037832830135, guid: 993186d337e7c5e419a8f1a418011b04, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2770,7 +2968,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 581297037832830135, guid: 993186d337e7c5e419a8f1a418011b04, type: 3}
       propertyPath: m_ConstrainProportionsScale
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1740465846098495637, guid: 993186d337e7c5e419a8f1a418011b04, type: 3}
       propertyPath: m_Name
@@ -2782,7 +2980,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1740465846098495637, guid: 993186d337e7c5e419a8f1a418011b04, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2819,6 +3017,7 @@ GameObject:
   - component: {fileID: 695326679}
   - component: {fileID: 695326678}
   - component: {fileID: 695326677}
+  - component: {fileID: 695326680}
   m_Layer: 7
   m_Name: pig_break_spritesheet_compressed_1
   m_TagString: Untagged
@@ -3001,6 +3200,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &695326680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 695326675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9832e15de5a3fbb48845f1f803905e51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  despawnTime: 2
+  randomDespawnTime: 1
+  minDespawnTime: 1
+  maxDespawnTime: 3
+  isDestroying: 0
 --- !u!1 &731968228
 GameObject:
   m_ObjectHideFlags: 0
@@ -3013,6 +3229,7 @@ GameObject:
   - component: {fileID: 731968232}
   - component: {fileID: 731968231}
   - component: {fileID: 731968230}
+  - component: {fileID: 731968233}
   m_Layer: 7
   m_Name: pig_break_spritesheet_compressed_36
   m_TagString: Untagged
@@ -3174,6 +3391,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &731968233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 731968228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9832e15de5a3fbb48845f1f803905e51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  despawnTime: 2
+  randomDespawnTime: 1
+  minDespawnTime: 1
+  maxDespawnTime: 3
+  isDestroying: 0
 --- !u!1001 &758422634
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3256,6 +3490,7 @@ GameObject:
   - component: {fileID: 767726993}
   - component: {fileID: 767726992}
   - component: {fileID: 767726991}
+  - component: {fileID: 767726994}
   m_Layer: 7
   m_Name: pig_break_spritesheet_compressed_16
   m_TagString: Untagged
@@ -3415,6 +3650,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &767726994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 767726989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9832e15de5a3fbb48845f1f803905e51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  despawnTime: 2
+  randomDespawnTime: 1
+  minDespawnTime: 1
+  maxDespawnTime: 3
+  isDestroying: 0
 --- !u!1 &841519946
 GameObject:
   m_ObjectHideFlags: 0
@@ -3473,6 +3725,7 @@ GameObject:
   - component: {fileID: 850615545}
   - component: {fileID: 850615544}
   - component: {fileID: 850615543}
+  - component: {fileID: 850615546}
   m_Layer: 7
   m_Name: pig_break_spritesheet_compressed_42
   m_TagString: Untagged
@@ -3634,6 +3887,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &850615546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 850615541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9832e15de5a3fbb48845f1f803905e51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  despawnTime: 2
+  randomDespawnTime: 1
+  minDespawnTime: 1
+  maxDespawnTime: 3
+  isDestroying: 0
 --- !u!1 &850664831
 GameObject:
   m_ObjectHideFlags: 0
@@ -3646,6 +3916,7 @@ GameObject:
   - component: {fileID: 850664835}
   - component: {fileID: 850664834}
   - component: {fileID: 850664833}
+  - component: {fileID: 850664836}
   m_Layer: 7
   m_Name: pig_break_spritesheet_compressed_31
   m_TagString: Untagged
@@ -3805,6 +4076,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &850664836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 850664831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9832e15de5a3fbb48845f1f803905e51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  despawnTime: 2
+  randomDespawnTime: 1
+  minDespawnTime: 1
+  maxDespawnTime: 3
+  isDestroying: 0
 --- !u!1001 &880462935
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3887,6 +4175,7 @@ GameObject:
   - component: {fileID: 894964469}
   - component: {fileID: 894964468}
   - component: {fileID: 894964467}
+  - component: {fileID: 894964470}
   m_Layer: 7
   m_Name: pig_break_spritesheet_compressed_46
   m_TagString: Untagged
@@ -4056,6 +4345,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &894964470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 894964465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9832e15de5a3fbb48845f1f803905e51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  despawnTime: 2
+  randomDespawnTime: 1
+  minDespawnTime: 1
+  maxDespawnTime: 3
+  isDestroying: 0
 --- !u!1 &941691120
 GameObject:
   m_ObjectHideFlags: 0
@@ -4068,6 +4374,7 @@ GameObject:
   - component: {fileID: 941691124}
   - component: {fileID: 941691123}
   - component: {fileID: 941691122}
+  - component: {fileID: 941691125}
   m_Layer: 7
   m_Name: pig_break_spritesheet_compressed_23
   m_TagString: Untagged
@@ -4224,6 +4531,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &941691125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 941691120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9832e15de5a3fbb48845f1f803905e51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  despawnTime: 2
+  randomDespawnTime: 1
+  minDespawnTime: 1
+  maxDespawnTime: 3
+  isDestroying: 0
 --- !u!1 &962435833
 GameObject:
   m_ObjectHideFlags: 0
@@ -4568,10 +4892,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   crackMaterial: {fileID: 2100000, guid: 2334f040f8e6cda48886d85eef6b8f61, type: 2}
-  max: 30
-  health: 30
+  max: 4
+  health: 5
   tapDamage: 0
-  swipeDamage: 6
+  swipeDamage: 1
   shakeDamage: 0
   target: {fileID: 962435833}
   deadObject: {fileID: 2103181806}
@@ -4882,6 +5206,7 @@ GameObject:
   - component: {fileID: 1035623594}
   - component: {fileID: 1035623593}
   - component: {fileID: 1035623592}
+  - component: {fileID: 1035623595}
   m_Layer: 7
   m_Name: pig_break_spritesheet_compressed_11
   m_TagString: Untagged
@@ -5045,6 +5370,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1035623595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1035623590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9832e15de5a3fbb48845f1f803905e51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  despawnTime: 2
+  randomDespawnTime: 1
+  minDespawnTime: 1
+  maxDespawnTime: 3
+  isDestroying: 0
 --- !u!1 &1037513377
 GameObject:
   m_ObjectHideFlags: 0
@@ -5057,6 +5399,7 @@ GameObject:
   - component: {fileID: 1037513381}
   - component: {fileID: 1037513380}
   - component: {fileID: 1037513379}
+  - component: {fileID: 1037513382}
   m_Layer: 7
   m_Name: pig_break_spritesheet_compressed_33
   m_TagString: Untagged
@@ -5223,6 +5566,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1037513382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1037513377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9832e15de5a3fbb48845f1f803905e51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  despawnTime: 2
+  randomDespawnTime: 1
+  minDespawnTime: 1
+  maxDespawnTime: 3
+  isDestroying: 0
 --- !u!1 &1114437945
 GameObject:
   m_ObjectHideFlags: 0
@@ -5235,6 +5595,7 @@ GameObject:
   - component: {fileID: 1114437949}
   - component: {fileID: 1114437948}
   - component: {fileID: 1114437947}
+  - component: {fileID: 1114437950}
   m_Layer: 7
   m_Name: pig_break_spritesheet_compressed_24
   m_TagString: Untagged
@@ -5396,6 +5757,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1114437950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1114437945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9832e15de5a3fbb48845f1f803905e51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  despawnTime: 2
+  randomDespawnTime: 1
+  minDespawnTime: 1
+  maxDespawnTime: 3
+  isDestroying: 0
 --- !u!1 &1128136879
 GameObject:
   m_ObjectHideFlags: 0
@@ -5408,6 +5786,7 @@ GameObject:
   - component: {fileID: 1128136883}
   - component: {fileID: 1128136882}
   - component: {fileID: 1128136881}
+  - component: {fileID: 1128136884}
   m_Layer: 7
   m_Name: pig_break_spritesheet_compressed_12
   m_TagString: Untagged
@@ -5570,6 +5949,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1128136884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1128136879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9832e15de5a3fbb48845f1f803905e51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  despawnTime: 2
+  randomDespawnTime: 1
+  minDespawnTime: 1
+  maxDespawnTime: 3
+  isDestroying: 0
 --- !u!1 &1191776639
 GameObject:
   m_ObjectHideFlags: 0
@@ -5582,6 +5978,7 @@ GameObject:
   - component: {fileID: 1191776643}
   - component: {fileID: 1191776642}
   - component: {fileID: 1191776641}
+  - component: {fileID: 1191776644}
   m_Layer: 7
   m_Name: pig_break_spritesheet_compressed_43
   m_TagString: Untagged
@@ -5751,6 +6148,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1191776644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1191776639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9832e15de5a3fbb48845f1f803905e51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  despawnTime: 2
+  randomDespawnTime: 1
+  minDespawnTime: 1
+  maxDespawnTime: 3
+  isDestroying: 0
 --- !u!1 &1202046244
 GameObject:
   m_ObjectHideFlags: 0
@@ -5763,6 +6177,7 @@ GameObject:
   - component: {fileID: 1202046248}
   - component: {fileID: 1202046247}
   - component: {fileID: 1202046246}
+  - component: {fileID: 1202046249}
   m_Layer: 7
   m_Name: pig_break_spritesheet_compressed_25
   m_TagString: Untagged
@@ -5923,6 +6338,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1202046249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1202046244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9832e15de5a3fbb48845f1f803905e51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  despawnTime: 2
+  randomDespawnTime: 1
+  minDespawnTime: 1
+  maxDespawnTime: 3
+  isDestroying: 0
 --- !u!1 &1281568560
 GameObject:
   m_ObjectHideFlags: 0
@@ -5935,6 +6367,7 @@ GameObject:
   - component: {fileID: 1281568564}
   - component: {fileID: 1281568563}
   - component: {fileID: 1281568562}
+  - component: {fileID: 1281568565}
   m_Layer: 7
   m_Name: pig_break_spritesheet_compressed_49
   m_TagString: Untagged
@@ -6090,6 +6523,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1281568565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1281568560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9832e15de5a3fbb48845f1f803905e51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  despawnTime: 2
+  randomDespawnTime: 1
+  minDespawnTime: 1
+  maxDespawnTime: 3
+  isDestroying: 0
 --- !u!1 &1293641851
 GameObject:
   m_ObjectHideFlags: 0
@@ -6102,6 +6552,7 @@ GameObject:
   - component: {fileID: 1293641855}
   - component: {fileID: 1293641854}
   - component: {fileID: 1293641853}
+  - component: {fileID: 1293641856}
   m_Layer: 7
   m_Name: pig_break_spritesheet_compressed_21
   m_TagString: Untagged
@@ -6262,6 +6713,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1293641856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1293641851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9832e15de5a3fbb48845f1f803905e51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  despawnTime: 2
+  randomDespawnTime: 1
+  minDespawnTime: 1
+  maxDespawnTime: 3
+  isDestroying: 0
 --- !u!1 &1359637260
 GameObject:
   m_ObjectHideFlags: 0
@@ -6274,6 +6742,7 @@ GameObject:
   - component: {fileID: 1359637264}
   - component: {fileID: 1359637263}
   - component: {fileID: 1359637262}
+  - component: {fileID: 1359637265}
   m_Layer: 7
   m_Name: pig_break_spritesheet_compressed_38
   m_TagString: Untagged
@@ -6435,6 +6904,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1359637265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1359637260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9832e15de5a3fbb48845f1f803905e51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  despawnTime: 2
+  randomDespawnTime: 1
+  minDespawnTime: 1
+  maxDespawnTime: 3
+  isDestroying: 0
 --- !u!1 &1435256825
 GameObject:
   m_ObjectHideFlags: 0
@@ -6447,6 +6933,7 @@ GameObject:
   - component: {fileID: 1435256829}
   - component: {fileID: 1435256828}
   - component: {fileID: 1435256827}
+  - component: {fileID: 1435256830}
   m_Layer: 7
   m_Name: pig_break_spritesheet_compressed_47
   m_TagString: Untagged
@@ -6611,6 +7098,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1435256830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1435256825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9832e15de5a3fbb48845f1f803905e51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  despawnTime: 2
+  randomDespawnTime: 1
+  minDespawnTime: 1
+  maxDespawnTime: 3
+  isDestroying: 0
 --- !u!1 &1485692595
 GameObject:
   m_ObjectHideFlags: 0
@@ -6623,6 +7127,7 @@ GameObject:
   - component: {fileID: 1485692599}
   - component: {fileID: 1485692598}
   - component: {fileID: 1485692597}
+  - component: {fileID: 1485692600}
   m_Layer: 7
   m_Name: pig_break_spritesheet_compressed_19
   m_TagString: Untagged
@@ -6779,6 +7284,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1485692600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1485692595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9832e15de5a3fbb48845f1f803905e51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  despawnTime: 2
+  randomDespawnTime: 1
+  minDespawnTime: 1
+  maxDespawnTime: 3
+  isDestroying: 0
 --- !u!1 &1559981878
 GameObject:
   m_ObjectHideFlags: 0
@@ -6791,6 +7313,7 @@ GameObject:
   - component: {fileID: 1559981882}
   - component: {fileID: 1559981881}
   - component: {fileID: 1559981880}
+  - component: {fileID: 1559981883}
   m_Layer: 7
   m_Name: pig_break_spritesheet_compressed_9
   m_TagString: Untagged
@@ -6953,6 +7476,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1559981883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1559981878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9832e15de5a3fbb48845f1f803905e51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  despawnTime: 2
+  randomDespawnTime: 1
+  minDespawnTime: 1
+  maxDespawnTime: 3
+  isDestroying: 0
 --- !u!1 &1583218063
 GameObject:
   m_ObjectHideFlags: 0
@@ -6969,7 +7509,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1583218064
 Transform:
   m_ObjectHideFlags: 0
@@ -7015,6 +7555,7 @@ GameObject:
   - component: {fileID: 1620554185}
   - component: {fileID: 1620554184}
   - component: {fileID: 1620554183}
+  - component: {fileID: 1620554186}
   m_Layer: 7
   m_Name: pig_break_spritesheet_compressed_45
   m_TagString: Untagged
@@ -7183,6 +7724,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1620554186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1620554181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9832e15de5a3fbb48845f1f803905e51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  despawnTime: 2
+  randomDespawnTime: 1
+  minDespawnTime: 1
+  maxDespawnTime: 3
+  isDestroying: 0
 --- !u!1 &1625604764
 GameObject:
   m_ObjectHideFlags: 0
@@ -7195,6 +7753,7 @@ GameObject:
   - component: {fileID: 1625604768}
   - component: {fileID: 1625604767}
   - component: {fileID: 1625604766}
+  - component: {fileID: 1625604769}
   m_Layer: 7
   m_Name: pig_break_spritesheet_compressed_2
   m_TagString: Untagged
@@ -7377,6 +7936,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1625604769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1625604764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9832e15de5a3fbb48845f1f803905e51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  despawnTime: 2
+  randomDespawnTime: 1
+  minDespawnTime: 1
+  maxDespawnTime: 3
+  isDestroying: 0
 --- !u!1 &1657593857
 GameObject:
   m_ObjectHideFlags: 0
@@ -7389,6 +7965,7 @@ GameObject:
   - component: {fileID: 1657593861}
   - component: {fileID: 1657593860}
   - component: {fileID: 1657593859}
+  - component: {fileID: 1657593862}
   m_Layer: 7
   m_Name: pig_break_spritesheet_compressed_28
   m_TagString: Untagged
@@ -7546,6 +8123,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1657593862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1657593857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9832e15de5a3fbb48845f1f803905e51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  despawnTime: 2
+  randomDespawnTime: 1
+  minDespawnTime: 1
+  maxDespawnTime: 3
+  isDestroying: 0
 --- !u!1 &1657786768
 GameObject:
   m_ObjectHideFlags: 0
@@ -7558,6 +8152,7 @@ GameObject:
   - component: {fileID: 1657786772}
   - component: {fileID: 1657786771}
   - component: {fileID: 1657786770}
+  - component: {fileID: 1657786773}
   m_Layer: 7
   m_Name: pig_break_spritesheet_compressed_26
   m_TagString: Untagged
@@ -7719,6 +8314,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1657786773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1657786768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9832e15de5a3fbb48845f1f803905e51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  despawnTime: 2
+  randomDespawnTime: 1
+  minDespawnTime: 1
+  maxDespawnTime: 3
+  isDestroying: 0
 --- !u!1 &1681456255
 GameObject:
   m_ObjectHideFlags: 0
@@ -7731,6 +8343,7 @@ GameObject:
   - component: {fileID: 1681456259}
   - component: {fileID: 1681456258}
   - component: {fileID: 1681456257}
+  - component: {fileID: 1681456260}
   m_Layer: 7
   m_Name: pig_break_spritesheet_compressed_35
   m_TagString: Untagged
@@ -7892,6 +8505,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1681456260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1681456255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9832e15de5a3fbb48845f1f803905e51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  despawnTime: 2
+  randomDespawnTime: 1
+  minDespawnTime: 1
+  maxDespawnTime: 3
+  isDestroying: 0
 --- !u!1 &1699858579 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5192334411911865799, guid: fc84a1157f2977e49838a26714928bda, type: 3}
@@ -7909,6 +8539,7 @@ GameObject:
   - component: {fileID: 1711678840}
   - component: {fileID: 1711678839}
   - component: {fileID: 1711678838}
+  - component: {fileID: 1711678841}
   m_Layer: 7
   m_Name: pig_break_spritesheet_compressed_14
   m_TagString: Untagged
@@ -8070,6 +8701,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1711678841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1711678836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9832e15de5a3fbb48845f1f803905e51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  despawnTime: 2
+  randomDespawnTime: 1
+  minDespawnTime: 1
+  maxDespawnTime: 3
+  isDestroying: 0
 --- !u!1 &1724598499
 GameObject:
   m_ObjectHideFlags: 0
@@ -8082,6 +8730,7 @@ GameObject:
   - component: {fileID: 1724598503}
   - component: {fileID: 1724598502}
   - component: {fileID: 1724598501}
+  - component: {fileID: 1724598504}
   m_Layer: 7
   m_Name: pig_break_spritesheet_compressed_0
   m_TagString: Untagged
@@ -8254,6 +8903,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1724598504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1724598499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9832e15de5a3fbb48845f1f803905e51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  despawnTime: 2
+  randomDespawnTime: 1
+  minDespawnTime: 1
+  maxDespawnTime: 3
+  isDestroying: 0
 --- !u!1 &1726527999
 GameObject:
   m_ObjectHideFlags: 0
@@ -8266,6 +8932,7 @@ GameObject:
   - component: {fileID: 1726528003}
   - component: {fileID: 1726528002}
   - component: {fileID: 1726528001}
+  - component: {fileID: 1726528004}
   m_Layer: 7
   m_Name: pig_break_spritesheet_compressed_34
   m_TagString: Untagged
@@ -8425,6 +9092,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1726528004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1726527999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9832e15de5a3fbb48845f1f803905e51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  despawnTime: 2
+  randomDespawnTime: 1
+  minDespawnTime: 1
+  maxDespawnTime: 3
+  isDestroying: 0
 --- !u!1 &1746658768
 GameObject:
   m_ObjectHideFlags: 0
@@ -8437,6 +9121,7 @@ GameObject:
   - component: {fileID: 1746658772}
   - component: {fileID: 1746658771}
   - component: {fileID: 1746658770}
+  - component: {fileID: 1746658773}
   m_Layer: 7
   m_Name: pig_break_spritesheet_compressed_20
   m_TagString: Untagged
@@ -8596,6 +9281,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1746658773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1746658768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9832e15de5a3fbb48845f1f803905e51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  despawnTime: 2
+  randomDespawnTime: 1
+  minDespawnTime: 1
+  maxDespawnTime: 3
+  isDestroying: 0
 --- !u!1 &1782641632
 GameObject:
   m_ObjectHideFlags: 0
@@ -8608,6 +9310,7 @@ GameObject:
   - component: {fileID: 1782641636}
   - component: {fileID: 1782641635}
   - component: {fileID: 1782641634}
+  - component: {fileID: 1782641637}
   m_Layer: 7
   m_Name: pig_break_spritesheet_compressed_10
   m_TagString: Untagged
@@ -8767,6 +9470,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1782641637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1782641632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9832e15de5a3fbb48845f1f803905e51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  despawnTime: 2
+  randomDespawnTime: 1
+  minDespawnTime: 1
+  maxDespawnTime: 3
+  isDestroying: 0
 --- !u!1 &1786012934
 GameObject:
   m_ObjectHideFlags: 0
@@ -8779,6 +9499,7 @@ GameObject:
   - component: {fileID: 1786012938}
   - component: {fileID: 1786012937}
   - component: {fileID: 1786012936}
+  - component: {fileID: 1786012939}
   m_Layer: 7
   m_Name: pig_break_spritesheet_compressed_5
   m_TagString: Untagged
@@ -8959,6 +9680,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1786012939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1786012934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9832e15de5a3fbb48845f1f803905e51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  despawnTime: 2
+  randomDespawnTime: 1
+  minDespawnTime: 1
+  maxDespawnTime: 3
+  isDestroying: 0
 --- !u!1 &1844524369
 GameObject:
   m_ObjectHideFlags: 0
@@ -8971,6 +9709,7 @@ GameObject:
   - component: {fileID: 1844524373}
   - component: {fileID: 1844524372}
   - component: {fileID: 1844524371}
+  - component: {fileID: 1844524374}
   m_Layer: 7
   m_Name: pig_break_spritesheet_compressed_6
   m_TagString: Untagged
@@ -9150,6 +9889,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1844524374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1844524369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9832e15de5a3fbb48845f1f803905e51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  despawnTime: 2
+  randomDespawnTime: 1
+  minDespawnTime: 1
+  maxDespawnTime: 3
+  isDestroying: 0
 --- !u!1 &1869821822
 GameObject:
   m_ObjectHideFlags: 0
@@ -9162,6 +9918,7 @@ GameObject:
   - component: {fileID: 1869821826}
   - component: {fileID: 1869821825}
   - component: {fileID: 1869821824}
+  - component: {fileID: 1869821827}
   m_Layer: 7
   m_Name: pig_break_spritesheet_compressed_8
   m_TagString: Untagged
@@ -9323,6 +10080,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1869821827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1869821822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9832e15de5a3fbb48845f1f803905e51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  despawnTime: 2
+  randomDespawnTime: 1
+  minDespawnTime: 1
+  maxDespawnTime: 3
+  isDestroying: 0
 --- !u!1 &1870121727
 GameObject:
   m_ObjectHideFlags: 0
@@ -9335,6 +10109,7 @@ GameObject:
   - component: {fileID: 1870121731}
   - component: {fileID: 1870121730}
   - component: {fileID: 1870121729}
+  - component: {fileID: 1870121732}
   m_Layer: 7
   m_Name: pig_break_spritesheet_compressed_41
   m_TagString: Untagged
@@ -9494,6 +10269,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1870121732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1870121727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9832e15de5a3fbb48845f1f803905e51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  despawnTime: 2
+  randomDespawnTime: 1
+  minDespawnTime: 1
+  maxDespawnTime: 3
+  isDestroying: 0
 --- !u!1 &1879135938
 GameObject:
   m_ObjectHideFlags: 0
@@ -9506,6 +10298,7 @@ GameObject:
   - component: {fileID: 1879135942}
   - component: {fileID: 1879135941}
   - component: {fileID: 1879135940}
+  - component: {fileID: 1879135943}
   m_Layer: 7
   m_Name: pig_break_spritesheet_compressed_27
   m_TagString: Untagged
@@ -9662,6 +10455,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1879135943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1879135938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9832e15de5a3fbb48845f1f803905e51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  despawnTime: 2
+  randomDespawnTime: 1
+  minDespawnTime: 1
+  maxDespawnTime: 3
+  isDestroying: 0
 --- !u!1 &1879909128
 GameObject:
   m_ObjectHideFlags: 0
@@ -9674,6 +10484,7 @@ GameObject:
   - component: {fileID: 1879909132}
   - component: {fileID: 1879909131}
   - component: {fileID: 1879909130}
+  - component: {fileID: 1879909133}
   m_Layer: 7
   m_Name: pig_break_spritesheet_compressed_44
   m_TagString: Untagged
@@ -9837,6 +10648,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1879909133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1879909128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9832e15de5a3fbb48845f1f803905e51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  despawnTime: 2
+  randomDespawnTime: 1
+  minDespawnTime: 1
+  maxDespawnTime: 3
+  isDestroying: 0
 --- !u!1 &1928088779
 GameObject:
   m_ObjectHideFlags: 0
@@ -9849,6 +10677,7 @@ GameObject:
   - component: {fileID: 1928088783}
   - component: {fileID: 1928088782}
   - component: {fileID: 1928088781}
+  - component: {fileID: 1928088784}
   m_Layer: 7
   m_Name: pig_break_spritesheet_compressed_48
   m_TagString: Untagged
@@ -10010,6 +10839,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1928088784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1928088779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9832e15de5a3fbb48845f1f803905e51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  despawnTime: 2
+  randomDespawnTime: 1
+  minDespawnTime: 1
+  maxDespawnTime: 3
+  isDestroying: 0
 --- !u!1 &1958348381
 GameObject:
   m_ObjectHideFlags: 0
@@ -10064,6 +10910,7 @@ GameObject:
   - component: {fileID: 1987817854}
   - component: {fileID: 1987817853}
   - component: {fileID: 1987817852}
+  - component: {fileID: 1987817855}
   m_Layer: 7
   m_Name: pig_break_spritesheet_compressed_40
   m_TagString: Untagged
@@ -10219,6 +11066,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1987817855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1987817850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9832e15de5a3fbb48845f1f803905e51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  despawnTime: 2
+  randomDespawnTime: 1
+  minDespawnTime: 1
+  maxDespawnTime: 3
+  isDestroying: 0
 --- !u!114 &2008754157 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3102746494672219261, guid: 993186d337e7c5e419a8f1a418011b04, type: 3}
@@ -10258,6 +11122,7 @@ GameObject:
   - component: {fileID: 2037830695}
   - component: {fileID: 2037830694}
   - component: {fileID: 2037830693}
+  - component: {fileID: 2037830696}
   m_Layer: 7
   m_Name: pig_break_spritesheet_compressed_39
   m_TagString: Untagged
@@ -10410,6 +11275,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2037830696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2037830691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9832e15de5a3fbb48845f1f803905e51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  despawnTime: 2
+  randomDespawnTime: 1
+  minDespawnTime: 1
+  maxDespawnTime: 3
+  isDestroying: 0
 --- !u!1 &2053741714
 GameObject:
   m_ObjectHideFlags: 0
@@ -10422,6 +11304,7 @@ GameObject:
   - component: {fileID: 2053741718}
   - component: {fileID: 2053741717}
   - component: {fileID: 2053741716}
+  - component: {fileID: 2053741719}
   m_Layer: 7
   m_Name: pig_break_spritesheet_compressed_13
   m_TagString: Untagged
@@ -10586,6 +11469,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2053741719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2053741714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9832e15de5a3fbb48845f1f803905e51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  despawnTime: 2
+  randomDespawnTime: 1
+  minDespawnTime: 1
+  maxDespawnTime: 3
+  isDestroying: 0
 --- !u!1 &2103181806
 GameObject:
   m_ObjectHideFlags: 0
