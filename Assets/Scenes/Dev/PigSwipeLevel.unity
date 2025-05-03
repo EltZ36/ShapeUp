@@ -335,8 +335,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   despawnTime: 2
   randomDespawnTime: 1
-  minDespawnTime: 1
-  maxDespawnTime: 3
+  minDespawnTime: 0.5
+  maxDespawnTime: 2
   isDestroying: 0
 --- !u!1 &16475104
 GameObject:
@@ -525,8 +525,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   despawnTime: 2
   randomDespawnTime: 1
-  minDespawnTime: 1
-  maxDespawnTime: 3
+  minDespawnTime: 0.5
+  maxDespawnTime: 2
   isDestroying: 0
 --- !u!1 &52994309
 GameObject:
@@ -871,8 +871,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   despawnTime: 2
   randomDespawnTime: 1
-  minDespawnTime: 1
-  maxDespawnTime: 3
+  minDespawnTime: 0.5
+  maxDespawnTime: 2
   isDestroying: 0
 --- !u!1 &202256186
 GameObject:
@@ -1073,8 +1073,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   despawnTime: 2
   randomDespawnTime: 1
-  minDespawnTime: 1
-  maxDespawnTime: 3
+  minDespawnTime: 0.5
+  maxDespawnTime: 2
   isDestroying: 0
 --- !u!1 &285841456
 GameObject:
@@ -1393,8 +1393,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   despawnTime: 2
   randomDespawnTime: 1
-  minDespawnTime: 1
-  maxDespawnTime: 3
+  minDespawnTime: 0.5
+  maxDespawnTime: 2
   isDestroying: 0
 --- !u!1 &296779159
 GameObject:
@@ -1582,8 +1582,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   despawnTime: 2
   randomDespawnTime: 1
-  minDespawnTime: 1
-  maxDespawnTime: 3
+  minDespawnTime: 0.5
+  maxDespawnTime: 2
   isDestroying: 0
 --- !u!1 &368445242
 GameObject:
@@ -1767,8 +1767,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   despawnTime: 2
   randomDespawnTime: 1
-  minDespawnTime: 1
-  maxDespawnTime: 3
+  minDespawnTime: 0.5
+  maxDespawnTime: 2
   isDestroying: 0
 --- !u!1 &373318889
 GameObject:
@@ -2012,8 +2012,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   despawnTime: 2
   randomDespawnTime: 1
-  minDespawnTime: 1
-  maxDespawnTime: 3
+  minDespawnTime: 0.5
+  maxDespawnTime: 2
   isDestroying: 0
 --- !u!1 &462204608
 GameObject:
@@ -2202,8 +2202,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   despawnTime: 2
   randomDespawnTime: 1
-  minDespawnTime: 1
-  maxDespawnTime: 3
+  minDespawnTime: 0.5
+  maxDespawnTime: 2
   isDestroying: 0
 --- !u!1 &474638321
 GameObject:
@@ -2409,8 +2409,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   despawnTime: 2
   randomDespawnTime: 1
-  minDespawnTime: 1
-  maxDespawnTime: 3
+  minDespawnTime: 0.5
+  maxDespawnTime: 2
   isDestroying: 0
 --- !u!1001 &506968657
 PrefabInstance:
@@ -2761,8 +2761,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   despawnTime: 2
   randomDespawnTime: 1
-  minDespawnTime: 1
-  maxDespawnTime: 3
+  minDespawnTime: 0.5
+  maxDespawnTime: 2
   isDestroying: 0
 --- !u!1 &631303525 stripped
 GameObject:
@@ -3214,8 +3214,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   despawnTime: 2
   randomDespawnTime: 1
-  minDespawnTime: 1
-  maxDespawnTime: 3
+  minDespawnTime: 0.5
+  maxDespawnTime: 2
   isDestroying: 0
 --- !u!1 &731968228
 GameObject:
@@ -3405,8 +3405,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   despawnTime: 2
   randomDespawnTime: 1
-  minDespawnTime: 1
-  maxDespawnTime: 3
+  minDespawnTime: 0.5
+  maxDespawnTime: 2
   isDestroying: 0
 --- !u!1001 &758422634
 PrefabInstance:
@@ -3664,9 +3664,154 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   despawnTime: 2
   randomDespawnTime: 1
-  minDespawnTime: 1
-  maxDespawnTime: 3
+  minDespawnTime: 0.5
+  maxDespawnTime: 2
   isDestroying: 0
+--- !u!1 &801360093
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 801360094}
+  - component: {fileID: 801360095}
+  m_Layer: 0
+  m_Name: CoinBounds
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &801360094
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 801360093}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.23, y: 1.91, z: -1.3698632}
+  m_LocalScale: {x: 0.25, y: 0.39, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 962435834}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!60 &801360095
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 801360093}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 4.0264654, y: 0.6405307}
+      - {x: 3.6978674, y: 1.6004784}
+      - {x: 3.1858063, y: 2.1021848}
+      - {x: 1.8895369, y: 2.6704903}
+      - {x: 0.8485937, y: 2.859064}
+      - {x: -0.13955832, y: 2.9157548}
+      - {x: -0.191329, y: 2.8645918}
+      - {x: 0.9840288, y: 2.7018669}
+      - {x: 2.0500932, y: 2.5160556}
+      - {x: 2.6722956, y: 2.2447674}
+      - {x: 2.938632, y: 2.101043}
+      - {x: 3.1270342, y: 1.9800105}
+      - {x: 3.3528442, y: 1.76576}
+      - {x: 3.5582218, y: 1.468212}
+      - {x: 3.6745758, y: 1.2900815}
+      - {x: 3.7499056, y: 1.0724975}
+      - {x: 3.8319235, y: 0.5301047}
+      - {x: 3.8128805, y: -0.26031172}
+      - {x: 3.7573519, y: -0.52095866}
+      - {x: 3.6087122, y: -0.74392235}
+      - {x: 3.3587818, y: -1.0628681}
+      - {x: 3.0077786, y: -1.4222287}
+      - {x: 2.660223, y: -1.5771604}
+      - {x: 2.259879, y: -1.7789638}
+      - {x: 2.133666, y: -1.8310719}
+      - {x: 1.9949927, y: -1.8655097}
+      - {x: 1.8493156, y: -1.9293232}
+      - {x: 1.512434, y: -2.0137963}
+      - {x: 1.4036183, y: -2.0394583}
+      - {x: 1.010858, y: -2.1007147}
+      - {x: 0.39766645, y: -2.1385984}
+      - {x: -0.24891615, y: -2.1772556}
+      - {x: -0.9945864, y: -2.169198}
+      - {x: -1.6412758, y: -2.1281505}
+      - {x: -2.391721, y: -2.028517}
+      - {x: -2.7095375, y: -1.9585109}
+      - {x: -2.8355432, y: -1.9510089}
+      - {x: -3.3544428, y: -1.791593}
+      - {x: -3.9254405, y: -1.3608372}
+      - {x: -4.335307, y: -0.7012004}
+      - {x: -4.4084077, y: -0.12819883}
+      - {x: -4.4516635, y: 0.8952694}
+      - {x: -4.051402, y: 1.7031676}
+      - {x: -3.6653001, y: 2.0556693}
+      - {x: -3.2133176, y: 2.276675}
+      - {x: -2.555518, y: 2.5800104}
+      - {x: -2.2315044, y: 2.6985347}
+      - {x: -1.8032146, y: 2.789368}
+      - {x: -1.2836516, y: 2.843407}
+      - {x: -1.1923676, y: 2.8983185}
+      - {x: -1.581326, y: 2.9255912}
+      - {x: -2.3409996, y: 2.7727706}
+      - {x: -3.3502622, y: 2.3528306}
+      - {x: -4.149538, y: 1.7157234}
+      - {x: -4.5421104, y: 0.91600984}
+      - {x: -4.494959, y: -0.16632676}
+      - {x: -4.399196, y: -0.77996504}
+      - {x: -4.013288, y: -1.3959422}
+      - {x: -3.4406683, y: -1.9706262}
+      - {x: -2.058466, y: -2.201034}
+      - {x: -0.5268855, y: -2.3009996}
+      - {x: 0.7242026, y: -2.2335742}
+      - {x: 1.52708, y: -2.092194}
+      - {x: 1.8221574, y: -2.0238578}
+      - {x: 2.2194395, y: -1.8999039}
+      - {x: 2.6321678, y: -1.7257992}
+      - {x: 3.249189, y: -1.3555552}
+      - {x: 3.8857293, y: -0.5583154}
+  m_UseDelaunayMesh: 0
 --- !u!1 &841519946
 GameObject:
   m_ObjectHideFlags: 0
@@ -3901,8 +4046,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   despawnTime: 2
   randomDespawnTime: 1
-  minDespawnTime: 1
-  maxDespawnTime: 3
+  minDespawnTime: 0.5
+  maxDespawnTime: 2
   isDestroying: 0
 --- !u!1 &850664831
 GameObject:
@@ -4090,8 +4235,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   despawnTime: 2
   randomDespawnTime: 1
-  minDespawnTime: 1
-  maxDespawnTime: 3
+  minDespawnTime: 0.5
+  maxDespawnTime: 2
   isDestroying: 0
 --- !u!1001 &880462935
 PrefabInstance:
@@ -4359,8 +4504,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   despawnTime: 2
   randomDespawnTime: 1
-  minDespawnTime: 1
-  maxDespawnTime: 3
+  minDespawnTime: 0.5
+  maxDespawnTime: 2
   isDestroying: 0
 --- !u!1 &941691120
 GameObject:
@@ -4545,8 +4690,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   despawnTime: 2
   randomDespawnTime: 1
-  minDespawnTime: 1
-  maxDespawnTime: 3
+  minDespawnTime: 0.5
+  maxDespawnTime: 2
   isDestroying: 0
 --- !u!1 &962435833
 GameObject:
@@ -4557,12 +4702,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 962435834}
-  - component: {fileID: 962435840}
+  - component: {fileID: 962435841}
   - component: {fileID: 962435839}
   - component: {fileID: 962435838}
   - component: {fileID: 962435837}
   - component: {fileID: 962435836}
-  - component: {fileID: 962435835}
+  - component: {fileID: 962435842}
   m_Layer: 0
   m_Name: Pig
   m_TagString: Untagged
@@ -4583,110 +4728,9 @@ Transform:
   m_LocalScale: {x: 0.72999996, y: 0.72999996, z: 0.72999996}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1015134390}
+  - {fileID: 801360094}
   m_Father: {fileID: 1958348382}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!60 &962435835
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 962435833}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 10.24, y: 7}
-    newSize: {x: 10.24, y: 7}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 1.7416893, y: -2.0887952}
-      - {x: 1.9578812, y: -2.273913}
-      - {x: 2.677403, y: -2.3376057}
-      - {x: 3.0601034, y: -2.3184617}
-      - {x: 3.3107307, y: -2.1983664}
-      - {x: 3.4459877, y: -1.9971381}
-      - {x: 3.4869032, y: -1.2037541}
-      - {x: 3.9781, y: -0.4137353}
-      - {x: 4.0726514, y: 0.6667321}
-      - {x: 3.7976427, y: 1.445934}
-      - {x: 4.029479, y: 1.3603058}
-      - {x: 4.4250174, y: 1.468035}
-      - {x: 4.509833, y: 1.8018054}
-      - {x: 4.679722, y: 1.855275}
-      - {x: 4.7725763, y: 2.1617837}
-      - {x: 4.9954743, y: 2.2342222}
-      - {x: 4.968698, y: 2.4449546}
-      - {x: 4.7395287, y: 2.6150727}
-      - {x: 4.5250015, y: 2.6036887}
-      - {x: 4.239853, y: 2.6544027}
-      - {x: 3.9938984, y: 2.5667188}
-      - {x: 3.884087, y: 2.3822906}
-      - {x: 3.5689454, y: 2.2506106}
-      - {x: 3.388498, y: 1.9499866}
-      - {x: 2.6614294, y: 2.4028986}
-      - {x: 1.6933248, y: 2.7593355}
-      - {x: -0.3007746, y: 3.0302122}
-      - {x: -1.7463824, y: 2.9445343}
-      - {x: -2.741281, y: 2.6906154}
-      - {x: -3.1452744, y: 2.8833096}
-      - {x: -3.5456548, y: 2.8491604}
-      - {x: -4.0242224, y: 2.584653}
-      - {x: -4.335489, y: 2.092702}
-      - {x: -4.2597427, y: 1.6447952}
-      - {x: -4.5324993, y: 1.1238718}
-      - {x: -4.6536007, y: 0.5331761}
-      - {x: -4.581465, y: -0.186338}
-      - {x: -4.7335095, y: -0.54207486}
-      - {x: -4.6048717, y: -0.9674344}
-      - {x: -4.277921, y: -1.1478764}
-      - {x: -3.6717515, y: -1.8149011}
-      - {x: -3.65124, y: -2.4266667}
-      - {x: -3.5362918, y: -2.6550372}
-      - {x: -3.2730227, y: -2.791684}
-      - {x: -2.2517548, y: -2.8227587}
-      - {x: -2.0251763, y: -2.7546442}
-      - {x: -1.9300007, y: -2.6266415}
-      - {x: -1.8391356, y: -2.2610996}
-      - {x: -0.99139696, y: -2.3206127}
-      - {x: -0.8513867, y: -2.8208065}
-      - {x: -0.59445953, y: -2.9796343}
-      - {x: -0.042360906, y: -3.0353346}
-      - {x: 0.51535904, y: -3.0251684}
-      - {x: 0.72708166, y: -2.8872604}
-      - {x: 0.84897476, y: -2.7748065}
-      - {x: 0.89448726, y: -2.2484956}
-  m_UseDelaunayMesh: 0
 --- !u!212 &962435836
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4767,7 +4811,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dc6d39d28c20b04b9ac3475e8874f2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Tags: 8
+  Tags: 56
   spriteName: pig_greyfill
   uniqueID: 
   OnFixedUpdateEvent:
@@ -4818,9 +4862,9 @@ MonoBehaviour:
   OnTapEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 962435839}
-        m_TargetAssemblyTypeName: EffectCrackShaderVariable, Assembly-CSharp
-        m_MethodName: AddTapCrack
+      - m_Target: {fileID: 962435841}
+        m_TargetAssemblyTypeName: EffectEmitParticle, Assembly-CSharp
+        m_MethodName: EmitParticles
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4833,9 +4877,9 @@ MonoBehaviour:
   OnAccelerateEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 962435839}
-        m_TargetAssemblyTypeName: EffectCrackShaderVariable, Assembly-CSharp
-        m_MethodName: AddShakeCrack
+      - m_Target: {fileID: 962435841}
+        m_TargetAssemblyTypeName: EffectEmitParticle, Assembly-CSharp
+        m_MethodName: EmitParticles
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4851,7 +4895,7 @@ MonoBehaviour:
   OnGravityChangeEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 962435840}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: EffectRawTilt, Assembly-CSharp
         m_MethodName: CheckUpsideDown
         m_Mode: 0
@@ -4874,7 +4918,7 @@ MonoBehaviour:
   showPinch: 0
   showSlice: 1
   showTap: 1
-  showAccelerate: 0
+  showAccelerate: 1
   showAttitude: 0
   showGravity: 0
   showCreate: 0
@@ -4903,8 +4947,8 @@ MonoBehaviour:
   swipeSound: {fileID: 8300000, guid: 6dca1d9728515a743bbeeb9ee5a29bb5, type: 3}
   shakeSound: {fileID: 8300000, guid: 2f8c64e985d613a4382870edc2c474a8, type: 3}
   tapBuffer: 0.5
-  coinBox: {fileID: 1015134391}
---- !u!114 &962435840
+  coinBox: {fileID: 801360095}
+--- !u!114 &962435841
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4913,11 +4957,55 @@ MonoBehaviour:
   m_GameObject: {fileID: 962435833}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6707f4145bc18741bc27307b24d344a, type: 3}
+  m_Script: {fileID: 11500000, guid: 85a1eac87a26a49489cad881a63f4c6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startTime: 2
-  flipTime: 1
+  tapParticles: {fileID: 6893540742718307453, guid: c4004c208c5cff34ebc0c2ab2f81a7bc, type: 3}
+--- !u!61 &962435842
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 962435833}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.29, y: 1.99}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 10.24, y: 7}
+    newSize: {x: 10.24, y: 7}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2}
+  m_EdgeRadius: 0
 --- !u!1 &996856893
 GameObject:
   m_ObjectHideFlags: 0
@@ -4965,151 +5053,6 @@ MonoBehaviour:
   radius: 20
   power: 2
   explodeSound: {fileID: 8300000, guid: 7105bd520acb5914a96e2fffb6951af3, type: 3}
---- !u!1 &1015134389
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1015134390}
-  - component: {fileID: 1015134391}
-  m_Layer: 0
-  m_Name: CoinBounds
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1015134390
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1015134389}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 962435834}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!60 &1015134391
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1015134389}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 4.0264654, y: 0.6405307}
-      - {x: 3.6978674, y: 1.6004784}
-      - {x: 3.1858063, y: 2.1021848}
-      - {x: 1.8895369, y: 2.6704903}
-      - {x: 0.8485937, y: 2.859064}
-      - {x: -0.13955832, y: 2.9157548}
-      - {x: -0.191329, y: 2.8645918}
-      - {x: 0.9840288, y: 2.7018669}
-      - {x: 2.0500932, y: 2.5160556}
-      - {x: 2.6722956, y: 2.2447674}
-      - {x: 2.938632, y: 2.101043}
-      - {x: 3.1270342, y: 1.9800105}
-      - {x: 3.3528442, y: 1.76576}
-      - {x: 3.5582218, y: 1.468212}
-      - {x: 3.6745758, y: 1.2900815}
-      - {x: 3.7499056, y: 1.0724975}
-      - {x: 3.8319235, y: 0.5301047}
-      - {x: 3.8128805, y: -0.26031172}
-      - {x: 3.7573519, y: -0.52095866}
-      - {x: 3.6087122, y: -0.74392235}
-      - {x: 3.3587818, y: -1.0628681}
-      - {x: 3.0077786, y: -1.4222287}
-      - {x: 2.660223, y: -1.5771604}
-      - {x: 2.259879, y: -1.7789638}
-      - {x: 2.133666, y: -1.8310719}
-      - {x: 1.9949927, y: -1.8655097}
-      - {x: 1.8493156, y: -1.9293232}
-      - {x: 1.512434, y: -2.0137963}
-      - {x: 1.4036183, y: -2.0394583}
-      - {x: 1.010858, y: -2.1007147}
-      - {x: 0.39766645, y: -2.1385984}
-      - {x: -0.24891615, y: -2.1772556}
-      - {x: -0.9945864, y: -2.169198}
-      - {x: -1.6412758, y: -2.1281505}
-      - {x: -2.391721, y: -2.028517}
-      - {x: -2.7095375, y: -1.9585109}
-      - {x: -2.8355432, y: -1.9510089}
-      - {x: -3.3544428, y: -1.791593}
-      - {x: -3.9254405, y: -1.3608372}
-      - {x: -4.335307, y: -0.7012004}
-      - {x: -4.4084077, y: -0.12819883}
-      - {x: -4.4516635, y: 0.8952694}
-      - {x: -4.051402, y: 1.7031676}
-      - {x: -3.6653001, y: 2.0556693}
-      - {x: -3.2133176, y: 2.276675}
-      - {x: -2.555518, y: 2.5800104}
-      - {x: -2.2315044, y: 2.6985347}
-      - {x: -1.8032146, y: 2.789368}
-      - {x: -1.2836516, y: 2.843407}
-      - {x: -1.1923676, y: 2.8983185}
-      - {x: -1.581326, y: 2.9255912}
-      - {x: -2.3409996, y: 2.7727706}
-      - {x: -3.3502622, y: 2.3528306}
-      - {x: -4.149538, y: 1.7157234}
-      - {x: -4.5421104, y: 0.91600984}
-      - {x: -4.494959, y: -0.16632676}
-      - {x: -4.399196, y: -0.77996504}
-      - {x: -4.013288, y: -1.3959422}
-      - {x: -3.4406683, y: -1.9706262}
-      - {x: -2.058466, y: -2.201034}
-      - {x: -0.5268855, y: -2.3009996}
-      - {x: 0.7242026, y: -2.2335742}
-      - {x: 1.52708, y: -2.092194}
-      - {x: 1.8221574, y: -2.0238578}
-      - {x: 2.2194395, y: -1.8999039}
-      - {x: 2.6321678, y: -1.7257992}
-      - {x: 3.249189, y: -1.3555552}
-      - {x: 3.8857293, y: -0.5583154}
-  m_UseDelaunayMesh: 0
 --- !u!1 &1026423073
 GameObject:
   m_ObjectHideFlags: 0
@@ -5384,8 +5327,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   despawnTime: 2
   randomDespawnTime: 1
-  minDespawnTime: 1
-  maxDespawnTime: 3
+  minDespawnTime: 0.5
+  maxDespawnTime: 2
   isDestroying: 0
 --- !u!1 &1037513377
 GameObject:
@@ -5580,8 +5523,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   despawnTime: 2
   randomDespawnTime: 1
-  minDespawnTime: 1
-  maxDespawnTime: 3
+  minDespawnTime: 0.5
+  maxDespawnTime: 2
   isDestroying: 0
 --- !u!1 &1114437945
 GameObject:
@@ -5771,8 +5714,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   despawnTime: 2
   randomDespawnTime: 1
-  minDespawnTime: 1
-  maxDespawnTime: 3
+  minDespawnTime: 0.5
+  maxDespawnTime: 2
   isDestroying: 0
 --- !u!1 &1128136879
 GameObject:
@@ -5963,8 +5906,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   despawnTime: 2
   randomDespawnTime: 1
-  minDespawnTime: 1
-  maxDespawnTime: 3
+  minDespawnTime: 0.5
+  maxDespawnTime: 2
   isDestroying: 0
 --- !u!1 &1191776639
 GameObject:
@@ -6162,8 +6105,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   despawnTime: 2
   randomDespawnTime: 1
-  minDespawnTime: 1
-  maxDespawnTime: 3
+  minDespawnTime: 0.5
+  maxDespawnTime: 2
   isDestroying: 0
 --- !u!1 &1202046244
 GameObject:
@@ -6352,8 +6295,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   despawnTime: 2
   randomDespawnTime: 1
-  minDespawnTime: 1
-  maxDespawnTime: 3
+  minDespawnTime: 0.5
+  maxDespawnTime: 2
   isDestroying: 0
 --- !u!1 &1281568560
 GameObject:
@@ -6537,8 +6480,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   despawnTime: 2
   randomDespawnTime: 1
-  minDespawnTime: 1
-  maxDespawnTime: 3
+  minDespawnTime: 0.5
+  maxDespawnTime: 2
   isDestroying: 0
 --- !u!1 &1293641851
 GameObject:
@@ -6727,8 +6670,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   despawnTime: 2
   randomDespawnTime: 1
-  minDespawnTime: 1
-  maxDespawnTime: 3
+  minDespawnTime: 0.5
+  maxDespawnTime: 2
   isDestroying: 0
 --- !u!1 &1359637260
 GameObject:
@@ -6918,8 +6861,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   despawnTime: 2
   randomDespawnTime: 1
-  minDespawnTime: 1
-  maxDespawnTime: 3
+  minDespawnTime: 0.5
+  maxDespawnTime: 2
   isDestroying: 0
 --- !u!1 &1435256825
 GameObject:
@@ -7112,8 +7055,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   despawnTime: 2
   randomDespawnTime: 1
-  minDespawnTime: 1
-  maxDespawnTime: 3
+  minDespawnTime: 0.5
+  maxDespawnTime: 2
   isDestroying: 0
 --- !u!1 &1485692595
 GameObject:
@@ -7298,8 +7241,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   despawnTime: 2
   randomDespawnTime: 1
-  minDespawnTime: 1
-  maxDespawnTime: 3
+  minDespawnTime: 0.5
+  maxDespawnTime: 2
   isDestroying: 0
 --- !u!1 &1559981878
 GameObject:
@@ -7490,8 +7433,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   despawnTime: 2
   randomDespawnTime: 1
-  minDespawnTime: 1
-  maxDespawnTime: 3
+  minDespawnTime: 0.5
+  maxDespawnTime: 2
   isDestroying: 0
 --- !u!1 &1583218063
 GameObject:
@@ -7738,8 +7681,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   despawnTime: 2
   randomDespawnTime: 1
-  minDespawnTime: 1
-  maxDespawnTime: 3
+  minDespawnTime: 0.5
+  maxDespawnTime: 2
   isDestroying: 0
 --- !u!1 &1625604764
 GameObject:
@@ -7950,8 +7893,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   despawnTime: 2
   randomDespawnTime: 1
-  minDespawnTime: 1
-  maxDespawnTime: 3
+  minDespawnTime: 0.5
+  maxDespawnTime: 2
   isDestroying: 0
 --- !u!1 &1657593857
 GameObject:
@@ -8137,8 +8080,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   despawnTime: 2
   randomDespawnTime: 1
-  minDespawnTime: 1
-  maxDespawnTime: 3
+  minDespawnTime: 0.5
+  maxDespawnTime: 2
   isDestroying: 0
 --- !u!1 &1657786768
 GameObject:
@@ -8328,8 +8271,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   despawnTime: 2
   randomDespawnTime: 1
-  minDespawnTime: 1
-  maxDespawnTime: 3
+  minDespawnTime: 0.5
+  maxDespawnTime: 2
   isDestroying: 0
 --- !u!1 &1681456255
 GameObject:
@@ -8519,8 +8462,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   despawnTime: 2
   randomDespawnTime: 1
-  minDespawnTime: 1
-  maxDespawnTime: 3
+  minDespawnTime: 0.5
+  maxDespawnTime: 2
   isDestroying: 0
 --- !u!1 &1699858579 stripped
 GameObject:
@@ -8715,8 +8658,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   despawnTime: 2
   randomDespawnTime: 1
-  minDespawnTime: 1
-  maxDespawnTime: 3
+  minDespawnTime: 0.5
+  maxDespawnTime: 2
   isDestroying: 0
 --- !u!1 &1724598499
 GameObject:
@@ -8917,8 +8860,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   despawnTime: 2
   randomDespawnTime: 1
-  minDespawnTime: 1
-  maxDespawnTime: 3
+  minDespawnTime: 0.5
+  maxDespawnTime: 2
   isDestroying: 0
 --- !u!1 &1726527999
 GameObject:
@@ -9106,8 +9049,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   despawnTime: 2
   randomDespawnTime: 1
-  minDespawnTime: 1
-  maxDespawnTime: 3
+  minDespawnTime: 0.5
+  maxDespawnTime: 2
   isDestroying: 0
 --- !u!1 &1746658768
 GameObject:
@@ -9295,8 +9238,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   despawnTime: 2
   randomDespawnTime: 1
-  minDespawnTime: 1
-  maxDespawnTime: 3
+  minDespawnTime: 0.5
+  maxDespawnTime: 2
   isDestroying: 0
 --- !u!1 &1782641632
 GameObject:
@@ -9484,8 +9427,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   despawnTime: 2
   randomDespawnTime: 1
-  minDespawnTime: 1
-  maxDespawnTime: 3
+  minDespawnTime: 0.5
+  maxDespawnTime: 2
   isDestroying: 0
 --- !u!1 &1786012934
 GameObject:
@@ -9694,8 +9637,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   despawnTime: 2
   randomDespawnTime: 1
-  minDespawnTime: 1
-  maxDespawnTime: 3
+  minDespawnTime: 0.5
+  maxDespawnTime: 2
   isDestroying: 0
 --- !u!1 &1844524369
 GameObject:
@@ -9903,8 +9846,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   despawnTime: 2
   randomDespawnTime: 1
-  minDespawnTime: 1
-  maxDespawnTime: 3
+  minDespawnTime: 0.5
+  maxDespawnTime: 2
   isDestroying: 0
 --- !u!1 &1869821822
 GameObject:
@@ -10094,8 +10037,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   despawnTime: 2
   randomDespawnTime: 1
-  minDespawnTime: 1
-  maxDespawnTime: 3
+  minDespawnTime: 0.5
+  maxDespawnTime: 2
   isDestroying: 0
 --- !u!1 &1870121727
 GameObject:
@@ -10283,8 +10226,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   despawnTime: 2
   randomDespawnTime: 1
-  minDespawnTime: 1
-  maxDespawnTime: 3
+  minDespawnTime: 0.5
+  maxDespawnTime: 2
   isDestroying: 0
 --- !u!1 &1879135938
 GameObject:
@@ -10469,8 +10412,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   despawnTime: 2
   randomDespawnTime: 1
-  minDespawnTime: 1
-  maxDespawnTime: 3
+  minDespawnTime: 0.5
+  maxDespawnTime: 2
   isDestroying: 0
 --- !u!1 &1879909128
 GameObject:
@@ -10662,8 +10605,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   despawnTime: 2
   randomDespawnTime: 1
-  minDespawnTime: 1
-  maxDespawnTime: 3
+  minDespawnTime: 0.5
+  maxDespawnTime: 2
   isDestroying: 0
 --- !u!1 &1928088779
 GameObject:
@@ -10853,8 +10796,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   despawnTime: 2
   randomDespawnTime: 1
-  minDespawnTime: 1
-  maxDespawnTime: 3
+  minDespawnTime: 0.5
+  maxDespawnTime: 2
   isDestroying: 0
 --- !u!1 &1958348381
 GameObject:
@@ -11080,8 +11023,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   despawnTime: 2
   randomDespawnTime: 1
-  minDespawnTime: 1
-  maxDespawnTime: 3
+  minDespawnTime: 0.5
+  maxDespawnTime: 2
   isDestroying: 0
 --- !u!114 &2008754157 stripped
 MonoBehaviour:
@@ -11109,7 +11052,7 @@ MonoBehaviour:
   impactSound: {fileID: 8300000, guid: fb765d7d7c4a7e44d81556d5c44ba748, type: 3}
   rollSound: {fileID: 8300000, guid: c67c84eb69f2b2d4691c3cfab16be20f, type: 3}
   rb: {fileID: 676902234}
-  coinBounds: {fileID: 0}
+  coinBounds: {fileID: 801360093}
 --- !u!1 &2037830691
 GameObject:
   m_ObjectHideFlags: 0
@@ -11289,8 +11232,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   despawnTime: 2
   randomDespawnTime: 1
-  minDespawnTime: 1
-  maxDespawnTime: 3
+  minDespawnTime: 0.5
+  maxDespawnTime: 2
   isDestroying: 0
 --- !u!1 &2053741714
 GameObject:
@@ -11483,8 +11426,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   despawnTime: 2
   randomDespawnTime: 1
-  minDespawnTime: 1
-  maxDespawnTime: 3
+  minDespawnTime: 0.5
+  maxDespawnTime: 2
   isDestroying: 0
 --- !u!1 &2103181806
 GameObject:
