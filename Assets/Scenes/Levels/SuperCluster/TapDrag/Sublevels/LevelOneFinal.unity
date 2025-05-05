@@ -1990,7 +1990,7 @@ MonoBehaviour:
   - cube_head_body
   - cone_head_full
   - cube_head_full
-  - cone_head_body-headless
+  - cone_head_headless
   shapes:
   - {fileID: 1409910222}
   - {fileID: 2124386983}
@@ -2289,8 +2289,8 @@ Transform:
   m_GameObject: {fileID: 913750034}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.157589, y: 1.91898, z: 0.056763247}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalPosition: {x: -7.157589, y: 2.1, z: 0.056763247}
+  m_LocalScale: {x: 0.181, y: 0.181, z: 0.181}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1947996821}
@@ -2327,9 +2327,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 1.37}
+  m_Offset: {x: -0.2800001, y: 2.8195047}
   serializedVersion: 2
-  m_Radius: 0.7431066
+  m_Radius: 2.0979578
 --- !u!114 &913750037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2343,8 +2343,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Tags: 0
-  spriteName: cone_head_body
-  uniqueID: headless
+  spriteName: cone_head_headless
+  uniqueID: 
   OnFixedUpdateEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -2435,7 +2435,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 0915e0cb2c69c09459ba805baf859783, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f2b1c02dcf77e4d76ab059dd34176664, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3071,7 +3071,7 @@ MonoBehaviour:
     shapeB: cube_greyfill
     shapeC: cube_head_full
     recipeType: 0
-  - shapeA: cone_head_body-headless
+  - shapeA: cone_head_headless
     shapeB: sphere_greyfill
     shapeC: cone_head_body
     recipeType: 0

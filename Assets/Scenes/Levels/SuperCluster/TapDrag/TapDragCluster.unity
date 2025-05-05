@@ -633,22 +633,22 @@ PrefabInstance:
     - target: {fileID: 1654394840187478972, guid: 2b2cd809ba6faf74da6204ced6136572, type: 3}
       propertyPath: sprites.Array.data[0]
       value: 
-      objectReference: {fileID: 21300000, guid: 210b4ec4a19dbc449a2f83e615e2f5d1, type: 3}
+      objectReference: {fileID: 21300000, guid: eeb6e41ed7c654e45867bab176018fbe, type: 3}
     - target: {fileID: 1654394840187478972, guid: 2b2cd809ba6faf74da6204ced6136572, type: 3}
       propertyPath: sprites.Array.data[1]
       value: 
       objectReference: {fileID: 21300000, guid: f93b4c7a0eacb9347bdf7c701b6e01c4, type: 3}
     - target: {fileID: 2924447894569761838, guid: 2b2cd809ba6faf74da6204ced6136572, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.8375
+      value: 3.24
       objectReference: {fileID: 0}
     - target: {fileID: 2924447894569761838, guid: 2b2cd809ba6faf74da6204ced6136572, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.8375
+      value: 3.24
       objectReference: {fileID: 0}
     - target: {fileID: 2924447894569761838, guid: 2b2cd809ba6faf74da6204ced6136572, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 3.8686569
       objectReference: {fileID: 0}
     - target: {fileID: 2924447894569761838, guid: 2b2cd809ba6faf74da6204ced6136572, type: 3}
       propertyPath: m_LocalPosition.x
@@ -697,7 +697,7 @@ PrefabInstance:
     - target: {fileID: 6776819501858844909, guid: 2b2cd809ba6faf74da6204ced6136572, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 210b4ec4a19dbc449a2f83e615e2f5d1, type: 3}
+      objectReference: {fileID: 21300000, guid: eeb6e41ed7c654e45867bab176018fbe, type: 3}
     - target: {fileID: 7216949966368150821, guid: 2b2cd809ba6faf74da6204ced6136572, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5587695
@@ -1305,18 +1305,22 @@ PrefabInstance:
     - target: {fileID: 1654394840187478972, guid: 2b2cd809ba6faf74da6204ced6136572, type: 3}
       propertyPath: sprites.Array.data[0]
       value: 
-      objectReference: {fileID: 21300000, guid: a64bce07442c4c849be05c4f6ffa35d2, type: 3}
+      objectReference: {fileID: 21300000, guid: 25e685c0b60134ca182d745c61b195f6, type: 3}
     - target: {fileID: 1654394840187478972, guid: 2b2cd809ba6faf74da6204ced6136572, type: 3}
       propertyPath: sprites.Array.data[1]
       value: 
       objectReference: {fileID: 21300000, guid: f93b4c7a0eacb9347bdf7c701b6e01c4, type: 3}
     - target: {fileID: 2924447894569761838, guid: 2b2cd809ba6faf74da6204ced6136572, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.8375
+      value: 3.24
       objectReference: {fileID: 0}
     - target: {fileID: 2924447894569761838, guid: 2b2cd809ba6faf74da6204ced6136572, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.8375
+      value: 3.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 2924447894569761838, guid: 2b2cd809ba6faf74da6204ced6136572, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3.8686566
       objectReference: {fileID: 0}
     - target: {fileID: 2924447894569761838, guid: 2b2cd809ba6faf74da6204ced6136572, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1325,6 +1329,10 @@ PrefabInstance:
     - target: {fileID: 2924447894569761838, guid: 2b2cd809ba6faf74da6204ced6136572, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2924447894569761838, guid: 2b2cd809ba6faf74da6204ced6136572, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3294931423795960901, guid: 2b2cd809ba6faf74da6204ced6136572, type: 3}
       propertyPath: m_text
@@ -1361,7 +1369,7 @@ PrefabInstance:
     - target: {fileID: 6776819501858844909, guid: 2b2cd809ba6faf74da6204ced6136572, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: a64bce07442c4c849be05c4f6ffa35d2, type: 3}
+      objectReference: {fileID: 21300000, guid: 25e685c0b60134ca182d745c61b195f6, type: 3}
     - target: {fileID: 7216949966368150821, guid: 2b2cd809ba6faf74da6204ced6136572, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5587695
@@ -1972,7 +1980,7 @@ Transform:
   m_GameObject: {fileID: 1808359970}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.04, y: -0.43, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 3.1, y: 3.1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2214,18 +2222,22 @@ PrefabInstance:
     - target: {fileID: 1654394840187478972, guid: 2b2cd809ba6faf74da6204ced6136572, type: 3}
       propertyPath: sprites.Array.data[0]
       value: 
-      objectReference: {fileID: 21300000, guid: 13ca085e911064249a29a94b79af484f, type: 3}
+      objectReference: {fileID: 21300000, guid: 8b1124050a3fc4b5aa415d9f8da250bc, type: 3}
     - target: {fileID: 1654394840187478972, guid: 2b2cd809ba6faf74da6204ced6136572, type: 3}
       propertyPath: sprites.Array.data[1]
       value: 
       objectReference: {fileID: 21300000, guid: f93b4c7a0eacb9347bdf7c701b6e01c4, type: 3}
     - target: {fileID: 2924447894569761838, guid: 2b2cd809ba6faf74da6204ced6136572, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.8375
+      value: 3.24
       objectReference: {fileID: 0}
     - target: {fileID: 2924447894569761838, guid: 2b2cd809ba6faf74da6204ced6136572, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.8375
+      value: 3.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 2924447894569761838, guid: 2b2cd809ba6faf74da6204ced6136572, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3.8686569
       objectReference: {fileID: 0}
     - target: {fileID: 2924447894569761838, guid: 2b2cd809ba6faf74da6204ced6136572, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2234,6 +2246,10 @@ PrefabInstance:
     - target: {fileID: 2924447894569761838, guid: 2b2cd809ba6faf74da6204ced6136572, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2924447894569761838, guid: 2b2cd809ba6faf74da6204ced6136572, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3294931423795960901, guid: 2b2cd809ba6faf74da6204ced6136572, type: 3}
       propertyPath: m_text
@@ -2270,7 +2286,7 @@ PrefabInstance:
     - target: {fileID: 6776819501858844909, guid: 2b2cd809ba6faf74da6204ced6136572, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 13ca085e911064249a29a94b79af484f, type: 3}
+      objectReference: {fileID: 21300000, guid: 8b1124050a3fc4b5aa415d9f8da250bc, type: 3}
     - target: {fileID: 7216949966368150821, guid: 2b2cd809ba6faf74da6204ced6136572, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5587695
