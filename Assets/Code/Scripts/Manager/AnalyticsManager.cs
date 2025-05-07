@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.Services.Analytics;
 using Unity.Services.Core;
 using UnityEngine;
+using UnityEngine.Analytics;
 
 public class AnalyticsManager : MonoBehaviour
 {
@@ -26,10 +27,12 @@ public class AnalyticsManager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
 
             await UnityServices.InitializeAsync();
-
             AnalyticsService.Instance.StartDataCollection();
-            Debug.Log("Data collection started");
         }
+
+        // DELETE THIS BEFORE SHIPPING. SOLELY FOR DEVELOPMENT TESTING
+        PlayerPrefs.DeleteAll();
+        PlayerPrefs.Save();
     }
     #endregion
 }
