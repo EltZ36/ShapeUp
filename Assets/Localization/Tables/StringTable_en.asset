@@ -146,6 +146,14 @@ MonoBehaviour:
     m_Localized: Shadowcluster
     m_Metadata:
       m_Items: []
+  - m_Id: 8623285079379968
+    m_Localized: Level Select
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8623313630007296
+    m_Localized: Daily Puzzle
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

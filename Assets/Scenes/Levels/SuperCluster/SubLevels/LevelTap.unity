@@ -517,7 +517,7 @@ GameObject:
   - component: {fileID: 739531983}
   - component: {fileID: 739531982}
   - component: {fileID: 739531981}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: cube_head_sled
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1032,7 +1032,7 @@ GameObject:
   - component: {fileID: 1360833267}
   - component: {fileID: 1360833266}
   - component: {fileID: 1360833265}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: cone_head_sled
   m_TagString: Untagged
   m_Icon: {fileID: 0}

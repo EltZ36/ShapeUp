@@ -115,6 +115,14 @@ MonoBehaviour:
     m_Localized: "GrupoSombr\xEDo"
     m_Metadata:
       m_Items: []
+  - m_Id: 8623285079379968
+    m_Localized: "Selecci\xF3n de Nivel"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8623313630007296
+    m_Localized: Puzzle Diario
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
