@@ -434,7 +434,7 @@
                 "m_Node": {
                     "m_Id": "e3894053d981413c9ca4b7ccd741bee5"
                 },
-                "m_SlotId": 1
+                "m_SlotId": 0
             },
             "m_InputSlot": {
                 "m_Node": {
@@ -763,8 +763,8 @@
     "m_ObjectId": "17a08723ce3046ccb2e00a407a56da26",
     "m_Title": "Combining UV with noise",
     "m_Position": {
-        "x": -1702.0,
-        "y": -1209.000244140625
+        "x": -1701.999755859375,
+        "y": -1208.999755859375
     }
 }
 
@@ -818,7 +818,7 @@
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
-    "m_Value": 0.125,
+    "m_Value": 0.004999999888241291,
     "m_FloatType": 0,
     "m_RangeValues": {
         "x": 0.0,
@@ -1938,7 +1938,7 @@
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
-    "m_Value": 40.0,
+    "m_Value": 7.0,
     "m_FloatType": 0,
     "m_RangeValues": {
         "x": 0.0,
@@ -2457,7 +2457,7 @@
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
-    "m_Value": 0.004999999888241291,
+    "m_Value": 0.012500000186264515,
     "m_FloatType": 0,
     "m_RangeValues": {
         "x": 0.0,
@@ -3500,8 +3500,8 @@
     "m_ObjectId": "e87b3b34dc7141ccb49e27c05a7cfdc2",
     "m_Title": "Moving noise forward",
     "m_Position": {
-        "x": -2629.0,
-        "y": -1588.0001220703125
+        "x": -2628.999755859375,
+        "y": -1587.999755859375
     }
 }
 
@@ -3539,8 +3539,8 @@
     "m_ObjectId": "ed6f71d9743b495f82f82e72aaf77416",
     "m_Title": "Manipulating noise to wobble with sine",
     "m_Position": {
-        "x": -2502.0,
-        "y": -1003.0003051757813
+        "x": -2501.999755859375,
+        "y": -1002.999755859375
     }
 }
 
