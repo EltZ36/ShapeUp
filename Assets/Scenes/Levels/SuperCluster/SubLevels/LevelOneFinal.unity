@@ -3440,11 +3440,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: 679a2627b2c70e14bb4030e7d74977eb, type: 3}
       propertyPath: showPinch
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: 679a2627b2c70e14bb4030e7d74977eb, type: 3}
       propertyPath: showSlice
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: 679a2627b2c70e14bb4030e7d74977eb, type: 3}
       propertyPath: showCreate
