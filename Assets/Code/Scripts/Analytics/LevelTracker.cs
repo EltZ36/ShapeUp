@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.Services.Analytics;
 using UnityEngine;
 using UnityEngine.Analytics;
 
@@ -24,12 +25,10 @@ public class LevelTracker : MonoBehaviour
 
             Debug.Log("Visited " + levelName + ", visits: " + levelVisits);
 
-            AnalyticsResult analyticsResult = Analytics.CustomEvent(
-                "levelEntered",
-                new Dictionary<string, object> { { "level", levelName }, { "visits", levelVisits } }
-            );
+            AnalyticsService.Instance.RecordEvent("levelEntered");
 
-            Debug.Log("analyticsResult: " + analyticsResult);
+            //  "levelEntered",
+            //new Dictionary<string, object> { { "level", levelName }, { "visits", levelVisits } }
         }
         else
         {
