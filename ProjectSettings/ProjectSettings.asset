@@ -913,11 +913,11 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 0
   windowsGamepadBackendHint: 0
-  cloudProjectId: 4ce65329-784d-4878-b1a3-d77defdc8d24
+  cloudProjectId: 826d2496-0c50-4243-8b90-ebc1af26d39a
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: ShapeUp 2025-01-17_15-41-40
-  organizationId: poptako9
+  projectName: Shape Up
+  organizationId: zekeaccount
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}
