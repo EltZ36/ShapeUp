@@ -2,16 +2,18 @@ using System.Collections.Generic;
 using Unity.Services.Analytics;
 using UnityEngine;
 using UnityEngine.Analytics;
+using UnityEngine.SceneManagement;
 
 public class LevelTracker : MonoBehaviour
 {
-    [SerializeField]
     private string levelName;
 
-    private const string keySuffix = "_numVisits";
+    private const string keySuffix = "_totalVisits";
 
     void Start()
     {
+        levelName = SceneManager.GetActiveScene().name;
+        
         TrackLevelEvent();
     }
 
@@ -19,16 +21,15 @@ public class LevelTracker : MonoBehaviour
     {
         if (!string.IsNullOrEmpty(levelName))
         {
-            IncrementLevelVisits();
+            int visitCount = IncrementLevelVisits();
 
-            int levelVisits = GetLevelVisitCount();
+            LevelEnteredEvent levelEnteredEvent = new LevelEnteredEvent
+            {
+                LevelName = levelName,
+                VisitCount = visitCount
+            };
 
-            Debug.Log("Visited " + levelName + ", visits: " + levelVisits);
-
-            AnalyticsService.Instance.RecordEvent("levelEntered");
-
-            //  "levelEntered",
-            //new Dictionary<string, object> { { "level", levelName }, { "visits", levelVisits } }
+            AnalyticsService.Instance.RecordEvent(levelEnteredEvent);
         }
         else
         {
@@ -36,15 +37,22 @@ public class LevelTracker : MonoBehaviour
         }
     }
 
-    private void IncrementLevelVisits()
+    private int IncrementLevelVisits()
     {
-        int currentVisitCount = GetLevelVisitCount();
-        PlayerPrefs.SetInt(levelName + keySuffix, currentVisitCount + 1);
+        string prefsKey = levelName + keySuffix;
+        int visitCount = PlayerPrefs.GetInt(prefsKey, 0) + 1;
+        
+        PlayerPrefs.SetInt(levelName + keySuffix, visitCount);
         PlayerPrefs.Save();
-    }
 
-    private int GetLevelVisitCount()
-    {
-        return PlayerPrefs.GetInt(levelName + keySuffix, 0);
+        return visitCount;
     }
+}
+
+public class LevelEnteredEvent : Unity.Services.Analytics.Event
+{
+    public LevelEnteredEvent() : base("levelEntered") { }
+    
+    public string LevelName { set { SetParameter("levelName", value ); } }
+    public int VisitCount { set {SetParameter("visitCount", value ); } }
 }
