@@ -2,11 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DailyUI : MonoBehaviour
 {
     [SerializeField]
     public TextMeshProUGUI timerUI;
+
+    [SerializeField]
+    public GameObject winUI;
 
     void Update()
     {
@@ -27,5 +31,16 @@ public class DailyUI : MonoBehaviour
         }
         time += num % 60;
         return time;
+    }
+
+    public void Win()
+    {
+        winUI.SetActive(true);
+    }
+
+    public void OnExitToMenu()
+    {
+        // Quit game, load menu
+        SceneManager.LoadScene("Menu");
     }
 }

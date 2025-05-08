@@ -28,7 +28,7 @@ public class DailyManager : MonoBehaviour
         else
         {
             _instance = this;
-            DontDestroyOnLoad(this.gameObject);
+            // DontDestroyOnLoad(this.gameObject);
         }
     }
     #endregion
@@ -36,6 +36,9 @@ public class DailyManager : MonoBehaviour
     [SerializeField]
     public List<string> levelPool = new List<string>();
     private List<string> randomLevels = new List<string>();
+
+    [SerializeField]
+    public DailyUI UI;
 
     public int currentLevelIndex,
         timer;
@@ -59,7 +62,7 @@ public class DailyManager : MonoBehaviour
     private void SetSeed()
     {
         DateTime dt = DateTime.Now;
-        int randomSeed = dt.DayOfYear;
+        int randomSeed = Int32.Parse(dt.DayOfYear + "" + dt.Year);
         UnityEngine.Random.InitState(randomSeed);
     }
 
@@ -79,7 +82,15 @@ public class DailyManager : MonoBehaviour
     {
         SceneManager.UnloadSceneAsync(randomLevels[currentLevelIndex]);
         currentLevelIndex++;
-        SceneManager.LoadSceneAsync(randomLevels[currentLevelIndex], LoadSceneMode.Additive);
+        if (currentLevelIndex == 3)
+        {
+            complete = true;
+            UI.Win();
+        }
+        else
+        {
+            SceneManager.LoadSceneAsync(randomLevels[currentLevelIndex], LoadSceneMode.Additive);
+        }
     }
 
     IEnumerator IncrementTimer()
