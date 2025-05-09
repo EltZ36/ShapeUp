@@ -13,7 +13,8 @@ public class LevelTracker : MonoBehaviour
     void Start()
     {
         levelName = SceneManager.GetActiveScene().name;
-        
+        Debug.Log("Level name: " + levelName);
+
         TrackLevelEvent();
     }
 
@@ -23,10 +24,12 @@ public class LevelTracker : MonoBehaviour
         {
             int visitCount = IncrementLevelVisits();
 
+            Debug.Log("visit count: " + visitCount);
+
             LevelEnteredEvent levelEnteredEvent = new LevelEnteredEvent
             {
                 LevelName = levelName,
-                VisitCount = visitCount
+                VisitCount = visitCount,
             };
 
             AnalyticsService.Instance.RecordEvent(levelEnteredEvent);
@@ -41,7 +44,7 @@ public class LevelTracker : MonoBehaviour
     {
         string prefsKey = levelName + keySuffix;
         int visitCount = PlayerPrefs.GetInt(prefsKey, 0) + 1;
-        
+
         PlayerPrefs.SetInt(levelName + keySuffix, visitCount);
         PlayerPrefs.Save();
 
@@ -51,8 +54,15 @@ public class LevelTracker : MonoBehaviour
 
 public class LevelEnteredEvent : Unity.Services.Analytics.Event
 {
-    public LevelEnteredEvent() : base("levelEntered") { }
-    
-    public string LevelName { set { SetParameter("levelName", value ); } }
-    public int VisitCount { set {SetParameter("visitCount", value ); } }
+    public LevelEnteredEvent()
+        : base("levelEntered") { }
+
+    public string LevelName
+    {
+        set { SetParameter("levelName", value); }
+    }
+    public int VisitCount
+    {
+        set { SetParameter("visitCount", value); }
+    }
 }
