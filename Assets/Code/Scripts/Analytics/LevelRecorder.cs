@@ -5,11 +5,9 @@ using UnityEngine.Analytics;
 using UnityEngine.SceneManagement;
 
 /*
-KPI recorder script for Levels.
-
-Currently has options to record:
-    - Number of visits made to that level
-    - Time spent completing the level
+ * Records:
+ *  - Number of visits made --> (levelName: string, visitCount: int)
+ *  - Time spent completing the level --> (levelName: string, timeSpent: float)
 */
 
 public class LevelRecorder : MonoBehaviour

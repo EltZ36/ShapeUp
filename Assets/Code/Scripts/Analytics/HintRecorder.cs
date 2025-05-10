@@ -4,6 +4,11 @@ using Unity.Services.Analytics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/*
+ * Records:
+ *  - Number of hints used --> (levelName: string, hintCount: int)
+*/
+
 public class HintRecorder : MonoBehaviour
 {
     private string levelName;

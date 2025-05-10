@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using Unity.Services.Analytics;
 using UnityEngine;
 
+/*
+ * Records:
+ *  - Client FPS every X interval --> (fps: int)
+*/
+
 public class FPSRecorder : MonoBehaviour
 {
     [SerializeField]
