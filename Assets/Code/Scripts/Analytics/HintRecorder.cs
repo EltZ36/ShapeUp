@@ -13,7 +13,7 @@ public class HintRecorder : MonoBehaviour
 {
     private string levelName;
 
-    private const string keySuffix = "_hintUses";
+    private const string keySuffix = "_hintsUsed";
 
     void Start()
     {
