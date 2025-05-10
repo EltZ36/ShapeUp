@@ -13,31 +13,23 @@ public class LevelTracker : MonoBehaviour
     void Start()
     {
         levelName = SceneManager.GetActiveScene().name;
-        Debug.Log("Level name: " + levelName);
 
         TrackLevelEvent();
     }
 
     public void TrackLevelEvent()
     {
-        if (!string.IsNullOrEmpty(levelName))
+        int visitCount = IncrementLevelVisits();
+
+        Debug.Log("visit count: " + visitCount);
+
+        LevelEnteredEvent levelEnteredEvent = new LevelEnteredEvent
         {
-            int visitCount = IncrementLevelVisits();
+            LevelName = levelName,
+            VisitCount = visitCount,
+        };
 
-            Debug.Log("visit count: " + visitCount);
-
-            LevelEnteredEvent levelEnteredEvent = new LevelEnteredEvent
-            {
-                LevelName = levelName,
-                VisitCount = visitCount,
-            };
-
-            AnalyticsService.Instance.RecordEvent(levelEnteredEvent);
-        }
-        else
-        {
-            Debug.Log("LevelTracker: level name field is empty");
-        }
+        AnalyticsService.Instance.RecordEvent(levelEnteredEvent);
     }
 
     private int IncrementLevelVisits()
