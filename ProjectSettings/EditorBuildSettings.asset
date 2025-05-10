@@ -77,6 +77,51 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/SuperCluster/ShadowSubLevels/LightTap.unity
     guid: b65a6ede918984aa09c55ea96d7fcd56
+  - enabled: 1
+    path: Assets/Scenes/Levels/SuperCluster/TapDrag/TapDragCluster.unity
+    guid: 4832860e3ecde4301afdc72f8d217d63
+  - enabled: 1
+    path: Assets/Scenes/Levels/SuperCluster/TapDrag/Sublevels/BoxTap.unity
+    guid: b5eb82ba99370448e96ca215d6993824
+  - enabled: 1
+    path: Assets/Scenes/Levels/SuperCluster/TapDrag/Sublevels/EggLevel.unity
+    guid: 599c1e42e55d39348adce9dccd8b9749
+  - enabled: 1
+    path: Assets/Scenes/Levels/SuperCluster/TapDrag/Sublevels/TapDragFinal.unity
+    guid: 2427cf3ae5b284357a861c6de7197e5d
+  - enabled: 1
+    path: Assets/Scenes/Levels/SuperCluster/TapDrag/Sublevels/SledLevel.unity
+    guid: 296590a8e36c040c2b555f55ce496398
+  - enabled: 1
+    path: Assets/Scenes/Levels/SuperCluster/TapDrag/Sublevels/PigDragLevel.unity
+    guid: 856125d5ec0b69c408f7322d8f97686d
+  - enabled: 1
+    path: Assets/Scenes/Levels/SuperCluster/TapDrag/Sublevels/TableLevel.unity
+    guid: 1a2eea2c62016ae46b9d30fe18aec16e
+  - enabled: 1
+    path: Assets/Scenes/Levels/SuperCluster/PinchSwipe/PinchSwipeCluster.unity
+    guid: f09df1561b4a44449a011ddc9e100b5e
+  - enabled: 1
+    path: Assets/Scenes/Levels/SuperCluster/PinchSwipe/Sublevels - PinchDrag/BoulderLevel.unity
+    guid: cd4db323a92d80c4b9152683d251f609
+  - enabled: 1
+    path: Assets/Scenes/Levels/SuperCluster/PinchSwipe/Sublevels - PinchDrag/RopeLevel.unity
+    guid: 56e016a958bf848bb941c3beccfdbddf
+  - enabled: 1
+    path: Assets/Scenes/Levels/SuperCluster/PinchSwipe/Sublevels - PinchDrag/CubeheadForThree.unity
+    guid: bf3dc0e0a55354349bf9bfe94facbe04
+  - enabled: 1
+    path: Assets/Scenes/Levels/SuperCluster/PinchSwipe/Sublevels - PinchDrag/CirclePinch.unity
+    guid: 9a2aa05a665034768b74c6ccfde161b4
+  - enabled: 1
+    path: Assets/Scenes/Levels/SuperCluster/PinchSwipe/Sublevels - PinchDrag/PigSwipeLevel.unity
+    guid: d8e8b26fefa07f841ae32cc60ee91633
+  - enabled: 1
+    path: Assets/Scenes/Levels/SuperCluster/PinchSwipe/Sublevels - PinchDrag/PinchDrag.unity
+    guid: 253f4d56a495a491c939a374c849c136
+  - enabled: 1
+    path: Assets/Scenes/Levels/SuperCluster/PinchSwipe/Sublevels - PinchDrag/PlateLevel.unity
+    guid: 79eaa215334cb0e42b4a2e1f85447067
   m_configObjects:
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 5acb6dc0ef378be47959efcf50c27298, type: 2}
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: a491f95ff7262104f8d70dba4b2e36d8, type: 2}

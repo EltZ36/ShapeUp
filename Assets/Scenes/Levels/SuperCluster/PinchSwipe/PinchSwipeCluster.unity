@@ -195,7 +195,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -2
+  m_SortingOrder: -4
   m_Sprite: {fileID: 21300000, guid: 3972b1145b16d3b4e86cd6adfb2416a8, type: 3}
   m_Color: {r: 0.754717, g: 0.754717, b: 0.754717, a: 1}
   m_FlipX: 0
@@ -818,7 +818,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -2
+  m_SortingOrder: -3
   m_Sprite: {fileID: 1285955752, guid: 9ac3e4a973aa59548835845663772951, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -924,7 +924,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -2
+  m_SortingOrder: -3
   m_Sprite: {fileID: 1285955752, guid: 9ac3e4a973aa59548835845663772951, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1030,7 +1030,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -2
+  m_SortingOrder: -3
   m_Sprite: {fileID: 1285955752, guid: 9ac3e4a973aa59548835845663772951, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1469,7 +1469,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -2
+  m_SortingOrder: -3
   m_Sprite: {fileID: 1285955752, guid: 9ac3e4a973aa59548835845663772951, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1548,14 +1548,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelInfo:
-    SceneName: ShadowCluster
+    SceneName: PinchSwipeCluster
     IsComplete: 0
     SubLevels:
     - SceneName: PinchDrag
       IsComplete: 0
       Thumbnail: {fileID: 1688693569}
       firstLoad: 0
-    - SceneName: LevelPinch
+    - SceneName: CirclePinch
       IsComplete: 0
       Thumbnail: {fileID: 357313774}
       firstLoad: 0
@@ -1567,7 +1567,7 @@ MonoBehaviour:
       IsComplete: 0
       Thumbnail: {fileID: 200559515}
       firstLoad: 0
-    - SceneName: BreakRope
+    - SceneName: RopeLevel
       IsComplete: 0
       Thumbnail: {fileID: 1700647864}
       firstLoad: 0
@@ -2539,7 +2539,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -2
+  m_SortingOrder: -3
   m_Sprite: {fileID: 1285955752, guid: 9ac3e4a973aa59548835845663772951, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

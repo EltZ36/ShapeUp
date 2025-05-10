@@ -489,7 +489,7 @@ PrefabInstance:
     - target: {fileID: 1654394840187478972, guid: 2b2cd809ba6faf74da6204ced6136572, type: 3}
       propertyPath: sprites.Array.data[1]
       value: 
-      objectReference: {fileID: 21300000, guid: f93b4c7a0eacb9347bdf7c701b6e01c4, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 2924447894569761838, guid: 2b2cd809ba6faf74da6204ced6136572, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.8375
@@ -637,7 +637,7 @@ PrefabInstance:
     - target: {fileID: 1654394840187478972, guid: 2b2cd809ba6faf74da6204ced6136572, type: 3}
       propertyPath: sprites.Array.data[1]
       value: 
-      objectReference: {fileID: 21300000, guid: f93b4c7a0eacb9347bdf7c701b6e01c4, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 2924447894569761838, guid: 2b2cd809ba6faf74da6204ced6136572, type: 3}
       propertyPath: m_LocalScale.x
       value: 3.24
@@ -811,7 +811,7 @@ MonoBehaviour:
       IsComplete: 0
       Thumbnail: {fileID: 580984483}
       firstLoad: 0
-    - SceneName: LevelTap
+    - SceneName: SledLevel
       IsComplete: 0
       Thumbnail: {fileID: 1084836182}
       firstLoad: 0
@@ -819,7 +819,7 @@ MonoBehaviour:
       IsComplete: 0
       Thumbnail: {fileID: 1897567592}
       firstLoad: 0
-    - SceneName: LevelOneFinal
+    - SceneName: TapDragFinal
       IsComplete: 0
       Thumbnail: {fileID: 421034134}
       firstLoad: 0
@@ -868,7 +868,7 @@ PrefabInstance:
     - target: {fileID: 1654394840187478972, guid: 2b2cd809ba6faf74da6204ced6136572, type: 3}
       propertyPath: sprites.Array.data[1]
       value: 
-      objectReference: {fileID: 21300000, guid: f93b4c7a0eacb9347bdf7c701b6e01c4, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 2924447894569761838, guid: 2b2cd809ba6faf74da6204ced6136572, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.8375
@@ -1168,6 +1168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
+  tapTime: 0
 --- !u!114 &1198417564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1309,7 +1310,7 @@ PrefabInstance:
     - target: {fileID: 1654394840187478972, guid: 2b2cd809ba6faf74da6204ced6136572, type: 3}
       propertyPath: sprites.Array.data[1]
       value: 
-      objectReference: {fileID: 21300000, guid: f93b4c7a0eacb9347bdf7c701b6e01c4, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 2924447894569761838, guid: 2b2cd809ba6faf74da6204ced6136572, type: 3}
       propertyPath: m_LocalScale.x
       value: 3.24
@@ -2009,7 +2010,7 @@ PrefabInstance:
     - target: {fileID: 1654394840187478972, guid: 2b2cd809ba6faf74da6204ced6136572, type: 3}
       propertyPath: sprites.Array.data[1]
       value: 
-      objectReference: {fileID: 21300000, guid: f93b4c7a0eacb9347bdf7c701b6e01c4, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 2924447894569761838, guid: 2b2cd809ba6faf74da6204ced6136572, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.8375
@@ -2025,6 +2026,22 @@ PrefabInstance:
     - target: {fileID: 2924447894569761838, guid: 2b2cd809ba6faf74da6204ced6136572, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4030606893181159945, guid: 2b2cd809ba6faf74da6204ced6136572, type: 3}
+      propertyPath: m_Size.x
+      value: 33.369377
+      objectReference: {fileID: 0}
+    - target: {fileID: 4030606893181159945, guid: 2b2cd809ba6faf74da6204ced6136572, type: 3}
+      propertyPath: m_Size.y
+      value: 18.768944
+      objectReference: {fileID: 0}
+    - target: {fileID: 4030606893181159945, guid: 2b2cd809ba6faf74da6204ced6136572, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.072834015
+      objectReference: {fileID: 0}
+    - target: {fileID: 4030606893181159945, guid: 2b2cd809ba6faf74da6204ced6136572, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.015174866
       objectReference: {fileID: 0}
     - target: {fileID: 6776819501858844909, guid: 2b2cd809ba6faf74da6204ced6136572, type: 3}
       propertyPath: m_Sprite
@@ -2226,7 +2243,7 @@ PrefabInstance:
     - target: {fileID: 1654394840187478972, guid: 2b2cd809ba6faf74da6204ced6136572, type: 3}
       propertyPath: sprites.Array.data[1]
       value: 
-      objectReference: {fileID: 21300000, guid: f93b4c7a0eacb9347bdf7c701b6e01c4, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 2924447894569761838, guid: 2b2cd809ba6faf74da6204ced6136572, type: 3}
       propertyPath: m_LocalScale.x
       value: 3.24
