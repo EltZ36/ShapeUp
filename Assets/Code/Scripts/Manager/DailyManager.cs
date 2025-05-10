@@ -33,6 +33,10 @@ public class DailyManager : MonoBehaviour
     }
     #endregion
 
+
+    [SerializeField]
+    public Dictionary<string, Sprite> levelDict = new Dictionary<string, Sprite>();
+
     [SerializeField]
     public List<string> levelPool = new List<string>();
     private List<string> randomLevels = new List<string>();
