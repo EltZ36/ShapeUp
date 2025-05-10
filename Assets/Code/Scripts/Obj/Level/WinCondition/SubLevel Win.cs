@@ -23,6 +23,12 @@ public class SubLevelWin : MonoBehaviour
         Shape shape = obj.GetComponent<Shape>();
         if (shape != null && shape.ShapeName == targetName)
         {
+            LevelTracker tracker = FindObjectOfType<LevelTracker>();
+            if (tracker != null)
+            {
+                tracker.TrackLevelCompleted();
+            }
+
             PlayFireworks(shape.ShapeName);
             StartCoroutine(CameraController.ZoomOut(false));
             Destroy(shape.gameObject);
