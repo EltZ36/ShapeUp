@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 /*
 KPI tracker script for Levels.
 
-Currently tracks:
+Currently has options to track:
     - Number of visits made to that level
     - Time spent completing the level
 */
