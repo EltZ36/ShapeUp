@@ -146,8 +146,8 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 7387700213015977867}
-        m_TargetAssemblyTypeName: HintTracker, Assembly-CSharp
-        m_MethodName: OnHintButton
+        m_TargetAssemblyTypeName: HintRecorder, Assembly-CSharp
+        m_MethodName: RecordHints
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Services.Analytics;
@@ -7,6 +8,8 @@ using UnityEngine.Analytics;
 
 public class AnalyticsManager : MonoBehaviour
 {
+    private FPSRecorder fpsRecorder;
+
     #region Singleton Pattern
     private static AnalyticsManager _instance;
     public static AnalyticsManager Instance
@@ -28,6 +31,16 @@ public class AnalyticsManager : MonoBehaviour
 
             await UnityServices.InitializeAsync();
             AnalyticsService.Instance.StartDataCollection();
+        }
+
+        fpsRecorder = GetComponent<FPSRecorder>();
+        if (fpsRecorder != null)
+        {
+            fpsRecorder.StartTackingFPS();
+        }
+        else
+        {
+            Debug.Log("FPS Recorder component not found");
         }
 
         // DELETE THIS BEFORE SHIPPING. SOLELY FOR DEVELOPMENT TESTING

@@ -5,14 +5,14 @@ using UnityEngine.Analytics;
 using UnityEngine.SceneManagement;
 
 /*
-KPI tracker script for Levels.
+KPI recorder script for Levels.
 
-Currently has options to track:
+Currently has options to record:
     - Number of visits made to that level
     - Time spent completing the level
 */
 
-public class LevelTracker : MonoBehaviour
+public class LevelRecorder : MonoBehaviour
 {
     private string levelName;
 
@@ -25,10 +25,10 @@ public class LevelTracker : MonoBehaviour
         levelName = SceneManager.GetActiveScene().name;
         levelStartTime = Time.time;
 
-        TrackLevelVisitsEvent();
+        RecordLevelVisitsEvent();
     }
 
-    private void TrackLevelVisitsEvent()
+    private void RecordLevelVisitsEvent()
     {
         int visitCount = IncrementLevelVisits();
 
@@ -54,7 +54,7 @@ public class LevelTracker : MonoBehaviour
         return visitCount;
     }
 
-    public void TrackLevelCompleted()
+    public void RecordLevelCompleted()
     {
         float timeSpent = Time.time - levelStartTime;
 

@@ -23,10 +23,10 @@ public class SubLevelWin : MonoBehaviour
         Shape shape = obj.GetComponent<Shape>();
         if (shape != null && shape.ShapeName == targetName)
         {
-            LevelTracker tracker = FindObjectOfType<LevelTracker>();
+            LevelRecorder tracker = FindObjectOfType<LevelRecorder>();
             if (tracker != null)
             {
-                tracker.TrackLevelCompleted();
+                tracker.RecordLevelCompleted();
             }
 
             PlayFireworks(shape.ShapeName);

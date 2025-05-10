@@ -4,7 +4,7 @@ using Unity.Services.Analytics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class HintTracker : MonoBehaviour
+public class HintRecorder : MonoBehaviour
 {
     private string levelName;
 
@@ -15,7 +15,7 @@ public class HintTracker : MonoBehaviour
         levelName = SceneManager.GetActiveScene().name;
     }
 
-    public void OnHintButton()
+    public void RecordHints()
     {
         int hintCount = IncrementHintUses();
 
