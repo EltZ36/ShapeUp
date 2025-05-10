@@ -11,9 +11,12 @@ public class EffectMove : MonoBehaviour
 
     private Vector3 targetPos;
 
+    private Rigidbody2D rb;
+
     void Awake()
     {
         originalScale = gameObject.transform.localScale;
+        rb = GetComponent<Rigidbody2D>();
     }
 
     public void SetSize(EventInfo eventInfo)
@@ -50,6 +53,7 @@ public class EffectMove : MonoBehaviour
 
     public void MoveShape(EventInfo eventInfo)
     {
-        eventInfo.TargetObject.transform.position = (Vector2)eventInfo.VectorTwo;
+        //eventInfo.TargetObject.transform.position = (Vector2)eventInfo.VectorTwo;
+        rb.MovePosition((Vector2)eventInfo.VectorTwo);
     }
 }
