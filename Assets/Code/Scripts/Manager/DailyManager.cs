@@ -1,14 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Xml;
-using TMPro;
-using Unity.Mathematics;
-using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.SocialPlatforms;
-using UnityEngine.UIElements;
 
 public class DailyManager : MonoBehaviour
 {
@@ -33,27 +27,25 @@ public class DailyManager : MonoBehaviour
     }
     #endregion
 
-
-    [SerializeField]
-    public Dictionary<string, Sprite> levelDict = new Dictionary<string, Sprite>();
-
-    [SerializeField]
-    public List<string> levelPool = new List<string>();
+    public Dictionary<string, string> levelDict = new Dictionary<string, string>();
     private List<string> randomLevels = new List<string>();
 
     [SerializeField]
     public DailyUI UI;
 
-    public int currentLevelIndex,
-        timer;
+    private int currentLevelIndex;
+    public int timer;
 
     private bool complete;
+
+    public string copyString;
 
     void Start()
     {
         timer = 0;
         complete = false;
         SetSeed();
+        PopulateLevelDict();
         PickLevels();
         // Debug.Log(randomLevels[0] + ", " + randomLevels[1] + ", " + randomLevels[2]);
         SceneManager.LoadSceneAsync(randomLevels[0], LoadSceneMode.Additive);
@@ -73,7 +65,7 @@ public class DailyManager : MonoBehaviour
     private void PickLevels()
     {
         List<string> availableLevels = new List<string>();
-        availableLevels.AddRange(levelPool);
+        availableLevels.AddRange(levelDict.Keys);
         for (int i = 0; i < 3; i++)
         {
             int randomIndex = UnityEngine.Random.Range(0, availableLevels.Count - 1);
@@ -89,12 +81,27 @@ public class DailyManager : MonoBehaviour
         if (currentLevelIndex == 3)
         {
             complete = true;
+            SetCopyString();
+            Debug.Log(copyString);
             UI.Win();
         }
         else
         {
             SceneManager.LoadSceneAsync(randomLevels[currentLevelIndex], LoadSceneMode.Additive);
         }
+    }
+
+    public void PopulateLevelDict()
+    {
+        levelDict.Add("BreakRope", "🎣");
+        levelDict.Add("LevelTap", "🛷");
+        levelDict.Add("LevelPinch", "🏔️");
+    }
+
+    public void SetCopyString()
+    {
+        copyString =
+            levelDict[randomLevels[0]] + levelDict[randomLevels[1]] + levelDict[randomLevels[2]];
     }
 
     IEnumerator IncrementTimer()

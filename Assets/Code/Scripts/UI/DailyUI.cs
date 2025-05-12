@@ -43,4 +43,13 @@ public class DailyUI : MonoBehaviour
         // Quit game, load menu
         SceneManager.LoadScene("Menu");
     }
+
+    public void OnCopyPuzzle()
+    {
+        TextEditor te = new TextEditor();
+        te.text =
+            DailyManager.Instance.copyString + " " + ConvertNumToTime(DailyManager.Instance.timer);
+        te.SelectAll();
+        te.Copy();
+    }
 }
