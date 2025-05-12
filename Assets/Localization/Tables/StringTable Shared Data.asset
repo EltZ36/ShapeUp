@@ -107,6 +107,10 @@ MonoBehaviour:
     m_Key: shadowcluster
     m_Metadata:
       m_Items: []
+  - m_Id: 13728657631150080
+    m_Key: copy
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

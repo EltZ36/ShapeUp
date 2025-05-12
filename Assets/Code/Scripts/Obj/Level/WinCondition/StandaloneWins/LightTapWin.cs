@@ -29,12 +29,27 @@ public class LightTapWin : MonoBehaviour
         {
             if (shape.ShapeName == targetName)
             {
-                lights.GetComponent<Light2D>().intensity = 1;
-                PlayFireworks(shape.ShapeName);
-                StartCoroutine(CameraController.ZoomOut(false));
-                Destroy(shape.gameObject);
-                Physics2D.gravity = new Vector2(0f, -9.8f);
-                LevelManager.Instance.OnCurrentSubLevelComplete();
+                // lights.GetComponent<Light2D>().intensity = 1;
+                // PlayFireworks(shape.ShapeName);
+                // StartCoroutine(CameraController.ZoomOut(false));
+                // Destroy(shape.gameObject);
+                // Physics2D.gravity = new Vector2(0f, -9.8f);
+                // LevelManager.Instance.OnCurrentSubLevelComplete();
+
+                if (DailyManager.Instance == null)
+                {
+                    lights.GetComponent<Light2D>().intensity = 1;
+                    PlayFireworks(shape.ShapeName);
+                    StartCoroutine(CameraController.ZoomOut(false));
+                    Destroy(shape.gameObject);
+                    Physics2D.gravity = new UnityEngine.Vector2(0f, -9.8f);
+                    LevelManager.Instance.OnCurrentSubLevelComplete();
+                }
+                else
+                {
+                    Physics2D.gravity = new UnityEngine.Vector2(0f, -9.8f);
+                    DailyManager.Instance.LoadNextLevel();
+                }
             }
         }
         Destroy(collision.gameObject);

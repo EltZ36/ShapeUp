@@ -13,6 +13,10 @@ public class DisableIfIncomplete : MonoBehaviour
 
     void Start()
     {
+        if (DailyManager.Instance != null)
+        {
+            return;
+        }
         for (int i = 0; i < names.Length; i++)
         {
             Check(names[i], shapes[i]);

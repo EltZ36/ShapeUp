@@ -147,6 +147,10 @@ MonoBehaviour:
     m_Localized: "Cluster d\u2019Ombres"
     m_Metadata:
       m_Items: []
+  - m_Id: 13728657631150080
+    m_Localized: Copie
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

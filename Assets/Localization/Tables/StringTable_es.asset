@@ -115,6 +115,10 @@ MonoBehaviour:
     m_Localized: "GrupoSombr\xEDo"
     m_Metadata:
       m_Items: []
+  - m_Id: 13728657631150080
+    m_Localized: Copiar
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

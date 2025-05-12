@@ -77,6 +77,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/SuperCluster/ShadowSubLevels/LightTap.unity
     guid: b65a6ede918984aa09c55ea96d7fcd56
+  - enabled: 1
+    path: Assets/Scenes/Dev/EggLevel.unity
+    guid: 599c1e42e55d39348adce9dccd8b9749
+  - enabled: 1
+    path: Assets/Scenes/Dev/TableLevel.unity
+    guid: 1a2eea2c62016ae46b9d30fe18aec16e
+  - enabled: 1
+    path: Assets/Scenes/Levels/SuperCluster/PinchSwipe/BoulderLevel.unity
+    guid: cd4db323a92d80c4b9152683d251f609
+  - enabled: 1
+    path: Assets/Scenes/Levels/SuperCluster/BoxTap.unity
+    guid: b5eb82ba99370448e96ca215d6993824
   m_configObjects:
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 5acb6dc0ef378be47959efcf50c27298, type: 2}
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: a491f95ff7262104f8d70dba4b2e36d8, type: 2}

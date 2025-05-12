@@ -93,9 +93,25 @@ public class DailyManager : MonoBehaviour
 
     public void PopulateLevelDict()
     {
-        levelDict.Add("BreakRope", "🎣");
+        levelDict.Add("EggLevel", "🥚");
         levelDict.Add("LevelTap", "🛷");
+        levelDict.Add("TableLevel", "🧺");
+        // levelDict.Add("PigDragLevel", "🪙");
+        levelDict.Add("BoxTap", "📦");
+        levelDict.Add("LevelOneFinal", "🪖");
         levelDict.Add("LevelPinch", "🏔️");
+
+        levelDict.Add("BreakRope", "🎣");
+
+        levelDict.Add("BoulderLevel", "🪤");
+
+        levelDict.Add("HouseLevel", "🏚️");
+        levelDict.Add("MazeLevel", "🪓");
+        levelDict.Add("PigLevel", "🐽");
+        levelDict.Add("ShadowLevel", "☀️");
+        levelDict.Add("TwoShadowLevel", "🌙");
+        levelDict.Add("LightTap", "🪰");
+        levelDict.Add("LightbulbLevel", "💡");
     }
 
     public void SetCopyString()

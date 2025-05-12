@@ -146,6 +146,10 @@ MonoBehaviour:
     m_Localized: Shadowcluster
     m_Metadata:
       m_Items: []
+  - m_Id: 13728657631150080
+    m_Localized: Copy
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
