@@ -6,7 +6,8 @@ using UnityEngine;
 
 /*
  * Records:
- *  - Client FPS every X interval --> (fps: int)
+ *  - Average client FPS per defined interval --> (averageFPS: int)
+ *  - Average of the lowest 100 frames per defined interval --> (averageLowFPS: int)
 */
 
 public class FPSRecorder : MonoBehaviour
@@ -14,7 +15,11 @@ public class FPSRecorder : MonoBehaviour
     [SerializeField]
     private float snapshotInterval = 10f;
 
-    private List<int> fpsSamples = new List<int>();
+    private int totalFPS = 0,
+        frameCount = 0;
+
+    private List<int> lowFPSBuffer = new List<int>();
+    private const int maxLowBufferSize = 100;
 
     #region Singleton Pattern
     private static FPSRecorder _instance;
@@ -38,6 +43,12 @@ public class FPSRecorder : MonoBehaviour
     }
     #endregion
 
+    void Start()
+    {
+        // pre-allocating memory to store X elements
+        lowFPSBuffer.Capacity = maxLowBufferSize;
+    }
+
     public void StartTackingFPS()
     {
         StartCoroutine(CalculateFPS());
@@ -49,7 +60,11 @@ public class FPSRecorder : MonoBehaviour
         while (true)
         {
             int fps = Mathf.FloorToInt(1f / Time.unscaledDeltaTime);
-            fpsSamples.Add(fps);
+
+            totalFPS += fps;
+            frameCount++;
+
+            AddToLowFPSBuffer(fps);
 
             yield return null;
         }
@@ -60,31 +75,71 @@ public class FPSRecorder : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(snapshotInterval);
-
             RecordFPS();
-            fpsSamples.Clear();
         }
     }
 
     private void RecordFPS()
     {
-        if (fpsSamples.Count == 0)
+        if (totalFPS == 0)
             return;
 
-        int averageFPS = Mathf.FloorToInt((float)fpsSamples.Average());
+        int averageFPS = totalFPS / frameCount;
 
-        List<int> sortedFPS = fpsSamples.OrderBy(f => f).ToList();
+        int averageLowFPS = 0;
+        if (lowFPSBuffer.Count > 0)
+        {
+            int sum = 0;
+            for (int i = 0; i < lowFPSBuffer.Count; i++)
+                sum += lowFPSBuffer[i];
 
-        int onePercentCount = Mathf.Max(1, Mathf.FloorToInt(sortedFPS.Count * 0.01f));
-        int lowFPSAverage = Mathf.FloorToInt((float)sortedFPS.Take(onePercentCount).Average());
+            averageLowFPS = sum / lowFPSBuffer.Count;
+        }
+        else
+        {
+            averageLowFPS = averageFPS;
+        }
+
+        Debug.Log("Avg FPS: " + averageFPS + ", low FPS: " + averageLowFPS);
 
         FPSReportEvent fpsReportEvent = new FPSReportEvent
         {
             AverageFPS = averageFPS,
-            AverageOnePercentLowFPS = lowFPSAverage,
+            AverageLowFPS = averageLowFPS,
         };
 
         AnalyticsService.Instance.RecordEvent(fpsReportEvent);
+
+        // Clear sampling period
+        totalFPS = 0;
+        frameCount = 0;
+        lowFPSBuffer.Clear();
+    }
+
+    private void AddToLowFPSBuffer(int fps)
+    {
+        if (lowFPSBuffer.Count < maxLowBufferSize)
+        {
+            lowFPSBuffer.Add(fps);
+        }
+        else
+        {
+            int maxInBuffer = lowFPSBuffer[0];
+            int maxIndex = 0;
+            for (int i = 1; i < lowFPSBuffer.Count; i++)
+            {
+                if (lowFPSBuffer[i] > maxInBuffer)
+                {
+                    maxInBuffer = lowFPSBuffer[i];
+                    maxIndex = i;
+                }
+            }
+
+            if (fps < maxInBuffer)
+            {
+                lowFPSBuffer[maxIndex] = fps;
+            }
+        }
     }
 
     public class FPSReportEvent : Unity.Services.Analytics.Event
@@ -97,9 +152,9 @@ public class FPSRecorder : MonoBehaviour
             set { SetParameter("averageFPS", value); }
         }
 
-        public int AverageOnePercentLowFPS
+        public int AverageLowFPS
         {
-            set { SetParameter("averageOnePercentLowFPS", value); }
+            set { SetParameter("averageLowFPS", value); }
         }
     }
 }
