@@ -42,10 +42,6 @@ public class AnalyticsManager : MonoBehaviour
         {
             Debug.Log("FPS Recorder component not found");
         }
-
-        // DELETE THIS BEFORE SHIPPING. SOLELY FOR DEVELOPMENT TESTING
-        PlayerPrefs.DeleteAll();
-        PlayerPrefs.Save();
     }
     #endregion
 }
