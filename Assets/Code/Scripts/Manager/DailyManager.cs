@@ -94,6 +94,12 @@ public class DailyManager : MonoBehaviour
         else
         {
             SceneManager.LoadSceneAsync(randomLevels[currentLevelIndex], LoadSceneMode.Additive);
+            if (aspectRatio < 16f / 9f)
+            {
+                Camera.main.orthographicSize = 5f * ((16f / 9f) / aspectRatio);
+            } else {
+                Camera.main.orthographicSize = 5f;
+            }
         }
     }
 
