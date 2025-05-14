@@ -36,7 +36,7 @@ public class AnalyticsManager : MonoBehaviour
         fpsRecorder = GetComponent<FPSRecorder>();
         if (fpsRecorder != null)
         {
-            fpsRecorder.StartTackingFPS();
+            fpsRecorder.StartTrackingFPS();
         }
         else
         {

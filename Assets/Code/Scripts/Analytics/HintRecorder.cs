@@ -24,8 +24,6 @@ public class HintRecorder : MonoBehaviour
     {
         int hintCount = IncrementHintUses();
 
-        Debug.Log("hint uses: " + hintCount);
-
         HintUsedEvent hintUsedEvent = new HintUsedEvent
         {
             LevelName = levelName,

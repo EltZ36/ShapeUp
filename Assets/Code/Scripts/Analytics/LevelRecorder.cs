@@ -30,8 +30,6 @@ public class LevelRecorder : MonoBehaviour
     {
         int visitCount = IncrementLevelVisits();
 
-        Debug.Log("visit count: " + visitCount);
-
         LevelEnteredEvent levelEnteredEvent = new LevelEnteredEvent
         {
             LevelName = levelName,
@@ -54,17 +52,15 @@ public class LevelRecorder : MonoBehaviour
 
     public void RecordLevelCompleted()
     {
-        float timeSpent = Time.time - levelStartTime;
+        float timeSpent = Mathf.Floor((Time.time - levelStartTime) * 10f) / 10f;
 
-        Debug.Log($"Level '{levelName}' completed in {timeSpent:F2} seconds.");
-
-        LevelCompletedEvent levelCompletedEvent = new LevelCompletedEvent
+        LevelCompletionTimeEvent levelCompletionTimeEvent = new LevelCompletionTimeEvent
         {
             LevelName = levelName,
             TimeSpent = timeSpent,
         };
 
-        AnalyticsService.Instance.RecordEvent(levelCompletedEvent);
+        AnalyticsService.Instance.RecordEvent(levelCompletionTimeEvent);
     }
 }
 
@@ -83,10 +79,10 @@ public class LevelEnteredEvent : Unity.Services.Analytics.Event
     }
 }
 
-public class LevelCompletedEvent : Unity.Services.Analytics.Event
+public class LevelCompletionTimeEvent : Unity.Services.Analytics.Event
 {
-    public LevelCompletedEvent()
-        : base("levelCompleted") { }
+    public LevelCompletionTimeEvent()
+        : base("levelCompletionTime") { }
 
     public string LevelName
     {

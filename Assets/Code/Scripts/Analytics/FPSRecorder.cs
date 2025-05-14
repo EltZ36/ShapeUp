@@ -49,7 +49,7 @@ public class FPSRecorder : MonoBehaviour
         lowFPSBuffer.Capacity = maxLowBufferSize;
     }
 
-    public void StartTackingFPS()
+    public void StartTrackingFPS()
     {
         StartCoroutine(CalculateFPS());
         StartCoroutine(TakeFPSSnapshot());
@@ -99,8 +99,6 @@ public class FPSRecorder : MonoBehaviour
         {
             averageLowFPS = averageFPS;
         }
-
-        Debug.Log("Avg FPS: " + averageFPS + ", low FPS: " + averageLowFPS);
 
         FPSReportEvent fpsReportEvent = new FPSReportEvent
         {

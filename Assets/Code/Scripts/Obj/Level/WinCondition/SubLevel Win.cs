@@ -28,6 +28,10 @@ public class SubLevelWin : MonoBehaviour
             {
                 tracker.RecordLevelCompleted();
             }
+            else
+            {
+                Debug.Log("Level recorder not found");
+            }
 
             PlayFireworks(shape.ShapeName);
             StartCoroutine(CameraController.ZoomOut(false));
