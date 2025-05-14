@@ -23,21 +23,28 @@ public class SubLevelWin : MonoBehaviour
         Shape shape = obj.GetComponent<Shape>();
         if (shape != null && shape.ShapeName == targetName)
         {
-            LevelRecorder tracker = FindObjectOfType<LevelRecorder>();
-            if (tracker != null)
+            if (DailyManager.Instance == null)
             {
-                tracker.RecordLevelCompleted();
+                LevelRecorder tracker = FindObjectOfType<LevelRecorder>();
+                if (tracker != null)
+                {
+                    tracker.RecordLevelCompleted();
+                }
+                else
+                {
+                    Debug.Log("Level recorder not found");
+                }
+                PlayFireworks(shape.ShapeName);
+                StartCoroutine(CameraController.ZoomOut(false));
+                Destroy(shape.gameObject);
+                Physics2D.gravity = new Vector2(0f, -9.8f);
+                LevelManager.Instance.OnCurrentSubLevelComplete();
             }
             else
             {
-                Debug.Log("Level recorder not found");
+                Physics2D.gravity = new Vector2(0f, -9.8f);
+                DailyManager.Instance.LoadNextLevel();
             }
-
-            PlayFireworks(shape.ShapeName);
-            StartCoroutine(CameraController.ZoomOut(false));
-            Destroy(shape.gameObject);
-            Physics2D.gravity = new Vector2(0f, -9.8f);
-            LevelManager.Instance.OnCurrentSubLevelComplete();
         }
 
         Destroy(obj);

@@ -153,6 +153,8 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 8623285079379968
     m_Localized: "S\xE9lection de Niveau"
+  - m_Id: 13728657631150080
+    m_Localized: Copie
     m_Metadata:
       m_Items: []
   references:
