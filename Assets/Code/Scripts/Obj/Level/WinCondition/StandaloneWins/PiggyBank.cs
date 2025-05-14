@@ -33,6 +33,15 @@ public class PiggyBank : MonoBehaviour
 
                 if (DailyManager.Instance == null)
                 {
+                    LevelRecorder tracker = FindObjectOfType<LevelRecorder>();
+                    if (tracker != null)
+                    {
+                        tracker.RecordLevelCompleted();
+                    }
+                    else
+                    {
+                        Debug.Log("Level recorder not found");
+                    }
                     PlayFireworks(shape.ShapeName);
                     StartCoroutine(CameraController.ZoomOut(false));
                     Destroy(shape.gameObject);

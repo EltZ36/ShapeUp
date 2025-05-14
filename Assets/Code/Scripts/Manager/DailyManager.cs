@@ -77,6 +77,12 @@ public class DailyManager : MonoBehaviour
     public void LoadNextLevel()
     {
         SceneManager.UnloadSceneAsync(randomLevels[currentLevelIndex]);
+        float aspectRatio = (float)Screen.width / (float)Screen.height;
+        if (aspectRatio < 16f / 9f)
+        {
+            Camera.main.orthographicSize = 5f * ((16f / 9f) / aspectRatio);
+        }
+
         currentLevelIndex++;
         if (currentLevelIndex == 3)
         {

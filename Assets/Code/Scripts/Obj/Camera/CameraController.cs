@@ -21,8 +21,11 @@ public class CameraController : MonoBehaviour
 
     private Dictionary<int, float> touchDict = new Dictionary<int, float>();
 
+    private bool isOverUI;
+
     private void Start()
     {
+        isOverUI = false;
         zoom = 1f;
         tapTime = 0.2f;
         resetBounds();
@@ -55,6 +58,9 @@ public class CameraController : MonoBehaviour
             touchDict.Add(Input.touches[0].fingerId, Time.time);
             lastX = Input.GetTouch(0).position.x;
             lastY = Input.GetTouch(0).position.y;
+            isOverUI = UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject(
+                Input.GetTouch(0).fingerId
+            );
         }
         if (Input.touches[0].phase == TouchPhase.Ended)
         {
@@ -64,10 +70,6 @@ public class CameraController : MonoBehaviour
                 Vector3 pointOne = Camera.main.ScreenToWorldPoint(Input.touches[0].position);
                 Vector2 pointOne2D = new Vector2(pointOne.x, pointOne.y);
                 RaycastHit2D hit = Physics2D.Raycast(pointOne2D, Camera.main.transform.forward);
-                bool isOverUI =
-                    UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject(
-                        Input.GetTouch(0).fingerId
-                    );
                 if (hit.collider != null && !isOverUI)
                 {
                     LevelInfo levelInfo = LevelManager.Instance.Levels[
@@ -84,6 +86,7 @@ public class CameraController : MonoBehaviour
                 }
             }
             touchDict.Remove(Input.touches[0].fingerId);
+            isOverUI = false;
         }
         float deltaX = Input.GetTouch(0).position.x - lastX;
         float deltaY = Input.GetTouch(0).position.y - lastY;

@@ -9,4 +9,19 @@ public class LevelSelect : MonoBehaviour
     {
         SceneManager.LoadScene("Menu");
     }
+
+    public void OnTapDragButton()
+    {
+        LevelManager.Instance.LoadLevel(2);
+    }
+
+    public void OnPinchSwipeButton()
+    {
+        LevelManager.Instance.LoadLevel(3);
+    }
+
+    public void OnLightShadowButton()
+    {
+        LevelManager.Instance.LoadLevel(1);
+    }
 }

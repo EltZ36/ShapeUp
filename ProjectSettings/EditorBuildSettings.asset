@@ -122,6 +122,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/SuperCluster/PinchSwipe/Sublevels - PinchDrag/PlateLevel.unity
     guid: 79eaa215334cb0e42b4a2e1f85447067
+  - enabled: 1
+    path: Assets/Scenes/Dev/DailyPuzzle.unity
+    guid: f30862ba80632f24cba78e4868fa5cbc
   m_configObjects:
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 5acb6dc0ef378be47959efcf50c27298, type: 2}
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: a491f95ff7262104f8d70dba4b2e36d8, type: 2}

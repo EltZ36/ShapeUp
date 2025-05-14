@@ -7,8 +7,11 @@ public class EffectSetPosition : MonoBehaviour
     [SerializeField]
     Vector3 setPosition = Vector3.zero;
 
+    [SerializeField]
+    Transform parent;
+
     public void SetPosition(EventInfo eventInfo)
     {
-        gameObject.transform.position = setPosition;
+        gameObject.transform.position = parent.position + setPosition;
     }
 }

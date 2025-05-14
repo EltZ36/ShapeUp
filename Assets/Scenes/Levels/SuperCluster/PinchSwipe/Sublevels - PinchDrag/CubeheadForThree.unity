@@ -415,6 +415,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   setPosition: {x: 1.26, y: -3.276, z: 0}
+  parent: {fileID: 1560371527}
 --- !u!1 &73432914
 GameObject:
   m_ObjectHideFlags: 0
@@ -1670,6 +1671,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   setPosition: {x: -6.129, y: -0.929, z: 0}
+  parent: {fileID: 1560371527}
 --- !u!61 &461093837
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3935,7 +3937,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &945692966
 Transform:
   m_ObjectHideFlags: 0
@@ -5623,6 +5625,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1560371527}
+  - component: {fileID: 1560371528}
   m_Layer: 0
   m_Name: SubLevel
   m_TagString: Untagged
@@ -5661,6 +5664,18 @@ Transform:
   - {fileID: 468811729}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1560371528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1560371526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd765fb9a845d6842b52182d42cb0994, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1573100155
 GameObject:
   m_ObjectHideFlags: 0

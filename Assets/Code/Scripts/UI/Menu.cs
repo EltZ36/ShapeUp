@@ -13,7 +13,8 @@ public class Menu : MonoBehaviour
     public void OnDailyPuzzleButton()
     {
         // redirect to daily puzzle
-        LevelManager.Instance.LoadLevel(3);
+        // LevelManager.Instance.LoadLevel(3);
+        SceneManager.LoadScene("DailyPuzzle");
     }
 
     public void OnHowToPlayButton()

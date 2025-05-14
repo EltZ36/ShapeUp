@@ -19,9 +19,25 @@ public class EnterWin : MonoBehaviour
     {
         if (cubePlate.shapeInside && conePlate.shapeInside)
         {
-            PlayFireworks(shape.ShapeName);
-            LevelManager.Instance.OnCurrentSubLevelComplete();
-            StartCoroutine(CameraController.ZoomOut(false));
+            if (DailyManager.Instance == null)
+            {
+                LevelRecorder tracker = FindObjectOfType<LevelRecorder>();
+                if (tracker != null)
+                {
+                    tracker.RecordLevelCompleted();
+                }
+                else
+                {
+                    Debug.Log("Level recorder not found");
+                }
+                PlayFireworks(shape.ShapeName);
+                LevelManager.Instance.OnCurrentSubLevelComplete();
+                StartCoroutine(CameraController.ZoomOut(false));
+            }
+            else
+            {
+                DailyManager.Instance.LoadNextLevel();
+            }
         }
     }
 

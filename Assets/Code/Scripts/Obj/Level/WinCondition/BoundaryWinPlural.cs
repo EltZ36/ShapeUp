@@ -45,6 +45,15 @@ public class BoundaryWinPlural : MonoBehaviour
 
                 if (DailyManager.Instance == null)
                 {
+                    LevelRecorder tracker = FindObjectOfType<LevelRecorder>();
+                    if (tracker != null)
+                    {
+                        tracker.RecordLevelCompleted();
+                    }
+                    else
+                    {
+                        Debug.Log("Level recorder not found");
+                    }
                     PlayFireworks(shape.ShapeName);
                     StartCoroutine(CameraController.ZoomOut(false));
                     Physics2D.gravity = new UnityEngine.Vector2(0f, -9.8f);

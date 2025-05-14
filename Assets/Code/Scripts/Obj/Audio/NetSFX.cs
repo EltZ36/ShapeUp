@@ -14,7 +14,7 @@ public class NetSFX : MonoBehaviour
     {
         if (col == basketball)
         {
-            AudioManager.Instance.Play(false, swishSound, 0);
+            AudioManager.Instance.Play(false, swishSound, -1);
             Swish.Invoke();
         }
     }

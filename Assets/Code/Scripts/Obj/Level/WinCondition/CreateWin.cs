@@ -49,6 +49,15 @@ public class CreateWin : MonoBehaviour
             // StartCoroutine(CameraController.ZoomOut(false));
             if (DailyManager.Instance == null)
             {
+                LevelRecorder tracker = FindObjectOfType<LevelRecorder>();
+                if (tracker != null)
+                {
+                    tracker.RecordLevelCompleted();
+                }
+                else
+                {
+                    Debug.Log("Level recorder not found");
+                }
                 PlayFireworks(active[0], active[1]);
                 StartCoroutine(CameraController.ZoomOut(false));
                 LevelManager.Instance.OnCurrentSubLevelComplete();
