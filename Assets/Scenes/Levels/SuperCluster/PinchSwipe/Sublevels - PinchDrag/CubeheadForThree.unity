@@ -7123,6 +7123,64 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &2121836917
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2121836919}
+  - component: {fileID: 2121836918}
+  m_Layer: 0
+  m_Name: DisableShapesIfIncomplete
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2121836918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2121836917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 245c199ba3bccc248b60438b8af59303, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  names:
+  - CirclePinch
+  - BoulderLevel
+  - PigSwipeLevel
+  - PinchDrag
+  - PlateLevel
+  - RopeLevel
+  shapes:
+  - {fileID: 1001139430}
+  - {fileID: 836671722}
+  - {fileID: 1681480674}
+  - {fileID: 692639382}
+  - {fileID: 535423324}
+  - {fileID: 1104260360}
+--- !u!4 &2121836919
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2121836917}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.7517606, y: 0.6815551, z: -9.94175}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &4962626492856226026
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7213,3 +7271,4 @@ SceneRoots:
   - {fileID: 712084298}
   - {fileID: 36454281}
   - {fileID: 1725295797}
+  - {fileID: 2121836919}

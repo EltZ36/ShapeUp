@@ -8618,6 +8618,8 @@ MonoBehaviour:
   levelNames:
   - TestLevel
   - ShadowCluster
+  - TapDragCluster
+  - PinchSwipeCluster
   levelCompleteUI: {fileID: 1046022712350882095, guid: 4a4fe9eef26b5d1489d2dffff5f541d7, type: 3}
 --- !u!4 &1502121287
 Transform:
