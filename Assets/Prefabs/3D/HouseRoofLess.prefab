@@ -81,12 +81,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 165a5355d1531094f91d1b648e857229, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ada45908da7c9d5498bfb29e4ae68a9d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.9765625, y: 1.0009766}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -184,7 +184,7 @@ MonoBehaviour:
   - {x: 0.04648089, y: -0.46917844, z: 0}
   m_ShapePathHash: -2019991853
   m_Mesh: {fileID: 0}
-  m_InstanceId: 48768
+  m_InstanceId: 60354
   m_LocalBounds:
     m_Center: {x: 0.0069158673, y: -0.16241592, z: 0}
     m_Extent: {x: 0.45345622, y: 0.30676252, z: 0}
@@ -251,8 +251,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.338859, y: 5.4697266}
-    newSize: {x: 1, y: 1}
+    oldSize: {x: 0.9765625, y: 1.0009766}
+    newSize: {x: 0.9765625, y: 1.0009766}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -286,9 +286,9 @@ Transform:
   m_GameObject: {fileID: 394774684266223695}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.7886993, y: -1.1702521, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0.112, y: -0.23, z: 0}
+  m_LocalScale: {x: 0.2375, y: 0.2375, z: 0.2375}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4123488463532031271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -369,9 +369,9 @@ Transform:
   m_GameObject: {fileID: 3963135947618682025}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.99, y: -1.1930523, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0.145, y: -0.236, z: 0}
+  m_LocalScale: {x: 0.33, y: 0.33, z: 0.33}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4123488463532031271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -452,8 +452,8 @@ Transform:
   m_GameObject: {fileID: 7959632593936055535}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.13, y: -0.85, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.365, y: -0.164, z: 0}
+  m_LocalScale: {x: 0.33, y: 0.33, z: 0.33}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4123488463532031271}
@@ -534,9 +534,9 @@ Transform:
   m_GameObject: {fileID: 8773336148678831955}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.96509, y: -0.77893, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0.342, y: -0.157, z: 0}
+  m_LocalScale: {x: 0.33, y: 0.33, z: 0.33}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4123488463532031271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
