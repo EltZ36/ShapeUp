@@ -97,7 +97,9 @@ public class DailyManager : MonoBehaviour
             if (aspectRatio < 16f / 9f)
             {
                 Camera.main.orthographicSize = 5f * ((16f / 9f) / aspectRatio);
-            } else {
+            }
+            else
+            {
                 Camera.main.orthographicSize = 5f;
             }
         }
@@ -113,7 +115,7 @@ public class DailyManager : MonoBehaviour
         levelDict.Add("LevelOneFinal", "🪖");
         levelDict.Add("LevelPinch", "🏔️");
 
-        levelDict.Add("BreakRope", "🎣");
+        levelDict.Add("RopeLevel", "🎣");
 
         levelDict.Add("BoulderLevel", "🪤");
 

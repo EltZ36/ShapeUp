@@ -67,7 +67,7 @@ public class EffectPig : MonoBehaviour
         {
             tapEnd = false;
             health -= tapDamage;
-            AudioManager.Instance.Play(false, tapSound, 0);
+            AudioManager.Instance.Play(false, tapSound, -1);
             StartCoroutine(TapDelay());
             if (health <= 0)
             {
@@ -89,7 +89,7 @@ public class EffectPig : MonoBehaviour
         if (swipeEnd)
         {
             health -= swipeDamage;
-            AudioManager.Instance.Play(false, swipeSound, 0);
+            AudioManager.Instance.Play(false, swipeSound, -1);
             if (health <= 0)
             {
                 Die();
@@ -109,7 +109,7 @@ public class EffectPig : MonoBehaviour
     public void AddShakeCrack(EventInfo eventInfo)
     {
         health -= shakeDamage;
-        AudioManager.Instance.Play(false, shakeSound, 0);
+        AudioManager.Instance.Play(false, shakeSound, -1);
         if (health <= 0)
         {
             Die();
