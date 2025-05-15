@@ -108,15 +108,14 @@ public class DailyManager : MonoBehaviour
     public void PopulateLevelDict()
     {
         levelDict.Add("EggLevel", "🥚");
-        levelDict.Add("LevelTap", "🛷");
+        levelDict.Add("SledLevel", "🛷");
         levelDict.Add("TableLevel", "🧺");
         // levelDict.Add("PigDragLevel", "🪙");
         levelDict.Add("BoxTap", "📦");
         levelDict.Add("LevelOneFinal", "🪖");
-        levelDict.Add("LevelPinch", "🏔️");
 
+        levelDict.Add("CirclePinch", "🏔️");
         levelDict.Add("RopeLevel", "🎣");
-
         levelDict.Add("BoulderLevel", "🪤");
 
         levelDict.Add("HouseLevel", "🏚️");
@@ -130,8 +129,9 @@ public class DailyManager : MonoBehaviour
 
     public void SetCopyString()
     {
+        DateTime dt = DateTime.Now;
         copyString =
-            levelDict[randomLevels[0]] + levelDict[randomLevels[1]] + levelDict[randomLevels[2]];
+            "Shape Up \n" + dt.Month + "/" + dt.Day + "/" + dt.Year + " \n\n" + levelDict[randomLevels[0]] + levelDict[randomLevels[1]] + levelDict[randomLevels[2]];
     }
 
     IEnumerator IncrementTimer()
