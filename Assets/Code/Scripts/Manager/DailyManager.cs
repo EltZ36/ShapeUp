@@ -48,7 +48,16 @@ public class DailyManager : MonoBehaviour
         PopulateLevelDict();
         PickLevels();
         // Debug.Log(randomLevels[0] + ", " + randomLevels[1] + ", " + randomLevels[2]);
-        SceneManager.LoadSceneAsync(randomLevels[0], LoadSceneMode.Additive);
+        // SceneManager.LoadSceneAsync(randomLevels[0], LoadSceneMode.Additive);
+        // Scene subLevel = SceneManager.GetSceneByName(randomLevels[0]);
+        // SceneManager.SetActiveScene(subLevel);
+        SceneManager.LoadSceneAsync(randomLevels[0], LoadSceneMode.Additive).completed += (
+            operation
+        ) =>
+        {
+            Scene subLevel = SceneManager.GetSceneByName(randomLevels[0]);
+            SceneManager.SetActiveScene(subLevel);
+        };
         currentLevelIndex = 0;
         StartCoroutine(IncrementTimer());
     }
@@ -93,7 +102,13 @@ public class DailyManager : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadSceneAsync(randomLevels[currentLevelIndex], LoadSceneMode.Additive);
+            SceneManager
+                .LoadSceneAsync(randomLevels[currentLevelIndex], LoadSceneMode.Additive)
+                .completed += (operation) =>
+            {
+                Scene subLevel = SceneManager.GetSceneByName(randomLevels[currentLevelIndex]);
+                SceneManager.SetActiveScene(subLevel);
+            };
         }
     }
 
