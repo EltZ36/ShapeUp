@@ -12,7 +12,7 @@ public class Menu : MonoBehaviour
 
     public void OnDailyPuzzleButton()
     {
-        SceneManager.LoadScene("DailyPuzzle");
+        SceneManager.LoadScene("DailyPuzzleMenu");
     }
 
     public void OnHowToPlayButton()
