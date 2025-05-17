@@ -22,6 +22,11 @@ public class DailyPuzzleMenu : MonoBehaviour
         SceneManager.LoadScene("Menu");
     }
 
+    public void OnStartButton()
+    {
+        SceneManager.LoadScene("DailyPuzzle");
+    }
+
     public void TriggerPopup()
     {
         if (popupEffect != null)

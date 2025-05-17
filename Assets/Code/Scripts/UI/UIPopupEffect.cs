@@ -28,6 +28,11 @@ public class UIPopupEffect : MonoBehaviour
     private void Awake()
     {
         canvasGroup = GetComponent<CanvasGroup>();
+        if (canvasGroup == null)
+        {
+            Debug.Log("CanvasGroup component not found");
+        }
+
         rectTransform = GetComponent<RectTransform>();
     }
 
