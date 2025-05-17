@@ -14,11 +14,13 @@ public class UIPopupEffect : MonoBehaviour
 
     [Header("Scale Settings")]
     public Vector3 startScale = new Vector3(0.5f, 0.5f, 0.5f);
-    public Vector3 endScale = Vector3.one;
 
     [Header("Animation Settings")]
     public float duration = 0.5f;
     public Ease easeType = Ease.OutBack;
+
+    [SerializeField]
+    private bool animateAtStart = false;
 
     private CanvasGroup canvasGroup;
     private RectTransform rectTransform;
@@ -29,8 +31,18 @@ public class UIPopupEffect : MonoBehaviour
         rectTransform = GetComponent<RectTransform>();
     }
 
+    void Start()
+    {
+        if (animateAtStart)
+        {
+            AnimatePopup();
+        }
+    }
+
     public void AnimatePopup()
     {
+        Vector3 endScale = rectTransform.localScale;
+
         canvasGroup.alpha = startOpacity;
         rectTransform.localScale = startScale;
 

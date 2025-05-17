@@ -827,8 +827,8 @@ RectTransform:
   m_GameObject: {fileID: 888117928}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.05, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2086362505}
   - {fileID: 1152769614}
@@ -905,7 +905,6 @@ MonoBehaviour:
   startOpacity: 1
   endOpacity: 1
   startScale: {x: 0.5, y: 0.5, z: 0.5}
-  endScale: {x: 1, y: 1, z: 1}
   duration: 0.3
   easeType: 27
 --- !u!114 &888117934
