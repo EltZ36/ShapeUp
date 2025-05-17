@@ -42,13 +42,20 @@ public class DailyManager : MonoBehaviour
 
     void Start()
     {
+        Physics2D.gravity = new Vector2(0f, -9.8f);
         timer = 0;
         complete = false;
         SetSeed();
         PopulateLevelDict();
         PickLevels();
         // Debug.Log(randomLevels[0] + ", " + randomLevels[1] + ", " + randomLevels[2]);
-        SceneManager.LoadSceneAsync(randomLevels[0], LoadSceneMode.Additive);
+        SceneManager.LoadSceneAsync(randomLevels[0], LoadSceneMode.Additive).completed += (
+            operation
+        ) =>
+        {
+            Scene subLevel = SceneManager.GetSceneByName(randomLevels[0]);
+            SceneManager.SetActiveScene(subLevel);
+        };
         currentLevelIndex = 0;
         StartCoroutine(IncrementTimer());
     }
@@ -93,7 +100,13 @@ public class DailyManager : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadSceneAsync(randomLevels[currentLevelIndex], LoadSceneMode.Additive);
+            SceneManager
+                .LoadSceneAsync(randomLevels[currentLevelIndex], LoadSceneMode.Additive)
+                .completed += (operation) =>
+            {
+                Scene subLevel = SceneManager.GetSceneByName(randomLevels[currentLevelIndex]);
+                SceneManager.SetActiveScene(subLevel);
+            };
             if (aspectRatio < 16f / 9f)
             {
                 Camera.main.orthographicSize = 5f * ((16f / 9f) / aspectRatio);
@@ -102,6 +115,7 @@ public class DailyManager : MonoBehaviour
             {
                 Camera.main.orthographicSize = 5f;
             }
+            ShapeEventSystem.Instance.ClearSelectedShape();
         }
     }
 
@@ -110,10 +124,14 @@ public class DailyManager : MonoBehaviour
         levelDict.Add("EggLevel", "🥚");
         levelDict.Add("SledLevel", "🛷");
         levelDict.Add("TableLevel", "🧺");
-        // levelDict.Add("PigDragLevel", "🪙");
+        levelDict.Add("PigDragLevel", "🪙");
         levelDict.Add("BoxTap", "📦");
-        levelDict.Add("LevelOneFinal", "🪖");
+        levelDict.Add("TapDragFinal", "🪖");
 
+        levelDict.Add("CubeheadForThree", "🏀");
+        levelDict.Add("PigSwipeLevel", "🐖");
+        levelDict.Add("PinchDrag", "🚦");
+        levelDict.Add("PlateLevel", "🍽️");
         levelDict.Add("CirclePinch", "🏔️");
         levelDict.Add("RopeLevel", "🎣");
         levelDict.Add("BoulderLevel", "🪤");
@@ -131,7 +149,16 @@ public class DailyManager : MonoBehaviour
     {
         DateTime dt = DateTime.Now;
         copyString =
-            "Shape Up \n" + dt.Month + "/" + dt.Day + "/" + dt.Year + " \n\n" + levelDict[randomLevels[0]] + levelDict[randomLevels[1]] + levelDict[randomLevels[2]];
+            "Shape Up \n"
+            + dt.Month
+            + "/"
+            + dt.Day
+            + "/"
+            + dt.Year
+            + " \n\n"
+            + levelDict[randomLevels[0]]
+            + levelDict[randomLevels[1]]
+            + levelDict[randomLevels[2]];
     }
 
     IEnumerator IncrementTimer()
