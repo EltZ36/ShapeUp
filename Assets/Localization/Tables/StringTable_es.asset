@@ -121,8 +121,23 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 8623313630007296
     m_Localized: Puzzle Diario
+    m_Metadata:
+      m_Items: []
   - m_Id: 13728657631150080
     m_Localized: Copiar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15532435025694720
+    m_Localized: Puzzle Diario!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15532514931380224
+    m_Localized: "Resuelve 3 niveles aleatorios lo m\xE1s r\xE1pido posible!\nUna
+      vez que empieces, no podr\xE1s salir."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15532596292489216
+    m_Localized: Estoy listo!
     m_Metadata:
       m_Items: []
   references:

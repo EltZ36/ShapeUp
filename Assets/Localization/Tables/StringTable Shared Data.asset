@@ -119,6 +119,18 @@ MonoBehaviour:
     m_Key: copy
     m_Metadata:
       m_Items: []
+  - m_Id: 15532435025694720
+    m_Key: dailyPuzzleMenu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15532514931380224
+    m_Key: dailyPuzzleDescription
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15532596292489216
+    m_Key: imReady
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

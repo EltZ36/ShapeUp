@@ -152,8 +152,25 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 8623313630007296
     m_Localized: Daily Puzzle
+    m_Metadata:
+      m_Items: []
   - m_Id: 13728657631150080
     m_Localized: Copy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15532435025694720
+    m_Localized: Daily Puzzle!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15532596292489216
+    m_Localized: I'm Ready!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15532514931380224
+    m_Localized: 'Solve 3 random levels as fast as possible!
+
+      Once you start,
+      you can''t quit.'
     m_Metadata:
       m_Items: []
   references:
