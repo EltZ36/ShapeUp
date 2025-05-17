@@ -5,8 +5,28 @@ using UnityEngine.SceneManagement;
 
 public class DailyPuzzleMenu : MonoBehaviour
 {
+    [SerializeField]
+    CanvasGroup popup;
+
+    private UIPopupEffect popupEffect;
+
+    void Start()
+    {
+        popupEffect = popup.GetComponent<UIPopupEffect>();
+
+        TriggerPopup();
+    }
+
     public void OnBackButton()
     {
         SceneManager.LoadScene("Menu");
+    }
+
+    public void TriggerPopup()
+    {
+        if (popupEffect != null)
+        {
+            popupEffect.AnimatePopup();
+        }
     }
 }
