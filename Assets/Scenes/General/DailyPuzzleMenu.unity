@@ -304,7 +304,7 @@ Transform:
   m_GameObject: {fileID: 114845542}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.35, y: 4.92, z: 0}
+  m_LocalPosition: {x: 6.35, y: 4.92, z: 10}
   m_LocalScale: {x: 0.425, y: 0.3807576, z: 0.63}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -402,7 +402,7 @@ GameObject:
   m_Component:
   - component: {fileID: 483920106}
   m_Layer: 0
-  m_Name: Walls
+  m_Name: Borders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -571,7 +571,7 @@ Transform:
   m_GameObject: {fileID: 730694394}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.32, y: 10.68, z: -2.053998}
+  m_LocalPosition: {x: 6.32, y: 10.68, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -591,8 +591,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   items:
   - {fileID: 85198039482194473, guid: 33f5caa84e3ff5744a507735d39cadfc, type: 3}
-  spawnCount: 8
+  spawnCount: 6
   spawnInterval: 0.25
+  minForce: 4
+  maxForce: 6
 --- !u!114 &730694397
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -766,37 +768,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newLayer: InsideBox
---- !u!1 &772576224
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 772576225}
-  m_Layer: 0
-  m_Name: Shapes
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &772576225
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 772576224}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1748580407}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &888117928
 GameObject:
   m_ObjectHideFlags: 0
@@ -1469,7 +1440,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.9019608}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1762,14 +1733,14 @@ MonoBehaviour:
   m_text: I'm Ready!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9bf47735fccdd2446b1d9d0ce0033337, type: 2}
-  m_sharedMaterial: {fileID: -1433627986105509691, guid: 9bf47735fccdd2446b1d9d0ce0033337, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: facd90c9db7e50747b47712b5ee5d467, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1906,7 +1877,6 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 114845543}
-  - {fileID: 772576225}
   - {fileID: 483920106}
   - {fileID: 730694395}
   - {fileID: 771681475}

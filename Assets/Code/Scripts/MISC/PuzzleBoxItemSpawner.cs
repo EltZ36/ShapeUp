@@ -11,7 +11,9 @@ public class PuzzleBoxItemSpawner : MonoBehaviour
     private int spawnCount = 5;
 
     [SerializeField]
-    private float spawnInterval = 1f;
+    private float spawnInterval = 1f,
+        minForce = 1f,
+        maxForce = 1f;
 
     private string spawnLayerName = "OutsideBox";
 
@@ -35,8 +37,12 @@ public class PuzzleBoxItemSpawner : MonoBehaviour
             GameObject prefab = items[Random.Range(0, items.Count)];
 
             GameObject obj = Instantiate(prefab, transform.position, Quaternion.identity);
-
             obj.layer = LayerMask.NameToLayer(spawnLayerName);
+
+            Rigidbody2D rb2D = obj.GetComponent<Rigidbody2D>();
+            float force = Random.Range(minForce, maxForce);
+
+            rb2D.AddForce(Vector2.down * force, ForceMode2D.Impulse);
 
             spawned++;
 
