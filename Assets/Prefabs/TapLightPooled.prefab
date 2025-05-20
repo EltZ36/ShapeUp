@@ -96,4 +96,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   holdTime: 3
-  fadeTime: 3
+  fadeTime: 2
+  fireFlyPrefab: {fileID: 7956969247650298832, guid: ea68ff6c09426694ebf6abae39a04704, type: 3}
