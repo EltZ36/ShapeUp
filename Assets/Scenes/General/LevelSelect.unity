@@ -795,10 +795,9 @@ MonoBehaviour:
   startOpacity: 0
   endOpacity: 1
   startScale: {x: 0.75, y: 0.75, z: 0.75}
-  duration: 0.5
+  duration: 0.4
   easeType: 27
   animateAtStart: 1
-  playOnce: 0
 --- !u!225 &886558801
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -1128,10 +1127,9 @@ MonoBehaviour:
   startOpacity: 0
   endOpacity: 1
   startScale: {x: 0.75, y: 0.75, z: 0.75}
-  duration: 0.75
+  duration: 0.5
   easeType: 27
   animateAtStart: 1
-  playOnce: 0
 --- !u!225 &963505009
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -1662,10 +1660,9 @@ MonoBehaviour:
   startOpacity: 0
   endOpacity: 1
   startScale: {x: 0.75, y: 0.75, z: 0.75}
-  duration: 0.25
+  duration: 0.3
   easeType: 27
   animateAtStart: 1
-  playOnce: 0
 --- !u!225 &1775409423
 CanvasGroup:
   m_ObjectHideFlags: 0
