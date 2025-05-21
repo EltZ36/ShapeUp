@@ -1595,8 +1595,6 @@ MonoBehaviour:
   duration: 0.45
   easeType: 27
   animateAtStart: 1
-  playOnce: 1
-  keyPrefix: credits
 --- !u!225 &292558079
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -3985,8 +3983,6 @@ MonoBehaviour:
   duration: 0.5
   easeType: 27
   animateAtStart: 1
-  playOnce: 1
-  keyPrefix: settings
 --- !u!225 &485331622
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -4447,8 +4443,6 @@ MonoBehaviour:
   duration: 0.4
   easeType: 27
   animateAtStart: 1
-  playOnce: 1
-  keyPrefix: howToPlay
 --- !u!225 &742020370
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -4565,6 +4559,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f5c63621770d36468df3102f267fa9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioMixer: {fileID: 24100000, guid: d890ec555167b314e87c936d0f27c0d6, type: 2}
 --- !u!4 &751033790
 Transform:
   m_ObjectHideFlags: 0
@@ -6573,8 +6568,6 @@ MonoBehaviour:
   duration: 0.3
   easeType: 27
   animateAtStart: 1
-  playOnce: 1
-  keyPrefix: levelSelect
 --- !u!225 &1030269248
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -6826,8 +6819,6 @@ MonoBehaviour:
   duration: 0.35
   easeType: 27
   animateAtStart: 1
-  playOnce: 1
-  keyPrefix: dailyPuzzle
 --- !u!225 &1037274315
 CanvasGroup:
   m_ObjectHideFlags: 0

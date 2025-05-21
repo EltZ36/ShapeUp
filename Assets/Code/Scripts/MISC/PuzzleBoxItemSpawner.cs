@@ -34,9 +34,11 @@ public class PuzzleBoxItemSpawner : MonoBehaviour
                 yield break;
             }
 
+            Vector3 spawnPos = new Vector3(transform.position.x, transform.position.y, -2f);
+
             GameObject prefab = items[Random.Range(0, items.Count)];
 
-            GameObject obj = Instantiate(prefab, transform.position, Quaternion.identity);
+            GameObject obj = Instantiate(prefab, spawnPos, Quaternion.identity);
             obj.layer = LayerMask.NameToLayer(spawnLayerName);
 
             Rigidbody2D rb2D = obj.GetComponent<Rigidbody2D>();

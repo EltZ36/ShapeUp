@@ -1,16 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.Localization.Settings;
 
 public class PlayerPrefsLoader : MonoBehaviour
 {
     private void Awake()
     {
-        LoadLanguage();
+        LoadLanguageSettings();
     }
 
-    private void LoadLanguage()
+    private void LoadLanguageSettings()
     {
         if (PlayerPrefs.HasKey("LocaleID"))
         {
