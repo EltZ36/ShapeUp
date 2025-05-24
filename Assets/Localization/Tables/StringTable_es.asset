@@ -23,11 +23,13 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 699753137704960
-    m_Localized: "Productor\r\nCJ Moshy\r\nJefe de Motor\r\nLuke Murayama\r\nJefe
-      de Herramientas\r\nElton Zeng\r\nJefe de Dise\xF1o\r\nZeke Davidson\r\nJefe
-      de Pruebas de Juego\r\nHenry Christopher\r\nDise\xF1o de Arte y Sonido\r\nLorraine
-      Torres\r\nDise\xF1o de Arte y UI\r\nMichael Wong\n\nFuente: Skinny Me de Mike
-      Evans\r\nMusica: That Fascinating Game de Denis Pavlov"
+    m_Localized: "- Productor -\nCJ Moshy\n\n- L\xEDder de Motor -\nLuke Murayama\n\n-
+      L\xEDder de Herramientas -\nElton Zeng\n\n- L\xEDder de Dise\xF1o -\nZeke Davidson\n\n-
+      Dise\xF1o de Niveles -\nIan Wallace\n\n- L\xEDder de Pruebas de Juego -\nHenry
+      Christopher\n\n- Arte, Dise\xF1o de Sonido, Marketing -\nLorraine Torres\n\n-
+      Dise\xF1o de Arte e Interfaz -\nMichael Wong\nNick Corfmat\n\nFuente: Skinny
+      Me por Mike Evans\nMusica: That Fascinating Game por Denis Pavlov\n\n- Contratistas
+      -"
     m_Metadata:
       m_Items: []
   - m_Id: 2878697261764608
