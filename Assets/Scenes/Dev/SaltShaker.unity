@@ -1915,6 +1915,8 @@ GameObject:
   m_Component:
   - component: {fileID: 896325844}
   - component: {fileID: 896325848}
+  - component: {fileID: 896325849}
+  - component: {fileID: 896325850}
   - component: {fileID: 896325847}
   - component: {fileID: 896325846}
   - component: {fileID: 896325845}
@@ -2014,7 +2016,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dc6d39d28c20b04b9ac3475e8874f2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Tags: 0
+  Tags: 24
   spriteName: Circle
   uniqueID: 
   OnFixedUpdateEvent:
@@ -2034,13 +2036,37 @@ MonoBehaviour:
       m_Calls: []
   OnSliceEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 896325850}
+        m_TargetAssemblyTypeName: EffectEmitParticle, Assembly-CSharp
+        m_MethodName: EmitParticles
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnSliceEndEvent:
     m_PersistentCalls:
       m_Calls: []
   OnTapEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 896325849}
+        m_TargetAssemblyTypeName: EffectEmitParticle, Assembly-CSharp
+        m_MethodName: EmitParticles
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnAccelerateEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -2059,8 +2085,8 @@ MonoBehaviour:
   showFixedUpdate: 0
   showDrag: 0
   showPinch: 0
-  showSlice: 0
-  showTap: 0
+  showSlice: 1
+  showTap: 1
   showAccelerate: 0
   showAttitude: 0
   showGravity: 0
@@ -2118,6 +2144,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &896325849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 896325843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85a1eac87a26a49489cad881a63f4c6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tapParticles: {fileID: 6893540742718307453, guid: c4004c208c5cff34ebc0c2ab2f81a7bc, type: 3}
+--- !u!114 &896325850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 896325843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85a1eac87a26a49489cad881a63f4c6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tapParticles: {fileID: 3059793695371579445, guid: 09f9e144b7db92541954332bac1d2f3b, type: 3}
 --- !u!1 &1018135265
 GameObject:
   m_ObjectHideFlags: 0
