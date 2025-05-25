@@ -594,6 +594,7 @@ MonoBehaviour:
   - {fileID: 1740465846098495637, guid: 3c0fd5560e2ef3640906b65abca721fd, type: 3}
   - {fileID: 1740465846098495637, guid: 6f0bb0a93a34a6440a871df3bb342b4c, type: 3}
   - {fileID: 85198039482194473, guid: 33f5caa84e3ff5744a507735d39cadfc, type: 3}
+  - {fileID: 3320446637766762250, guid: fbb9ebc18793e4dc49e194abd27508e4, type: 3}
   prefabSize: 1.8
   spawnCount: 7
   spawnInterval: 0.25

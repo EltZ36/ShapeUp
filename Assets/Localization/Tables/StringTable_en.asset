@@ -143,6 +143,14 @@ MonoBehaviour:
       you can''t quit.'
     m_Metadata:
       m_Items: []
+  - m_Id: 18043987175661568
+    m_Localized: 'Your time:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18051918797463552
+    m_Localized: Share
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
