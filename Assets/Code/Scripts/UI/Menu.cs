@@ -1,10 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Localization.Settings;
 using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
+    private void Awake()
+    {
+        if (PlayerPrefs.HasKey("LocaleID"))
+        {
+            int localeID = PlayerPrefs.GetInt("LocaleID");
+
+            LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[
+                localeID
+            ];
+        }
+    }
+
     public void OnLevelSelectButton()
     {
         SceneManager.LoadScene("LevelSelect");
@@ -12,7 +25,7 @@ public class Menu : MonoBehaviour
 
     public void OnDailyPuzzleButton()
     {
-        SceneManager.LoadScene("DailyPuzzle");
+        SceneManager.LoadScene("DailyPuzzleMenu");
     }
 
     public void OnHowToPlayButton()

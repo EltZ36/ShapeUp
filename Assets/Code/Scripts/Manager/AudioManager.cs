@@ -22,6 +22,8 @@ public class AudioManager : MonoBehaviour
 
     private AudioSource bgmAudio;
 
+    List<string> audioSettings = new List<string> { "MasterVolume", "MusicVolume", "SFXVolume" };
+
     #region Singleton
     private static AudioManager _instance;
     public static AudioManager Instance
@@ -44,6 +46,8 @@ public class AudioManager : MonoBehaviour
         asrs = new List<AudioSource>();
         bgmAudio = gameObject.AddComponent<AudioSource>();
         bgmAudio.outputAudioMixerGroup = musicGroup;
+
+        LoadAudioSettings();
 
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
@@ -116,6 +120,22 @@ public class AudioManager : MonoBehaviour
             }
             bgmAudio.clip = clip;
             bgmAudio.Play();
+        }
+    }
+
+    private void LoadAudioSettings()
+    {
+        foreach (string audioSetting in audioSettings)
+        {
+            if (PlayerPrefs.HasKey(audioSetting))
+            {
+                float volume = PlayerPrefs.GetFloat(audioSetting, 1);
+
+                audioMixer.SetFloat(
+                    audioSetting,
+                    Mathf.Log10(Mathf.Clamp(volume, 0.0001f, 1)) * 40
+                );
+            }
         }
     }
 }

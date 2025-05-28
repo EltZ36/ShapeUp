@@ -1372,6 +1372,8 @@ GameObject:
   - component: {fileID: 292558072}
   - component: {fileID: 292558071}
   - component: {fileID: 292558077}
+  - component: {fileID: 292558078}
+  - component: {fileID: 292558079}
   m_Layer: 5
   m_Name: Credits
   m_TagString: Untagged
@@ -1575,6 +1577,36 @@ MonoBehaviour:
   animationDuration: 0.1
   easeIn: 27
   easeOut: 4
+--- !u!114 &292558078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 292558069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c806ba9a457f4b43851afd3a8cd1af6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startOpacity: 1
+  endOpacity: 1
+  startScale: {x: 0, y: 0, z: 0}
+  duration: 0.45
+  easeType: 27
+  animateAtStart: 1
+--- !u!225 &292558079
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 292558069}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &297548462
 GameObject:
   m_ObjectHideFlags: 0
@@ -3770,6 +3802,8 @@ GameObject:
   - component: {fileID: 485331616}
   - component: {fileID: 485331619}
   - component: {fileID: 485331620}
+  - component: {fileID: 485331621}
+  - component: {fileID: 485331622}
   m_Layer: 5
   m_Name: Settings
   m_TagString: Untagged
@@ -3931,6 +3965,36 @@ MonoBehaviour:
   animationDuration: 0.1
   easeIn: 27
   easeOut: 4
+--- !u!114 &485331621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 485331614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c806ba9a457f4b43851afd3a8cd1af6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startOpacity: 1
+  endOpacity: 1
+  startScale: {x: 0, y: 0, z: 0}
+  duration: 0.5
+  easeType: 27
+  animateAtStart: 1
+--- !u!225 &485331622
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 485331614}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &491059595
 GameObject:
   m_ObjectHideFlags: 0
@@ -4156,6 +4220,8 @@ GameObject:
   - component: {fileID: 742020367}
   - component: {fileID: 742020366}
   - component: {fileID: 742020368}
+  - component: {fileID: 742020369}
+  - component: {fileID: 742020370}
   m_Layer: 5
   m_Name: HowToPlay
   m_TagString: Untagged
@@ -4359,6 +4425,36 @@ MonoBehaviour:
   animationDuration: 0.1
   easeIn: 27
   easeOut: 4
+--- !u!114 &742020369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 742020360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c806ba9a457f4b43851afd3a8cd1af6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startOpacity: 1
+  endOpacity: 1
+  startScale: {x: 0, y: 0, z: 0}
+  duration: 0.4
+  easeType: 27
+  animateAtStart: 1
+--- !u!225 &742020370
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 742020360}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &750529879
 GameObject:
   m_ObjectHideFlags: 0
@@ -4434,6 +4530,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 750529879}
   m_CullTransparentMesh: 1
+--- !u!1 &751033788
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 751033790}
+  - component: {fileID: 751033789}
+  m_Layer: 0
+  m_Name: PlayerPrefsLoader
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &751033789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751033788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f5c63621770d36468df3102f267fa9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioMixer: {fileID: 24100000, guid: d890ec555167b314e87c936d0f27c0d6, type: 2}
+--- !u!4 &751033790
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751033788}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 947.48816, y: 517.70996, z: 0.023071881}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &780268202
 GameObject:
   m_ObjectHideFlags: 0
@@ -6204,6 +6345,8 @@ GameObject:
   - component: {fileID: 1030269241}
   - component: {fileID: 1030269240}
   - component: {fileID: 1030269246}
+  - component: {fileID: 1030269247}
+  - component: {fileID: 1030269248}
   m_Layer: 5
   m_Name: Level Select
   m_TagString: Untagged
@@ -6407,6 +6550,36 @@ MonoBehaviour:
   animationDuration: 0.1
   easeIn: 27
   easeOut: 4
+--- !u!114 &1030269247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1030269238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c806ba9a457f4b43851afd3a8cd1af6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startOpacity: 1
+  endOpacity: 1
+  startScale: {x: 0, y: 0, z: 0}
+  duration: 0.3
+  easeType: 27
+  animateAtStart: 1
+--- !u!225 &1030269248
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1030269238}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1037274305
 GameObject:
   m_ObjectHideFlags: 0
@@ -6423,6 +6596,8 @@ GameObject:
   - component: {fileID: 1037274308}
   - component: {fileID: 1037274307}
   - component: {fileID: 1037274313}
+  - component: {fileID: 1037274314}
+  - component: {fileID: 1037274315}
   m_Layer: 5
   m_Name: Daily Puzzle
   m_TagString: Untagged
@@ -6626,6 +6801,36 @@ MonoBehaviour:
   animationDuration: 0.1
   easeIn: 27
   easeOut: 4
+--- !u!114 &1037274314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1037274305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c806ba9a457f4b43851afd3a8cd1af6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startOpacity: 1
+  endOpacity: 1
+  startScale: {x: 0, y: 0, z: 0}
+  duration: 0.35
+  easeType: 27
+  animateAtStart: 1
+--- !u!225 &1037274315
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1037274305}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1057215724
 GameObject:
   m_ObjectHideFlags: 0
@@ -11456,3 +11661,4 @@ SceneRoots:
   - {fileID: 450987810}
   - {fileID: 1615280980}
   - {fileID: 1413477211}
+  - {fileID: 751033790}
