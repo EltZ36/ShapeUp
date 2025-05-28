@@ -22,12 +22,12 @@ MonoBehaviour:
     m_Localized: 0e5fc8f647f509941ab28ef3f478d847[reset_zoom]
     m_Metadata:
       m_Items: []
-  - m_Id: 2697884602368
-    m_Localized: db05552645e22d24d946aface21352fb[exit_to_menu]
-    m_Metadata:
-      m_Items: []
   - m_Id: 24110817349632
     m_Localized: 3e759536b88ab8a409d444061e88d9b6[level_complete_temp]
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2697884602368
+    m_Localized: db05552645e22d24d946aface21352fb[exit_to_menu]
     m_Metadata:
       m_Items: []
   references:

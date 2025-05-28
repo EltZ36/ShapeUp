@@ -116,6 +116,9 @@
         },
         {
             "m_Id": "81824f377dd14945a50ed974489430e0"
+        },
+        {
+            "m_Id": "b67bc5bb0dbb489fb360997683c234e3"
         }
     ],
     "m_GroupDatas": [
@@ -763,8 +766,8 @@
     "m_ObjectId": "17a08723ce3046ccb2e00a407a56da26",
     "m_Title": "Combining UV with noise",
     "m_Position": {
-        "x": -1702.0,
-        "y": -1209.000244140625
+        "x": -1702.0001220703125,
+        "y": -1209.0001220703125
     }
 }
 
@@ -2638,6 +2641,36 @@
 
 {
     "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.ColorRGBMaterialSlot",
+    "m_ObjectId": "addd2d70e699467b9ff54fd6a265c8ef",
+    "m_Id": 1,
+    "m_DisplayName": "Mask Color",
+    "m_SlotType": 0,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "MaskColor",
+    "m_StageCapability": 3,
+    "m_Value": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+    },
+    "m_DefaultValue": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+    },
+    "m_Labels": [],
+    "m_ColorMode": 0,
+    "m_DefaultColor": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+    }
+}
+
+{
+    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.MultiplyNode",
     "m_ObjectId": "ae8422341f304a4ea61c8e64a34769b2",
     "m_Group": {
@@ -2776,6 +2809,51 @@
     "m_Value": 0.0,
     "m_DefaultValue": 0.0,
     "m_Labels": []
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.ColorMaskNode",
+    "m_ObjectId": "b67bc5bb0dbb489fb360997683c234e3",
+    "m_Group": {
+        "m_Id": ""
+    },
+    "m_Name": "Color Mask",
+    "m_DrawState": {
+        "m_Expanded": true,
+        "m_Position": {
+            "serializedVersion": "2",
+            "x": -148.3500518798828,
+            "y": -443.90008544921877,
+            "width": 0.0,
+            "height": 0.0
+        }
+    },
+    "m_Slots": [
+        {
+            "m_Id": "dc4440c0340b4600a51d651bb6fbf768"
+        },
+        {
+            "m_Id": "addd2d70e699467b9ff54fd6a265c8ef"
+        },
+        {
+            "m_Id": "ee162d128acf4edd9ad22d4d5fa18c72"
+        },
+        {
+            "m_Id": "f00a08a6757d4d71a722188e3fcf606c"
+        },
+        {
+            "m_Id": "f1306fa0c2b84b90a778e044e31a1bae"
+        }
+    ],
+    "synonyms": [],
+    "m_Precision": 0,
+    "m_PreviewExpanded": true,
+    "m_DismissedVersion": 0,
+    "m_PreviewMode": 0,
+    "m_CustomColors": {
+        "m_SerializableColors": []
+    }
 }
 
 {
@@ -3257,6 +3335,29 @@
 
 {
     "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Vector3MaterialSlot",
+    "m_ObjectId": "dc4440c0340b4600a51d651bb6fbf768",
+    "m_Id": 0,
+    "m_DisplayName": "In",
+    "m_SlotType": 0,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "In",
+    "m_StageCapability": 3,
+    "m_Value": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+    },
+    "m_DefaultValue": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+    },
+    "m_Labels": []
+}
+
+{
+    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
     "m_ObjectId": "dcf55f40822d4bb78d817b8771b50f9e",
     "m_Id": 6,
@@ -3500,7 +3601,7 @@
     "m_ObjectId": "e87b3b34dc7141ccb49e27c05a7cfdc2",
     "m_Title": "Moving noise forward",
     "m_Position": {
-        "x": -2629.0,
+        "x": -2629.000244140625,
         "y": -1588.0001220703125
     }
 }
@@ -3540,8 +3641,23 @@
     "m_Title": "Manipulating noise to wobble with sine",
     "m_Position": {
         "x": -2502.0,
-        "y": -1003.0003051757813
+        "y": -1003.0000610351563
     }
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
+    "m_ObjectId": "ee162d128acf4edd9ad22d4d5fa18c72",
+    "m_Id": 2,
+    "m_DisplayName": "Range",
+    "m_SlotType": 0,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "Range",
+    "m_StageCapability": 3,
+    "m_Value": 0.0,
+    "m_DefaultValue": 0.0,
+    "m_Labels": []
 }
 
 {
@@ -3553,6 +3669,21 @@
     "m_SlotType": 1,
     "m_Hidden": false,
     "m_ShaderOutputName": "Delta Time",
+    "m_StageCapability": 3,
+    "m_Value": 0.0,
+    "m_DefaultValue": 0.0,
+    "m_Labels": []
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
+    "m_ObjectId": "f00a08a6757d4d71a722188e3fcf606c",
+    "m_Id": 4,
+    "m_DisplayName": "Fuzziness",
+    "m_SlotType": 0,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "Fuzziness",
     "m_StageCapability": 3,
     "m_Value": 0.0,
     "m_DefaultValue": 0.0,
@@ -3605,6 +3736,21 @@
         "e32": 0.0,
         "e33": 1.0
     }
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
+    "m_ObjectId": "f1306fa0c2b84b90a778e044e31a1bae",
+    "m_Id": 3,
+    "m_DisplayName": "Out",
+    "m_SlotType": 1,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "Out",
+    "m_StageCapability": 3,
+    "m_Value": 0.0,
+    "m_DefaultValue": 0.0,
+    "m_Labels": []
 }
 
 {
