@@ -48,7 +48,16 @@ public class DailyManager : MonoBehaviour
         PopulateLevelDict();
         PickLevels();
         // Debug.Log(randomLevels[0] + ", " + randomLevels[1] + ", " + randomLevels[2]);
-        SceneManager.LoadSceneAsync(randomLevels[0], LoadSceneMode.Additive);
+        // SceneManager.LoadSceneAsync(randomLevels[0], LoadSceneMode.Additive);
+        // Scene subLevel = SceneManager.GetSceneByName(randomLevels[0]);
+        // SceneManager.SetActiveScene(subLevel);
+        SceneManager.LoadSceneAsync(randomLevels[0], LoadSceneMode.Additive).completed += (
+            operation
+        ) =>
+        {
+            Scene subLevel = SceneManager.GetSceneByName(randomLevels[0]);
+            SceneManager.SetActiveScene(subLevel);
+        };
         currentLevelIndex = 0;
         StartCoroutine(IncrementTimer());
     }
@@ -93,7 +102,13 @@ public class DailyManager : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadSceneAsync(randomLevels[currentLevelIndex], LoadSceneMode.Additive);
+            SceneManager
+                .LoadSceneAsync(randomLevels[currentLevelIndex], LoadSceneMode.Additive)
+                .completed += (operation) =>
+            {
+                Scene subLevel = SceneManager.GetSceneByName(randomLevels[currentLevelIndex]);
+                SceneManager.SetActiveScene(subLevel);
+            };
             if (aspectRatio < 16f / 9f)
             {
                 Camera.main.orthographicSize = 5f * ((16f / 9f) / aspectRatio);
@@ -131,7 +146,16 @@ public class DailyManager : MonoBehaviour
     {
         DateTime dt = DateTime.Now;
         copyString =
-            "Shape Up \n" + dt.Month + "/" + dt.Day + "/" + dt.Year + " \n\n" + levelDict[randomLevels[0]] + levelDict[randomLevels[1]] + levelDict[randomLevels[2]];
+            "Shape Up \n"
+            + dt.Month
+            + "/"
+            + dt.Day
+            + "/"
+            + dt.Year
+            + " \n\n"
+            + levelDict[randomLevels[0]]
+            + levelDict[randomLevels[1]]
+            + levelDict[randomLevels[2]];
     }
 
     IEnumerator IncrementTimer()
