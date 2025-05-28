@@ -34,7 +34,6 @@ public class LightPool : MonoBehaviour
         {
             if (Input.touches[0].phase == TouchPhase.Began)
             {
-                Debug.Log("touch");
                 SpawnLight();
             }
         }
@@ -57,7 +56,6 @@ public class LightPool : MonoBehaviour
         GameObject light = SharedInstance.GetPooledObject();
         if (light != null)
         {
-            Debug.Log(Input.GetTouch(0).position);
             light.transform.position =
                 Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position)
                 + new Vector3(0f, 0f, 10f);
