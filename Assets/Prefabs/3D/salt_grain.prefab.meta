@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Prefabs/3D/salt_grain.prefab.meta
 guid: 0331c99f7d8411d40b7b947be1ade48d
 PrefabImporter:
+=======
+guid: a6c21d6808e5e43d5b7696d92235c0e7
+TextScriptImporter:
+>>>>>>> origin/FileCompression:Assets/AddressableAssetsData/link.xml.meta
   externalObjects: {}
   userData: 
   assetBundleName: 

@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Art/Textures/Extra Entities/RocketLevel/astro_cube_head_transparent.png.meta
 guid: 2ba1442b21da6114dad8192a5b7c1f09
+========
+guid: 6bf54b6f4ae22c64a876809ba7b70521
+>>>>>>>> origin/FileCompression:Assets/Art/Textures/3D Shapes/Standalone/HouseLevel/sun 1.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -69,12 +73,12 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 1024
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
+    textureCompression: 3
+    compressionQuality: 0
+    crunchedCompression: 1
     allowsAlphaSplitting: 0
     overridden: 0
     ignorePlatformSupport: 0
