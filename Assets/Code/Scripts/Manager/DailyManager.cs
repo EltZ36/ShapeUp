@@ -42,15 +42,13 @@ public class DailyManager : MonoBehaviour
 
     void Start()
     {
+        Physics2D.gravity = new Vector2(0f, -9.8f);
         timer = 0;
         complete = false;
         SetSeed();
         PopulateLevelDict();
         PickLevels();
         // Debug.Log(randomLevels[0] + ", " + randomLevels[1] + ", " + randomLevels[2]);
-        // SceneManager.LoadSceneAsync(randomLevels[0], LoadSceneMode.Additive);
-        // Scene subLevel = SceneManager.GetSceneByName(randomLevels[0]);
-        // SceneManager.SetActiveScene(subLevel);
         SceneManager.LoadSceneAsync(randomLevels[0], LoadSceneMode.Additive).completed += (
             operation
         ) =>
@@ -117,6 +115,7 @@ public class DailyManager : MonoBehaviour
             {
                 Camera.main.orthographicSize = 5f;
             }
+            ShapeEventSystem.Instance.ClearSelectedShape();
         }
     }
 
@@ -125,10 +124,14 @@ public class DailyManager : MonoBehaviour
         levelDict.Add("EggLevel", "🥚");
         levelDict.Add("SledLevel", "🛷");
         levelDict.Add("TableLevel", "🧺");
-        // levelDict.Add("PigDragLevel", "🪙");
+        levelDict.Add("PigDragLevel", "🪙");
         levelDict.Add("BoxTap", "📦");
-        levelDict.Add("LevelOneFinal", "🪖");
+        levelDict.Add("TapDragFinal", "🪖");
 
+        levelDict.Add("CubeheadForThree", "🏀");
+        levelDict.Add("PigSwipeLevel", "🐖");
+        levelDict.Add("PinchDrag", "🚦");
+        levelDict.Add("PlateLevel", "🍽️");
         levelDict.Add("CirclePinch", "🏔️");
         levelDict.Add("RopeLevel", "🎣");
         levelDict.Add("BoulderLevel", "🪤");
