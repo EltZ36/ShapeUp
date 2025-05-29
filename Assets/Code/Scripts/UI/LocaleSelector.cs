@@ -20,6 +20,9 @@ public class LocaleSelector : MonoBehaviour
             localeID
         ];
 
+        PlayerPrefs.SetInt("LocaleID", localeID);
+        PlayerPrefs.Save();
+
         isChangingLocale = false;
     }
 }

@@ -206,6 +206,11 @@ public class ShapeEventSystem : MonoBehaviour
         }
     }
 
+    public void ClearSelectedShape()
+    {
+        selectedShape.Clear();
+    }
+
     bool checkPinching(out Shape pinchShape)
     {
         if (Input.touchCount != 2)

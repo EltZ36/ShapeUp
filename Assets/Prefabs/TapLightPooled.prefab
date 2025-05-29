@@ -95,5 +95,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a293c3642ee434543902a4c8ca95c067, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  holdTime: 3
-  fadeTime: 3
+  holdTime: 2
+  fadeTime: 1
+  fireFlyPrefab: {fileID: 7956969247650298832, guid: ea68ff6c09426694ebf6abae39a04704, type: 3}

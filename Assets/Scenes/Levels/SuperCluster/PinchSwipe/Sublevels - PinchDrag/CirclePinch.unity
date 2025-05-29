@@ -1318,7 +1318,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: 993186d337e7c5e419a8f1a418011b04, type: 3}
       propertyPath: Tags
-      value: 30
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: 993186d337e7c5e419a8f1a418011b04, type: 3}
       propertyPath: showTap
@@ -1326,7 +1326,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: 993186d337e7c5e419a8f1a418011b04, type: 3}
       propertyPath: showDrag
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: 993186d337e7c5e419a8f1a418011b04, type: 3}
       propertyPath: showPinch
@@ -1334,7 +1334,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: 993186d337e7c5e419a8f1a418011b04, type: 3}
       propertyPath: showSlice
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: 993186d337e7c5e419a8f1a418011b04, type: 3}
       propertyPath: OnTapEvent.m_PersistentCalls.m_Calls.Array.size

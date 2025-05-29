@@ -125,6 +125,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Dev/DailyPuzzle.unity
     guid: f30862ba80632f24cba78e4868fa5cbc
+  - enabled: 1
+    path: Assets/Scenes/General/DailyPuzzleMenu.unity
+    guid: c948cbce145b26645915f8b91e464ba2
   m_configObjects:
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 5acb6dc0ef378be47959efcf50c27298, type: 2}
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: a491f95ff7262104f8d70dba4b2e36d8, type: 2}

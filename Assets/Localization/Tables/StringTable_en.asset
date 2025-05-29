@@ -23,42 +23,12 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 699753137704960
-    m_Localized: 'Producer
-
-      CJ Moshy
-
-      Engine Lead
-
-      Luke Murayama
-
-      Tools
-      Lead
-
-      Elton Zeng
-
-      Design Lead
-
-      Zeke Davidson
-
-      Playtesting
-      Lead
-
-      Henry Christopher
-
-      Art and Sound Design
-
-      Lorraine Torres
-
-      Art
-      and UI Design
-
-      Michael Wong
-
-
-      Font: Skinny Me by Mike Evans
-
-      Music:
-      That Fascinating Game by Denis Pavlov'
+    m_Localized: "- Producer -\nCJ Moshy\n\n- Engine Lead -\nLuke Murayama\n\n- Tools
+      Lead- \nElton Zeng\n\n- Design Lead -\nZeke Davidson\n\n- Level Design -\nIan
+      Wallace\n\n- Playtesting Lead -\nHenry Christopher\n\n- Art, Sound Design,
+      Marketing -\nLorraine Torres\n\n- Art and UI Design -\nMichael Wong\nNick Corfmat\n\nFont:
+      Skinny Me by Mike Evans\nMusic: That Fascinating Game by Denis Pavlov\n\n-
+      Contractors -"
     m_Metadata:
       m_Items: []
   - m_Id: 2878644749078528
@@ -152,8 +122,33 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 8623313630007296
     m_Localized: Daily Puzzle
+    m_Metadata:
+      m_Items: []
   - m_Id: 13728657631150080
     m_Localized: Copy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15532435025694720
+    m_Localized: Daily Puzzle!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15532596292489216
+    m_Localized: I'm Ready!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15532514931380224
+    m_Localized: 'Solve 3 random levels as fast as possible!
+
+      Once you start,
+      you can''t quit.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18043987175661568
+    m_Localized: 'Your time:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18051918797463552
+    m_Localized: Share
     m_Metadata:
       m_Items: []
   references:

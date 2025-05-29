@@ -23,43 +23,61 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 699753137704960
-    m_Localized: 'Producteur
+    m_Localized: '- Producteur -
 
       CJ Moshy
 
-      Responsable Moteur
+
+      - Responsable Moteur -
 
       Luke
       Murayama
 
-      Responsable Outils
+
+      - Responsable Outils -
 
       Elton Zeng
 
-      Responsable Conception
 
-      Zeke
-      Davidson
+      - Responsable
+      Design -
 
-      Responsable Tests de Jeu
+      Zeke Davidson
+
+
+      - Conception de Niveaux -
+
+      Ian
+      Wallace
+
+
+      - Responsable des Tests de Jeu -
 
       Henry Christopher
 
-      Conception
-      Artistique et Sonore
+
+      -
+      Art, Design Sonore, Marketing -
 
       Lorraine Torres
 
-      Art et UI
 
-      Michael
-      Wong
+      - Design Graphique
+      et Interface Utilisateur -
+
+      Michael Wong
+
+      Nick Corfmat
 
 
-      Police : Skinny Me de Mike Evans
+      Police
+      : Skinny Me par Mike Evans
 
-      Musique : That Fascinating
-      Game de Denis Pavlov'
+      Musique : That Fascinating Game par Denis
+      Pavlov
+
+
+      - Sous-traitants -'
     m_Metadata:
       m_Items: []
   - m_Id: 2878697261764608
@@ -153,8 +171,31 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 8623285079379968
     m_Localized: "S\xE9lection de Niveau"
+    m_Metadata:
+      m_Items: []
   - m_Id: 13728657631150080
     m_Localized: Copie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15532435025694720
+    m_Localized: "Casse-T\xEAte du Jour!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15532514931380224
+    m_Localized: "R\xE9sous 3 niveaux al\xE9atoires le plus vite possible !\nUne
+      fois que tu commences, tu ne peux plus quitter."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15532596292489216
+    m_Localized: "Je suis pr\xEAt !"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18043987175661568
+    m_Localized: 'Votre temps:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18051918797463552
+    m_Localized: Partager
     m_Metadata:
       m_Items: []
   references:

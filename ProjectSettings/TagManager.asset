@@ -25,9 +25,9 @@ TagManager:
   - IgnoreShape
   - Rope
   - RopeAndShape
-  - 
-  - 
-  - 
+  - InsideBox
+  - OutsideBox
+  - IgnorePhysics
   - 
   - 
   - 
