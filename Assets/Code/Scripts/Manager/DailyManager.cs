@@ -30,6 +30,8 @@ public class DailyManager : MonoBehaviour
     public Dictionary<string, string> levelDict = new Dictionary<string, string>();
     private List<string> randomLevels = new List<string>();
 
+    private List<AsyncOperation> preLoadedLevels = new List<AsyncOperation>();
+
     [SerializeField]
     public DailyUI UI;
 
@@ -49,9 +51,31 @@ public class DailyManager : MonoBehaviour
         PopulateLevelDict();
         PickLevels();
         // Debug.Log(randomLevels[0] + ", " + randomLevels[1] + ", " + randomLevels[2]);
-        SceneManager.LoadSceneAsync(randomLevels[0], LoadSceneMode.Additive).completed += (
-            operation
-        ) =>
+        StartCoroutine(PreLoadLevels());
+    }
+
+    IEnumerator PreLoadLevels()
+    {
+        PreLoadLevel(0);
+        while (preLoadedLevels[0].progress < 0.9f)
+        {
+            Debug.Log("Level 1 Progress: " + preLoadedLevels[0].progress);
+            yield return null;
+        }
+        PreLoadLevel(1);
+        while (preLoadedLevels[1].progress < 0.9f)
+        {
+            Debug.Log("Level 2 Progress: " + preLoadedLevels[1].progress);
+            yield return null;
+        }
+        PreLoadLevel(2);
+        while (preLoadedLevels[2].progress < 0.9f)
+        {
+            Debug.Log("Level 3 Progress: " + preLoadedLevels[2].progress);
+            yield return null;
+        }
+        preLoadedLevels[0].allowSceneActivation = true;
+        preLoadedLevels[0].completed += (operation) =>
         {
             Scene subLevel = SceneManager.GetSceneByName(randomLevels[0]);
             SceneManager.SetActiveScene(subLevel);
@@ -60,7 +84,14 @@ public class DailyManager : MonoBehaviour
         StartCoroutine(IncrementTimer());
     }
 
-    void Update() { }
+    private void PreLoadLevel(int index)
+    {
+        //Begin to load the Scene you specify
+        AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(randomLevels[index]);
+        //Don't let the Scene activate until you allow it to
+        asyncOperation.allowSceneActivation = false;
+        preLoadedLevels.Add(asyncOperation);
+    }
 
     private void SetSeed()
     {
@@ -100,9 +131,8 @@ public class DailyManager : MonoBehaviour
         }
         else
         {
-            SceneManager
-                .LoadSceneAsync(randomLevels[currentLevelIndex], LoadSceneMode.Additive)
-                .completed += (operation) =>
+            preLoadedLevels[currentLevelIndex].allowSceneActivation = true;
+            preLoadedLevels[currentLevelIndex].completed += (operation) =>
             {
                 Scene subLevel = SceneManager.GetSceneByName(randomLevels[currentLevelIndex]);
                 SceneManager.SetActiveScene(subLevel);
