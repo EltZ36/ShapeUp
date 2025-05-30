@@ -674,7 +674,7 @@ GameObject:
   - component: {fileID: 785163726}
   m_Layer: 13
   m_Name: cone_head_chair
-  m_TagString: Untagged
+  m_TagString: Conehead
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -740,7 +740,7 @@ Transform:
   m_GameObject: {fileID: 785163722}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.52, y: 9.3, z: -0.02072502}
+  m_LocalPosition: {x: 6.7, y: 14.3, z: -0.02072502}
   m_LocalScale: {x: -3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1609,7 +1609,7 @@ GameObject:
   - component: {fileID: 1131882582}
   m_Layer: 13
   m_Name: cube_head_chair
-  m_TagString: Untagged
+  m_TagString: Cubehead
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
