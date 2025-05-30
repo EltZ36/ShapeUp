@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using Unity.Collections.LowLevel.Unsafe;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -5,36 +7,27 @@ using UnityEngine.UI;
 public class Loader : MonoBehaviour
 {
     [SerializeField]
-    private int maxLevel = 3;
+    private List<GameObject> Levels;
 
     void Awake()
     {
         foreach (int ID in GameManager.Instance.gameData.LevelCompleteMap.Keys)
         {
-            int number = ID + 1;
-            string level = "L" + number.ToString();
-            if (number >= maxLevel)
-            {
-                number = maxLevel;
-                continue;
-            }
-            try
-            {
-                GameObject Tob = GameObject.FindGameObjectWithTag(level);
-                if (Tob != null)
-                {
-                    Tob.GetComponent<Image>().enabled = true;
-                    Debug.Log("Trophy object with tag " + level + " found and enabled.");
-                }
-                else
-                {
-                    Debug.LogWarning("Trophy object with tag " + level + " not found.");
-                }
-            }
-            catch (UnityException)
+            var number = ID + 1;
+            if (number >= Levels.Count)
             {
                 continue;
             }
+            else if (
+                Levels[number] == null
+                || Levels[number].GetComponent<Image>() == null
+                || Levels[number].GetComponentInChildren<Image>() == null
+            )
+            {
+                return;
+            }
+            Levels[number].GetComponent<Image>().enabled = true;
+            Levels[number].GetComponentInChildren<Image>().enabled = true;
         }
     }
 

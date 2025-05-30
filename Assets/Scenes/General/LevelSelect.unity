@@ -152,6 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxLevel: 3
+  Levels: []
 --- !u!4 &10943905
 Transform:
   m_ObjectHideFlags: 0
@@ -646,7 +647,7 @@ GameObject:
   - component: {fileID: 886558801}
   m_Layer: 5
   m_Name: Level2
-  m_TagString: L1
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -978,7 +979,7 @@ GameObject:
   - component: {fileID: 963505009}
   m_Layer: 5
   m_Name: Level3
-  m_TagString: L2
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1434,6 +1435,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxLevel: 3
+  Levels:
+  - {fileID: 1775409416}
+  - {fileID: 886558794}
+  - {fileID: 963505002}
 --- !u!4 &1585300771
 Transform:
   m_ObjectHideFlags: 0
@@ -1557,7 +1562,7 @@ GameObject:
   - component: {fileID: 1775409423}
   m_Layer: 5
   m_Name: Level1
-  m_TagString: L0
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
