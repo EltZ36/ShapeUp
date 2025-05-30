@@ -151,6 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f48d2db4f1385172ae872fe49279921, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxLevel: 3
 --- !u!4 &10943905
 Transform:
   m_ObjectHideFlags: 0
@@ -161,56 +162,6 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1026.3767, y: 370.32483, z: -6.238059}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &142748711
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 142748713}
-  - component: {fileID: 142748712}
-  m_Layer: 0
-  m_Name: LevelManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &142748712
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 142748711}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90a9a2a955be2f74388ab453fdec28fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  levelNames:
-  - TestLevel
-  - ShadowCluster
-  - TapDragCluster
-  - PinchSwipeCluster
-  levelCompleteUI: {fileID: 1046022712350882095, guid: 4a4fe9eef26b5d1489d2dffff5f541d7, type: 3}
---- !u!4 &142748713
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 142748711}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.58, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -229,7 +180,7 @@ GameObject:
   - component: {fileID: 394536987}
   m_Layer: 5
   m_Name: Trophy
-  m_TagString: T3
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -695,7 +646,7 @@ GameObject:
   - component: {fileID: 886558801}
   m_Layer: 5
   m_Name: Level2
-  m_TagString: Untagged
+  m_TagString: L1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -783,7 +734,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 886558794}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -873,7 +824,7 @@ GameObject:
   - component: {fileID: 910220962}
   m_Layer: 5
   m_Name: Trophy
-  m_TagString: T1
+  m_TagString: T2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -948,7 +899,7 @@ GameObject:
   - component: {fileID: 963277687}
   m_Layer: 5
   m_Name: Trophy
-  m_TagString: T2
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1027,7 +978,7 @@ GameObject:
   - component: {fileID: 963505009}
   m_Layer: 5
   m_Name: Level3
-  m_TagString: Untagged
+  m_TagString: L2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1115,7 +1066,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963505002}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -1482,6 +1433,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f48d2db4f1385172ae872fe49279921, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxLevel: 3
 --- !u!4 &1585300771
 Transform:
   m_ObjectHideFlags: 0
@@ -1605,7 +1557,7 @@ GameObject:
   - component: {fileID: 1775409423}
   m_Layer: 5
   m_Name: Level1
-  m_TagString: Untagged
+  m_TagString: L0
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1885,5 +1837,4 @@ SceneRoots:
   - {fileID: 1009284264}
   - {fileID: 1533930041}
   - {fileID: 10943905}
-  - {fileID: 142748713}
   - {fileID: 1585300771}
