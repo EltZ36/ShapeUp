@@ -126,9 +126,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8923596980095791959}
-        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
-        m_MethodName: OnLevelSelectButton
+      - m_Target: {fileID: 7077005557384614011}
+        m_TargetAssemblyTypeName: LevelComplete, Assembly-CSharp
+        m_MethodName: GoToLevelSelect
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -231,7 +231,6 @@ GameObject:
   - component: {fileID: 4925818639265540290}
   - component: {fileID: 7077005557384614011}
   - component: {fileID: 873688500340910889}
-  - component: {fileID: 8923596980095791959}
   m_Layer: 5
   m_Name: WinUI
   m_TagString: Untagged
@@ -353,18 +352,6 @@ MonoBehaviour:
   animationDuration: 0.1
   easeIn: 27
   easeOut: 4
---- !u!114 &8923596980095791959
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1046022712350882095}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49abc5295173bb940b0c68a2c38ce3b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1155315231696254489
 GameObject:
   m_ObjectHideFlags: 0
