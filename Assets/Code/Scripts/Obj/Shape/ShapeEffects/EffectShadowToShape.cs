@@ -33,6 +33,7 @@ public class EffectShadowToShape : MonoBehaviour
             Destroy(shadow);
             squareSprite.sortingOrder = 3;
             squareBody.gravityScale = 1f;
+            squareBody.constraints = RigidbodyConstraints2D.None;
         }
     }
 }

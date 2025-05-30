@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -35,6 +36,9 @@ public class DailyManager : MonoBehaviour
     [SerializeField]
     public DailyUI UI;
 
+    [SerializeField]
+    public TextMeshProUGUI loading;
+
     private int currentLevelIndex;
     public int timer;
 
@@ -47,6 +51,7 @@ public class DailyManager : MonoBehaviour
         Physics2D.gravity = new Vector2(0f, -9.8f);
         timer = 0;
         complete = false;
+        currentLevelIndex = 0;
         SetSeed();
         PopulateLevelDict();
         PickLevels();
@@ -56,41 +61,30 @@ public class DailyManager : MonoBehaviour
 
     IEnumerator PreLoadLevels()
     {
-        PreLoadLevel(0);
-        while (preLoadedLevels[0].progress < 0.9f)
+        for (int i = 2; i >= 0; i--)
         {
-            Debug.Log("Level 1 Progress: " + preLoadedLevels[0].progress);
-            yield return null;
+            //Begin to load the Scene you specify
+            AsyncOperation level = SceneManager.LoadSceneAsync(
+                randomLevels[i],
+                LoadSceneMode.Additive
+            );
+            while (!level.isDone)
+            {
+                yield return null;
+            }
+            Scene subLevel = SceneManager.GetSceneByName(randomLevels[i]);
+            if (i == 0)
+            {
+                SceneManager.SetActiveScene(subLevel);
+            }
+            else if (i != 0)
+            {
+                GameObject root = subLevel.GetRootGameObjects()[0];
+                root.SetActive(false);
+            }
         }
-        PreLoadLevel(1);
-        while (preLoadedLevels[1].progress < 0.9f)
-        {
-            Debug.Log("Level 2 Progress: " + preLoadedLevels[1].progress);
-            yield return null;
-        }
-        PreLoadLevel(2);
-        while (preLoadedLevels[2].progress < 0.9f)
-        {
-            Debug.Log("Level 3 Progress: " + preLoadedLevels[2].progress);
-            yield return null;
-        }
-        preLoadedLevels[0].allowSceneActivation = true;
-        preLoadedLevels[0].completed += (operation) =>
-        {
-            Scene subLevel = SceneManager.GetSceneByName(randomLevels[0]);
-            SceneManager.SetActiveScene(subLevel);
-        };
-        currentLevelIndex = 0;
+        loading.enabled = false;
         StartCoroutine(IncrementTimer());
-    }
-
-    private void PreLoadLevel(int index)
-    {
-        //Begin to load the Scene you specify
-        AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(randomLevels[index]);
-        //Don't let the Scene activate until you allow it to
-        asyncOperation.allowSceneActivation = false;
-        preLoadedLevels.Add(asyncOperation);
     }
 
     private void SetSeed()
@@ -114,39 +108,38 @@ public class DailyManager : MonoBehaviour
 
     public void LoadNextLevel()
     {
-        SceneManager.UnloadSceneAsync(randomLevels[currentLevelIndex]);
-        float aspectRatio = (float)Screen.width / (float)Screen.height;
-        if (aspectRatio < 16f / 9f)
+        SceneManager.UnloadSceneAsync(randomLevels[currentLevelIndex]).completed += (operation) =>
         {
-            Camera.main.orthographicSize = 5f * ((16f / 9f) / aspectRatio);
-        }
-
-        currentLevelIndex++;
-        if (currentLevelIndex == 3)
-        {
-            complete = true;
-            SetCopyString();
-            Debug.Log(copyString);
-            UI.Win();
-        }
-        else
-        {
-            preLoadedLevels[currentLevelIndex].allowSceneActivation = true;
-            preLoadedLevels[currentLevelIndex].completed += (operation) =>
-            {
-                Scene subLevel = SceneManager.GetSceneByName(randomLevels[currentLevelIndex]);
-                SceneManager.SetActiveScene(subLevel);
-            };
+            float aspectRatio = (float)Screen.width / (float)Screen.height;
             if (aspectRatio < 16f / 9f)
             {
                 Camera.main.orthographicSize = 5f * ((16f / 9f) / aspectRatio);
             }
+
+            currentLevelIndex++;
+            if (currentLevelIndex == 3)
+            {
+                complete = true;
+                SetCopyString();
+                Debug.Log(copyString);
+                UI.Win();
+            }
             else
             {
-                Camera.main.orthographicSize = 5f;
+                Scene subLevel = SceneManager.GetSceneByName(randomLevels[currentLevelIndex]);
+                GameObject root = subLevel.GetRootGameObjects()[0];
+                root.SetActive(true);
+                if (aspectRatio < 16f / 9f)
+                {
+                    Camera.main.orthographicSize = 5f * ((16f / 9f) / aspectRatio);
+                }
+                else
+                {
+                    Camera.main.orthographicSize = 5f;
+                }
+                ShapeEventSystem.Instance.ClearSelectedShape();
             }
-            ShapeEventSystem.Instance.ClearSelectedShape();
-        }
+        };
     }
 
     public void PopulateLevelDict()
