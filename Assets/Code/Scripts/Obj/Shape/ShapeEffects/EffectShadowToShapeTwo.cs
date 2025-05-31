@@ -37,6 +37,7 @@ public class EffectShadowToShapeTwo : MonoBehaviour
         {
             triangleSprite.sortingOrder = 3;
             triangleBody.gravityScale = 1f;
+            triangleBody.constraints = RigidbodyConstraints2D.None;
             globalLight.intensity = 1f;
             light1.enabled = false;
             light2.enabled = false;
