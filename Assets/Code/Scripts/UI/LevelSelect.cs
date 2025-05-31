@@ -22,6 +22,6 @@ public class LevelSelect : MonoBehaviour
 
     public void OnLightShadowButton()
     {
-        LevelManager.Instance.LoadLevel(4);
+        LevelManager.Instance.LoadLevel(1);
     }
 }
