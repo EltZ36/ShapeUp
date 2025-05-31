@@ -14,6 +14,8 @@ TagManager:
   - Drag
   - Zoom
   - Slice
+  - Cubehead
+  - Conehead
   layers:
   - Default
   - TransparentFX
@@ -28,7 +30,7 @@ TagManager:
   - InsideBox
   - OutsideBox
   - IgnorePhysics
-  - 
+  - IgnoreDefault
   - 
   - 
   - 
