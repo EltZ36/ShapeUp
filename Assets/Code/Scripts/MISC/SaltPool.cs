@@ -24,8 +24,8 @@ public class SaltPool : PoolObject
             tmp = Instantiate(objectToPool);
             tmp.SetActive(true);
             tmp.transform.position = new Vector3(
-                Random.Range(0.9f, 1f),
-                Random.Range(1.1f, 1.363f),
+                Random.Range(0.4f, .7f),
+                Random.Range(15.1f, 15.363f),
                 0
             );
             pooledObjects.Add(tmp);

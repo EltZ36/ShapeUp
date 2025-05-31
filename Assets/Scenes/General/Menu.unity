@@ -4559,7 +4559,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f5c63621770d36468df3102f267fa9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioMixer: {fileID: 24100000, guid: d890ec555167b314e87c936d0f27c0d6, type: 2}
 --- !u!4 &751033790
 Transform:
   m_ObjectHideFlags: 0
@@ -8883,6 +8882,7 @@ MonoBehaviour:
   - ShadowCluster
   - TapDragCluster
   - PinchSwipeCluster
+  - ShakeTiltCluster
   levelCompleteUI: {fileID: 1046022712350882095, guid: 4a4fe9eef26b5d1489d2dffff5f541d7, type: 3}
 --- !u!4 &1502121287
 Transform:
