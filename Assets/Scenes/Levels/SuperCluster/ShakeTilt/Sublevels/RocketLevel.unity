@@ -4584,6 +4584,68 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tapParticles: {fileID: 6893540742718307453, guid: c4004c208c5cff34ebc0c2ab2f81a7bc, type: 3}
+--- !u!1 &673391138
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 673391140}
+  - component: {fileID: 673391139}
+  m_Layer: 0
+  m_Name: DisableShapesIfIncomplete
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &673391139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 673391138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 245c199ba3bccc248b60438b8af59303, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  names:
+  - PigTilt
+  - ShakeBoulder
+  - SaltShaker
+  - SmashIt
+  - ShakeMaze
+  - ShakeMaze
+  - SmashIt
+  - SeesawTilt
+  shapes:
+  - {fileID: 1134896547}
+  - {fileID: 880170794}
+  - {fileID: 1203951241}
+  - {fileID: 665923828}
+  - {fileID: 509727541}
+  - {fileID: 1075538811}
+  - {fileID: 596040190}
+  - {fileID: 2039600819}
+--- !u!4 &673391140
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 673391138}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.7517606, y: 0.6815551, z: -9.94175}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &699757603
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14843,3 +14905,4 @@ SceneRoots:
   - {fileID: 257927989}
   - {fileID: 1756082396}
   - {fileID: 1928992625}
+  - {fileID: 673391140}

@@ -1648,22 +1648,22 @@ PrefabInstance:
     - target: {fileID: 1654394840187478972, guid: 2b2cd809ba6faf74da6204ced6136572, type: 3}
       propertyPath: sprites.Array.data[0]
       value: 
-      objectReference: {fileID: 21300000, guid: 21296d6d833bc364b94c4bfdb38271dd, type: 3}
+      objectReference: {fileID: 21300000, guid: cf0348eb875474719b03c2ce7c066ec9, type: 3}
     - target: {fileID: 1654394840187478972, guid: 2b2cd809ba6faf74da6204ced6136572, type: 3}
       propertyPath: sprites.Array.data[1]
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2924447894569761838, guid: 2b2cd809ba6faf74da6204ced6136572, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.83750004
+      value: 3.25
       objectReference: {fileID: 0}
     - target: {fileID: 2924447894569761838, guid: 2b2cd809ba6faf74da6204ced6136572, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.83750004
+      value: 3.25
       objectReference: {fileID: 0}
     - target: {fileID: 2924447894569761838, guid: 2b2cd809ba6faf74da6204ced6136572, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 3.8805969
       objectReference: {fileID: 0}
     - target: {fileID: 2924447894569761838, guid: 2b2cd809ba6faf74da6204ced6136572, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1716,7 +1716,7 @@ PrefabInstance:
     - target: {fileID: 6776819501858844909, guid: 2b2cd809ba6faf74da6204ced6136572, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 21296d6d833bc364b94c4bfdb38271dd, type: 3}
+      objectReference: {fileID: 21300000, guid: cf0348eb875474719b03c2ce7c066ec9, type: 3}
     - target: {fileID: 7216949966368150821, guid: 2b2cd809ba6faf74da6204ced6136572, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5587695
@@ -1768,6 +1768,10 @@ PrefabInstance:
     - target: {fileID: 7216949966368150821, guid: 2b2cd809ba6faf74da6204ced6136572, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7216949966368150821, guid: 2b2cd809ba6faf74da6204ced6136572, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 383761915426515338, guid: 2b2cd809ba6faf74da6204ced6136572, type: 3}
@@ -2120,22 +2124,22 @@ PrefabInstance:
     - target: {fileID: 1654394840187478972, guid: 2b2cd809ba6faf74da6204ced6136572, type: 3}
       propertyPath: sprites.Array.data[0]
       value: 
-      objectReference: {fileID: 21300000, guid: 13ca085e911064249a29a94b79af484f, type: 3}
+      objectReference: {fileID: 21300000, guid: c57421d3fdf28495e823be810dcb72d6, type: 3}
     - target: {fileID: 1654394840187478972, guid: 2b2cd809ba6faf74da6204ced6136572, type: 3}
       propertyPath: sprites.Array.data[1]
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2924447894569761838, guid: 2b2cd809ba6faf74da6204ced6136572, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.41
+      value: 1.6
       objectReference: {fileID: 0}
     - target: {fileID: 2924447894569761838, guid: 2b2cd809ba6faf74da6204ced6136572, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.41
+      value: 1.6
       objectReference: {fileID: 0}
     - target: {fileID: 2924447894569761838, guid: 2b2cd809ba6faf74da6204ced6136572, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.48955226
+      value: 1.910448
       objectReference: {fileID: 0}
     - target: {fileID: 2924447894569761838, guid: 2b2cd809ba6faf74da6204ced6136572, type: 3}
       propertyPath: m_ConstrainProportionsScale
@@ -2176,7 +2180,7 @@ PrefabInstance:
     - target: {fileID: 6776819501858844909, guid: 2b2cd809ba6faf74da6204ced6136572, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 13ca085e911064249a29a94b79af484f, type: 3}
+      objectReference: {fileID: 21300000, guid: c57421d3fdf28495e823be810dcb72d6, type: 3}
     - target: {fileID: 6776819501858844909, guid: 2b2cd809ba6faf74da6204ced6136572, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
