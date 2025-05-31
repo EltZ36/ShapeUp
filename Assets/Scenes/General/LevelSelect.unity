@@ -151,8 +151,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f48d2db4f1385172ae872fe49279921, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxLevel: 3
   Levels: []
+  LevelImages: []
 --- !u!4 &10943905
 Transform:
   m_ObjectHideFlags: 0
@@ -180,12 +180,12 @@ GameObject:
   - component: {fileID: 394536988}
   - component: {fileID: 394536987}
   m_Layer: 5
-  m_Name: Trophy
+  m_Name: Lock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &394536986
 RectTransform:
   m_ObjectHideFlags: 0
@@ -195,14 +195,14 @@ RectTransform:
   m_GameObject: {fileID: 394536985}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
+  m_LocalScale: {x: 1.6545359, y: 1.6545359, z: 1.6545359}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 963505003}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -70, y: 70}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -0, y: 5}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &394536987
@@ -225,7 +225,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d4b9ddb457c3c36a495e683ff9b41e45, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 25373f2ddfb9e774182e0ed9a60b711f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -711,7 +711,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 886558797}
   m_OnClick:
     m_PersistentCalls:
@@ -735,7 +735,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 886558794}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -824,12 +824,12 @@ GameObject:
   - component: {fileID: 910220963}
   - component: {fileID: 910220962}
   m_Layer: 5
-  m_Name: Trophy
-  m_TagString: T2
+  m_Name: Lock
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &910220961
 RectTransform:
   m_ObjectHideFlags: 0
@@ -839,14 +839,14 @@ RectTransform:
   m_GameObject: {fileID: 910220960}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
+  m_LocalScale: {x: 0.68625, y: 0.68625, z: 0.68625}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1775409417}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -70, y: 70}
+  m_AnchoredPosition: {x: -58.8, y: 44.3}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &910220962
@@ -856,7 +856,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 910220960}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -869,7 +869,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d4b9ddb457c3c36a495e683ff9b41e45, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 25373f2ddfb9e774182e0ed9a60b711f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -899,12 +899,12 @@ GameObject:
   - component: {fileID: 963277688}
   - component: {fileID: 963277687}
   m_Layer: 5
-  m_Name: Trophy
+  m_Name: Lock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &963277686
 RectTransform:
   m_ObjectHideFlags: 0
@@ -914,14 +914,14 @@ RectTransform:
   m_GameObject: {fileID: 963277685}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
+  m_LocalScale: {x: 1.6545359, y: 1.6545359, z: 1.6545359}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 886558795}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -70, y: 70}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 5}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &963277687
@@ -944,7 +944,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d4b9ddb457c3c36a495e683ff9b41e45, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 25373f2ddfb9e774182e0ed9a60b711f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1043,7 +1043,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 963505005}
   m_OnClick:
     m_PersistentCalls:
@@ -1067,7 +1067,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963505002}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -1434,11 +1434,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f48d2db4f1385172ae872fe49279921, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxLevel: 3
   Levels:
   - {fileID: 1775409416}
   - {fileID: 886558794}
   - {fileID: 963505002}
+  LevelImages:
+  - {fileID: 910220960}
+  - {fileID: 963277685}
+  - {fileID: 394536985}
 --- !u!4 &1585300771
 Transform:
   m_ObjectHideFlags: 0

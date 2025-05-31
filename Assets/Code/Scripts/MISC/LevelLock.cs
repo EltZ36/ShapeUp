@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using Unity.Collections.LowLevel.Unsafe;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -7,7 +6,8 @@ using UnityEngine.UI;
 public class Loader : MonoBehaviour
 {
     [SerializeField]
-    private List<GameObject> Levels;
+    private List<GameObject> Levels,
+        LevelImages;
 
     void Awake()
     {
@@ -24,10 +24,11 @@ public class Loader : MonoBehaviour
                 || Levels[number].GetComponentInChildren<Image>() == null
             )
             {
+                Debug.LogError($"Level Image for {number} is null");
                 return;
             }
-            Levels[number].GetComponent<Image>().enabled = true;
-            Levels[number].GetComponentInChildren<Image>().enabled = true;
+            LevelImages[number].GetComponent<Image>().enabled = false;
+            Levels[number].GetComponent<Button>().interactable = true;
         }
     }
 
