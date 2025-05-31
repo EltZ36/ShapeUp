@@ -16,6 +16,8 @@ TagManager:
   - Slice
   - Cubehead
   - Conehead
+  - Loading
+  - Lines
   layers:
   - Default
   - TransparentFX

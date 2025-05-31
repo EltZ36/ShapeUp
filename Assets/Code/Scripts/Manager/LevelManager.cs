@@ -7,8 +7,10 @@ Dependancies: ILevelManager, MonoBehaviour
 */
 
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -49,6 +51,9 @@ public class LevelManager : MonoBehaviour, ILevelManager
     public int currentLevelID { get; private set; } = -1;
     public int currentSubLevelID { get; private set; } = -1;
     private GameObject[] thumbnails;
+    private GameObject loading;
+
+    private GameObject lines;
 
     #region Interface Methods
 
@@ -191,6 +196,49 @@ public class LevelManager : MonoBehaviour, ILevelManager
         string name = levelNames[levelID];
         SceneManager.LoadScene(name);
         SceneManager.LoadSceneAsync("LevelUI", LoadSceneMode.Additive);
+        StartCoroutine(PreLoadSubLevels(currentLevelID));
+    }
+
+    public IEnumerator PreLoadSubLevels(int levelID)
+    {
+        while (Levels[levelID] == null)
+        {
+            yield return null;
+        }
+        lines = GameObject.FindGameObjectWithTag("Lines");
+        ToggleLines();
+        DisableThumbnails();
+        loading = GameObject.FindGameObjectWithTag("Loading");
+        loading.SetActive(true);
+        int subLevelCount = Levels[levelID].SubLevels.Count;
+        int progress = 0;
+        for (int i = 0; i < subLevelCount; i++)
+        {
+            //Begin to load the Scene you specify
+            AsyncOperation level = SceneManager.LoadSceneAsync(
+                Levels[levelID].SubLevels[i].SceneName,
+                LoadSceneMode.Additive
+            );
+            while (!level.isDone)
+            {
+                yield return null;
+            }
+            progress += (int)(100f / ((float)subLevelCount + 1f));
+            loading.GetComponent<TextMeshProUGUI>().text = "Loading: " + progress + "%";
+            Scene subLevel = SceneManager.GetSceneByName(Levels[levelID].SubLevels[i].SceneName);
+            GameObject root = subLevel.GetRootGameObjects()[0];
+            root.SetActive(false);
+            AsyncOperation unLevel = SceneManager.UnloadSceneAsync(
+                Levels[levelID].SubLevels[i].SceneName
+            );
+            while (!unLevel.isDone)
+            {
+                yield return null;
+            }
+        }
+        loading.SetActive(false);
+        EnableThumbnails();
+        ToggleLines();
     }
 
     //SubLevel ID is relative to current level
@@ -359,5 +407,10 @@ public class LevelManager : MonoBehaviour, ILevelManager
                 .GetComponent<ThumbnailSprites>()
                 .sprites[0];
         }
+    }
+
+    private void ToggleLines()
+    {
+        lines.SetActive(!lines.activeSelf);
     }
 }
