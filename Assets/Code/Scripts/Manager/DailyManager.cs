@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -31,7 +32,8 @@ public class DailyManager : MonoBehaviour
     public Dictionary<string, string> levelDict = new Dictionary<string, string>();
     private List<string> randomLevels = new List<string>();
 
-    private List<AsyncOperation> preLoadedLevels = new List<AsyncOperation>();
+    private List<ShapeDatabase> shapeDatabases = new List<ShapeDatabase>();
+    private List<ShapeRecipes> shapeRecipes = new List<ShapeRecipes>();
 
     [SerializeField]
     public DailyUI UI;
@@ -73,16 +75,27 @@ public class DailyManager : MonoBehaviour
                 yield return null;
             }
             Scene subLevel = SceneManager.GetSceneByName(randomLevels[i]);
+            GameObject root = subLevel.GetRootGameObjects()[0];
+            shapeDatabases.Insert(0, root.GetComponentInChildren<ShapeDatabase>());
+            shapeRecipes.Insert(0, root.GetComponentInChildren<ShapeRecipes>());
             if (i == 0)
             {
                 SceneManager.SetActiveScene(subLevel);
+                if (shapeDatabases[0] != null)
+                {
+                    ShapeManager.Instance.shapeDatabase = shapeDatabases[0];
+                }
+                if (shapeRecipes[0] != null)
+                {
+                    ShapeManager.Instance.shapeRecipes = shapeRecipes[0];
+                }
             }
             else if (i != 0)
             {
-                GameObject root = subLevel.GetRootGameObjects()[0];
                 root.SetActive(false);
             }
         }
+        Debug.Log("levels loaded");
         loading.enabled = false;
         StartCoroutine(IncrementTimer());
     }
@@ -129,6 +142,15 @@ public class DailyManager : MonoBehaviour
                 Scene subLevel = SceneManager.GetSceneByName(randomLevels[currentLevelIndex]);
                 GameObject root = subLevel.GetRootGameObjects()[0];
                 root.SetActive(true);
+                SceneManager.SetActiveScene(subLevel);
+                if (shapeDatabases[currentLevelIndex] != null)
+                {
+                    ShapeManager.Instance.shapeDatabase = shapeDatabases[currentLevelIndex];
+                }
+                if (shapeRecipes[currentLevelIndex] != null)
+                {
+                    ShapeManager.Instance.shapeRecipes = shapeRecipes[currentLevelIndex];
+                }
                 if (aspectRatio < 16f / 9f)
                 {
                     Camera.main.orthographicSize = 5f * ((16f / 9f) / aspectRatio);
