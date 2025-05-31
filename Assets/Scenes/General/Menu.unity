@@ -4559,7 +4559,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f5c63621770d36468df3102f267fa9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioMixer: {fileID: 24100000, guid: d890ec555167b314e87c936d0f27c0d6, type: 2}
 --- !u!4 &751033790
 Transform:
   m_ObjectHideFlags: 0
@@ -6218,6 +6217,7 @@ MonoBehaviour:
   bgm:
   - {fileID: 8300000, guid: be38e035a6247a40bbdea27306df0f70, type: 3}
   - {fileID: 8300000, guid: b3b3f5df5dd9013d491b43692ccec875, type: 3}
+  - {fileID: 8300000, guid: bbc093a8891bf1644852c8686973fa31, type: 3}
 --- !u!4 &955181434
 Transform:
   m_ObjectHideFlags: 0
