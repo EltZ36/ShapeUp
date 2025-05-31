@@ -20,8 +20,13 @@ public class LevelSelect : MonoBehaviour
         LevelManager.Instance.LoadLevel(1);
     }
 
-    public void OnLightShadowButton()
+    public void onTiltButton()
     {
         LevelManager.Instance.LoadLevel(2);
+    }
+
+    public void OnLightShadowButton()
+    {
+        LevelManager.Instance.LoadLevel(3);
     }
 }

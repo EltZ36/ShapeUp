@@ -152,6 +152,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/SuperCluster/ShakeTilt/Sublevels/SmashIt.unity
     guid: bdacd8ac0f0d9452baec081265ba2caa
+  - enabled: 1
+    path: Assets/Scenes/Levels/SuperCluster/ShakeTilt/Sublevels/PigShake.unity
+    guid: 1a4784f888a19bd4db87041dcbc242d1
   m_configObjects:
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 5acb6dc0ef378be47959efcf50c27298, type: 2}
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: a491f95ff7262104f8d70dba4b2e36d8, type: 2}

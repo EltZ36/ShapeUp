@@ -10,7 +10,7 @@ public class Loader : MonoBehaviour
         LockImages,
         TrophyImages;
 
-    void Start()
+    void OnEnable()
     {
         foreach (int ID in GameManager.Instance.gameData.LevelCompleteMap.Keys)
         {
