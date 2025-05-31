@@ -7,12 +7,19 @@ public class Loader : MonoBehaviour
 {
     [SerializeField]
     private List<GameObject> Levels,
-        LevelImages;
+        LockImages,
+        TrophyImages;
 
-    void Awake()
+    void Start()
     {
         foreach (int ID in GameManager.Instance.gameData.LevelCompleteMap.Keys)
         {
+            // from https://www.sourcecodehub.com/article/10618/how-to-handle-indexoutofrangeexception-in-c-sharp-causes-symptoms-and-solutions to check for index errors.
+            if (ID < 0 || ID >= Levels.Count)
+            {
+                continue;
+            }
+            TrophyImages[ID].GetComponent<Image>().enabled = true;
             var number = ID + 1;
             if (number >= Levels.Count)
             {
@@ -20,15 +27,15 @@ public class Loader : MonoBehaviour
             }
             else if (
                 Levels[number] == null
-                || Levels[number].GetComponent<Image>() == null
-                || Levels[number].GetComponentInChildren<Image>() == null
+                || LockImages[number] == null
+                || TrophyImages[number] == null
             )
             {
-                Debug.LogError($"Level Image for {number} is null");
-                return;
+                continue;
             }
-            LevelImages[number].GetComponent<Image>().enabled = false;
+            LockImages[number].GetComponent<Image>().enabled = false;
             Levels[number].GetComponent<Button>().interactable = true;
+            TrophyImages[ID].GetComponent<Image>().enabled = true;
         }
     }
 
