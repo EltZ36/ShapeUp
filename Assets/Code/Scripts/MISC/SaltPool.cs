@@ -17,6 +17,12 @@ public class SaltPool : PoolObject
 
     public override void Start()
     {
+        StartCoroutine(loadPool());
+    }
+
+    private IEnumerator loadPool()
+    {
+        yield return null;
         pooledObjects = new List<GameObject>();
         GameObject tmp;
         for (int i = 0; i < amountToPool; i++)
