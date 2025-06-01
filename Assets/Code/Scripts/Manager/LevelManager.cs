@@ -199,6 +199,18 @@ public class LevelManager : MonoBehaviour, ILevelManager
         StartCoroutine(PreLoadSubLevels(currentLevelID));
     }
 
+    public void ResetLoadLevel(int levelID)
+    {
+        currentSubLevelID = -1;
+        currentLevelID = levelID;
+        string name = levelNames[levelID];
+        SceneManager.LoadScene(name);
+        SceneManager.LoadSceneAsync("LevelUI", LoadSceneMode.Additive).completed += (operation) => {
+            loading = GameObject.FindGameObjectWithTag("Loading");
+            loading.SetActive(false);
+        };
+    }
+
     public IEnumerator PreLoadSubLevels(int levelID)
     {
         while (Levels[levelID] == null)
@@ -238,6 +250,7 @@ public class LevelManager : MonoBehaviour, ILevelManager
             }
         }
         loading.SetActive(false);
+        Physics2D.gravity = new Vector2(0f, -9.8f);
         EnableThumbnails();
         ToggleLines();
     }

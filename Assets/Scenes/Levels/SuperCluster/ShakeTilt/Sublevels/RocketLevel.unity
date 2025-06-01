@@ -8607,19 +8607,19 @@ MonoBehaviour:
   - shapeA: squarocket_01
     shapeB: cube_greyfill
     shapeC: squarocket_02
-    recipeType: 2
+    recipeType: 0
   - shapeA: squarocket_02
     shapeB: pyramid_greyfill
     shapeC: squarocket_03
-    recipeType: 2
+    recipeType: 0
   - shapeA: circular_rocket_02
     shapeB: cone_greyfill
     shapeC: circular_rocket_03
-    recipeType: 2
+    recipeType: 0
   - shapeA: cylinder_greyfill
     shapeB: circular_rocket_01
     shapeC: circular_rocket_02
-    recipeType: 2
+    recipeType: 0
 --- !u!1 &1298482895
 GameObject:
   m_ObjectHideFlags: 0
@@ -8636,7 +8636,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1298482896
 SpriteRenderer:
   m_ObjectHideFlags: 0

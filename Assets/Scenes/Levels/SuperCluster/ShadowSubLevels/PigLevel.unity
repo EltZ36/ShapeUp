@@ -4977,7 +4977,7 @@ MonoBehaviour:
   health: 30
   tapDamage: 1
   swipeDamage: 5
-  shakeDamage: 10
+  shakeDamage: 5
   target: {fileID: 952380114}
   deadObject: {fileID: 1357040015}
   tapSound: {fileID: 8300000, guid: c5322b633b11e8447a0dd06accd4b46e, type: 3}

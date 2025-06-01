@@ -2242,6 +2242,7 @@ GameObject:
   - component: {fileID: 1883026882}
   - component: {fileID: 1883026881}
   - component: {fileID: 1883026898}
+  - component: {fileID: 1883026899}
   m_Layer: 0
   m_Name: Prism
   m_TagString: Untagged
@@ -2295,6 +2296,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: EffectCrackShader, Assembly-CSharp
         m_MethodName: AddCrack
         m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1883026899}
+        m_TargetAssemblyTypeName: SoundEmitter, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2767,6 +2780,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sound: {fileID: 8300000, guid: e16e9881a3b0cd9738ba6cdb29704957, type: 3}
+--- !u!114 &1883026899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1883026879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 374a4a551b0c6729d860db33bacc2935, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound: {fileID: 8300000, guid: 4d5a209191e5ac443a88a65fe1d0d92f, type: 3}
 --- !u!1 &1982049963
 GameObject:
   m_ObjectHideFlags: 0

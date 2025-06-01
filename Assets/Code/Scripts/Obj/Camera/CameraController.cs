@@ -225,7 +225,7 @@ public class CameraController : MonoBehaviour
             yield return null;
         }
         Camera.main.orthographicSize = EndPos;
-        LevelManager.Instance.LoadLevel(LevelID);
+        LevelManager.Instance.ResetLoadLevel(LevelID);
         GameManager.Instance.SaveGame();
     }
 

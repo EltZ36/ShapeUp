@@ -5,10 +5,12 @@ using UnityEngine;
 public class EffectPhysicsMove : MonoBehaviour
 {
     private Rigidbody2D rb2D;
+    private float originalGravity;
 
     void Awake()
     {
         rb2D = GetComponent<Rigidbody2D>();
+        originalGravity = rb2D.gravityScale;
     }
 
     public void MoveShape(EventInfo eventInfo)
@@ -26,7 +28,7 @@ public class EffectPhysicsMove : MonoBehaviour
 
     public void ReleaseShape(EventInfo eventInfo)
     {
-        rb2D.gravityScale = 1f;
+        rb2D.gravityScale = originalGravity;
         rb2D.constraints = RigidbodyConstraints2D.None;
     }
 
