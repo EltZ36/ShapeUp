@@ -14,6 +14,17 @@ public class SlidePool : PoolObject
 
     public override void Start()
     {
+        StartCoroutine(loadPool());
+    }
+
+    void Awake()
+    {
+        SharedInstance = this;
+    }
+
+    private IEnumerator loadPool()
+    {
+        yield return null;
         pooledObjects = new List<GameObject>();
         GameObject tmp;
         GameObject tmp2;
@@ -26,11 +37,6 @@ public class SlidePool : PoolObject
             pooledObjects.Add(tmp);
             pooledObjects.Add(tmp2);
         }
-    }
-
-    void Awake()
-    {
-        SharedInstance = this;
     }
 
     public void ResetPosition(GameObject obj)
