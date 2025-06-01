@@ -55,4 +55,17 @@ public class LevelComplete : MonoBehaviour
         SceneManager.LoadScene("Menu");
         Destroy(gameObject);
     }
+
+    public void GoToLevelSelect()
+    {
+        if (LevelManager.Instance != null)
+        {
+            if (LevelManager.Instance.currentLevelID >= 0)
+            {
+                LevelManager.Instance.LeaveCurrentLevel();
+            }
+        }
+        SceneManager.LoadScene("LevelSelect");
+        Destroy(gameObject);
+    }
 }

@@ -101,8 +101,29 @@ public class AudioManager : MonoBehaviour
             case "Menu":
                 clip = bgm[0];
                 break;
+            case "Level Select":
+                clip = bgm[0];
+                break;
             case "TestLevel":
                 clip = bgm[1];
+                break;
+            case "TapDragCluster":
+                clip = bgm[1];
+                break;
+            case "PinchSwipeCluster":
+                clip = bgm[1];
+                break;
+            case "ShakeTiltCluster":
+                clip = bgm[1];
+                break;
+            case "ShadowCluster":
+                clip = bgm[1];
+                break;
+            case "DailyPuzzleMenu":
+                clip = bgm[2];
+                break;
+            case "DailyPuzzle":
+                clip = bgm[2];
                 break;
             default:
                 clip = null;
@@ -119,6 +140,7 @@ public class AudioManager : MonoBehaviour
                 bgmAudio.Stop();
             }
             bgmAudio.clip = clip;
+            bgmAudio.loop = true;
             bgmAudio.Play();
         }
     }

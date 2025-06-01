@@ -12,16 +12,21 @@ public class LevelSelect : MonoBehaviour
 
     public void OnTapDragButton()
     {
-        LevelManager.Instance.LoadLevel(2);
+        LevelManager.Instance.LoadLevel(0);
     }
 
     public void OnPinchSwipeButton()
     {
-        LevelManager.Instance.LoadLevel(3);
+        LevelManager.Instance.LoadLevel(1);
+    }
+
+    public void onTiltButton()
+    {
+        LevelManager.Instance.LoadLevel(2);
     }
 
     public void OnLightShadowButton()
     {
-        LevelManager.Instance.LoadLevel(1);
+        LevelManager.Instance.LoadLevel(3);
     }
 }

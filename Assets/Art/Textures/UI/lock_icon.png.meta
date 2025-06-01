@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/Art/Textures/Extra Entities/RocketLevel/astro_cone_transparent.png.meta
-guid: 098abc39ab5cb3c44ac9121e32533363
-========
-guid: c36be6004834b684abd7b2db2222a318
->>>>>>>> origin/FileCompression:Assets/Art/Textures/3D Shapes/Standalone/HouseLevel/sun 2.png.meta
+guid: 25373f2ddfb9e774182e0ed9a60b711f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -73,12 +69,12 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 1024
+    maxTextureSize: 512
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 3
-    compressionQuality: 0
-    crunchedCompression: 1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
     ignorePlatformSupport: 0

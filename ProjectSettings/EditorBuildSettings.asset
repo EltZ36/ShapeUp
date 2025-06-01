@@ -17,28 +17,28 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/General/LevelSelect.unity
     guid: aaa5cf57f7efa93479d4503e96055c19
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Levels/SuperCluster/TestLevel.unity
     guid: 9d8b1c9b7ee8b8247b21cabc3cf93170
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Levels/SuperCluster/SubLevels/LevelTap.unity
     guid: cdd9abd48538a83409d26ef5716cb8b5
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Levels/SuperCluster/SubLevels/LevelOneFinal.unity
     guid: f8103cf9875955748986369ce2697e9a
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Levels/SuperCluster/SubLevels/BreakRope.unity
     guid: a28b718d19ec1434a9029d9252777888
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Levels/SuperCluster/SubLevels/LevelAccel.unity
     guid: 339fb2f0406b82842a3b741a94b4f334
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Levels/SuperCluster/SubLevels/LevelGyro.unity
     guid: c6d5aa4ab74672045a39140105750583
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Dev/SubLevel.unity
     guid: 06e126fe5dba14f4489da4fcaab7ce66
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Levels/SuperCluster/SubLevels/LevelPinch.unity
     guid: 3c5cdcd7d30d24c4d9f64229661b61e0
   - enabled: 1
@@ -47,7 +47,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/SuperCluster/ShadowSubLevels/HouseLevel.unity
     guid: d467090722e954849a8d7c874afa843d
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Levels/Standalones/CutTheRopes.unity
     guid: 71d225c2e17da8ee4a162685f123f076
   - enabled: 1
@@ -64,7 +64,7 @@ EditorBuildSettings:
     guid: 420ea8e3923b09f418f3ab4ec111e0bf
   - enabled: 1
     path: Assets/Scenes/Levels/SuperCluster/ShadowCluster.unity
-    guid: 855160836d3e92346b44cb44135b235b
+    guid: c0fbedbd913065f47a36b9d715a70bbe
   - enabled: 1
     path: Assets/Scenes/Levels/SuperCluster/ShadowSubLevels/ShadowLevel.unity
     guid: 268210aec739167438030991b36951eb
@@ -128,6 +128,33 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/General/DailyPuzzleMenu.unity
     guid: c948cbce145b26645915f8b91e464ba2
+  - enabled: 1
+    path: Assets/Scenes/Levels/SuperCluster/ShakeTilt/ShakeTiltCluster.unity
+    guid: b06f2977ae4cc4b728375db5b4e4f890
+  - enabled: 1
+    path: Assets/Scenes/Levels/SuperCluster/ShakeTilt/Sublevels/PigTilt.unity
+    guid: 5103442205e67480aaf1e7919fefa52a
+  - enabled: 1
+    path: Assets/Scenes/Levels/SuperCluster/ShakeTilt/Sublevels/RocketLevel.unity
+    guid: 919231813489d8049b895c5d24720cb9
+  - enabled: 1
+    path: Assets/Scenes/Levels/SuperCluster/ShakeTilt/Sublevels/SaltShaker.unity
+    guid: 6625402f8ff64584bb668497259b9188
+  - enabled: 1
+    path: Assets/Scenes/Levels/SuperCluster/ShakeTilt/Sublevels/SeesawTilt.unity
+    guid: b2495b43685c147df87f4cc2b66cf588
+  - enabled: 1
+    path: Assets/Scenes/Levels/SuperCluster/ShakeTilt/Sublevels/ShakeBoulder.unity
+    guid: e700d175f21f9aa4c9befd489f81cdca
+  - enabled: 1
+    path: Assets/Scenes/Levels/SuperCluster/ShakeTilt/Sublevels/ShakeMaze.unity
+    guid: 2687a3c8ddc62460fa3bb7859403c831
+  - enabled: 1
+    path: Assets/Scenes/Levels/SuperCluster/ShakeTilt/Sublevels/SmashIt.unity
+    guid: bdacd8ac0f0d9452baec081265ba2caa
+  - enabled: 1
+    path: Assets/Scenes/Levels/SuperCluster/ShakeTilt/Sublevels/PigShake.unity
+    guid: 1a4784f888a19bd4db87041dcbc242d1
   m_configObjects:
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 5acb6dc0ef378be47959efcf50c27298, type: 2}
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: a491f95ff7262104f8d70dba4b2e36d8, type: 2}

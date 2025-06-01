@@ -55,7 +55,7 @@ public class PiggyBank : MonoBehaviour
                 }
             }
         }
-        Destroy(collision.gameObject);
+        // Destroy(collision.gameObject);
     }
 
     void PlayFireworks(string _shape)

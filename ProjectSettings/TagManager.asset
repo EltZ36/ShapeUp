@@ -6,14 +6,14 @@ TagManager:
   tags:
   - thumbnail
   - hint
-  - T1
-  - T2
-  - T3
-  - T4
   - Accelerate
   - Drag
   - Zoom
   - Slice
+  - Cubehead
+  - Conehead
+  - Loading
+  - Lines
   layers:
   - Default
   - TransparentFX
@@ -28,7 +28,7 @@ TagManager:
   - InsideBox
   - OutsideBox
   - IgnorePhysics
-  - 
+  - IgnoreDefault
   - 
   - 
   - 

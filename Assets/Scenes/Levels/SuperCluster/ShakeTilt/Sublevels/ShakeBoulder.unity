@@ -308,6 +308,7 @@ GameObject:
   - component: {fileID: 240019098}
   - component: {fileID: 240019097}
   - component: {fileID: 240019096}
+  - component: {fileID: 240019107}
   m_Layer: 0
   m_Name: Circle
   m_TagString: Untagged
@@ -324,8 +325,8 @@ Transform:
   m_GameObject: {fileID: 240019094}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.94, y: 3.44, z: 0}
-  m_LocalScale: {x: 2.1230166, y: 2.1230166, z: 2.1230166}
+  m_LocalPosition: {x: -5.13, y: 0.77, z: 0}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 569050260}
@@ -474,6 +475,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: ShakeShape, Assembly-CSharp
         m_MethodName: TakeDamage
         m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 240019107}
+        m_TargetAssemblyTypeName: SoundEmitter, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -650,6 +663,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   velocity: {x: 0, y: 0}
+--- !u!114 &240019107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 240019094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 374a4a551b0c6729d860db33bacc2935, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound: {fileID: 8300000, guid: 826aa72268cf66bba94c273317dff06e, type: 3}
 --- !u!1 &257927987
 GameObject:
   m_ObjectHideFlags: 0
@@ -666,7 +692,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &257927988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -716,7 +742,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3432957601158103634, guid: fc84a1157f2977e49838a26714928bda, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.10935037
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3432957601158103634, guid: fc84a1157f2977e49838a26714928bda, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1039,7 +1065,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3432957601158103634, guid: fc84a1157f2977e49838a26714928bda, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.10935037
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3432957601158103634, guid: fc84a1157f2977e49838a26714928bda, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1109,7 +1135,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1394753359
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1461,7 +1487,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1756082395
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1512,7 +1538,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1928992624
 MonoBehaviour:
   m_ObjectHideFlags: 0
