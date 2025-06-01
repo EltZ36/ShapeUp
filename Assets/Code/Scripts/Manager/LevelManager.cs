@@ -223,9 +223,10 @@ public class LevelManager : MonoBehaviour, ILevelManager
             {
                 yield return null;
             }
+            Scene subLevel = SceneManager.GetSceneByName(Levels[levelID].SubLevels[i].SceneName);
+            SceneManager.SetActiveScene(subLevel);
             progress += (int)(100f / ((float)subLevelCount + 1f));
             loading.GetComponent<TextMeshProUGUI>().text = "Loading: " + progress + "%";
-            Scene subLevel = SceneManager.GetSceneByName(Levels[levelID].SubLevels[i].SceneName);
             GameObject root = subLevel.GetRootGameObjects()[0];
             root.SetActive(false);
             AsyncOperation unLevel = SceneManager.UnloadSceneAsync(
