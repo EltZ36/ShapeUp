@@ -9,6 +9,7 @@ public class SaltPool : PoolObject
     [SerializeField]
     private int amountToRemove = 5;
     private int amountRemoved = 0;
+    public Transform poolPosition;
 
     void Awake()
     {
@@ -30,8 +31,8 @@ public class SaltPool : PoolObject
             tmp = Instantiate(objectToPool);
             tmp.SetActive(true);
             tmp.transform.position = new Vector3(
-                Random.Range(0.4f, .7f),
-                Random.Range(15.1f, 15.363f),
+                Random.Range(poolPosition.position.x - 0.4f, poolPosition.position.x + .4f),
+                Random.Range(poolPosition.position.y - 0.4f, poolPosition.position.y + .4f),
                 0
             );
             pooledObjects.Add(tmp);

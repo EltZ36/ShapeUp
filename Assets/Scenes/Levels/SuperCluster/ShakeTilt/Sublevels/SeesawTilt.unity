@@ -925,7 +925,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 442f4648c1b99814f9e32b012abc09d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slidePosition: {x: 26, y: 7, z: 0}
+  slidePosition: {fileID: 369942069}
+  startingOffset: {x: -3, y: -3, z: 0}
 --- !u!1 &831418312
 GameObject:
   m_ObjectHideFlags: 0
@@ -1639,7 +1640,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 442f4648c1b99814f9e32b012abc09d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slidePosition: {x: 26, y: 7, z: 0}
+  slidePosition: {fileID: 369942069}
+  startingOffset: {x: -3, y: 6, z: 0}
 --- !u!1001 &1136760428
 PrefabInstance:
   m_ObjectHideFlags: 0

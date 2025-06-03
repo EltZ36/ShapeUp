@@ -5,9 +5,12 @@ using UnityEngine;
 public class SpawnSliders : MonoBehaviour
 {
     [SerializeField]
-    private Vector3 slidePosition;
+    private Transform slidePosition;
+
+    [SerializeField]
+    private Vector3 startingOffset;
 
     void Awake(){
-        gameObject.transform.position = slidePosition + gameObject.transform.position;
+        gameObject.transform.position = slidePosition.position + startingOffset;
     }
 }
