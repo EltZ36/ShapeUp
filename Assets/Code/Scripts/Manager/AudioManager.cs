@@ -101,7 +101,7 @@ public class AudioManager : MonoBehaviour
             case "Menu":
                 clip = bgm[0];
                 break;
-            case "Level Select":
+            case "LevelSelect":
                 clip = bgm[0];
                 break;
             case "TestLevel":
