@@ -161,17 +161,17 @@ public class DailyManager : MonoBehaviour
         levelDict.Add("TapDragFinal", "🪖");
 
         levelDict.Add("CubeheadForThree", "🏀");
-        levelDict.Add("PigSwipeLevel", "🐖");
+        // levelDict.Add("PigSwipeLevel", "🐖");
         levelDict.Add("PinchDrag", "☃️");
         levelDict.Add("PlateLevel", "🍽️");
         levelDict.Add("CirclePinch", "🏔️");
         levelDict.Add("RopeLevel", "🎣");
         levelDict.Add("BoulderLevel", "🪤");
 
-        levelDict.Add("PigShake", "🐷");
+        // levelDict.Add("PigShake", "🐷");
         levelDict.Add("RocketLevel", "🚀");
-        // levelDict.Add("SaltShaker", "🧂");
-        // levelDict.Add("SeesawTilt", "⚖️");
+        levelDict.Add("SaltShaker", "🧂");
+        levelDict.Add("SeesawTilt", "⚖️");
         levelDict.Add("ShakeBoulder", "🗿");
         levelDict.Add("ShakeMaze", "🧰");
         levelDict.Add("SmashIt", "🧀");
