@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1827705960596684737}
   - component: {fileID: 3497025132088096457}
   - component: {fileID: 8377111582812817423}
+  - component: {fileID: 2966750390774007573}
   - component: {fileID: 1616481965775162746}
   - component: {fileID: 8195331972565926716}
   m_Layer: 5
@@ -39,10 +40,10 @@ RectTransform:
   - {fileID: 3877513810745793607}
   m_Father: {fileID: 6727857194341825601}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1050, y: 250}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 350, y: -125}
+  m_SizeDelta: {x: 1214.9609, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7809722269036500284
 CanvasRenderer:
@@ -176,7 +177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 0
+    m_Left: 90
     m_Right: 85
     m_Top: 0
     m_Bottom: 0
@@ -189,6 +190,20 @@ MonoBehaviour:
   m_ChildScaleWidth: 1
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &2966750390774007573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 347078649255643278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalFit: 2
+  m_VerticalFit: 0
 --- !u!225 &1616481965775162746
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -874,7 +889,7 @@ RectTransform:
   m_GameObject: {fileID: 3692653397132944174}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.60445064, y: 0.49250728, z: 0.973278}
+  m_LocalScale: {x: 0.99999994, y: 0.81480145, z: 1.610186}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1687024223751336872}
@@ -1329,7 +1344,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 4
   m_VerticalAlignment: 512
   m_textAlignment: 65535
