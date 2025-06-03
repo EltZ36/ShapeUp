@@ -10,6 +10,9 @@ public class DailyUI : MonoBehaviour
     public TextMeshProUGUI timerUI;
 
     [SerializeField]
+    public TextMeshProUGUI scoreUI;
+
+    [SerializeField]
     public GameObject winUI;
 
     void Update()
@@ -35,6 +38,8 @@ public class DailyUI : MonoBehaviour
 
     public void Win()
     {
+        scoreUI.text = ConvertNumToTime(DailyManager.Instance.timer);
+        // timerUI.enabled = false;
         winUI.SetActive(true);
     }
 

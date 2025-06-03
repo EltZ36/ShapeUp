@@ -166,28 +166,36 @@ public class DailyManager : MonoBehaviour
 
     public void PopulateLevelDict()
     {
-        levelDict.Add("EggLevel", "🥚");
-        levelDict.Add("SledLevel", "🛷");
-        levelDict.Add("TableLevel", "🧺");
-        levelDict.Add("PigDragLevel", "🪙");
-        levelDict.Add("BoxTap", "📦");
-        levelDict.Add("TapDragFinal", "🪖");
+        // levelDict.Add("EggLevel", "🥚");
+        // levelDict.Add("SledLevel", "🛷");
+        // levelDict.Add("TableLevel", "🧺");
+        // levelDict.Add("PigDragLevel", "🪙");
+        // levelDict.Add("BoxTap", "📦");
+        // levelDict.Add("TapDragFinal", "🪖");
 
-        levelDict.Add("CubeheadForThree", "🏀");
-        levelDict.Add("PigSwipeLevel", "🐖");
-        levelDict.Add("PinchDrag", "🚦");
-        levelDict.Add("PlateLevel", "🍽️");
-        levelDict.Add("CirclePinch", "🏔️");
-        levelDict.Add("RopeLevel", "🎣");
-        levelDict.Add("BoulderLevel", "🪤");
+        // levelDict.Add("CubeheadForThree", "🏀");
+        // // levelDict.Add("PigSwipeLevel", "🐖");
+        // levelDict.Add("PinchDrag", "☃️");
+        // levelDict.Add("PlateLevel", "🍽️");
+        // levelDict.Add("CirclePinch", "🏔️");
+        // levelDict.Add("RopeLevel", "🎣");
+        // levelDict.Add("BoulderLevel", "🪤");
 
-        levelDict.Add("HouseLevel", "🏚️");
-        levelDict.Add("MazeLevel", "🪓");
-        levelDict.Add("PigLevel", "🐽");
-        levelDict.Add("ShadowLevel", "☀️");
-        levelDict.Add("TwoShadowLevel", "🌙");
-        levelDict.Add("LightTap", "🪰");
-        levelDict.Add("LightbulbLevel", "💡");
+        // levelDict.Add("PigShake", "🐷");
+        levelDict.Add("RocketLevel", "🚀");
+        levelDict.Add("SaltShaker", "🧂");
+        levelDict.Add("SeesawTilt", "⚖️");
+        levelDict.Add("ShakeBoulder", "🗿");
+        levelDict.Add("ShakeMaze", "🧰");
+        levelDict.Add("SmashIt", "🧀");
+
+        // levelDict.Add("HouseLevel", "🏚️");
+        // levelDict.Add("MazeLevel", "🗺️");
+        // levelDict.Add("PigLevel", "🐽");
+        // levelDict.Add("ShadowLevel", "☀️");
+        // levelDict.Add("TwoShadowLevel", "🌙");
+        // levelDict.Add("LightTap", "🐝");
+        // levelDict.Add("LightbulbLevel", "💡");
     }
 
     public void SetCopyString()

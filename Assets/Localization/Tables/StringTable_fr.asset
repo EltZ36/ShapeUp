@@ -70,14 +70,8 @@ MonoBehaviour:
       Nick Corfmat
 
 
-      Police
-      : Skinny Me par Mike Evans
-
-      Musique : That Fascinating Game par Denis
-      Pavlov
-
-
-      - Sous-traitants -'
+      -
+      Sous-traitants -'
     m_Metadata:
       m_Items: []
   - m_Id: 2878697261764608
@@ -196,6 +190,35 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 18051918797463552
     m_Localized: Partager
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21344332955512832
+    m_Localized: 'Cous avez termine le casse-tete du jour en '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21363470327345152
+    m_Localized: 'Eric Sean So, Saima Mukadam, Brendan Trieu,
+
+      Patrick Hu,
+      Patrick James Alcantara, Acer Cristea,
+
+      Dale Spence, Jacqueline Gracey,
+      Liam Edwards
+
+
+      Police : Skinny Me par Mike Evans
+
+      Musique : That
+      Fascinating Game par Denis Pavlov
+
+      "Vibe Ace" Kevin MacLeod (incompetech.com)
+
+      Licensed
+      under Creative Commons: By Attribution 4.0 License
+
+      http://creativecommons.org/licenses/by/4.0/
+
+'
     m_Metadata:
       m_Items: []
   references:

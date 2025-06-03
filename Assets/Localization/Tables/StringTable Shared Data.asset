@@ -139,6 +139,14 @@ MonoBehaviour:
     m_Key: share
     m_Metadata:
       m_Items: []
+  - m_Id: 21344332955512832
+    m_Key: dailyPuzzleScore
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21363470327345152
+    m_Key: contractors
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

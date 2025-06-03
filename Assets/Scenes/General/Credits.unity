@@ -300,6 +300,7 @@ GameObject:
   - component: {fileID: 922505074}
   - component: {fileID: 922505076}
   - component: {fileID: 922505075}
+  - component: {fileID: 922505077}
   m_Layer: 5
   m_Name: Contractors
   m_TagString: Untagged
@@ -323,7 +324,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 7.059316, y: -1409.1172}
+  m_AnchoredPosition: {x: 7.059316, y: -1201}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &922505075
@@ -346,12 +347,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Eric Sean So, Saima Mukadam, Brendan Trieu,
-
-    Patrick Hu, Patrick James
-    Alcantara, Acer Cristea,
-
-    Dale Spence, Jacqueline Gracey, Liam Edwards'
+  m_text: "Eric Sean So, Saima Mukadam, Brendan Trieu,\nPatrick Hu, Patrick James
+    Alcantara, Acer Cristea,\nDale Spence, Jacqueline Gracey, Liam Edwards\n\nFont:
+    Skinny Me by Mike Evans\nMusic: That Fascinating Game by Denis Pavlov\n\"Vibe
+    Ace\" Kevin MacLeod (incompetech.com)\r\nLicensed under Creative Commons: By
+    Attribution 4.0 License\r\nhttp://creativecommons.org/licenses/by/4.0/\r"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9bf47735fccdd2446b1d9d0ce0033337, type: 2}
   m_sharedMaterial: {fileID: -1433627986105509691, guid: 9bf47735fccdd2446b1d9d0ce0033337, type: 2}
@@ -428,6 +428,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 922505073}
   m_CullTransparentMesh: 1
+--- !u!114 &922505077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 922505073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_StringReference:
+    m_TableReference:
+      m_TableCollectionName: GUID:4912def05b3a65d4fa810a46b1d502f1
+    m_TableEntryReference:
+      m_KeyId: 21363470327345152
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  m_FormatArguments: []
+  m_UpdateString:
+    m_PersistentCalls:
+      m_Calls: []
+  references:
+    version: 2
+    RefIds: []
 --- !u!1 &975212638
 GameObject:
   m_ObjectHideFlags: 0
@@ -490,8 +518,7 @@ MonoBehaviour:
   m_text: "- Producer -\nCJ Moshy\n\n- Engine Lead -\nLuke Murayama\n\n- Tools Lead-
     \nElton Zeng\n\n- Design Lead -\nZeke Davidson\n\n- Level Design -\nIan Wallace\n\n-
     Playtesting Lead -\nHenry Christopher\n\n- Art, Sound Design, Marketing -\nLorraine
-    Torres\n\n- Art and UI Design -\nMichael Wong\nNick Corfmat\n\nFont: Skinny Me
-    by Mike Evans\nMusic: That Fascinating Game by Denis Pavlov\n\n- Contractors
+    Torres\n\n- Art and UI Design -\nMichael Wong\nNick Corfmat\n\n- Contractors
     -"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9bf47735fccdd2446b1d9d0ce0033337, type: 2}

@@ -26,8 +26,7 @@ MonoBehaviour:
     m_Localized: "- Producer -\nCJ Moshy\n\n- Engine Lead -\nLuke Murayama\n\n- Tools
       Lead- \nElton Zeng\n\n- Design Lead -\nZeke Davidson\n\n- Level Design -\nIan
       Wallace\n\n- Playtesting Lead -\nHenry Christopher\n\n- Art, Sound Design,
-      Marketing -\nLorraine Torres\n\n- Art and UI Design -\nMichael Wong\nNick Corfmat\n\nFont:
-      Skinny Me by Mike Evans\nMusic: That Fascinating Game by Denis Pavlov\n\n-
+      Marketing -\nLorraine Torres\n\n- Art and UI Design -\nMichael Wong\nNick Corfmat\n\n-
       Contractors -"
     m_Metadata:
       m_Items: []
@@ -149,6 +148,18 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 18051918797463552
     m_Localized: Share
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21344332955512832
+    m_Localized: You completed the daily puzzle in
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21363470327345152
+    m_Localized: "Eric Sean So, Saima Mukadam, Brendan Trieu,\nPatrick Hu, Patrick
+      James Alcantara, Acer Cristea,\nDale Spence, Jacqueline Gracey, Liam Edwards\n\nFont:
+      Skinny Me by Mike Evans\nMusic: That Fascinating Game by Denis Pavlov\n\"Vibe
+      Ace\" Kevin MacLeod (incompetech.com)\r\nLicensed under Creative Commons: By
+      Attribution 4.0 License\r\nhttp://creativecommons.org/licenses/by/4.0/\r"
     m_Metadata:
       m_Items: []
   references:
