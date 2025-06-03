@@ -75,24 +75,16 @@ public class DailyManager : MonoBehaviour
                 yield return null;
             }
             Scene subLevel = SceneManager.GetSceneByName(randomLevels[i]);
-            GameObject root = subLevel.GetRootGameObjects()[0];
-            shapeDatabases.Insert(0, root.GetComponentInChildren<ShapeDatabase>());
-            shapeRecipes.Insert(0, root.GetComponentInChildren<ShapeRecipes>());
-            if (i == 0)
+            SceneManager.SetActiveScene(subLevel);
+            if (i != 0)
             {
-                SceneManager.SetActiveScene(subLevel);
-                if (shapeDatabases[0] != null)
-                {
-                    ShapeManager.Instance.shapeDatabase = shapeDatabases[0];
-                }
-                if (shapeRecipes[0] != null)
-                {
-                    ShapeManager.Instance.shapeRecipes = shapeRecipes[0];
-                }
-            }
-            else if (i != 0)
-            {
+                GameObject root = subLevel.GetRootGameObjects()[0];
                 root.SetActive(false);
+                AsyncOperation unLevel = SceneManager.UnloadSceneAsync(randomLevels[i]);
+                while (!unLevel.isDone)
+                {
+                    yield return null;
+                }
             }
         }
         Debug.Log("levels loaded");
@@ -139,63 +131,58 @@ public class DailyManager : MonoBehaviour
             }
             else
             {
-                Scene subLevel = SceneManager.GetSceneByName(randomLevels[currentLevelIndex]);
-                GameObject root = subLevel.GetRootGameObjects()[0];
-                root.SetActive(true);
-                SceneManager.SetActiveScene(subLevel);
-                if (shapeDatabases[currentLevelIndex] != null)
+                SceneManager
+                    .LoadSceneAsync(randomLevels[currentLevelIndex], LoadSceneMode.Additive)
+                    .completed += (operation) =>
                 {
-                    ShapeManager.Instance.shapeDatabase = shapeDatabases[currentLevelIndex];
-                }
-                if (shapeRecipes[currentLevelIndex] != null)
-                {
-                    ShapeManager.Instance.shapeRecipes = shapeRecipes[currentLevelIndex];
-                }
-                if (aspectRatio < 16f / 9f)
-                {
-                    Camera.main.orthographicSize = 5f * ((16f / 9f) / aspectRatio);
-                }
-                else
-                {
-                    Camera.main.orthographicSize = 5f;
-                }
-                ShapeEventSystem.Instance.ClearSelectedShape();
+                    Scene subLevel = SceneManager.GetSceneByName(randomLevels[currentLevelIndex]);
+                    SceneManager.SetActiveScene(subLevel);
+                    if (aspectRatio < 16f / 9f)
+                    {
+                        Camera.main.orthographicSize = 5f * ((16f / 9f) / aspectRatio);
+                    }
+                    else
+                    {
+                        Camera.main.orthographicSize = 5f;
+                    }
+                    ShapeEventSystem.Instance.ClearSelectedShape();
+                };
             }
         };
     }
 
     public void PopulateLevelDict()
     {
-        // levelDict.Add("EggLevel", "🥚");
-        // levelDict.Add("SledLevel", "🛷");
-        // levelDict.Add("TableLevel", "🧺");
-        // levelDict.Add("PigDragLevel", "🪙");
-        // levelDict.Add("BoxTap", "📦");
-        // levelDict.Add("TapDragFinal", "🪖");
+        levelDict.Add("EggLevel", "🥚");
+        levelDict.Add("SledLevel", "🛷");
+        levelDict.Add("TableLevel", "🧺");
+        levelDict.Add("PigDragLevel", "🪙");
+        levelDict.Add("BoxTap", "📦");
+        levelDict.Add("TapDragFinal", "🪖");
 
-        // levelDict.Add("CubeheadForThree", "🏀");
-        // // levelDict.Add("PigSwipeLevel", "🐖");
-        // levelDict.Add("PinchDrag", "☃️");
-        // levelDict.Add("PlateLevel", "🍽️");
-        // levelDict.Add("CirclePinch", "🏔️");
-        // levelDict.Add("RopeLevel", "🎣");
-        // levelDict.Add("BoulderLevel", "🪤");
+        levelDict.Add("CubeheadForThree", "🏀");
+        levelDict.Add("PigSwipeLevel", "🐖");
+        levelDict.Add("PinchDrag", "☃️");
+        levelDict.Add("PlateLevel", "🍽️");
+        levelDict.Add("CirclePinch", "🏔️");
+        levelDict.Add("RopeLevel", "🎣");
+        levelDict.Add("BoulderLevel", "🪤");
 
-        // levelDict.Add("PigShake", "🐷");
+        levelDict.Add("PigShake", "🐷");
         levelDict.Add("RocketLevel", "🚀");
-        levelDict.Add("SaltShaker", "🧂");
-        levelDict.Add("SeesawTilt", "⚖️");
+        // levelDict.Add("SaltShaker", "🧂");
+        // levelDict.Add("SeesawTilt", "⚖️");
         levelDict.Add("ShakeBoulder", "🗿");
         levelDict.Add("ShakeMaze", "🧰");
         levelDict.Add("SmashIt", "🧀");
 
-        // levelDict.Add("HouseLevel", "🏚️");
-        // levelDict.Add("MazeLevel", "🗺️");
-        // levelDict.Add("PigLevel", "🐽");
-        // levelDict.Add("ShadowLevel", "☀️");
-        // levelDict.Add("TwoShadowLevel", "🌙");
-        // levelDict.Add("LightTap", "🐝");
-        // levelDict.Add("LightbulbLevel", "💡");
+        levelDict.Add("HouseLevel", "🏚️");
+        levelDict.Add("MazeLevel", "🗺️");
+        levelDict.Add("PigLevel", "🐽");
+        levelDict.Add("ShadowLevel", "☀️");
+        levelDict.Add("TwoShadowLevel", "🌙");
+        levelDict.Add("LightTap", "🐝");
+        levelDict.Add("LightbulbLevel", "💡");
     }
 
     public void SetCopyString()
