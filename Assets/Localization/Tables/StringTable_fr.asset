@@ -193,7 +193,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 21344332955512832
-    m_Localized: 'Cous avez termine le casse-tete du jour en '
+    m_Localized: "Vous avez termin\xE9 le casse-tete du jour en "
     m_Metadata:
       m_Items: []
   - m_Id: 21363470327345152
@@ -213,8 +213,8 @@ MonoBehaviour:
 
       "Vibe Ace" Kevin MacLeod (incompetech.com)
 
-      Licensed
-      under Creative Commons: By Attribution 4.0 License
+      Sous
+      licence Creative Commons : Attribution 4.0
 
       http://creativecommons.org/licenses/by/4.0/
 
