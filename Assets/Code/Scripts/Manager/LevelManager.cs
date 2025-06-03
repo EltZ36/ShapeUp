@@ -205,7 +205,8 @@ public class LevelManager : MonoBehaviour, ILevelManager
         currentLevelID = levelID;
         string name = levelNames[levelID];
         SceneManager.LoadScene(name);
-        SceneManager.LoadSceneAsync("LevelUI", LoadSceneMode.Additive).completed += (operation) => {
+        SceneManager.LoadSceneAsync("LevelUI", LoadSceneMode.Additive).completed += (operation) =>
+        {
             loading = GameObject.FindGameObjectWithTag("Loading");
             loading.SetActive(false);
         };

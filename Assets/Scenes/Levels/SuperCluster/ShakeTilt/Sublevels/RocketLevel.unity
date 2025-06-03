@@ -10137,7 +10137,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: 8e76d4961ada2644aa783dbe5397cea5, type: 3}
       propertyPath: OnDragStartEvent.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: EnableCollision
+      value: ToggleCollision
       objectReference: {fileID: 0}
     - target: {fileID: 3102746494672219261, guid: 8e76d4961ada2644aa783dbe5397cea5, type: 3}
       propertyPath: OnTapEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
