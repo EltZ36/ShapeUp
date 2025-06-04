@@ -16,7 +16,11 @@ public class Loader : MonoBehaviour
         {
             int length = GameManager.Instance.gameData.LevelCompleteMap[ID].Keys.Count;
             // from https://www.sourcecodehub.com/article/10618/how-to-handle-indexoutofrangeexception-in-c-sharp-causes-symptoms-and-solutions to check for index errors.
-            if (ID < 0 || ID >= Levels.Count || GameManager.Instance.gameData.LevelCompleteMap[ID][length - 1] == false)
+            if (
+                ID < 0
+                || ID >= Levels.Count
+                || GameManager.Instance.gameData.LevelCompleteMap[ID][length - 1] == false
+            )
             {
                 continue;
             }

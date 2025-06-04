@@ -258,10 +258,10 @@ public class LevelManager : MonoBehaviour, ILevelManager
         if (currentSubLevelID == -1 && currentLevelID != -1)
         {
             // if the level is complete, don't reload it
-            if (Levels[currentLevelID].SubLevels[subLevelID].IsComplete == true)
-            {
-                return false;
-            }
+            // if (Levels[currentLevelID].SubLevels[subLevelID].IsComplete == true)
+            // {
+            //     return false;
+            // }
 
             ShapeManager.Instance.shapeRecipes = null;
             ShapeManager.Instance.shapeDatabase = null;
@@ -365,10 +365,10 @@ public class LevelManager : MonoBehaviour, ILevelManager
             float dist = Vector2.Distance(camPos, subLevel.Thumbnail.transform.position);
             if (dist < closestSubLevel.Item2)
             {
-                if (subLevel.IsComplete)
-                {
-                    continue;
-                }
+                // if (subLevel.IsComplete)
+                // {
+                //     continue;
+                // }
                 closestSubLevel.Item1 = i;
                 closestSubLevel.Item2 = dist;
                 closestSubLevel.Item3 = subLevel.Thumbnail.transform.position;

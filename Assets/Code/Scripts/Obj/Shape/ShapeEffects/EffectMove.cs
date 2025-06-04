@@ -54,8 +54,12 @@ public class EffectMove : MonoBehaviour
 
     public void MoveShape(EventInfo eventInfo)
     {
-        // eventInfo.TargetObject.transform.position = (Vector2)eventInfo.VectorTwo;
         Vector2 currentPosition = (Vector2)eventInfo.VectorTwo;
         rb2D.MovePosition(currentPosition);
+    }
+
+    public void MoveShapeWithoutRB(EventInfo eventInfo)
+    {
+        eventInfo.TargetObject.transform.position = (Vector2)eventInfo.VectorTwo;
     }
 }

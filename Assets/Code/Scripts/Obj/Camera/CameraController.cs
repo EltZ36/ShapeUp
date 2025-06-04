@@ -78,7 +78,8 @@ public class CameraController : MonoBehaviour
                     SubLevelInfo sublevel = levelInfo.SubLevels.FirstOrDefault(sublevel =>
                         sublevel.Thumbnail == hit.collider.gameObject
                     );
-                    if (sublevel != null && sublevel.IsComplete != true)
+                    // if (sublevel != null && sublevel.IsComplete != true)
+                    if (sublevel != null)
                     {
                         Vector2 levelPosition = hit.transform.position;
                         StartCoroutine(ZoomIn(levelPosition));

@@ -1951,7 +1951,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 283293096}
         m_TargetAssemblyTypeName: EffectMove, Assembly-CSharp
-        m_MethodName: MoveShape
+        m_MethodName: MoveShapeWithoutRB
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
