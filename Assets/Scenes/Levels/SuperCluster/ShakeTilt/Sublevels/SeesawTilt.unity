@@ -926,7 +926,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slidePosition: {fileID: 369942069}
-  startingOffset: {x: -3, y: -3, z: 0}
+  startingOffset: {x: -20, y: -3, z: 0}
 --- !u!1 &831418312
 GameObject:
   m_ObjectHideFlags: 0
@@ -1644,7 +1644,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slidePosition: {fileID: 369942069}
-  startingOffset: {x: -3, y: 6, z: 0}
+  startingOffset: {x: -20, y: 6, z: 0}
 --- !u!1001 &1136760428
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2067,6 +2067,22 @@ PrefabInstance:
       propertyPath: m_PreserveAspect
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6095278655388477071, guid: 77ba542a5b8ebf94980341de105a6daf, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6095278655388477071, guid: 77ba542a5b8ebf94980341de105a6daf, type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6095278655388477071, guid: 77ba542a5b8ebf94980341de105a6daf, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 3200
+      objectReference: {fileID: 0}
+    - target: {fileID: 6095278655388477071, guid: 77ba542a5b8ebf94980341de105a6daf, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1400
+      objectReference: {fileID: 0}
     - target: {fileID: 7572867970371291645, guid: 77ba542a5b8ebf94980341de105a6daf, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -2092,12 +2108,28 @@ PrefabInstance:
       value: hint
       objectReference: {fileID: 0}
     - target: {fileID: 8699912019322610809, guid: 77ba542a5b8ebf94980341de105a6daf, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8699912019322610809, guid: 77ba542a5b8ebf94980341de105a6daf, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8699912019322610809, guid: 77ba542a5b8ebf94980341de105a6daf, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8699912019322610809, guid: 77ba542a5b8ebf94980341de105a6daf, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -160
+      value: -175
       objectReference: {fileID: 0}
     - target: {fileID: 8699912019322610809, guid: 77ba542a5b8ebf94980341de105a6daf, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -250
+      value: -300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8699912019322610809, guid: 77ba542a5b8ebf94980341de105a6daf, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8916839806306593897, guid: 77ba542a5b8ebf94980341de105a6daf, type: 3}
       propertyPath: timer
@@ -2463,7 +2495,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -26.979229, y: -14.717624}
+  m_Offset: {x: -37.152615, y: -14.717624}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -2474,7 +2506,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 25.214592, y: 6.91852}
+  m_Size: {x: 45.56144, y: 6.91852}
   m_EdgeRadius: 0
 --- !u!1 &1890113294
 GameObject:
