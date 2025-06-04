@@ -926,7 +926,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slidePosition: {fileID: 369942069}
-  startingOffset: {x: -3, y: -3, z: 0}
+  startingOffset: {x: -20, y: -3, z: 0}
 --- !u!1 &831418312
 GameObject:
   m_ObjectHideFlags: 0
@@ -1641,7 +1641,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slidePosition: {fileID: 369942069}
-  startingOffset: {x: -3, y: 6, z: 0}
+  startingOffset: {x: -20, y: 6, z: 0}
 --- !u!1001 &1136760428
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2492,7 +2492,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -26.979229, y: -14.717624}
+  m_Offset: {x: -37.152615, y: -14.717624}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -2503,7 +2503,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 25.214592, y: 6.91852}
+  m_Size: {x: 45.56144, y: 6.91852}
   m_EdgeRadius: 0
 --- !u!1 &1890113294
 GameObject:

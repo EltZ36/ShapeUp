@@ -59,20 +59,16 @@ public class LevelManager : MonoBehaviour, ILevelManager
 
     public void SetLevelProgress(GameData gd)
     {
-        // get each level saved
-        foreach (int LNum in gd.LevelCompleteMap.Keys)
-        {
-            // go throuhg the sublevels of that level
-            foreach (var sl in gd.LevelCompleteMap[LNum])
-            { // level was beat
-                if (sl.Value == true)
-                { // set levels accordingly
-                    Levels[LNum].SubLevels[sl.Key].IsComplete = true;
-                    Levels[LNum]
-                        .SubLevels[sl.Key]
-                        .Thumbnail.GetComponentInChildren<SpriteRenderer>()
-                        .color = Color.grey;
-                }
+        // go throuhg the sublevels of that level
+        foreach (var sl in gd.LevelCompleteMap[currentLevelID])
+        { // level was beat
+            if (sl.Value == true)
+            { // set levels accordingly
+                Levels[currentLevelID].SubLevels[sl.Key].IsComplete = true;
+                Levels[currentLevelID]
+                    .SubLevels[sl.Key]
+                    .Thumbnail.GetComponentInChildren<SpriteRenderer>()
+                    .color = Color.grey;
             }
         }
     }
