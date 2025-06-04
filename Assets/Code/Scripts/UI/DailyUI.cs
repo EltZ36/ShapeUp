@@ -7,17 +7,20 @@ using UnityEngine.SceneManagement;
 public class DailyUI : MonoBehaviour
 {
     [SerializeField]
-    public TextMeshProUGUI timerUI;
+    public TextMeshProUGUI timeText;
 
     [SerializeField]
-    public TextMeshProUGUI scoreUI;
+    public TextMeshProUGUI scoreText;
 
     [SerializeField]
     public GameObject winUI;
 
+    [SerializeField]
+    private GameObject timerUI;
+
     void Update()
     {
-        timerUI.text = ConvertNumToTime(DailyManager.Instance.timer);
+        timeText.text = ConvertNumToTime(DailyManager.Instance.timer);
     }
 
     private string ConvertNumToTime(int num)
@@ -38,8 +41,8 @@ public class DailyUI : MonoBehaviour
 
     public void Win()
     {
-        scoreUI.text = ConvertNumToTime(DailyManager.Instance.timer);
-        // timerUI.enabled = false;
+        scoreText.text = ConvertNumToTime(DailyManager.Instance.timer);
+        timerUI.SetActive(false);
         winUI.SetActive(true);
     }
 
