@@ -23,55 +23,13 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 699753137704960
-    m_Localized: '- Producteur -
-
-      CJ Moshy
-
-
-      - Responsable Moteur -
-
-      Luke
-      Murayama
-
-
-      - Responsable Outils -
-
-      Elton Zeng
-
-
-      - Responsable
-      Design -
-
-      Zeke Davidson
-
-
-      - Conception de Niveaux -
-
-      Ian
-      Wallace
-
-
-      - Responsable des Tests de Jeu -
-
-      Henry Christopher
-
-
-      -
-      Art, Design Sonore, Marketing -
-
-      Lorraine Torres
-
-
-      - Design Graphique
-      et Interface Utilisateur -
-
-      Michael Wong
-
-      Nick Corfmat
-
-
-      -
-      Sous-traitants -'
+    m_Localized: "- Producteur -\nCJ Moshy\nZeke Davidson\n\n- Responsable Moteur
+      -\nLuke Murayama\nHenry Christopher\n\n- Responsable Outils -\nElton Zeng\n\n-
+      Responsable Design -\nZeke Davidson\n\n- Conception de Niveaux -\nIan Wallace\n\n-
+      Responsable des Tests de Jeu -\nHenry Christopher\n\n- Art, Design Sonore,
+      Marketing -\nLorraine Torres\n\n- Design Graphique et Interface Utilisateur
+      -\nMichael Wong\nNick Corfmat\n\n- Sous-traitants -\n\n\n\n\n\n\n\nMerci d'avoir
+      jou\xE9!"
     m_Metadata:
       m_Items: []
   - m_Id: 2878697261764608

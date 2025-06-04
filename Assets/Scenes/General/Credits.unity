@@ -160,8 +160,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.0017089844, y: -10240}
-  m_SizeDelta: {x: 200, y: 8550}
+  m_AnchoredPosition: {x: 0.0017089844, y: -11428}
+  m_SizeDelta: {x: 200, y: 9850}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &484250623
 MonoBehaviour:
@@ -324,7 +324,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 7.059316, y: -1201}
+  m_AnchoredPosition: {x: 7.059316, y: -1344}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &922505075
@@ -347,11 +347,28 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Eric Sean So, Saima Mukadam, Brendan Trieu,\nPatrick Hu, Patrick James
-    Alcantara, Acer Cristea,\nDale Spence, Jacqueline Gracey, Liam Edwards\n\nFont:
-    Skinny Me by Mike Evans\nMusic: That Fascinating Game by Denis Pavlov\n\"Vibe
-    Ace\" Kevin MacLeod (incompetech.com)\r\nLicensed under Creative Commons: By
-    Attribution 4.0 License\r\nhttp://creativecommons.org/licenses/by/4.0/\r"
+  m_text: 'Eric Sean So, Saima Mukadam, Brendan Trieu,
+
+    Patrick Hu, Patrick James
+    Alcantara, Acer Cristea,
+
+    Dale Spence, Jacqueline Gracey, Liam Edwards
+
+
+    Font:
+    Skinny Me by Mike Evans
+
+    Music: That Fascinating Game by Denis Pavlov
+
+    "Vibe
+    Ace" Kevin MacLeod (incompetech.com)
+
+    Licensed under Creative Commons: By
+    Attribution 4.0 License
+
+    http://creativecommons.org/licenses/by/4.0/
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9bf47735fccdd2446b1d9d0ce0033337, type: 2}
   m_sharedMaterial: {fileID: -1433627986105509691, guid: 9bf47735fccdd2446b1d9d0ce0033337, type: 2}
@@ -492,7 +509,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -24.001642, y: 1226}
+  m_AnchoredPosition: {x: -24.001642, y: 1946.2}
   m_SizeDelta: {x: 400, y: 1000}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &975212640
@@ -515,11 +532,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "- Producer -\nCJ Moshy\n\n- Engine Lead -\nLuke Murayama\n\n- Tools Lead-
-    \nElton Zeng\n\n- Design Lead -\nZeke Davidson\n\n- Level Design -\nIan Wallace\n\n-
-    Playtesting Lead -\nHenry Christopher\n\n- Art, Sound Design, Marketing -\nLorraine
-    Torres\n\n- Art and UI Design -\nMichael Wong\nNick Corfmat\n\n- Contractors
-    -"
+  m_text: "- Producer -\nCJ Moshy\nZeke Davidson\n\n- Engine Lead -\nLuke Murayama\nHenry
+    Christopher\n\n- Tools Lead- \nElton Zeng\n\n- Design Lead -\nZeke Davidson\n\n-
+    Level Design -\nIan Wallace\n\n- Playtesting Lead -\nHenry Christopher\n\n- Art,
+    Sound Design, Marketing -\nLorraine Torres\n\n- Art and UI Design -\nMichael
+    Wong\nNick Corfmat\n\n- Contractors -\n\n\n\n\n\n\n\nThanks for playing!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9bf47735fccdd2446b1d9d0ce0033337, type: 2}
   m_sharedMaterial: {fileID: -1433627986105509691, guid: 9bf47735fccdd2446b1d9d0ce0033337, type: 2}
@@ -993,7 +1010,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -24.001642, y: 1745}
+  m_AnchoredPosition: {x: -24.001642, y: 2437}
   m_SizeDelta: {x: 400, y: 1000}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1547455951
